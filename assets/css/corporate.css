@@ -1,0 +1,616 @@
+/**
+ *
+ * GLOBAL STYLES
+ *
+ */
+
+/**
+ *
+ * PROJECT SECTIONS
+ *
+ */
+#section-why {
+}
+#section-platform {
+}
+#section-offers {
+}
+#section-team-lead {
+}
+#section-team-cm {
+}
+#section-team-dev {
+}
+#section-team-advisors {
+}
+#section-team-partners {
+}
+#section-partners-logo {
+}
+/**
+ *
+ * ICO SECTIONS
+ *
+ */
+#section-economy {
+}
+#section-ico {
+}
+#section-market {
+}
+#section-milestones {
+}
+#section-specialists {
+}
+
+#section-what {
+}
+#section-roadmap {
+}
+
+/**
+ *
+ * blockchain section
+ *
+ */
+#section-blockchain {
+}
+#section-blockchain .right_text {
+    float: right;
+    width: calc(100% - 110px);
+    margin-left: 16px;
+}
+#section-blockchain .left_icon {
+    float: left;
+    width: 90px;
+    position: relative;
+}
+#section-blockchain .left_icon img {
+	width: 100%;
+	height: auto;
+	vertical-align: middle;
+	border-style: none;
+	max-width: 100%;
+	width: 100%;
+}
+
+
+/*section Tableau Token*/
+.tableau-token{
+	float:left;
+  line-height: 2rem;
+  font-size: 14px;
+}
+
+/* CARDS ICO */
+.carte {
+	padding-top:12px;
+	margin-bottom: 25px;
+	width:380px;
+	background-color: #fff;
+	box-shadow: 0 20px 30px 0 rgba(8, 56, 80, 0.2);
+	border-radius: 2.5rem;
+	overflow: hidden;
+}
+.titre-carte{
+	text-align:center;
+	color: #083850;
+  font-weight: 700;
+  font-size: 1.563rem;
+}
+.footer-carte {
+	color: #FFF;
+	border-top: 1px solid rgba(0,0,0,.125);
+	text-transform: uppercase;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 60px;
+	border: none;
+	text-align: center;
+}
+.carte-1 {
+	width:100%;
+}
+.carte-1 .titre-carte {
+	font-size: 3rem;
+	color: #e31080;
+}
+.carte-1 .footer-carte {
+	background-color:#e31080;
+}
+.carte-2 {
+	width:100%;
+}
+.carte-2 .titre-carte {
+	color:#033750;
+}
+.carte-2 .footer-carte {
+	background-color:#033750;
+}
+.carte-3 {
+	width:100%;
+}
+.carte-3 .titre-carte {
+	color:#7e95c8;
+}
+.carte-3 .footer-carte {
+	background-color:#7e95c8;
+}
+
+
+
+
+.titre-carte2{
+	text-align:center;
+	color:#083850;
+	font-size: 50px;
+	font-weight: bold;
+	margin:0px;
+	margin-bottom:12px;
+}
+
+/**
+ * TEAM SECTION STYLES
+ *
+ */
+.team_hover {
+  position: absolute;
+	top: 100%;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	transition: all 0.5s ease;
+	margin: 0;
+	padding: 0px 20px;
+	text-align: center;
+}
+.overlay-team { width: 100%; text-align:center; }
+.overlay-team a { font-size: 50px; }
+.team_view {
+	width: 70%;
+  position: relative;
+  overflow: hidden;
+	margin-bottom: 20px;
+	margin-left: 15%;
+}
+
+.team_head:hover .team_hover {
+    top: 0px;
+    transition: all 0.5s ease;
+}
+#section-team-advisors img,
+#section-team-lead img,
+#section-team-partners img,
+#section-specialists img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+  max-width: 100%;
+	filter: grayscale(100%);
+}
+/* TITLE, POSITION, NAME */
+.team_name {
+  color: #232323;
+  font-weight: 600;
+  /* text-transform: uppercase; */
+  font-size: 14px;
+	display: block;
+}
+.team_name, .team_title, .position {
+  display: block;
+  font-size: 14px;
+}
+.position {
+	font-weight: 700;
+  display: block;
+}
+.team_title span {
+  text-transform: capitalize;
+}
+.team_title {
+  background: #fff;
+  margin-top: 0;
+  padding: 10px;
+  margin: -27px 15% 0 15%;
+  position: relative;
+  text-align: center;
+}
+
+a.team-link, a.team-link:hover {
+	color: #000;
+}
+
+
+
+.team_column {
+	text-align: left;
+	column-count: 3;
+	font-weight: 600;
+	font-size: 14px;
+	padding-top: 30px;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
+  -webkit-column-rule: 1px solid lightblue;
+  -moz-column-rule: 1px solid lightblue;
+  column-rule: 1px solid lightblue;
+}
+.team_column a {
+  color: #033750;
+  font-size: 14px;
+	text-align: left;
+}
+.team_column li {
+	padding-bottom: 15px;
+	text-align: left;
+}
+.team_column li img {
+  width: 40px;
+  margin-right: 15px;
+	text-align: left;
+  /* -webkit-filter: grayscale(100%); */
+  /* filter: grayscale(100%); */
+}
+
+
+
+
+/**
+ *
+ * FORMATS SPECIFIQUES
+ *
+ */
+/* PARTIE BLOCKCHAIN */
+
+.fa, .fab, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+		padding: 10px;
+}
+.button-sw-block {
+  margin:0;
+	padding:0;
+	width: 100%;
+	margin-top: 20px;
+}
+.button-sw-block .fab {
+    font-size: 30px;
+    color: #f30c0c !important;
+    vertical-align: middle;
+}
+
+.token-table dl:nth-child(2n+1) {
+    background: #fff;
+}
+.token-table dl {
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+
+#ico-token .card {
+    box-shadow: 0 20px 30px 0 rgba(8, 56, 80, 0.2);
+    border-radius: 2.5rem;
+}
+
+.mx-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+.p-0 {
+    padding: 0 0 !important;
+}
+.token-table dt {
+    padding-left: 10px;
+}
+.token-table dt, .token-table dd {
+    float: left;
+    width: 50%;
+    line-height: 2rem;
+    font-size: 14px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* .temps {
+    text-transform: uppercase;
+    color: #a09f9f;
+    font-weight: 300;
+    font-size: 0.75rem;
+    width: 55px;
+} */
+
+#cart2 {
+	margin-right: 80px;
+  margin-left: 80px;
+}
+
+#section-partners-logo img {
+	max-width: 80%;
+	max-height: 80%;
+	margin:auto;
+}
+
+/**
+ *
+ * BUY CARDS
+ *
+ */
+.card.card-buy {
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.125);
+	border-radius: 50px;
+	width: 100%;
+	height: 100%;
+}
+.card.card-buy .card-body {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+	padding: 1.25rem;
+}
+.card.card-buy .card-header {
+	border: none;
+	background-color: transparent !important;
+}
+.card.card-buy .card-footer  {
+	background-color: #fff;
+	text-align: center;
+	margin: 0;
+	width: 100%;
+}
+.card.card-buy .card-footer:last-child{
+	border-radius: 50%;
+}
+.card.card-buy .price {
+ text-align: center;
+ margin: 0 0 15px 0;
+ width: 100%;
+ padding: 8px 5px 5px 5px;
+ background: #e31080;
+ color: #fff;
+ font-weight: 800;
+ text-transform: uppercase;
+ font-size: 1.125rem;
+ line-height: 1.5rem;
+ border-radius: 5px;
+ box-shadow: 0 7px 30px rgba(152, 10, 85, 0.5);
+}
+#section-products .price {
+ text-align: center;
+ margin: 0 15px 15px 0;
+ width: 100%;
+ padding: 5px 8px 5px 8px;
+ /* background: #e31080; */
+ background: #083850;
+ color: #fff;
+ font-weight: 500;
+ text-transform: uppercase;
+ font-size: 0.9rem;
+ line-height: 1rem;
+ border-radius: 5px;
+ /* box-shadow: 0 7px 30px rgba(152, 10, 85, 0.5); */
+ box-shadow: 0 7px 30px rgba(8, 56, 80, 0.5);
+}
+.card.card-buy .bonus {
+ text-align: center;
+ margin: 0;
+ padding: 0;
+ width: 100%;
+ color: #e31080;
+ font-weight: 800;
+ text-transform: uppercase;
+ font-size: 1.125rem;
+}
+#section-products .bonus {
+ text-align: left;
+ margin: 0;
+ padding: 0;
+ width: 100%;
+ color: #083850;
+ font-weight: 800;
+ font-size: 0.9rem;
+}
+.card.card-buy .sold {
+ text-align: center;
+ line-height: 1.563rem;
+ margin: 0;
+ padding: 0;
+ width: 100%;
+ color: #083850;
+ font-weight: 700;
+ font-size: 1.563rem;
+}
+.card.card-buy h5, .card.card-buy .sold {
+   color: #083850;
+   font-weight: 700;
+   font-size: 1.563rem;
+		margin: 8px 0 0 0;
+		padding: 0;
+}
+.card.card-buy .buy {
+ display: block;
+ color: #fff !important;
+ background-color: #033750;
+ padding: 20px;
+ text-transform: uppercase;
+ font-size: 1rem;
+ font-weight: 700;
+ line-height: 14px;
+ border-top-left-radius: 0;
+ border-top-right-radius: 0;
+ border-bottom-left-radius: 50px;
+ border-bottom-right-radius: 50px;
+ text-decoration: none;
+ text-shadow: 0 0 15px #0094db;
+}
+.card.card-buy .buy small {
+		font-size: 0.75rem;
+		font-weight: 300;
+}
+/**
+ * CONNECTY BANNER
+ *
+ */
+#banner-bloc {
+
+	position: relative;
+	color: #bc5b5b;
+	width: 100%;
+	margin:0;
+	padding-top: 60px;
+	min-height: 530px;
+
+}
+header {
+
+	background-position: 100% 0%;
+	background-size: auto, 100%;
+	-webkit-background-size: cover;
+	background-repeat: no-repeat;
+
+}
+#banner-bloc h1, #banner-bloc h2 {
+   text-align: left;
+   width: 100%;
+   text-transform: none;
+}
+#banner-bloc h1 {
+ font-size: 35px;
+ font-weight: normal;
+ margin-bottom: 0px;
+ color: #fff;
+ line-height: 1.5;
+}
+#banner-bloc h2 {
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 30px;
+	text-transform: none;
+	color: #ccc;
+	margin: 2rem 0 2rem;
+}
+#banner-bloc .image-icon {
+    max-width: 50px;
+}
+#banner-bloc .white-paper {
+	color: #fff;
+	text-transform: uppercase;
+}
+/**
+ * MILESTONES
+ *
+ */
+#bs-left {
+	border-left: solid 150px #fff;
+}
+#bs-right {
+	border-right: solid 150px #fff;
+}
+
+.bs-wizard-dot {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: block;
+    background: #7e95c8;
+    top: 80px;
+    left: 50%;
+    margin-top: 1px;
+    margin-left: -15px;
+    border-radius: 50%;
+	border: solid 5px #fff;
+}
+.bs-wizard-desc {
+	color: #033750;
+  font-size: 18px;
+}
+.bs-wizard-info {
+	color: #033750;
+font-size: 24px;
+}
+.bs-wizard > .bs-wizard-step > .progress > .progress-bar {
+    width: 100%;
+    box-shadow: none;
+    background: #033750;
+    background-color: rgb(3, 55, 80);
+		border-bottom: solid 8px #fff;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		overflow: hidden;
+		font-size: .75rem;
+		line-height: 1rem;
+		text-align: center;
+		border-radius: .25rem;
+}
+/**
+ *
+ * MISC
+ *
+ */
+#section-why img {
+    max-width: 40%;
+    margin: 0 auto;
+    display: block;
+}
+.texte_bleu_inv {
+    background: #033750;
+    color: #fff;
+    font-size: 24px;
+    width: auto;
+    padding: 7px 20px 9px;
+    border-radius: 50px;
+    margin: 30px auto;
+    box-shadow: 0 7px 30px rgba(8, 56, 80, 0.3);
+}
+.texte_bleu {
+    color: #033750;
+    background: none;
+    /* font-size: 24px; */
+    /* width: auto; */
+    /* padding: 7px 20px 9px; */
+    /* border-radius: 50px; */
+    /* margin: 30px auto; */
+    text-shadow: 0 7px 30px rgba(8, 56, 80, 0.3);
+		filter: drop-shadow(0 7px 30px rgba(8, 56, 80, 0.3));
+}
+.call-to-click {
+	border: none;
+  display: inline-block;
+  background: #033750;
+  color: #fff;
+  width: auto;
+  padding: 17px 50px 19px;
+  border-radius: 50px;
+  margin: 30px auto;
+  box-shadow: 0 7px 30px rgba(8, 56, 80, 0.3);
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+a.call-to-click:hover {
+	color: #fff;
+	text-transform: none;
+}
+/* ###### */
+@media (max-width: 1200px) {
+    .team_column {
+    	column-count: 2;
+    }
+}
+@media (max-width: 800px) {
+  .team_column {
+    column-count: 1;
+  }
+}
