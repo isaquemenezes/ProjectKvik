@@ -1,6 +1,6 @@
 <?php \Classes\ClassLayout::setHeadRestrito(); // Inicia a Sessão  ?>
 <?php \Classes\ClassLayout::setHead3('Área Restrita','Área exclusiva para membros!'); ?>
-<?php include ("{$_SERVER['DOCUMENT_ROOT']}/PDO/classes/ClassCrud.php"); ?>
+<?php include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php"); ?>
 		
 	<!--- STYLE PARTÍCULAS -->
 	<style type="text/css">
@@ -46,6 +46,7 @@
 											<?php echo $Fetch['nome']; ?>
 											<p><?php echo $Fetch['anoNascimento']; ?></p>
 											<p><?php echo $Fetch['cidade']; ?></p>	
+											<p><?php echo $Fetch['bairro']?></p>
 										</div>
 									</li>
 
