@@ -2,8 +2,7 @@
         <!--========== NAV  ==========--->
 		<?php include 'includes/nav.php'; ?>
 
-		<!--=== "banner-bloc" 
-		==================-->
+		<!--=== "banner-bloc" ==================-->		
 		<div id="banner-bloc">
 			<div class="container main-bloc">
 				<div class="row">
@@ -13,44 +12,26 @@
 								Kvik é a primeira plataforma de voluntariado. Dedicada, exclusivamente aos idosos.
 								Transforme o mundo. Seja voluntário.</font></font></h1>
 							<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-								</font></font>
-							</h2>	
+								</font></font></h2>	
 							
-							
-
-
 							<div class="button-sw-block">
 								<p>
-									
-									<?php
-										if(isset($_SESSION['id'])){ 
-											echo "";
-										}else{
-											echo "<a class='call-to-click text-right' style='margin-right: 12px;' 
-													href=".DIRPAGE."cadastro> Quero Ser Voluntário</a>";
-										}		
-									?>   
 
-							
-							
-									
 									<?php
-										if(isset($_SESSION['id'])){ 
-											echo "";
-										}else{
-											echo "<a class='call-to-click text-right' style='margin-right: 12px;'
-											href=".DIRPAGE."cadastro-idoso> Quero Cadastrar um Idoso</a>";
-										}
+										if(isset($_SESSION['id_users'])){ echo "";	}
+										else{   echo "<a class='call-to-click text-right' style='margin-right: 12px;' 
+													href=".DIRPAGE."cadastro> Quero Ser Voluntário</a>";	}		
+									?>   
+	
+									<?php
+										if(isset($_SESSION['id_users'])){ 	echo ""; }
+										else{ echo "<a class='call-to-click text-right' style='margin-right: 12px;'
+												href=".DIRPAGE."cadastro-idoso> Quero Cadastrar um Idoso</a>";	}
 									?>   	
 
 								</p>
 								<p></p>
 							</div>
-
-
-
-
-
 						</div>
 					</div>
 				</div>

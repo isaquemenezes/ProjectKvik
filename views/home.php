@@ -1,6 +1,6 @@
 <?php \Classes\ClassLayout::setHeadRestrito(); // Inicia a Sessão  ?>
 
-<?php \Classes\ClassLayout::setHead3(strtoupper($_SESSION['name']).' | Kvik Plataforma de Voluntariado', 'KVIK Plataforma de voluntariado.'); ?>
+<?php \Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' | Kvik Plataforma de Voluntariado', 'KVIK Plataforma de voluntariado.'); ?>
 
 	<!--- STYLE PARTÍCULAS -->
 	<style type="text/css">
@@ -9,13 +9,7 @@
 	</style>	
 
 	<!---- INICIALIZAR PARTICULAS ---->
-	<script type="text/javascript">		
-		window.onload = function() {
-            Particles.init({
-            selector: '.background'
-            });
-		};
-	</script>
+	<script>window.onload = function() { Particles.init({ selector: '.background' });};</script>
 
 	<!------- PARTÍCULAS -------->
 	<div id="particles-js"></div>

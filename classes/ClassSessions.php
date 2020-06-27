@@ -68,6 +68,7 @@
             $this->verifyIdSessions();
             $_SESSION["login"]=true;
             $_SESSION["time"]=time();
+            $_SESSION["id_users"]=$this->login->getDataUser($email)['data']['id'];
             $_SESSION["name"]=$this->login->getDataUser($email)['data']['nome'];
             $_SESSION["email"]=$this->login->getDataUser($email)['data']['email'];
 
@@ -77,7 +78,7 @@
 
             $_SESSION["permition"]=$this->login->getDataUser($email)['data']['permissoes'];
 
-            $_SESSION["id"]=$this->login->getDataUser($email)['data']['id'];
+           
             $_SESSION["status"]=$this->login->getDataUser($email)['data']['status'];
                     
             

@@ -32,10 +32,6 @@
      elseif(isset($_GET['sexo'])){ $Sexo=filter_input(INPUT_GET,'sexo',FILTER_SANITIZE_SPECIAL_CHARS); }
      else{ $Sexo=""; }
 
-     if(isset($_POST['titulo'])){  $Titulo=filter_input(INPUT_POST,'titulo',FILTER_SANITIZE_SPECIAL_CHARS); }
-     elseif(isset($_GET['titulo'])){ $Titulo=filter_input(INPUT_GET,'titulo',FILTER_SANITIZE_SPECIAL_CHARS);  }
-     else{ $Titulo=""; }
-
      if(isset($_POST['cidade'])){ $Cidade=filter_input(INPUT_POST,'cidade',FILTER_SANITIZE_SPECIAL_CHARS); }
      elseif(isset($_GET['cidade'])){ $Cidade=filter_input(INPUT_GET,'cidade',FILTER_SANITIZE_SPECIAL_CHARS); }
      else{ $Cidade="";  }
