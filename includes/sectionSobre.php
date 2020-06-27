@@ -8,18 +8,19 @@
 				à oportunidades de voluntariado em causas sociais à favor dos idosos. 
 			</font></p>
 			<p><font style="vertical-align: inherit;">
-				Estamos  desenvolvendo um solução para integra a todos, para ajudar na causa dos idosos! 
-				Uma  “rede de gratidão” um mecanismo adaptativo singular, permitindo a divisão do trabalho,
-				a troca de experiências, o compartilhamento. 	
+				Estamos  desenvolvendo um solução para integrar a todos! 
+				Uma  “rede de gratidão” um mecanismo adaptativo singular,
+				permitindo a divisão do trabalho, a troca de experiências, o compartilhamento. 	
 			</font></p>
 			<p><font style="vertical-align: inherit;">
 				Um ecossistema sofisticado e coordenado de ajuda, trazendo benefícios enormes para a sociedade.
   				Nele todos podem contribuí, desde uma pessoa formada 
-				em medicina até o estudante de escola primária. Também, vamos implementar o conceito de ‘Nova Economia’, 
+				em medicina até o estudante da escola primária. Também, vamos implementar o conceito de ‘Nova Economia’, 
 				em que os benefícios são distribuídos para todos.	  
 			</font></p>
 			<p><font style="vertical-align: inherit;">			
-				Nossa plataforma estará apoiada pela tecnologia Blockchain (Descentralizada, Imutável, Verificável, Transparente), através da distribuição de tokens (cripto-moedas).
+				Nossa plataforma estará apoiada pela tecnologia Blockchain (Descentralizada, Imutável, Verificável, Transparente),
+				através da distribuição de tokens (cripto-moedas).
 				Esses tokens, serão usados para obter descontos e vantagens com nossos parceiros.
 				Somos uma plataforma social online que conecta pessoas
 				à oportunidades de voluntariado em causas sociais à favor dos idosos. 
@@ -29,8 +30,8 @@
 				Nós acreditamos que todos podem contribuir para um mundo melhor.
 			</font></p>
 			
-			<!--p class="text-center"><strong>Onde Estamos: </strong>
-			<font style="vertical-align: inherit;">estamos, inicialmente atuando na região metropolitana de Belém PA.</font></p-->
+			<!--p class="text-center"><strong> </strong>
+			<font style="vertical-align: inherit;"></font></p-->
 			
 			<div class="row">
 				<div class="col-lg-4 col-md-4 col-xs-12 py-5 text-center">

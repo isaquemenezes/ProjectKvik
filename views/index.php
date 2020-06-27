@@ -7,13 +7,7 @@
 	</style>	
 
 	<!---- INICIALIZAR PARTICULAS ---->
-	<script type="text/javascript">		
-		window.onload = function() {
-            Particles.init({
-            selector: '.background'
-            });
-		};
-	</script>
+	<script> window.onload = function() { Particles.init({ selector: '.background' }); }; </script>
 
 	<!------- PARTÍCULAS -------->
 	<div id="particles-js"></div>
@@ -30,8 +24,7 @@
 		<div id="content" class="row d-flex align-items-stretch">		
 			<main class="col p-0 h-100">					
 				<div class="p-5">
-					<!--============= SECTION CAUSAS
-					=========================================-->
+					<!--========= SECTION CAUSAS =============-->
 					<?php include 'includes/sectionCausas.php';?>
 
 					<!--============= SECTION VANTAGENS
@@ -138,8 +131,7 @@
 	<!--============= PARCEIROS ================-->
 	<?php include 'includes/sectionParceiros.php';?>
 	
-	<br>
-	<br>
+	<br><br>
 	<!--============= FOOTER =============-->
 	<?php include 'includes/footer.php'; ?>	
 

@@ -70,6 +70,11 @@
             $_SESSION["time"]=time();
             $_SESSION["name"]=$this->login->getDataUser($email)['data']['nome'];
             $_SESSION["email"]=$this->login->getDataUser($email)['data']['email'];
+
+            $_SESSION["cidade"]=$this->login->getDataUser($email)['data']['cidade'];
+            $_SESSION["bairro"]=$this->login->getDataUser($email)['data']['bairro'];
+            $_SESSION["contato"]=$this->login->getDataUser($email)['data']['contato'];
+
             $_SESSION["permition"]=$this->login->getDataUser($email)['data']['permissoes'];
 
             $_SESSION["id"]=$this->login->getDataUser($email)['data']['id'];
