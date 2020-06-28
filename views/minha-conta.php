@@ -33,3 +33,5 @@
     
     <?php include "{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/includes/footer.php"; ?>
     
+    <!--======= FOOTER SCRIPTS =======-->
+    <?php  \Classes\ClassLayout::setFooter();?>

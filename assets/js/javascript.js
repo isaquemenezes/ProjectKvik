@@ -84,15 +84,13 @@ $("#formLogin").on("submit",function(event){
         }
     });
 });
+
 //CapsLock
 $("#senha").keypress(function(e){
     kc=e.keyCode?e.keyCode:e.which;
     sk=e.shiftKey?e.shiftKey:((kc==16)?true:false);
-    if(((kc>=65 && kc<=90) && !sk)||(kc>=97 && kc<=122)&&sk){
-        $(".resultadoForm").html("Caps Lock Ligado");
-    }else{
-        $(".resultadoForm").empty();
-    }
+    if(((kc>=65 && kc<=90) && !sk)||(kc>=97 && kc<=122)&&sk){ $(".resultadoForm").html("Caps Lock Ligado");  }
+    else{    $(".resultadoForm").empty();  }
 });
 
 //Ajax do formulário de confirmação de senha
@@ -106,9 +104,8 @@ $("#formSenha").on("submit",function(event){
         dataType: 'json',
         data: dados,
         success: function (response) {
-            if(response.retorno == 'success'){
-                $('.retornoSen').html("Redefinição de senha enviada com sucesso!");
-            }else{
+            if(response.retorno == 'success'){$('.retornoSen').html("Redefinição de senha enviada com sucesso!");}
+            else{
                 //getCaptcha();
                 $('.retornoSen').empty();
                 $.each(response.erros,function(key,value){
@@ -118,3 +115,31 @@ $("#formSenha").on("submit",function(event){
         }
     });
 });
+
+
+
+$("#formCadastro").on('submit', function(event){
+    event.preventDefault();
+    var Dados =$(this).serialize();
+
+    $.ajax({
+        url: 'controllers/controllerCadastro2.php',
+        type:'post',
+        dataType: 'html',
+        data: Dados,
+        success:function(Dados){
+            $('.resultado').show().html(Dados);                        
+        }
+
+    })
+});
+
+/* Confirmação de deletar de conta de usuário volunteer*/
+$('.excluir').on('click', function(event){
+    event.preventDefault(); //evita direcionamento automatica para o link
+
+    var link=$(this).attr('href');
+
+    if(confirm("Confirmar a Exclusão dos Dados?")){ window.location.href=link; }
+    else{  return false;  }   
+})
