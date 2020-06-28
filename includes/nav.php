@@ -44,6 +44,18 @@
                         ?>
 
                     </font></font></a></li>
+
+                <!-- Conta  -->
+                <li class="nav-item ml-auto">
+                    <a class="nav-link active" href="<?php echo DIRPAGE.'minha-conta';?>"><font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                        
+                        <?php
+                            if(isset($_SESSION['id_users'])){ echo "Conta";  }
+                            else{  echo "";  }
+                        ?>
+
+                    </font></font></a></li>    
                 
                 <!-- Entrar-->
                 <li class="nav-item ml-auto">

@@ -15,10 +15,6 @@
 	<div id="particles-js"></div>
 	<canvas class="background"></canvas>
 	<script src="./assets/js/particles.js"></script>
-
-	
-    <!--======================= BODY ==============================----->		
-	<!--body id="mod_corporate" class="root_home" style="padding-top: 0px;"-->
 	
 	<!--========== HEADER ============---->
 	<?php include 'includes/header.php'; ?>
