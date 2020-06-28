@@ -1,6 +1,6 @@
 <?php 
     \Classes\ClassLayout::setHeadRestrito();  // Inicia a Sessão 
-    \Classes\ClassLayout::setHead3(strtoupper($_SESSION['name']).'Minha Conta','Área Gerencie Sua Conta!'); 
+    \Classes\ClassLayout::setHead3(strtoupper($_SESSION['name']).' Minha Conta','Área Gerencie Sua Conta!'); 
     include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/includes/header.php");
     
 ?>
@@ -25,7 +25,7 @@
                 <td><?php echo $_SESSION['bairro']; ?></td>
                 <td>
                     <a href="<?php echo DIRPAGE."/PDO/editar-perfil?id={$_SESSION['id_users']}"; ?>">Editar</a>
-                    <a class="excluir" href="<?php echo DIRPAGE."/?id={$_SESSION['id_users']}"; ?>">Deletar Conta</a>
+                    <a class="excluir" href="<?php echo DIRPAGE."/PDO/controllers/controllerExcluirUser?id={$_SESSION['id_users']}"; ?>">Deletar Conta</a>
                 </td>
             </tr>   
        </table>

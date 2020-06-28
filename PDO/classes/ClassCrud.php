@@ -1,9 +1,6 @@
 <?php
     include 'ClassConexao.php';
 
-    // include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectCrud/Class/ClassConexao.php"); Caminho Absoluto
-
-
     class ClassCrud extends ClassConexao{
         private $crud;
         private $contador;
