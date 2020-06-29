@@ -1,55 +1,63 @@
-<?php \Classes\ClassLayout::setHeadRestrito(); // Inicia a Sessão  ?>
-<?php \Classes\ClassLayout::setHead('Cadastro de Idoso','Cadastre uma Pessoa Idosa.');?>
+<?php 
+    \Classes\ClassLayout::setHeadRestrito(); // Inicia a Sessão  
+    \Classes\ClassLayout::setHead('Cadastro de Idoso','Cadastre uma Pessoa Idosa.');
 
 <div class="topFaixa float w100 center">Cadastro de Idoso</div>
 
 <div class="retornoCad"></div>
 
-<form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'controllers/controllerCadastroIdoso'; ?>" method="post">
+
+
+<div class="topFaixa float w100 center">Cadastro de Idoso</div>
+<!--Retorno Ajax-->
+<div class="retornoCad"></div>
+<!--Formulário de Cadastro de Idoso-->
+<form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'PDO/controllers/controllerCadastroIdoso'; ?>" method="post">
     <div class="cadastro float center">
+        <input type="text" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
+        <input type="text" id="id" name="id" value="<?php echo $id; ?>">
 
         <label class="float">Email do responsável legal:</label>
         <input class="float w100 h40" text="email" readonly="readonly" id="email" name="email" value="<?php echo $_SESSION['email']; ?>" >
 
         <label class="float">Nome do Idoso:</label>
-        <input class="float w100 h40" type="text" id="nome" name="nome" placeholder="Nome Completo" required>
+        <input class="float w100 h40" type="text" id="nome" name="nome" value="<?php echo $nome; ?>" required>
         
         <select class="float w100 h40" name="sexo" id="sexo">
-            <option value="">Sexo</option>
+            <option value="<?php  echo $sexo; ?>"><?php  echo $sexo; ?></option>
             <option value="masculino">Masculino</option>
             <option value="feminino">Feminino</option>
         </select>
 
         <label class="float">Cidade:</label>
-        <input class="float w100 h40" type="text" id="cidade" name="cidade" required>
+        <input class="float w100 h40" type="text" id="cidade" name="cidade" value="<?php echo $cidade; ?>" required>
         
         <label class="float">Bairro:</label>    
-        <input class="float w100 h40" type="text" id="bairro" name="bairro" required>
+        <input class="float w100 h40" type="text" id="bairro" name="bairro" value="<?php echo $bairro; ?>" required>
 
         <select class="float w100 h40" name="categoria" id="categoria" required>
             <option value="">Quero Ajuda</option>
-            <option value="educacaoFinanceira">Educação Financeira</option>
-            <option value="educacaoTecnologica">Educação Tecnológica</option>
-            <option value="combateIsolamento">Combate ao Isolamento</option>
+            <option value="Educacao Financeira">Educação Financeira</option>
+            <option value="Educacao Tecnologica">Educação Tecnológica</option>
+            <option value="Combate ao Isolamento">Combate ao Isolamento</option>
         </select>
 
-        <select class="float w100 h40" name="online" id="online" required>
-            <option value="">Pode ser Feito Online</option>
+        <select class="float w100 h40" name="ead" id="ead" required>
+            <option value="<?php  echo $ead; ?>"><?php  echo $ead; ?></option>
             <option value="sim">Sim - Tenho condição de ser atendido à distância</option>
             <option value="nao">Não</option>
         </select>
-        <label class="float">Contato da Pessoa Responsável Legal ,parente,ou pessoa próxima:</label>
-        <input class="float w100 h40" type="fone" id="contato" name="contato" placeholder="Contato:" required>
 
-        <label class="float">Ano de Nascimento(somente números)</label>
-        <input class="float w100 h40" type="fone" id="anoNascimento" name="anoNascimento" placeholder="4 Dígitos " required>
+        <label class="float">Contato da Pessoa Responsável Legal, parente, ou pessoa próxima:</label>
+        <input class="float w100 h40" type="fone" id="contato" name="contato" value="<?php echo $contato; ?>" required>
 
-              
+        <label class="float">Ano de Nascimento(4dígitos)</label>
+        <input class="float w100 h40" type="fone" id="anoNascimento" name="anoNascimento" value="<?php echo $anoNascimento; ?>" required> 
 
-        <input class="inlineBlock h40" type="submit" value="Cadastrar">
+        <input type="submit" value="<?php echo $Acao; ?>">
         
     </div>
 </form>
 
-<?php \Classes\ClassLayout::setFooter(); ?>
+<?php //\Classes\ClassLayout::setFooter(); ?>
 

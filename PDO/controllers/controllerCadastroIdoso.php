@@ -1,41 +1,43 @@
 <?php
-    include '../includes/variaveis.php';
-    include '../classes/ClassCrud.php';    
+    include "{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/helpers/variaveis.php";
+    include "{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php";    
 
     $crud=new ClassCrud();
 
     if($Acao=="Cadastrar"){
         $crud->insertDB(
-            "cad",
-            "?,?,?,?,?,?,?",
-            array(
-                $id_idoso,
-                $Nome,
-                $AnoNascimento,
-                $Sexo,
-                $Cidade,
-                $Bairro,
-                $Radio
-            )
-
-        );
-
-    echo 'Success Cadastro!';
+                    "cadastro",
+                    "?,?,?,?,?,?,?,?,?,?",
+                    array(
+                        $id_idoso,
+                        $Email,
+                        $Nome,
+                        $Sexo,
+                        $AnoNascimento,
+                        $Contato,
+                        $Cidade,
+                        $Bairro,
+                        $Categoria,
+                        $Ead                  
+                    )
+                );
+        echo 'Cadastro Realizado com Successo!';
    }else{
         $crud->updateDB(
-            "cad",
-            "nome=?, anoNascimento=?, sexo=?, cidade=?, bairro=? ead=?",
-            "id=?",
-            array(
-                $Nome,
-                $AnoNascimento,
-                $Sexo,
-                $Cidade,
-                $Bairro,
-                $Radio,
-                $id_idoso
-            )
-        );
+                    "cadastro",
+                    "nome=?, sexo=?, anoNascimento=?, contato=?, cidade=?, bairro=?, categoria=?, ead=?",
+                    "id=?",
+                    array(
+                        $Nome,
+                        $Sexo,
+                        $AnoNascimento,
+                        $Contato,
+                        $Cidade,
+                        $Bairro,
+                        $Categoria,
+                        $Ead,
+                        $id_idoso
+                    )
+                );
         echo 'Dados Alterados Success!';
-        
     }

@@ -8,4 +8,4 @@
     $validate->validateConfSenha($senha,$senhaConf); //verificação de senhas 
     
     echo $validate->validateFinalCad($arrayVar);
-    echo $validate->validateFinalCad2($arrayVar);//Minhas modificacoes
+   

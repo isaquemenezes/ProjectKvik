@@ -8,16 +8,15 @@
         {
             $this->insertDB(
                 "users",
-                "?,?,?,?,?,?,?,?,?",
+                "?,?,?,?,?,?,?,?,?,?",
                         array(
                             0,
                             $arrayVar['nome'],
                             $arrayVar['email'],
                             $arrayVar['cidade'],
                             $arrayVar['bairro'],
+                            $arrayVar['contato'],
                             $arrayVar['hashSenha'],
-                            //$arrVar['dataNascimento'],
-                            //$arrVar['cpf'],
                             $arrayVar['dataCreate'],
                             'user',
                             'confirmation'
@@ -44,22 +43,6 @@
                 )
             );
         }// CLOSE RECUPERAÇÃO DE SENHA
-
-
-        //MInhas modificacoes
-        public function insertCadIdoso($arrayVar2){
-            $this->insertDB(
-                    "cadastro", 
-                    "?,?,?,?,?,?",
-                    array(
-                        0,  
-                        $arrayVar2['email'],
-                        $arrayVar2['nome'],
-                        $arrayVar2['anoNascimento'],
-                        $arrayVar2['cidade'],
-                        $arrayVar2['bairro'] ));
-
-        }
 
         #Veriricar se já existe o mesmo email cadastro no db
         public function getIssetEmail($email)

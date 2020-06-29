@@ -8,7 +8,7 @@
 
         private $login;
         private $timeSession=1200;
-        private $timeCanary=300; //tempo de sessão dentro do sistema para o usuário
+        private $timeCanary=300; //tempo de sessão dentro do sistema para o usuário em segundos
 
         public function __construct()
         {
@@ -32,25 +32,16 @@
         }
 
         #Proteger contra roubo de sessão
-        public function setSessionCanary($par=null)
-        {
+        public function setSessionCanary($par=null){
             session_regenerate_id(true);
-            if($par == null){
-                $_SESSION['canary']=[
-                    "birth" => time(),
-                    "IP" => TraitGetIp::getUserIp()
-                ];
-            }else{
-                $_SESSION['canary']['birth']=time();
-            }
+            if($par == null){  $_SESSION['canary']=["birth" => time(), "IP" => TraitGetIp::getUserIp() ];   }
+            else{ $_SESSION['canary']['birth']=time();  }
         }
 
         #Verificar a integridade da sessão
         public function verifyIdSessions()
         {
-            if(!isset($_SESSION['canary'])){
-                $this->setSessionCanary();
-            }
+            if(!isset($_SESSION['canary'])){ $this->setSessionCanary(); }
         
             if($_SESSION['canary']['IP'] !== TraitGetIp::getUserIp()){
                 $this->destructSessions();
@@ -78,7 +69,6 @@
 
             $_SESSION["permition"]=$this->login->getDataUser($email)['data']['permissoes'];
 
-           
             $_SESSION["status"]=$this->login->getDataUser($email)['data']['status'];
                     
             
@@ -102,21 +92,18 @@
                 }else{
                     $this->destructSessions();
                     echo "
-                    <script>
-                        alert('Sua sessão expirou. Faça login novamente!');
-                        window.location.href='".DIRPAGE."login';
-                    </script>
+                        <script>
+                            alert('Sua sessão expirou. Faça login novamente!');
+                            window.location.href='".DIRPAGE."login';
+                        </script>
                     ";
                 }
             }
         }
 
         #Destruir as sessions existentes
-        public function destructSessions()
-        {
-            foreach (array_keys($_SESSION) as $key) {
-                unset($_SESSION[$key]);
-            }
+        public function destructSessions() {
+            foreach (array_keys($_SESSION) as $key) {  unset($_SESSION[$key]);  }
         }
 
     }//CLOSE class ClassSessions
