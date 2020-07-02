@@ -2,9 +2,49 @@
     \Classes\ClassLayout::setHeadRestrito(); // Inicia a Sessão  
     \Classes\ClassLayout::setHead('Cadastro de Idoso','Cadastre uma Pessoa Idosa.');
 
-<div class="topFaixa float w100 center">Cadastro de Idoso</div>
+    include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php"); //Caminho Absoluto  
 
-<div class="retornoCad"></div>
+    /*Update de Dados*/
+    if(isset($_GET['id'])){
+        $Acao="Editar";
+
+        $crud=new ClassCrud();
+        $BFetch=$crud->selectDB(
+                            "*",
+                            "cadastro",
+                            "where id=?",
+                            array(
+                                $_GET['id']
+                            )
+                        );
+        
+        $Fetch=$BFetch->fetch(PDO::FETCH_ASSOC);
+        $id   =$Fetch['idIdoso'];
+        $email=$_SESSION['email'];
+        $nome =$Fetch['nome'];
+        $sexo =$Fetch['sexo'];
+        $anoNascimento=$Fetch['anoNascimento'];
+        $contato      =$Fetch['contato'];        
+        $cidade       =$Fetch['cidade'];
+        $bairro       =$Fetch['bairro'];
+        $categoria    =$Fetch['categoria'];  
+        $ead          =$Fetch['ead'];
+    }
+    /*Cadastro Novo*/
+    else{
+        $Acao="Cadastrar";
+        $id=0;
+        $nome="";
+        $email="";
+        $sexo="";
+        $anoNascimento="";
+        $contato="";      
+        $cidade="";
+        $bairro="";
+        $categoria="";
+        $ead="";
+    }
+?>
 
 
 
