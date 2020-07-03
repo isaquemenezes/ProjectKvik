@@ -60,6 +60,7 @@
             $_SESSION["login"]=true;
             $_SESSION["time"]=time();
             $_SESSION["id_users"]=$this->login->getDataUser($email)['data']['id'];
+           
             $_SESSION["name"]=$this->login->getDataUser($email)['data']['nome'];
             $_SESSION["email"]=$this->login->getDataUser($email)['data']['email'];
 

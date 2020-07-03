@@ -12,7 +12,7 @@
         $BFetch=$crud->selectDB(
                             "*",
                             "cadastro",
-                            "where id=?",
+                            "where idIdoso=?",
                             array(
                                 $_GET['id']
                             )
@@ -31,35 +31,19 @@
         $categoria    =$Fetch['categoria'];  
         $ead          =$Fetch['ead'];
     }
-    /*Cadastro Novo*/
-    else{
-        $Acao="Cadastrar";
-        $id=0;
-        $nome="";
-        $email="";
-        $sexo="";
-        $anoNascimento="";
-        $contato="";      
-        $cidade="";
-        $bairro="";
-        $categoria="";
-        $ead="";
-    }
 ?>
 
-
-
-<div class="topFaixa float w100 center">Cadastro de Idoso</div>
+<div class="topFaixa float w100 center">Editar Cadastro de Idoso</div>
 <!--Retorno Ajax-->
 <div class="retornoCad"></div>
 <!--Formulário de Cadastro de Idoso-->
-<form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'PDO/controllers/controllerCadastroIdoso'; ?>" method="post">
+<form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'PDO/controllers/controllerEditarCadastroIdoso'; ?>" method="post">
     <div class="cadastro float center">
         <input type="text" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
         <input type="text" id="id" name="id" value="<?php echo $id; ?>">
 
         <label class="float">Email do responsável legal:</label>
-        <input class="float w100 h40" text="email" readonly="readonly" id="email" name="email" value="<?php echo $_SESSION['email']; ?>" >
+        <input class="float w100 h40" text="email" readonly="readonly" id="email" name="email" value="<?php echo $email; ?>" >
 
         <label class="float">Nome do Idoso:</label>
         <input class="float w100 h40" type="text" id="nome" name="nome" value="<?php echo $nome; ?>" required>
@@ -77,7 +61,7 @@
         <input class="float w100 h40" type="text" id="bairro" name="bairro" value="<?php echo $bairro; ?>" required>
 
         <select class="float w100 h40" name="categoria" id="categoria" required>
-            <option value="">Quero Ajuda</option>
+            <option value="<?php echo $categoria; ?>"><?php echo $categoria; ?></option>
             <option value="Educacao Financeira">Educação Financeira</option>
             <option value="Educacao Tecnologica">Educação Tecnológica</option>
             <option value="Combate ao Isolamento">Combate ao Isolamento</option>

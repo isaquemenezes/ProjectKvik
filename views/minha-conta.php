@@ -69,7 +69,7 @@
                 <td><?php echo $cadastro['ead']; ?></td>
                 <td>
                     <a href="<?php echo DIRPAGE."./views/cadastro-idoso"; ?>">Cadastrar</a>
-                    <a href="<?php echo DIRPAGE."./views/cadastro-idoso?id={$cadastro['idIdoso']}"; ?>">Editar</a>
+                    <a href="<?php echo DIRPAGE."./PDO/editar-perfil-idoso?id={$cadastro['idIdoso']}"; ?>">Editar</a>
                     <a class="excluir" href="<?php echo DIRPAGE."/PDO/controllers/controllerExcluirAnuncio?id={$anuncios['id']}"; ?>">Deletar</a>
                 </td>
             </tr>              

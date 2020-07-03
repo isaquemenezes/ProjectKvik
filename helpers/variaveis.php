@@ -14,43 +14,43 @@
      elseif(isset($_GET['id'])){ $id_idoso=filter_input(INPUT_GET,'id',FILTER_SANITIZE_SPECIAL_CHARS); }
      else{ $id_idoso=0; }
 
-     //Nome DB users
+     //Nome DB users e DB cadastro(idoso)
      if(isset($_POST['nome'])){ $Nome=filter_input(INPUT_POST,'nome',FILTER_SANITIZE_SPECIAL_CHARS); }
      elseif(isset($_GET['nome'])){ $Nome=filter_input(INPUT_GET,'nome',FILTER_SANITIZE_SPECIAL_CHARS); }
      else{ $Nome=""; }
 
-     //sexo DB users_idoso
+     //sexo DB cadastro(idoso)
      if(isset($_POST['sexo'])){ $Sexo=filter_input(INPUT_POST,'sexo',FILTER_SANITIZE_SPECIAL_CHARS);  }
      elseif(isset($_GET['sexo'])){ $Sexo=filter_input(INPUT_GET,'sexo',FILTER_SANITIZE_SPECIAL_CHARS); }
      else{ $Sexo=""; }
 
-     //anoNascimento DB users_idoso
+     //anoNascimento DB cadastro(idoso)
      if(isset($_POST['anoNascimento'])){ $AnoNascimento=filter_input(INPUT_POST,'anoNascimento',FILTER_SANITIZE_SPECIAL_CHARS);  }
      elseif(isset($_GET['anoNascimento'])){ $AnoNascimento=filter_input(INPUT_GET,'anoNascimento',FILTER_SANITIZE_SPECIAL_CHARS); }
      else{ $AnoNascimento="";  } 
 
-     //contato DB users
+     //contato DB users e DB cadastro(idoso)
      if(isset($_POST['contato'])){ $Contato=filter_input(INPUT_POST,'contato',FILTER_SANITIZE_SPECIAL_CHARS); }
      elseif(isset($_GET['contato'])){ $Contato=filter_input(INPUT_GET,'contato',FILTER_SANITIZE_SPECIAL_CHARS); }
      else{ $Contato=""; } 
 
-     //email DB users
+     //email DB users e DB cadastro(idoso)
      if(isset($_POST['email'])){ $Email=filter_input(INPUT_POST,'email',FILTER_SANITIZE_SPECIAL_CHARS); }
      elseif(isset($_GET['email'])){ $Email=filter_input(INPUT_GET,'email',FILTER_SANITIZE_SPECIAL_CHARS); }
      else{ $Email=""; }      
 
-     //cidade DB users e users_idoso
+     //cidade DB users e cadastro(idoso)
      if(isset($_POST['cidade'])){ $Cidade=filter_input(INPUT_POST,'cidade',FILTER_SANITIZE_SPECIAL_CHARS); }
      elseif(isset($_GET['cidade'])){ $Cidade=filter_input(INPUT_GET,'cidade',FILTER_SANITIZE_SPECIAL_CHARS); }
      else{ $Cidade="";  }
 
-     // bairro DB users e users_idoso
+     // bairro DB users e cadastro(idoso)
      if(isset($_POST['bairro'])){ $Bairro=filter_input(INPUT_POST,'bairro',FILTER_SANITIZE_SPECIAL_CHARS); }
      elseif(isset($_GET['bairro'])){ $Bairro=filter_input(INPUT_GET,'bairro',FILTER_SANITIZE_SPECIAL_CHARS); }
      else{ $Bairro=""; }
 
     
-     //sexo DB users_idoso
+     //sexo DB cadastro(idoso)
      if(isset($_POST['categoria'])){ $Categoria=filter_input(INPUT_POST, 'categoria',FILTER_SANITIZE_SPECIAL_CHARS);  }
      elseif(isset($_GET['categoria'])){ $Categoria=filter_input(INPUT_GET,'categoria',FILTER_SANITIZE_SPECIAL_CHARS); }
      else{ $Categoria=""; }
