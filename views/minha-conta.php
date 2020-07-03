@@ -70,7 +70,7 @@
                 <td>
                     <a href="<?php echo DIRPAGE."./views/cadastro-idoso"; ?>">Cadastrar</a>
                     <a href="<?php echo DIRPAGE."./PDO/editar-perfil-idoso?id={$cadastro['idIdoso']}"; ?>">Editar</a>
-                    <a class="excluir" href="<?php echo DIRPAGE."/PDO/controllers/controllerExcluirAnuncio?id={$anuncios['id']}"; ?>">Deletar</a>
+                    <a class="excluir" href="<?php echo DIRPAGE."/PDO/controllers/controllerExcluir?id={$cadastro['idIdoso']}"; ?>">Deletar</a>
                 </td>
             </tr>              
         </table>
