@@ -8,7 +8,7 @@
     if($Acao=="Editar"){
         $crud->updateDB(
             "users",
-            "nome=?,email=?, contato=?, cidade=?, bairro=?",
+            "nome=?, email=?, contato=?, cidade=?, bairro=?",
             "id=?",
             array(
                 $Nome,
