@@ -1,7 +1,7 @@
 <?php 
     \Classes\ClassLayout::setHeadRestrito();  // Inicia a Sessão 
     include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php");
-    \Classes\ClassLayout::setHead3(strtoupper($_SESSION['name']).' Minha Conta','Área Gerencie Sua Conta!'); 
+    \Classes\ClassLayout::setHead3(strtoupper($_SESSION['name']).' Minha Conta',' Gerencie Sua Conta!'); 
     include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/includes/header.php");
     
 ?>
@@ -50,7 +50,7 @@
             <?php       
                 $crud=new ClassCrud();
                 $results1=$crud->selectDB("*","users","", array());
-                
+                // if - Precisa Ser Revisado
                 if($results1->fetch(PDO::FETCH_ASSOC)){
                     $email_user = $_SESSION['email'];        
                     $results_cadastro=$crud->selectDB("*", "cadastro","where email='$email_user'",array());   

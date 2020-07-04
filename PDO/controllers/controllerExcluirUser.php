@@ -1,5 +1,5 @@
 <?php
-    
+   
     include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php");
 
     $crud=new classCrud();
@@ -13,7 +13,7 @@
         )
     );
 
-    echo'Dados Deletados!<br>';
+        echo'Dados Deletados!<br>';
     echo "<a href='../index'>Home</a>";
 
-?>
+?><input type="text"  name="id" value="<?php echo $id_user;?>">
