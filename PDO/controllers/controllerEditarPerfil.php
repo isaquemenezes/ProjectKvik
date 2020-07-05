@@ -1,5 +1,4 @@
 <?php
-   
    include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/helpers/variaveis.php"); //Caminho Absoluto
    include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php");// Caminho Absoluto   
 
