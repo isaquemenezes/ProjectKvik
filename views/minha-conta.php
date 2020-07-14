@@ -1,7 +1,7 @@
 <?php 
     \Classes\ClassLayout::setHeadRestrito();  // Inicia a Sessão 
     include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php");
-    \Classes\ClassLayout::setHead3(strtoupper($_SESSION['name']).' Minha Conta',' Gerencie Sua Conta!'); 
+    \Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' Minha Conta',' Gerencie Sua Conta!'); 
     include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/includes/header.php");
     
 ?>

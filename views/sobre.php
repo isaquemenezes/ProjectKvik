@@ -1,9 +1,9 @@
 <?php 
 if(isset($_SESSION['id'])){
-echo \Classes\ClassLayout::setHead3(strtoupper($_SESSION['name']).' | Kvik Plataforma de Voluntariado', 'KVIK Plataforma de voluntariado.');
+echo \Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' | Kvik Plataforma de Voluntariado', 'KVIK Plataforma de voluntariado.');
 echo \Classes\ClassLayout::setHeadRestrito();
 	}else{
-		echo \Classes\ClassLayout::setHead3(' | Kvik Plataforma de Voluntariado', 'KVIK Plataforma de voluntariado.'); 
+		echo \Classes\ClassLayout::setHead(' | Kvik Plataforma de Voluntariado', 'KVIK Plataforma de voluntariado.'); 
 
 	}	
 	?>
