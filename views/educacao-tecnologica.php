@@ -1,5 +1,5 @@
-<?php \Classes\ClassLayout::setHeadRestrito(); // Inicia a Sessão  ?>
-<?php \Classes\ClassLayout::setHead3('Área Restrita','Área exclusiva para membros!'); ?>
+<?php //\Classes\ClassLayout::setHeadRestrito(); // Inicia a Sessão  ?>
+<?php \Classes\ClassLayout::setHead('Área Restrita','Área exclusiva para membros!'); ?>
 <?php include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php"); ?>
 		
 	<!--- STYLE PARTÍCULAS -->
@@ -36,7 +36,7 @@
 						<div class="team_column pt-5">
 							<?php 
 								$crud=new ClassCrud();
-								$BFetch=$crud->selectDB("*", "cadastro", "", array());
+								$BFetch=$crud->selectDB("*", "users_idoso", "", array());
 								while($Fetch=$BFetch->fetch(PDO::FETCH_ASSOC)){
 							?>
 								<ul>
