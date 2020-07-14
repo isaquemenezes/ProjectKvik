@@ -1,5 +1,5 @@
 <?php \Classes\ClassLayout::setHead('Cadastro de Usuário','Realize seu cadastro em nosso sistema.'); ?>
-    <div class="topFaixa float w100 center">Cadastro de Usuário</div>
+    <div class="topFaixa float w100 center">Cadastro de Usuário Branch Organizacao de Diretório</div>
     <!--Retorno Ajax-->
     <div class="retornoCad"></div>
     <!--Formulário de Cadastro de Usuário Voluntário-->
