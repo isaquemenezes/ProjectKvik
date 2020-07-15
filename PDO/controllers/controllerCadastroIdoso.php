@@ -7,7 +7,7 @@
 
     if($Acao=="Cadastrar"){
         $crud->insertDB(
-                    "cadastro",
+                    "users_idoso",
                     "?,?,?,?,?,?,?,?,?,?",
                     array(
                         $id_idoso,
