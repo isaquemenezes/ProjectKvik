@@ -11,7 +11,7 @@
         $crud=new ClassCrud();
         $BFetch=$crud->selectDB(
                             "*",
-                            "cadastro",
+                            "users_idoso",
                             "where idIdoso=?",
                             array(
                                 $_GET['id']

@@ -6,7 +6,7 @@
     $id_user=filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 
     $crud->deleteDB(
-            "cadastro",
+            "users_idoso",
             "idIdoso=?",
             array(
                 $id_user

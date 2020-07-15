@@ -53,7 +53,7 @@
                 // if - Precisa Ser Revisado
                 if($results1->fetch(PDO::FETCH_ASSOC)){
                     $email_user = $_SESSION['email'];        
-                    $results_cadastro=$crud->selectDB("*", "cadastro","where email='$email_user'",array());   
+                    $results_cadastro=$crud->selectDB("*", "users_idoso","where email='$email_user'",array());   
                     $cadastro=$results_cadastro->fetch(PDO::FETCH_ASSOC); 
                 }  
             ?> 
