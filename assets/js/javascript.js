@@ -142,6 +142,7 @@ $('.excluir').on('click', function(event){
 
     if(confirm("Confirmar a Exclusão dos Dados?")){ window.location.href=link; }
     else{  return false;  }   
+<<<<<<< Updated upstream
 });
 
 /* Listagem dos usuários idosos do DB na page */
@@ -162,3 +163,14 @@ function listar_user(pagina, qnt_result_pg){
 
     });
 }
+=======
+})
+
+/* javascript para listagem de dados de DB cadastro com jQuery*/
+$(document).ready(function (){
+    $.post('listar_usuarios.php', function(retorna_lista){
+        $("#conteudoListaDB").html(retorna_lista);
+
+    });
+});
+>>>>>>> Stashed changes

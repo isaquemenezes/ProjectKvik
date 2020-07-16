@@ -36,40 +36,34 @@
 						<div class="team_column pt-5">
 							<?php 
 								$crud=new ClassCrud();
+<<<<<<< Updated upstream
 								$BFetch=$crud->selectDB("*", "users_idoso", "", array());
+=======
+								$BFetch=$crud->selectDB("*", "cadastro", "where categoria='educacao tecnologica'", array());
+>>>>>>> Stashed changes
 								while($Fetch=$BFetch->fetch(PDO::FETCH_ASSOC)){
 							?>
 								<ul>
 									<li>
 										<div class="card-body">
-											<img  src="./assets/images/idososentado.jpg">
-											<?php echo $Fetch['nome']; ?>
-											<p><?php echo $Fetch['anoNascimento']; ?></p>
-											<p><?php echo $Fetch['cidade']; ?></p>	
-											<p><?php echo $Fetch['bairro']?></p>
+											<!--img  src="./assets/images/idososentado.jpg"-->
+											<?php echo 'Nome = '.$Fetch['nome']; ?>
+											<p><?php echo 'Idade = '.$Fetch['anoNascimento']; ?></p>
+											<p><?php echo 'Cidade = '.$Fetch['cidade']; ?></p>	
+											<p><?php echo 'Bairro = '.$Fetch['bairro']?></p>
+											<p><?php echo'Pode ser ONLINE ? '. $Fetch['ead']?></p>
 										</div>
 									</li>
 
-									<!--li><div class="card-body">
-										<img class="rounded-circle" src="./assets/images/imagem-login-fundo.jpg">
-										Abbas HOJATI<p class="card-text">Book your future premium 
-										account, and be sure to get one of first premium accounts at the lauching.
-										<br><br></p>
-									</div></li-->
-
-
-									<!--li><a href="#" target="_blank">
-									<div class="card-body">
-										<img class="rounded-circle" src="./assets/images/imagem-login-fundo.jpg">Maël REY
-										<p class="card-text">Book your future premium account, and be sure to get 
-										one of first premium 
-										accounts at the lauching.<br><br></p>
-									</div></li-->
+									
 							<?php 
                     			}
                 			?>
 								</ul>	 
 						</div>
+
+						<!--teste listar com javascript-->
+						<span id="#conteudoListaDB">aqui Lista</span>
 					</div>
 				</section>
 			</main><!-- Close  main -->
