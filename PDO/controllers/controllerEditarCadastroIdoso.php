@@ -7,7 +7,7 @@
 
     if($Acao=="Editar"){
         $crud->updateDB(
-                "cadastro",
+                "users_idoso",
                 "nome=?, sexo=?, anoNascimento=?, contato=?, cidade=?, bairro=?, categoria=?, ead=?",
                 "idIdoso=?",
                 array(
