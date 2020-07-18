@@ -1,5 +1,5 @@
-<?php include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php"); 
-	//$conexao_db = mysqli_connect('localhost', 'root', '', 'sistema');
+<?php 
+	include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php"); 
 
 	// Recebendo os dados de fuction
 	$pagina =filter_input(INPUT_POST, 'pagina', FILTER_SANITIZE_NUMBER_INT);
@@ -7,13 +7,16 @@
 
 	//Calculando o início da visualização
 	$inicio =($pagina * $qnt_result_pg) - $qnt_result_pg;
-
-	//$result_usuario = ("SELECT * FROM users_idoso ORDER BY idIdoso  LIMIT $inicio, $qnt_result_pg");
-	//$resultado_usuario = mysqli_query($conexao_db, $result_usuario);
-
      
 	$crud=new ClassCrud();
-	$BFetch=$crud->selectDB("*", "users_idoso", "ORDER BY idIdoso  LIMIT $inicio, $qnt_result_pg", array());
+	$BFetch=$crud->selectDB(
+					"*", 
+					"users_idoso", 
+					" WHERE categoria='Educacao Tecnologica' and ead='nao' ORDER BY idIdoso  LIMIT $inicio, $qnt_result_pg", 
+					array(
+
+					)
+				);
     while($Fetch=$BFetch->fetch(PDO::FETCH_ASSOC)){
 	?>
 	<ul>
@@ -34,17 +37,18 @@
 <?php 
 $crud=new ClassCrud();
 //Paginação - Soma a quantidade de usuários	
-//$result_page=("SELECT COUNT(*) AS num_result FROM users_idoso "); //query
-//$resultado_pg=mysqli_query($conexao_db,$result_page);             //executando o query
-//$row_pg =mysqli_fetch_assoc($resultado_pg);                       //lendo o resultado
-
-$result_page=$crud->selectDB("COUNT(*) AS num_result", "users_idoso","", array());
+$result_page=$crud->selectDB(
+					"COUNT(*) AS num_result", 
+					"users_idoso",
+					"WHERE categoria='Educacao Tecnologica' and ead='nao'", 
+					array(
+					)
+				);
 $row_pg = $result_page->fetch(PDO::FETCH_ASSOC);
-
-
 
 //Quantidade de pagina para enviar para última página
 $qnt_page=ceil($row_pg['num_result'] / $qnt_result_pg);
+
 
 //Limitar os links antes e depois da página atual, ou seja , se estou na page 3 mostra 1 2 e 4 5
 $max_links = 2;
