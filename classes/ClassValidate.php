@@ -129,29 +129,7 @@
 
         }
 
-        //MInhas modificacoes
-            public function validateFinalCadastroIdoso($arrayVar2)
-            {
-
-            
-            if(count($this->getErro())>0){
-                $arrayResponse=[
-                    "retorno"=>"erro",
-                    "erros"=>$this->getErro()
-                ];
-            }else{
-                $arrayResponse=[
-                    "retorno"=>"success",
-                    "erros"=>null
-                ];
-                $this->cadastro->insertCadIdoso($arrayVar2);
-                
-            }
-            return json_encode($arrayResponse);
-
-
-
-        }
+       
 
         /*#Validação final do cadastro com email de confirmacao
         public function validateFinalCad($arrayVar)

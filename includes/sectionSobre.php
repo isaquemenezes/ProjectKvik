@@ -22,27 +22,24 @@
 				Nossa plataforma estará apoiada pela tecnologia Blockchain (Descentralizada, Imutável, Verificável, Transparente),
 				através da distribuição de tokens (cripto-moedas).
 				Esses tokens, serão usados para obter descontos e vantagens com nossos parceiros.
-				Somos uma plataforma social online que conecta pessoas
-				à oportunidades de voluntariado em causas sociais à favor dos idosos. 
-			 	Nós acreditamos que todos podem contribuir para um mundo melhor e mais humano.
 			</font></p>
 			<p><font style="vertical-align: inherit;">			
 				Nós acreditamos que todos podem contribuir para um mundo melhor.
 			</font></p>
 			
-			<!--p class="text-center"><strong> </strong>
-			<font style="vertical-align: inherit;"></font></p-->
-			
 			<div class="row">
+				<!-- div Missão -->
 				<div class="col-lg-4 col-md-4 col-xs-12 py-5 text-center">
 					<p class="text-center"><h3>Missão</h3><img src="./assets/images/missao.webp"><br>
 						Nossa missão é ser um ecossistema para conectar pessoas idosas e voluntários, 
 						que desejam mudar o mundo.</p>
 				</div>
+				<!-- div Vissão -->
 				<div class="col-lg-4 col-md-4 col-xs-12 py-5 text-center">
 					<p class="text-center"><h3>Visão</h3><img src="./assets/images/vision02.webp"><br>
 						Criar Valor e fazer a diferença – onde estivermos e em tudo que fizermos.</p>
 				</div>
+				<!-- div Valores -->
 				<div class="col-lg-4 col-md-4 col-xs-12 py-5 text-center">
 					<p class="text-center"><h3>Valores</h3><img src="./assets/images/values.webp"><br>
 						Inclusão social, tecnológica, financeira, acessibilidade e comprometimento;

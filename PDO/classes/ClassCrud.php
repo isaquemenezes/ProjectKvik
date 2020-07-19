@@ -48,5 +48,5 @@
             return $this->crud;
         }
 
-    }
+    }// CLOSE ClassCrud
     

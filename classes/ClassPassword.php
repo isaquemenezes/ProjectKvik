@@ -21,8 +21,8 @@
         }
 
         #Verificar se o hash da senha está correto
-        public function verifyHash($email,$senha)
-        {
+        public function verifyHash($email,$senha){
+            
             $hashDb=$this->db->getDataUser($email);
             return password_verify($senha,$hashDb["data"]["senha"]);
         }

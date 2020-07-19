@@ -4,7 +4,7 @@
     Classes\ClassLayout::setHead3(strtoupper($_SESSION['name']).' Minha Conta','Área Gerencie Sua Conta!'); 
     include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/includes/header.php");
 
-    /*Update de Dados*/
+    /*Update de Dados de Usuário Volunteer*/
     if(isset($_GET['id'])){
         $Acao="Editar";
 
@@ -34,8 +34,8 @@
         <h1 class="center">Faça Sua Atualização de Perfil</h1>
             <form action="<?php echo DIRPAGE."PDO/controllers/controllerEditarPerfil"; ?>" name="formCadastro" id="formCadastro" method="post">
                 
-                <input type="text" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
-                <input type="text" id="Id" name="Id" value="<?php echo $Id; ?>">
+                <input type="hidden" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
+                <input type="hidden" id="Id" name="Id" value="<?php echo $Id; ?>">
             
                 <div class="formularioInput">Nome:<input type="text" id="nome" name="nome" value="<?php echo $nome; ?>"></div>
             
