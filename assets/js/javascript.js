@@ -136,10 +136,29 @@ $("#formCadastro").on('submit', function(event){
 
 /* Confirmação de deletar de conta de usuário volunteer*/
 $('.excluir').on('click', function(event){
-    event.preventDefault(); //evita direcionamento automatica para o link
+    event.preventDefault(); //evita direcionamento automática para o link
 
     var link=$(this).attr('href');
 
     if(confirm("Confirmar a Exclusão dos Dados?")){ window.location.href=link; }
     else{  return false;  }   
-})
+});
+
+/* Listagem dos usuários idosos do DB na page */
+var qnt_result_pg = 5; //quantidades de Registros por páginas
+var pagina = 1;  //page inícial
+
+$(document).ready(function (){
+   listar_user(pagina, qnt_result_pg); //Chama a funcao para exibir os dados
+});
+
+function listar_user(pagina, qnt_result_pg){
+    var dados_page ={
+        pagina: pagina,
+        qnt_result_pg: qnt_result_pg
+    }
+    $.post('listaDB/lista_combate_isolamento', dados_page, function(retorna_lista){
+        $("#conteudoListaDB").html(retorna_lista);
+
+    });
+}

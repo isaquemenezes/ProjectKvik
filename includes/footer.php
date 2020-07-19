@@ -3,23 +3,11 @@
 			<div class="row pb-5" style="text-align:center;">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 button-sw-block">
 					<a class="col" target="_blank" href="https://www.facebook.com/plataformakvik/">
-                        <!--<svg class="svg-inline--fa fa-facebook-f fa-w-9" style="font-size: 24px;" aria-hidden="true" data-prefix="fab" data-icon="facebook-f" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 512" data-fa-i2svg="">
-                        <path fill="currentColor" d="M76.7 512V283H0v-91h76.7v-71.7C76.7 42.4 124.3 0 193.8 0c33.3 0 61.9 2.5 70.2 3.6V85h-48.2c-37.8 0-45.1 18-45.1 44.3V192H256l-11.7 91h-73.6v229"></path>
-                    </svg>--><i class="fab fa-facebook-f" style="font-size:22px">facebook</i></a>
+					<i class="fab fa-facebook-f" style="font-size:22px">facebook</i></a>
 
 					<a class="col" target="_blank" href="#">
-                        <i class="fab fa-facebook-f" style="font-size:22px">instagram</i></a>
+                    <i class="fab fa-facebook-f" style="font-size:22px">instagram</i></a>
 				</div>
-
-				<!--<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 button-sw-block">
-					<a class="col" target="_blank" href="#">
-                        <i class="fab fa-facebook-f" style="font-size:24px">Escolha Sua Causa</i></a>
-				
-					<a class="col" target="_blank" href="#">
-                        <i class="fab fa-facebook-f" style="font-size:24px">FAQ</i></a>
-					<a class="col" target="_blank" href="#">
-                        <i class="fab fa-facebook-f" style="font-size:24px">Cadastra-se</i></a>
-				</div>-->
 			</div>
 						
 			<div class="row">

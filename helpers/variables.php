@@ -43,7 +43,6 @@
     
     //Esqueci minha senha - Recuperação
     $token=bin2hex(random_bytes(64));   
-    
     if(isset($_POST['token'])){  $token=$_POST['token'];  }
     else{  $token=bin2hex(random_bytes(64)); }
 

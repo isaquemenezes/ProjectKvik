@@ -1,11 +1,12 @@
 <?php 
     \Classes\ClassLayout::setHeadRestrito();  // Inicia a Sessão 
     include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php");
-    \Classes\ClassLayout::setHead3(strtoupper($_SESSION['name']).' Minha Conta',' Gerencie Sua Conta!'); 
+    \Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' Minha Conta',' Gerencie Sua Conta!'); 
     include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/includes/header.php");
     
 ?>
-    <div class="content"><strong>Seus Perfil</strong>
+    <div class="content"><strong>Gerencie Sua Conta</strong>
+    <div class="profile_image"><img src="<?php echo DIRPAGE.'./assets/images/logo_kvik.png';?>" alt="<?php echo $_SESSION['name'];?>"></div>
         <table class="tabelaCrud">
            <tr>
                 <td>Id</td>
@@ -34,6 +35,7 @@
 
      <!--======== DB cadastro idoso - PROFILE ========-->
      <div class="content"><strong>Seus Assistidos - idosos</strong>     
+     
        <table class="tabelaCrud">
            <tr>
                <td>Nome</td>
