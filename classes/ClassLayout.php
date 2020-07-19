@@ -237,7 +237,10 @@
                 body.part_policy main th {border-color: #FFF;background-color: #CCC;border-width: 1px;margin: 15px 0 15px 0;padding: 10px;}
                 </style>\n";
 
-
+                $html.="</head>\n\n";
+                $html.="<body> \n";
+                echo $html;
+            }
        
 
         #Setar as tags do footer
