@@ -2,8 +2,6 @@
 <?php \Classes\ClassLayout::setHead('Área Restrita','Área exclusiva para membros!'); ?>
 <?php include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php"); ?>
 
-			
-	<!--body id="mod_corporate" class="root_home" style="padding-top: 0px;"-->
 	
 	<!--=== HEADER ===---->
 	<?php include 'includes/headerCategoria.php'; ?>
@@ -16,8 +14,10 @@
 			<div class="container">
 					<h2 class="cty-h2">COMBATE AO ISOLAMENTO </h2>
 					<div class="team_column pt-5">
+
 					<!--Lista db - Via jQuery-->
-					<span id="conteudoListaDB"></span>				
+					<span id="conteudoListaDB"></span>	
+
 				</div>
 			</div>
 			</section>
