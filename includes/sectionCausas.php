@@ -1,7 +1,7 @@
     <section id="section-why" class="section-null pt-5">
 		<div class="container">
 			<h2 class="cty-h2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-			Conecte-se. Realize trabalhos voluntários.  Compartilhe conhecimento, fazer a diferença.
+			Conecte-se. Realize trabalhos voluntários.  Compartilhe conhecimento, faça a diferença.
 			 </font></font></h2>
 			<div class="row">
 			
@@ -28,7 +28,6 @@
 					<p class="text-center"><a href="<?php echo DIRPAGE.'./educacao-financeira'; ?>">
 					<h3>Educação Financeira</h3><img src="./assets/images/financeira.png"></a></p>	
 
-
 					<div class="card-body">
 						<p class="card-text">
 						Apenas 11% dos brasileiros declararam poupar para a velhice. 
@@ -50,18 +49,14 @@
 								<li style="margin-top: 10px;">Ou siga nossa ementa do mini-curso.</li>
 							</ul>
 						<br><br></p>
-						
+			
 						<p style="font-size: 22px;">Pré-Requitos:</p>
 						<p class="text-muted small">
 						Muita vontade de ajudar e fazer a diferença.</p>
-
 					</div>
-				
-				
 						<p></p>
 						<p class="text-center">
 						<a class="call-to-click" href="#">Junte-se Aqui.</a></p>
-				
 	
 				</div>	
 				<!--=========== DIV COMBATE AO ISOLAMENTO ==============-->		
@@ -95,19 +90,12 @@
 						Muita vontade de ajudar e fazer a diferença.</p>
 
 					</div>
-				
-				
 						<p></p>
 						<p class="text-center">
 						<a class="call-to-click" href="#">Junte-se Aqui.</a></p>
-					
-
-
-
-
 
 				</div>
-				<!--=========== DIV EDUCACAO TECNOLÓGICA ==============-->
+				<!--=========== DIV EDUCAÇÃO TECNOLÓGICA ==============-->
 				<div class="col-lg-4 col-md-4 col-xs-12 py-5 text-center">
 					<p class="text-center"><a href="<?php echo DIRPAGE.'./educacao-tecnologica#tech'; ?>"><h3>Educação Tecnológica!</h3>
 					<img src="./assets/images/tecnologia.png"></a></p>
@@ -129,25 +117,18 @@
 								<li>Pesquisar de forma segura na internet</li>
 								<li>Ou como não ser vítima de criminosos virtuais</li>
 
-							</ul>
-						
-						
+							</ul>						
 						<br><br></p>
-
 						<p style="font-size: 22px;">Pré-Requitos:</p>
 						<p class="text-muted small">
 						Muita vontade de ajudar e fazer a diferença.
 						</p>
-
 					</div>
-					
 						<p></p>			
 						<p class="text-center">
 						<a class="call-to-click" href="#">Junte-se Aqui.</a></p>
-					
 				</div>					
 				</div>
-				
 		</div>
 	</section>
 					

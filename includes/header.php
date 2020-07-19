@@ -9,7 +9,7 @@
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
 						<div class="d-flex align-items-start flex-column">
 							<h1 style="color: #31708f"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">		
-								Kvik é a primeira plataforma de voluntariado dedicada, exclusivamente aos idosos.
+								Kvik é uma plataforma social de voluntariado dedicada aos idosos.
 								Transforme o mundo. Seja voluntário.</font></font></h1>
 							<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
 								</font></font></h2>	

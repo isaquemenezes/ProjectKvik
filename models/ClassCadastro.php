@@ -25,7 +25,6 @@
                 
                 /********  RECUPERACAO DE SENHA ********/
                 $this->insConfirmation($arrayVar);  
-               
 
         }// CLOSE  Realizará a inserção no banco de dados
         
@@ -96,9 +95,5 @@
                 return false;
             }
         }*/
-
-
-
-
 
     }

@@ -38,6 +38,6 @@
 			<div class="col-3 text-center d-flex">
 				<img class="align-self-center" src="./assets/images/" alt="">
 			</div>
-			</div>-->
+			</div>>
         </div>
-	</section>
+	</section-->

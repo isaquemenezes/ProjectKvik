@@ -1,6 +1,7 @@
     <nav id="mainnavbar" class="navbar navbar-expand-sm navbar-dark bg-dark navtransparente">
-      
+            
             <?php
+                //USUÁRIO LOGADO
                 if(isset($_SESSION['id_users'])){ 
                     echo "<a class='navbar-brand' href=".DIRPAGE."home>". 
                     "<img src='./assets/images/logo.png' width='40' height='40' class='d-inline-block align-middle' 
@@ -9,6 +10,7 @@
                     <font style='vertical-align: inherit;'>&nbsp;Kvik.com</font></font></span>                    
                     </a>";
                 }
+                 //USUÁRIO NÃO LOGADO
                 else{ echo "<a class='navbar-brand' href=".DIRPAGE."index>".
                     "<img src='./assets/images/logo.png' width='40' height='40' class='d-inline-block align-middle' 
                     alt='logotipo kvik'><span class='text-uppercase align-middle navbar-brand'>
@@ -23,17 +25,17 @@
 
             <div class="collapse navbar-collapse" id="usernavbar">
                 <ul class="navbar-nav ml-auto">
-                    <!-- FAQ -->           
+                    <!-- MENU FAQ -->           
                     <li class="nav-item ml-auto">
                         <a class="nav-link" href="<?php echo DIRPAGE.'faq'; ?>"><font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">FAQ</font></font></a></li>
 
-                    <!-- SOBRE -->
+                    <!-- MENU SOBRE -->
                     <li class="nav-item ml-auto">
                         <a class="nav-link" href="#sobre"><font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">SOBRE</font></font></a></li>
 
-                    <!-- Cadastrar um Idoso  -->
+                    <!--MENU Cadastrar um Idoso  -->
                     <li class="nav-item ml-auto">
                         <a class="nav-link active" href="<?php echo DIRPAGE.'cadastro-idoso';?>"><font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">
@@ -45,7 +47,7 @@
 
                         </font></font></a></li>
 
-                    <!-- Conta  -->
+                    <!-- GERENCIE SUA CONTA  -->
                     <li class="nav-item ml-auto">
                         <a class="nav-link active" href="<?php echo DIRPAGE.'minha-conta';?>"><font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">
@@ -57,7 +59,7 @@
 
                         </font></font></a></li>    
                     
-                    <!-- Entrar-->
+                    <!-- MENU Entrar-->
                     <li class="nav-item ml-auto">
                         <a class="nav-link specialico" href="<?php echo DIRPAGE.'login';?>"><font style="vertical-align: inherit;">
                         <font style="vertical-align: inherit;">
@@ -69,7 +71,7 @@
 
                         </font></font></a></li>
 
-                    <!-- LOGOUT -->
+                    <!-- MENU LOGOUT -->
                     <li class="nav-item ml-auto">
                         <a class="nav-link active" href="<?php echo DIRPAGE.'controllers/controllerLogout';?>"><font style="vertical-align: inherit;">
                             <font style="vertical-align: inherit;">

@@ -18,10 +18,7 @@
 	<div id="particles-js"></div>
 	<canvas class="background"></canvas>
 	<script src="./assets/js/particles.js"></script>
-	
-
-
-	
+		
 	<?php
 	include 'header.php';
     /*<header>  
