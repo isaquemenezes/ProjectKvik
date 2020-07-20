@@ -10,13 +10,12 @@
 
         $crud=new ClassCrud();
         $BFetch=$crud->selectDB(
-                            "*",
-                            "users_idoso",
-                            "where id=?",
-                            array(
-                                $_GET['id']
-                            )
-                        );
+                        "*",
+                        "users_idoso",
+                        "where id=?",
+                        array(
+                            $_GET['id']
+                        ));
         
         $Fetch=$BFetch->fetch(PDO::FETCH_ASSOC);
         
