@@ -14,30 +14,29 @@
                         $Email,
                         $Nome,
                         $Sexo,
+                        $AnoNascimento,
+                        $Contato,
                         $Cidade,
                         $Bairro,
                         $Categoria,
-                        $Ead,
-                        $Contato,
-                        $AnoNascimento                   
-                                          
+                        $Ead                                  
                     )
                 );
-        echo 'Cadastro Realizado com Successo!';
+        echo 'Successo Pelo controllerCadastroIdoso!';
    }else{
         $crud->updateDB(
             "users_idoso",
-            "nome=?, sexo=?, cidade=?, bairro=?, categoria=?,  ead=?, contato=?, anoNascimento=?",
+            "nome=?, sexo=?, anoNascimento=?, contato=?, cidade=?, bairro=?, categoria=?,  ead=?,  ",
             "idIdoso=?",
             array(
                 $Nome,
                 $Sexo,
+                $AnoNascimento,
+                $Contato,
                 $Cidade,
                 $Bairro,
                 $Categoria,
-                $Ead,
-                $Contato,
-                $AnoNascimento,
+                $Ead,               
                 $Id_idoso
             )
         );

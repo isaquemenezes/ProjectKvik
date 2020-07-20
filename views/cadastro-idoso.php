@@ -31,10 +31,11 @@
         $contato      =$Fetch['contato'];
         $anoNascimento=$Fetch['anoNascimento'];
     }
-    //Cadastro Novo
+    #Cadastro Novo
     else{
         $Acao="Cadastrar";
-        $id=0;
+
+        $id=$_SESSION["id_users"];
         $nome="";
         $email="";
         $sexo="";
@@ -54,7 +55,7 @@
 <!--Retorno Ajax-->
 <div class="retornoCad"></div>
 <!--Formulário de Cadastro de Idoso-->
-<form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'PDO/controllers/controllerCadastroIdoso'; ?>" method="post">
+<form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'./PDO/controllers/controllerCadastroIdoso'; ?>" method="post">
     <div class="cadastro float center">
         <input type="text" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
         <input type="text" id="id" name="id" value="<?php echo $id; ?>">
@@ -94,7 +95,7 @@
         <input class="float w100 h40" type="fone" id="contato" name="contato" value="<?php echo $contato; ?>" required>
 
         <label class="float">Ano de Nascimento(4dígitos)</label>
-        <input class="float w100 h40" type="fone" id="anoNascimento" name="anoNascimento" value="<?php echo $anoNascimento; ?>" required> 
+        <input class="float w100 h40" type="text" id="anoNascimento" name="anoNascimento" value="<?php echo $anoNascimento; ?>" required> 
 
         <input type="submit" value="<?php echo $Acao; ?>">
         

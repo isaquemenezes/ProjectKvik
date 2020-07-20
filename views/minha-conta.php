@@ -71,7 +71,7 @@
                 <td><?php echo $cadastro['ead']; ?></td>
                 <td>
                     <a href="<?php echo DIRPAGE."./cadastro-idoso"; ?>">Cadastrar</a>
-                    <a href="<?php echo DIRPAGE."./PDO/editar-perfil-idoso?id={$cadastro['idIdoso']}"; ?>">Editar</a>
+                    <a href="<?php echo DIRPAGE."./cadastro-idoso?id={$cadastro['idIdoso']}"; ?>">Editar</a>
                     <a class="excluir" href="<?php echo DIRPAGE."/PDO/controllers/controllerExcluir?id={$cadastro['idIdoso']}"; ?>">Deletar</a>
                 </td>
             </tr>              
