@@ -10,8 +10,8 @@
      else{ $Id=0;  }
 
      //id DB cadastro para idoso 
-     if(isset($_POST['id'])){ $id_idoso=filter_input(INPUT_POST,'id',FILTER_SANITIZE_SPECIAL_CHARS); }
-     elseif(isset($_GET['id'])){ $id_idoso=filter_input(INPUT_GET,'id',FILTER_SANITIZE_SPECIAL_CHARS); }
+     if(isset($_POST['id'])){ $Id_idoso=filter_input(INPUT_POST,'id',FILTER_SANITIZE_SPECIAL_CHARS); }
+     elseif(isset($_GET['id'])){ $Id_idoso=filter_input(INPUT_GET,'id',FILTER_SANITIZE_SPECIAL_CHARS); }
      else{ $id_idoso=0; }
 
      //Nome DB users e DB cadastro(idoso)

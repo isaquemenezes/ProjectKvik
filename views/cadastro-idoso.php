@@ -4,7 +4,7 @@
 
     include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php"); //Caminho Absoluto  
 
-    /*Update de Dados*/
+    //Update de Dados
     if(isset($_GET['id'])){
         $Acao="Editar";
 
@@ -12,10 +12,11 @@
         $BFetch=$crud->selectDB(
                         "*",
                         "users_idoso",
-                        "where id=?",
+                        "where idIdoso=?",
                         array(
                             $_GET['id']
-                        ));
+                        )
+                    );
         
         $Fetch=$BFetch->fetch(PDO::FETCH_ASSOC);
         
@@ -23,14 +24,14 @@
         $email        =$_SESSION['email'];
         $nome         =$Fetch['nome'];
         $sexo         =$Fetch['sexo'];
-        $anoNascimento=$Fetch['anoNascimento'];
-        $contato      =$Fetch['contato'];        
-        $cidade       =$Fetch['cidade'];
+        $cidade       =$Fetch['cidade'];        
         $bairro       =$Fetch['bairro'];
         $categoria    =$Fetch['categoria'];  
         $ead          =$Fetch['ead'];
+        $contato      =$Fetch['contato'];
+        $anoNascimento=$Fetch['anoNascimento'];
     }
-    /*Cadastro Novo*/
+    //Cadastro Novo
     else{
         $Acao="Cadastrar";
         $id=0;
@@ -44,6 +45,7 @@
         $categoria="";
         $ead="";
     }
+   
 ?>
 
 

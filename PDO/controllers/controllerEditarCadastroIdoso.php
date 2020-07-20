@@ -19,7 +19,7 @@
                     $Bairro,
                     $Categoria,
                     $Ead,
-                    $id_idoso
+                    $Id_idoso
                 )
             );
         echo 'Dados Alterados Success!';

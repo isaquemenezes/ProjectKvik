@@ -10,17 +10,37 @@
                     "users_idoso",
                     "?,?,?,?,?,?,?,?,?,?",
                     array(
-                        $id_idoso,
+                        $Id_idoso,
                         $Email,
                         $Nome,
                         $Sexo,
-                        $AnoNascimento,
-                        $Contato,
                         $Cidade,
                         $Bairro,
                         $Categoria,
-                        $Ead                  
+                        $Ead,
+                        $Contato,
+                        $AnoNascimento                   
+                                          
                     )
                 );
         echo 'Cadastro Realizado com Successo!';
-   }
+   }else{
+        $crud->updateDB(
+            "users_idoso",
+            "nome=?, sexo=?, cidade=?, bairro=?, categoria=?,  ead=?, contato=?, anoNascimento=?",
+            "idIdoso=?",
+            array(
+                $Nome,
+                $Sexo,
+                $Cidade,
+                $Bairro,
+                $Categoria,
+                $Ead,
+                $Contato,
+                $AnoNascimento,
+                $Id_idoso
+            )
+        );
+    echo 'Dados Alterados Success!';
+    
+}
