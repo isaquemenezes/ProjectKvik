@@ -46,6 +46,7 @@
                <td>Bairro</td>
                <td>Categoria</td>
                <td>EAD</td>
+               <td>Data Criacao</td>
                <td>Ações</td>
            </tr>
     
@@ -69,6 +70,7 @@
                 <td><?php echo $cadastro['bairro']; ?></td>
                 <td><?php echo $cadastro['categoria']; ?></td>
                 <td><?php echo $cadastro['ead']; ?></td>
+                <td><?php echo $cadastro['dateCreated']; ?></td>
                 <td>
                     <a href="<?php echo DIRPAGE."./cadastro-idoso"; ?>">Cadastrar</a>
                     <a href="<?php echo DIRPAGE."./cadastro-idoso?id={$cadastro['idIdoso']}"; ?>">Editar</a>

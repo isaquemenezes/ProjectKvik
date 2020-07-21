@@ -45,6 +45,7 @@
         $bairro="";
         $categoria="";
         $ead="";
+        //$dataCreated="";
     }
    
 ?>

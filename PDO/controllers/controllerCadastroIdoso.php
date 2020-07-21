@@ -5,11 +5,15 @@
 
     $crud=new ClassCrud();
 
+    #Input data de Criacao 
+    date_default_timezone_set('America/Sao_Paulo');
+    $DataCreated=date("Y-m-d H:i:s", time());
+
     #Cadastro de Pessoa Atendida
     if($Acao=="Cadastrar"){
         $crud->insertDB(
                     "users_idoso",
-                    "?,?,?,?,?,?,?,?,?,?",
+                    "?,?,?,?,?,?,?,?,?,?,?",
                     array(
                         $Id_idoso,
                         $Email,
@@ -20,7 +24,8 @@
                         $Cidade,
                         $Bairro,
                         $Categoria,
-                        $Ead                                  
+                        $Ead,
+                        $DataCreated                                
                     )
                 );
         echo 'Successo Pelo controllerCadastroIdoso!';
