@@ -1,28 +1,21 @@
 {
-    "name": "login/wef",
-    "description": "cadastro e login",
+    "name": "login/kvik",
+    "description": "Cadastro e Login",
     "authors": [
         {
-            "name": "curso de composer",
-            "email": "webdesco@gmail.com"
+            "name": "Isaque Menezes da Silva",
+            "email": "37957188+isaquemenezes@users.noreply.github.com"
         }
     ],
     "require": {
         "bjeavons/zxcvbn-php": "^0.4",
-        "phpmailer/phpmailer": "^6.1",
-        "slim/slim": "~4.0",
-        "slim/views": "0.1.*",
-        "twig/twig": "~3.0",
-        "hassankhan/config": "~2.0",
-        "illuminate/database": "~7.0",
-        "alexgarrett/violin": "~2.0",
-        "ircmaxell/random-lib": "~1.0"
+        "phpmailer/phpmailer": "^6.1"
     },
     "autoload":{
     	"psr-4":{
     		"Classes\\":"../classes/",
     		"Models\\":"../models/",
             "Traits\\":"../traits/"
-        }
+    	}
     }
 }
