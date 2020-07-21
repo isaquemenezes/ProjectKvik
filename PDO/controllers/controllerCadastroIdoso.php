@@ -5,6 +5,7 @@
 
     $crud=new ClassCrud();
 
+    #Cadastro de Pessoa Atendida
     if($Acao=="Cadastrar"){
         $crud->insertDB(
                     "users_idoso",
@@ -23,10 +24,12 @@
                     )
                 );
         echo 'Successo Pelo controllerCadastroIdoso!';
-   }else{
+   }
+   #Update de Pessoa Atendida
+   else{
         $crud->updateDB(
             "users_idoso",
-            "nome=?, sexo=?, anoNascimento=?, contato=?, cidade=?, bairro=?, categoria=?,  ead=?,  ",
+            "nome=?, sexo=?, anoNascimento=?, contato=?, cidade=?, bairro=?, categoria=?, ead=?",
             "idIdoso=?",
             array(
                 $Nome,
@@ -40,6 +43,6 @@
                 $Id_idoso
             )
         );
-    echo 'Dados Alterados Success!';
+    echo 'Dados Alterados Success! controllerCadastroIdoso!';
     
 }

@@ -17,7 +17,7 @@
           $Id=0;  
      }
 
-     //id DB cadastro para idoso 
+     //id DB users_idoso  
      if(isset($_POST['id'])){ 
           $Id_idoso=filter_input(INPUT_POST,'id',FILTER_SANITIZE_SPECIAL_CHARS); 
      }elseif(isset($_GET['id'])){ 
