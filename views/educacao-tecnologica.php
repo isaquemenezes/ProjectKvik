@@ -36,11 +36,9 @@
 						<div class="team_column pt-5">
 							<?php 
 								$crud=new ClassCrud();
-<<<<<<< Updated upstream
 								$BFetch=$crud->selectDB("*", "users_idoso", "", array());
-=======
-								$BFetch=$crud->selectDB("*", "cadastro", "where categoria='educacao tecnologica'", array());
->>>>>>> Stashed changes
+
+								
 								while($Fetch=$BFetch->fetch(PDO::FETCH_ASSOC)){
 							?>
 								<ul>

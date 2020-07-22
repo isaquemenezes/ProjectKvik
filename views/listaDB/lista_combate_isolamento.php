@@ -12,7 +12,8 @@
 	$BFetch=$crud->selectDB(
 					"*", 
 					"users_idoso", 
-					"WHERE categoria='Combate ao Isolamento' and ead='sim' ORDER BY idIdoso  LIMIT $inicio, $qnt_result_pg", 
+					//"WHERE categoria='Combate ao Isolamento' and ead='sim' ORDER BY idIdoso  LIMIT $inicio, $qnt_result_pg",
+					"ORDER BY idIdoso  LIMIT $inicio, $qnt_result_pg", 
 					array(
 
 					)
@@ -24,6 +25,8 @@
 		<li>
 			<div class="card-body">
 				<img  src="./assets/images/idososentado.jpg">
+				<a href="<?php echo DIRPAGE."./PDO/visualizar?idIdoso={$Fetch['idIdoso']}";?>">
+				visualizar</a>					
 			    <p><?php echo $Fetch['nome']; ?></p>
 				<p><?php echo $Fetch['email']; ?></p>
 			    <p><?php echo $Fetch['anoNascimento']; ?></p>
@@ -32,7 +35,9 @@
 			    <p><?php echo $Fetch['cidade']; ?></p>	
 			    <p><?php echo $Fetch['bairro']?></p>
 				<p><?php echo $Fetch['ead']; ?></p>
+				<a href="#">Junte-se</a>
 			</div>
+			
 		</li>			
 <?php 
     }
@@ -46,7 +51,8 @@
 	$result_page=$crud->selectDB(
 						"COUNT(*) AS num_result", 
 						"users_idoso",
-						"WHERE categoria='Combate ao Isolamento' and ead='sim'", 
+						//"WHERE categoria='Combate ao Isolamento' and ead='sim'",
+						"", 
 						array(
 						)
 					);
