@@ -30,8 +30,8 @@
         
         /********  RECUPERACAO DE SENHA ********/
         #Inserção de confirmação
-        public function insConfirmation($arrayVar)
-        {
+        public function insConfirmation($arrayVar){
+
             $this->insertDB(
                 "confirmation",
                 "?,?,?",
@@ -41,7 +41,19 @@
                     $arrayVar['token']
                 )
             );
-        }// CLOSE RECUPERAÇÃO DE SENHA
+        }
+        /*public function confirmationSen($email, $token, $hashSenha){
+            
+            $b=$this->selectDB("*","confirmation", "where email=? and token=?",
+                                array($email, $token));
+            $r=$b->rowCount();
+
+            if($r >0){ $this->deleteDB("confirmation", "email=?",array($email));
+
+                $this->updateDB("users", "senha=?", "email=?",                             array($hashSenha, $email));
+                return true;
+            }else{  return false; }
+        }// CLOSE RECUPERAÇÃO DE SENHA*/
 
         #Veriricar se já existe o mesmo email cadastro no db
         public function getIssetEmail($email)

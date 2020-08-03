@@ -29,12 +29,8 @@
 
         }
 
-        public function getErro(){
-            return $this->erro;
-        }
-        public function setErro($erro){
-            array_push($this->erro,$erro);
-        }
+        public function getErro(){  return $this->erro;   }
+        public function setErro($erro){   array_push($this->erro,$erro);   }
 
         #Validar se os campos desejados foram preenchidos
         public function validateFields($par){
@@ -44,7 +40,6 @@
                     $i++;
                 }
             }
-
             if($i==0){
                 return true;
             }else{
@@ -54,14 +49,11 @@
         }// CLOSE Validar se os campos desejados foram preenchidos
 
         #Validação se o dado é um email
-        public function validateEmail($par)
-        {
-            if(filter_var($par, FILTER_VALIDATE_EMAIL)){
-                return true;
-            }else{
-                $this->setErro("Email inválido!");
-                return false;
-            }
+        public function validateEmail($par){
+
+            if(filter_var($par, FILTER_VALIDATE_EMAIL)){  return true;   }
+            else{  $this->setErro("Email inválido!");  return false;  }
+        
         }//CLOSE  Validação se o dado é um email
 
         #Validar se o email existe no banco de dados (action null para cadastro)
@@ -89,23 +81,16 @@
         #Verificar se a senha é igual a confirmação de senha
         public function validateConfSenha($senha,$senhaConf){
 
-            if($senha === $senhaConf){
-                return true;
-            }else{
-                $this->setErro("Senha diferente de confirmação de senha!");
-            }
+            if($senha === $senhaConf){  return true;  }
+            else{ $this->setErro("Senha diferente de confirmação de senha!"); }
 
         }
 
         #Verificação da senha digitada com o hash no banco de dados
         public function validateSenha($email,$senha)
         {
-            if($this->password->verifyHash($email,$senha)){
-                return true;
-            }else{
-                $this->setErro("Usuário ou Senha Inválidos!");
-                return false;
-            }
+            if($this->password->verifyHash($email,$senha)){  return true;  }
+            else{  $this->setErro("Usuário ou Senha Inválidos!"); return false;  }
         }
 
         #Validação final do cadastro
@@ -125,7 +110,6 @@
                 
             }
             return json_encode($arrayResponse);
-
 
         }
 
@@ -189,8 +173,6 @@
 
                 $arrayResponse=[
                     "retorno"=>"success",
-                    //"page"=>'areaRestrita',
-                    //"page"=>'minha-conta',
                     "page"=>'home',
                     "tentativas"=>$this->tentativas
                 ];
@@ -200,10 +182,11 @@
 
 
         #Método de validação de confirmação de email 24
-        public function validateUserActive($email)
-        {
+        public function validateUserActive($email){
+
             $user=$this->login->getDataUser($email);
             if($user["data"]["status"] == "confirmation"){
+                //Verificar a data de criacao do usuário - para ativação do cadastro pelo email
                 if(strtotime($user["data"]["dataCreate"])<= strtotime(date("Y-m-d H:i:s"))-432000){
                     $this->setErro("Ative seu cadastro pelo link do email");
                     return false;

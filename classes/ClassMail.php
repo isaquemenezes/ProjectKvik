@@ -17,13 +17,13 @@
         public function sendMail($email, $nome, $token=null , $assunto, $corpoEmail)
         {
             try {
-                $this->mail->isSMTP();                                      // Set mailer to use SMTP
-                $this->mail->Host = HOSTMAIL;  // Specify main and backup SMTP servers
-                $this->mail->SMTPAuth = true;                               // Enable SMTP authentication
-                $this->mail->Username = USERMAIL;                 // SMTP username
-                $this->mail->Password = PASSMAIL;                           // SMTP password
-                $this->mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-                $this->mail->Port = 587;                                    // TCP port to connect to
+                $this->mail->isSMTP();              // Set mailer to use SMTP
+                $this->mail->Host = HOSTMAIL;       // Specify main and backup SMTP servers
+                $this->mail->SMTPAuth = true;       // Enable SMTP authentication
+                $this->mail->Username = USERMAIL;   // SMTP username
+                $this->mail->Password = PASSMAIL;   // SMTP password
+                $this->mail->SMTPSecure = 'tls';    // Enable TLS encryption, `ssl` also accepted
+                $this->mail->Port = 587;            // TCP port to connect to
                 $this->mail->CharSet='utf-8';
                 $this->mail->SMTPOptions=array(
                 "ssl"=>array(
@@ -33,7 +33,7 @@
                     )
                 );
 
-                $this->mail->setFrom('EMAIL DA SUA EMPRESA', 'NOME DA SUA EMPRESA');
+                $this->mail->setFrom('contato@conexaoacara.com', 'Equipe Kvik');
                 $this->mail->addAddress($email, $nome);     // Add a recipient
 
                 $this->mail->isHTML(true);                                  // Set email format to HTML

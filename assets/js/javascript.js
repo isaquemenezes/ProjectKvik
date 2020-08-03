@@ -28,8 +28,6 @@ $("#formCadastro").on("submit",function(event){
     });
 });
 
-
-
 //Ajax do formulário de cadastro Idoso
 $("#formCadastro").on("submit",function(event){
     event.preventDefault();
@@ -54,8 +52,6 @@ $("#formCadastro").on("submit",function(event){
     });
 });
 
-
-
 //Ajax do formulário de login
 $("#formLogin").on("submit",function(event){
     event.preventDefault();
@@ -78,9 +74,7 @@ $("#formLogin").on("submit",function(event){
                 $.each(response.erros, function(key, value){
                     $('.resultadoForm').append(value+'<br>');
                 });
-
             }
-            
         }
     });
 });
@@ -114,24 +108,6 @@ $("#formSenha").on("submit",function(event){
             }
         }
     });
-});
-
-
-
-$("#formCadastro").on('submit', function(event){
-    event.preventDefault();
-    var Dados =$(this).serialize();
-
-    $.ajax({
-        url: 'controllers/controllerCadastro2.php',
-        type:'post',
-        dataType: 'html',
-        data: Dados,
-        success:function(Dados){
-            $('.resultado').show().html(Dados);                        
-        }
-
-    })
 });
 
 /* Confirmação de deletar de conta de usuário volunteer*/
