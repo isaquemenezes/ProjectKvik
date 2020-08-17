@@ -1,6 +1,6 @@
-<?php \Classes\ClassLayout::setHeadRestrito(); // Inicia a Sessão  ?>
-<?php \Classes\ClassLayout::setHead('Área Restrita','Área exclusiva para membros!'); ?>
-<?php include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php"); ?>
+<?php 	\Classes\ClassLayout::setHeadRestrito(); 
+ 		\Classes\ClassLayout::setHead('Área Restrita','Área exclusiva para membros!');
+ 		include "./models/ModelCrud.php"; ?>
 
 			
 	<!--body id="mod_corporate" class="root_home" style="padding-top: 0px;"-->

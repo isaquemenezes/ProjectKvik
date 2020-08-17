@@ -1,24 +1,17 @@
 <?php    
-    \Classes\ClassLayout::setHeadRestrito();  // Inicia a Sessão 
-    include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php"); //Caminho Absoluto 
+    \Classes\ClassLayout::setHeadRestrito();   
+    include "./models/ModelCrud.php"; 
     Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' Minha Conta','Área Gerencie Sua Conta!'); 
-    include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/includes/header.php");
+    include "./includes/header.php";
 ?>
     <div class="content">
         <?php
-            $crud=new ClassCrud();
+            $crud=new ModelCrud();
             $idUser=filter_input(INPUT_GET,"idIdoso", FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $BFetch=$crud->selectDB(
-                            "*",
-                            "users_idoso",
-                            "where idIdoso=?",
-                            array(
-                                $idUser
-                            )
-                        );
+            $BFetch=$crud->selectDB( "*", "users_idos", "where idIdoso=?", array($idUser));
 
-            $Fetch=$BFetch->fetch(PDO::FETCH_ASSOC);
+            $Fetch=$BFetch->fetch(\PDO::FETCH_ASSOC);
         ?>
         <div style="margin-top: 15px;"><h1>Dados do Usuário</h1></div>
         <div style="margin-top: 10px; ">
@@ -36,5 +29,5 @@
         </div>
     </div>
 
-<?php include 'includes/footer.php';  ?>
+<?php include './includes/footer.php';  ?>
     

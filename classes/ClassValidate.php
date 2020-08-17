@@ -1,8 +1,8 @@
 <?php
     namespace Classes;
 
-    use Models\ClassCadastro;
-    use Models\ClassLogin;
+    use Models\ModelCadastro;
+    use Models\ModelLogin;
     use Classes\ClassPassword;
     use Classes\ClassSessions;
     //use Classes\ClassMail; // email de confirmação 
@@ -21,9 +21,9 @@
         //composições
         public function __construct(){
 
-            $this->cadastro=new ClassCadastro(); 
+            $this->cadastro=new ModelCadastro(); 
             $this->password=new ClassPassword();
-            $this->login=new ClassLogin();
+            $this->login=new ModelLogin();
             $this->session=new ClassSessions();
             $this->mail=new ClassMail();
 

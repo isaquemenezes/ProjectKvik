@@ -1,5 +1,5 @@
 <?php 
-	include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php"); 
+	namespace Models; 
 
 	// Recebendo os dados de fuction
 	$pagina =filter_input(INPUT_POST, 'pagina', FILTER_SANITIZE_NUMBER_INT);
@@ -8,7 +8,7 @@
 	//Calculando o início da visualização
 	$inicio =($pagina * $qnt_result_pg) - $qnt_result_pg;
      
-	$crud=new ClassCrud();
+	$crud=new ModelCrud();
 	$BFetch=$crud->selectDB(
 					"*", 
 					"users_idoso", 
@@ -18,14 +18,14 @@
 
 					)
 				);
-    while($Fetch=$BFetch->fetch(PDO::FETCH_ASSOC)){
+    while($Fetch=$BFetch->fetch(\PDO::FETCH_ASSOC)){
 ?>
 
 	<ul>
 		<li>
 			<div class="card-body">
 				<img  src="./assets/images/idososentado.jpg">
-				<a href="<?php echo DIRPAGE."./PDO/visualizar?idIdoso={$Fetch['idIdoso']}";?>">
+				<a href="<?php echo DIRPAGE."visualizar?idIdoso={$Fetch['idIdoso']}";?>">
 				visualizar</a>					
 			    <p><?php echo $Fetch['nome']; ?></p>
 				<p><?php echo $Fetch['email']; ?></p>
@@ -46,7 +46,7 @@
 	</ul>	 
 
 <?php 
-	$crud=new ClassCrud();
+	$crud=new ModelCrud();
 	//Paginação - Soma a quantidade de usuários	
 	$result_page=$crud->selectDB(
 						"COUNT(*) AS num_result", 
@@ -56,7 +56,7 @@
 						array(
 						)
 					);
-	$row_pg = $result_page->fetch(PDO::FETCH_ASSOC);
+	$row_pg = $result_page->fetch(\PDO::FETCH_ASSOC);
 
 	//Quantidade de pagina para enviar para última página
 	$qnt_page=ceil($row_pg['num_result'] / $qnt_result_pg);

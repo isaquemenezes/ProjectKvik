@@ -6,17 +6,13 @@
                     echo "<a class='navbar-brand' href=".DIRPAGE."home>". 
                     "<img src='./assets/images/logo.png' width='40' height='40' class='d-inline-block align-middle' 
                     alt='logotipo kvik'><span class='text-uppercase align-middle navbar-brand'>
-                    <font style='vertical-align: inherit;'>
-                    <font style='vertical-align: inherit;'>&nbsp;Kvik.com</font></font></span>                    
-                    </a>";
+                    &nbsp;Kvik.com</span> </a>";
                 }
                  //USUÁRIO NÃO LOGADO
                 else{ echo "<a class='navbar-brand' href=".DIRPAGE."index>".
                     "<img src='./assets/images/logo.png' width='40' height='40' class='d-inline-block align-middle' 
                     alt='logotipo kvik'><span class='text-uppercase align-middle navbar-brand'>
-                    <font style='vertical-align: inherit;'>
-                    <font style='vertical-align: inherit;'>&nbsp;Kvik.com</font></font></span>                    
-                    </a>";   
+                    &nbsp;Kvik.com</span> </a>";   
                 }
             ?>    
  
@@ -27,61 +23,55 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- MENU FAQ -->           
                     <li class="nav-item ml-auto">
-                        <a class="nav-link" href="<?php echo DIRPAGE.'faq'; ?>"><font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">FAQ</font></font></a></li>
+                        <a class="nav-link" href="<?php echo DIRPAGE.'faq'; ?>">FAQ</a></li>
 
                     <!-- MENU SOBRE -->
                     <li class="nav-item ml-auto">
-                        <a class="nav-link" href="#sobre"><font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">SOBRE</font></font></a></li>
+                        <a class="nav-link" href="#sobre"> SOBRE </a></li>
 
                     <!--MENU Cadastrar um Idoso  -->
                     <li class="nav-item ml-auto">
-                        <a class="nav-link active" href="<?php echo DIRPAGE.'cadastro-idoso';?>"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">
+                        <a class="nav-link active" href="<?php echo DIRPAGE.'cadastro-idoso';?>">
                             
                             <?php
                                 if(isset($_SESSION['id_users'])){ echo "Cadastrar um Idoso";  }
                                 else{  echo "";  }
                             ?>
 
-                        </font></font></a></li>
+                        </a></li>
 
                     <!-- GERENCIE SUA CONTA  -->
                     <li class="nav-item ml-auto">
-                        <a class="nav-link active" href="<?php echo DIRPAGE.'minha-conta';?>"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">
+                        <a class="nav-link active" href="<?php echo DIRPAGE.'minha-conta';?>">
                             
                             <?php
                                 if(isset($_SESSION['id_users'])){ echo "Conta";  }
                                 else{  echo "";  }
                             ?>
 
-                        </font></font></a></li>    
+                        </a></li>    
                     
                     <!-- MENU Entrar-->
                     <li class="nav-item ml-auto">
-                        <a class="nav-link specialico" href="<?php echo DIRPAGE.'login';?>"><font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">
+                        <a class="nav-link specialico" href="<?php echo DIRPAGE.'login';?>">
                             
                             <?php
                                 if(isset($_SESSION['id_users'])){ echo strtoupper($_SESSION['name']); }
                                 else{  echo "Entrar";  }
                             ?>
 
-                        </font></font></a></li>
+                        </a></li>
 
                     <!-- MENU LOGOUT -->
                     <li class="nav-item ml-auto">
-                        <a class="nav-link active" href="<?php echo DIRPAGE.'controllers/controllerLogout';?>"><font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">
-                                
-                                <?php
-                                    if(isset($_SESSION['id_users'])){  echo "Logout";  }
-                                    else{ echo ""; }  
-                                ?>
+                        <a class="nav-link active" href="<?php echo DIRPAGE.'controllers/controllerLogout';?>">
+                            
+                            <?php
+                                if(isset($_SESSION['id_users'])){  echo "Logout";  }
+                                else{ echo ""; }  
+                            ?>
 
-                            </font></font></a>
+                        </a>
                     </li>
                 </ul>
             </div>

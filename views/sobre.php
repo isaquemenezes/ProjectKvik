@@ -1,9 +1,9 @@
 <?php 
-if(isset($_SESSION['id'])){
-echo \Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' | Kvik Plataforma de Voluntariado', 'KVIK Plataforma de voluntariado.');
-echo \Classes\ClassLayout::setHeadRestrito();
+	if(isset($_SESSION['id'])){
+	echo \Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' | Kvik Plataforma de Voluntariado', 'KVIK Plataforma de voluntariado.');
+	echo \Classes\ClassLayout::setHeadRestrito();
 	}else{
-		echo \Classes\ClassLayout::setHead(' | Kvik Plataforma de Voluntariado', 'KVIK Plataforma de voluntariado.'); 
+		echo \Classes\ClassLayout::setHead('Kvik Plataforma de Voluntariado', 'KVIK Plataforma de voluntariado.'); 
 
 	}	
 	?>
@@ -28,16 +28,16 @@ echo \Classes\ClassLayout::setHeadRestrito();
 	<script src="./assets/js/particles.js"></script>
 				
 	<!--=== HEADER ===---->
-	<?php include 'includes/header.php'; ?>
+	<?php include './includes/header.php'; ?>
 	
 	<!--========== SOBRE NÓS ================-->
-	<?php include 'includes/sectionSobre.php';?>
+	<?php include './includes/sectionSobre.php';?>
 
 	<!--==== PARCEIROS 	================-->
-	<?php include 'includes/sectionParceiros.php';?><br><br>
+	<?php include './includes/sectionParceiros.php';?><br><br>
 
 	<!--============= FOOTER =============-->
-	<?php include 'includes/footer.php'; ?>	
+	<?php include './includes/footer.php'; ?>	
 			
 	<!--======= FOOTER SCRIPTS =======-->
 	<?php \Classes\ClassLayout::setFooter(); ?>

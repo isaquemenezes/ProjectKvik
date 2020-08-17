@@ -1,8 +1,8 @@
 <?php
    
-    include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php");
+    include "./models/ModelCrud.php";
 
-    $crud=new classCrud();
+    $crud=new ModelCrud();
     $id_user=filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);
 
     $crud->deleteDB(

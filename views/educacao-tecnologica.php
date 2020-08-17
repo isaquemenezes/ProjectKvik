@@ -1,6 +1,6 @@
-<?php //\Classes\ClassLayout::setHeadRestrito(); // Inicia a Sessão  ?>
-<?php \Classes\ClassLayout::setHead('Área Restrita','Área exclusiva para membros!'); ?>
-<?php include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php"); ?>
+<?php 	\Classes\ClassLayout::setHeadRestrito(); 
+		\Classes\ClassLayout::setHead('Área Restrita','Área exclusiva para membros!'); 
+		include "./models/ModelCrud.php"; ?>
 		
 	<!--- STYLE PARTÍCULAS -->
 	<style type="text/css">
@@ -35,11 +35,11 @@
 						<h2 class="cty-h2">Educação Tecnológica - Lista </h2>
 						<div class="team_column pt-5">
 							<?php 
-								$crud=new ClassCrud();
+								$crud=new ModelsCrud();
 								$BFetch=$crud->selectDB("*", "users_idoso", "", array());
 
 								
-								while($Fetch=$BFetch->fetch(PDO::FETCH_ASSOC)){
+								while($Fetch=$BFetch->fetch(\PDO::FETCH_ASSOC)){
 							?>
 								<ul>
 									<li>

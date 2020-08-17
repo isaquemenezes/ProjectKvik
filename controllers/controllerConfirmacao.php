@@ -1,8 +1,9 @@
 <?php
+    
     $email=\Traits\TraitParseUrl::parseUrl(2);
     $token=\Traits\TraitParseUrl::parseUrl(3);
   
-    $confirmation=new \Models\ClassCadastro();
+    $confirmation=new \Models\ModelCadastro();
 
     if($confirmation->confirmationCad($email,$token)){
         echo "

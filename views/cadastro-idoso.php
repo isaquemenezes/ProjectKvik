@@ -1,14 +1,15 @@
 <?php 
-    \Classes\ClassLayout::setHeadRestrito(); // Inicia a Sessão  
+    namespace Models;
+
+    \Classes\ClassLayout::setHeadRestrito();   
     \Classes\ClassLayout::setHead('Cadastro de Idoso','Cadastre uma Pessoa Idosa.');
 
-    include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php"); //Caminho Absoluto  
 
     //Update de Dados do DB users_idoso
     if(isset($_GET['id'])){
         $Acao="Editar";
 
-        $crud=new ClassCrud();
+        $crud=new ModelCrud();
         $BFetch=$crud->selectDB(
                         "*",
                         "users_idoso",
@@ -18,7 +19,7 @@
                         )
                     );
         
-        $Fetch=$BFetch->fetch(PDO::FETCH_ASSOC);
+        $Fetch=$BFetch->fetch(\PDO::FETCH_ASSOC);
         
         $id           =$Fetch['idIdoso'];
         $email        =$Fetch['email'];
@@ -55,7 +56,7 @@
 <!--Retorno Ajax-->
 <div class="retornoCad"></div>
 <!--Formulário de Cadastro de Idoso-->
-<form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'./PDO/controllers/controllerCadastroIdoso'; ?>" method="post">
+<form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'./controllers/controllerCadastroIdoso'; ?>" method="post">
     <div class="cadastro float center">
         <input type="hidden" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
         <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">

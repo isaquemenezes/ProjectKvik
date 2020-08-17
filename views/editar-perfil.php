@@ -1,14 +1,14 @@
 <?php
-    \Classes\ClassLayout::setHeadRestrito();  // Inicia a Sessão 
-    include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php"); //Caminho Absoluto 
+    \Classes\ClassLayout::setHeadRestrito();   
+    include "./models/ModelCrud.php"; 
     Classes\ClassLayout::setHead3(strtoupper($_SESSION['name']).' Minha Conta','Área Gerencie Sua Conta!'); 
-    include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/includes/header.php");
+    include "./includes/header.php";
 
     /*Update de Dados de Usuário Volunteer*/
     if(isset($_GET['id'])){
         $Acao="Editar";
 
-        $crud=new ClassCrud();
+        $crud=new ModelCrud();
         $BFetch=$crud->selectDB(
             "*",
             "users",
@@ -32,7 +32,7 @@
     <!--Formulário de edicao de perfil para usuário voluntário-->
     <div class="formulario">
         <h1 class="center">Faça Sua Atualização de Perfil</h1>
-            <form action="<?php echo DIRPAGE."PDO/controllers/controllerEditarPerfil"; ?>" name="formCadastro" id="formCadastro" method="post">
+            <form action="<?php echo DIRPAGE."controllers/controllerEditarPerfil"; ?>" name="formCadastro" id="formCadastro" method="post">
                 
                 <input type="hidden" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
                 <input type="hidden" id="Id" name="Id" value="<?php echo $Id; ?>">

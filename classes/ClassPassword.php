@@ -1,7 +1,7 @@
 <?php
     namespace Classes;
 
-    use Models\ClassLogin;
+    use Models\ModelLogin;
 
     class ClassPassword{
 
@@ -9,7 +9,7 @@
 
         public function __construct(){
 
-            $this->db=new ClassLogin();
+            $this->db=new ModelLogin();
             
         }
 

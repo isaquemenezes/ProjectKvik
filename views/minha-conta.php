@@ -1,8 +1,10 @@
 <?php 
-    \Classes\ClassLayout::setHeadRestrito();  // Inicia a Sessão 
-    include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php");
+    namespace Models;
+
+    \Classes\ClassLayout::setHeadRestrito(); 
+    
     \Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' Minha Conta',' Gerencie Sua Conta!'); 
-    include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/includes/header.php");
+    include "./includes/header.php";
     
 ?>
     <div class="content"><strong>Gerencie Sua Conta</strong>
@@ -10,6 +12,7 @@
         <table class="tabelaCrud">
            <tr>
                 <td>Id</td>
+                <td>Status da Conta</td>
                 <td>Nome</td>
                 <td>Email</td>   
                 <td>Contato</td>
@@ -19,7 +22,8 @@
            </tr>
 
             <tr>
-                <td><?php echo $_SESSION['id_users'];?></td>     
+                <td><?php echo $_SESSION['id_users'];?></td>  
+                <td><?php echo $_SESSION['status'];?></td>     
                 <td><?php echo $_SESSION['name'];?></td>                    
                 <td><?php echo $_SESSION['email'];?></td>
                 <td><?php echo $_SESSION['contato']; ?></td>
@@ -51,13 +55,13 @@
            </tr>
     
             <?php       
-                $crud=new ClassCrud();
+                $crud=new ModelCrud();
                 $results1=$crud->selectDB("*","users","", array());
                 // if - Precisa Ser Revisado
-                if($results1->fetch(PDO::FETCH_ASSOC)){
+                if($results1->fetch(\PDO::FETCH_ASSOC)){
                     $email_user = $_SESSION['email'];        
                     $results_cadastro=$crud->selectDB("*", "users_idoso","where email='$email_user'",array());   
-                    $cadastro=$results_cadastro->fetch(PDO::FETCH_ASSOC); 
+                    $cadastro=$results_cadastro->fetch(\PDO::FETCH_ASSOC); 
                 }  
             ?> 
 
@@ -80,7 +84,7 @@
         </table>
     </div>
     
-    <?php include "{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/includes/footer.php"; ?>
+    <?php include "./includes/footer.php"; ?>
     
     <!--======= FOOTER SCRIPTS =======-->
     <?php  \Classes\ClassLayout::setFooter();?>

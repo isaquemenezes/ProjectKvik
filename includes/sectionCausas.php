@@ -1,8 +1,8 @@
     <section id="section-why" class="section-null pt-5">
 		<div class="container">
-			<h2 class="cty-h2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-			Conecte-se. Realize trabalhos voluntários.  Compartilhe conhecimento, faça a diferença.
-			 </font></font></h2>
+			<h2 class="cty-h2">
+				Conecte-se. Realize trabalhos voluntários.  Compartilhe conhecimento, faça a diferença.
+			</h2>
 			<div class="row">
 			
 			<!--<div class="col-lg-4 col-md-4 col-xs-12 py-5 text-center">

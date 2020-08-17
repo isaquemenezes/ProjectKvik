@@ -9,6 +9,7 @@
     //$validate->validateCaptcha($gRecaptchaResponse);Google Captcha
     //$validate->validateUserActive($email);         token de ativação do email 
     $validate->validateAttemptLogin();              //controle d tentativas de login do usuário
+    
     echo $validate->validateFinalLogin($email); 
     
     

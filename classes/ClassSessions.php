@@ -28,7 +28,7 @@
                 ini_set("session.hash_bits_per_character",5);
                 session_start();
             }
-            $this->login=new Models\ClassLogin();
+            $this->login=new Models\ModelLogin();
         }
 
         #Proteger contra roubo de sessão

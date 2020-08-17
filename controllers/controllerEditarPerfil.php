@@ -1,8 +1,8 @@
 <?php
-   include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/helpers/variaveis.php"); //Caminho Absoluto
-   include ("{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php");// Caminho Absoluto   
+   include "./helpers/variaveis.php"; 
+   include "./models/ModelCrud.php";  
 
-    $crud=new ClassCrud();
+    $crud=new ModelCrud();
 
     if($Acao=="Editar"){
         $crud->updateDB(

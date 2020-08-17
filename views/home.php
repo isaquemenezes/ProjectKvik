@@ -1,6 +1,6 @@
-<?php \Classes\ClassLayout::setHeadRestrito(); // Inicia a Sessão  ?>
-
-<?php \Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' | Kvik Plataforma de Voluntariado', 'KVIK Plataforma de voluntariado.'); ?>
+<?php 
+	\Classes\ClassLayout::setHeadRestrito(); 
+	\Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' | Kvik Plataforma de Voluntariado', 'KVIK Plataforma de voluntariado.'); ?>
 
 	<!--- STYLE PARTÍCULAS -->
 	<style type="text/css">

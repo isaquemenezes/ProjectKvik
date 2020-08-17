@@ -1,9 +1,9 @@
 <?php
-   
-    include "{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/helpers/variaveis.php";
-    include "{$_SERVER['DOCUMENT_ROOT']}/ProjectKvik/PDO/classes/ClassCrud.php";    
+    namespace Models;
+    
+    include_once "./helpers/variaveis.php";  
 
-    $crud=new ClassCrud();
+    $crud=new ModelCrud();
 
     #Input data de Criacao 
     date_default_timezone_set('America/Sao_Paulo');
@@ -28,7 +28,7 @@
                         $DataCreated                                
                     )
                 );
-        echo 'Successo Pelo controllerCadastroIdoso!';
+        echo "Dados Inserido com Sucesso!";
    }
    #Update de Pessoa Atendida
    else{
@@ -48,6 +48,6 @@
                 $Id_idoso
             )
         );
-    echo 'Dados Alterados Success! controllerCadastroIdoso!';
+        header("location:".DIRPAGE."minha-conta");
     
-}
+    }
