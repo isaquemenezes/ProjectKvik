@@ -7,7 +7,11 @@
 	</style>	
 
 	<!---- INICIALIZAR PARTICULAS ---->
-	<script> window.onload = function() { Particles.init({ selector: '.background' }); }; </script>
+	<script> window.onload = function() { 
+		Particles.init({ 
+			selector: '.background' }); 
+		};
+	</script>
 
 	<!------- PARTÍCULAS -------->
 	<div id="particles-js"></div>
@@ -126,7 +130,7 @@
 		</div>
 	</div>
 	<!--=========== SOBRE NÓS ==============-->
-	<?php include 'includes/sectionSobre.php';?>
+	<?php //include 'includes/sectionSobre.php';?>
 
 	<!--============= PARCEIROS ================-->
 	<?php include 'includes/sectionParceiros.php';?>

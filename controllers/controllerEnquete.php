@@ -1,8 +1,9 @@
 <?php
-    include("../includes/variaveis.php");
-    include("../classes/ClassCrud.php");
 
-    $crud=new ClassCrud();
+    include("../includes/variaveis.php");
+   
+
+    $crud=new \Models\ModelCrud();
     $crud->insertDB(
         "enquete",
         "?,?",

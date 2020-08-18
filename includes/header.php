@@ -8,11 +8,10 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
 						<div class="d-flex align-items-start flex-column">
-							<h1 style="color: #31708f"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">		
+							<h1 style="color: #31708f">		
 								Kvik é uma plataforma social de voluntariado dedicada aos idosos.
-								Transforme o mundo. Seja voluntário.</font></font></h1>
-							<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-								</font></font></h2>	
+								Transforme o mundo. Seja voluntário.</h1>
+							<h2></h2>	
 							
 							<div class="button-sw-block">
 								<p>

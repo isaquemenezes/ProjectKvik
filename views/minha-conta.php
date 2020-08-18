@@ -8,7 +8,7 @@
     
 ?>
     <div class="content"><strong>Gerencie Sua Conta</strong>
-    <div class="profile_image"><img src="<?php echo DIRPAGE.'./assets/images/logo_kvik.png';?>" alt="<?php echo $_SESSION['name'];?>"></div>
+    <div class="profile_image"><img src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="<?php echo $_SESSION['name'];?>"></div>
         <table class="tabelaCrud">
            <tr>
                 <td>Id</td>
@@ -30,8 +30,8 @@
                 <td><?php echo $_SESSION['cidade']; ?></td>
                 <td><?php echo $_SESSION['bairro']; ?></td>
                 <td>
-                    <a href="<?php echo DIRPAGE."/PDO/editar-perfil?id={$_SESSION['id_users']}"; ?>">Editar</a>
-                    <a class="excluir" href="<?php echo DIRPAGE."/PDO/controllers/controllerExcluirUser?id={$_SESSION['id_users']}"; ?>">Deletar Conta</a>
+                    <a href="<?php echo DIRPAGE."./editar-perfil?id={$_SESSION['id_users']}"; ?>">Editar</a>
+                    <a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluirUser?id={$_SESSION['id_users']}"; ?>">Deletar Conta</a>
                 </td>
             </tr>   
        </table>
@@ -78,7 +78,7 @@
                 <td>
                     <a href="<?php echo DIRPAGE."./cadastro-idoso"; ?>">Cadastrar</a>
                     <a href="<?php echo DIRPAGE."./cadastro-idoso?id={$cadastro['idIdoso']}"; ?>">Editar</a>
-                    <a class="excluir" href="<?php echo DIRPAGE."/PDO/controllers/controllerExcluir?id={$cadastro['idIdoso']}"; ?>">Deletar</a>
+                    <a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id={$cadastro['idIdoso']}"; ?>">Deletar</a>
                 </td>
             </tr>              
         </table>

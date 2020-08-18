@@ -1,7 +1,8 @@
 <?php
-    \Classes\ClassLayout::setHeadRestrito();   
-    include "./models/ModelCrud.php"; 
-    Classes\ClassLayout::setHead3(strtoupper($_SESSION['name']).' Minha Conta','Área Gerencie Sua Conta!'); 
+    namespace Models;
+
+    \Classes\ClassLayout::setHeadRestrito();    
+    \Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' Minha Conta','Área Gerencie Sua Conta!'); 
     include "./includes/header.php";
 
     /*Update de Dados de Usuário Volunteer*/

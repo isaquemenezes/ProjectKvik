@@ -1,8 +1,9 @@
 <?php 
+	namespace Models;
 	//\Classes\ClassLayout::setHeadRestrito(); // Inicia a Sessão  
  	\Classes\ClassLayout::setHead('Área Restrita','Área exclusiva para membros!'); 
- 	include "./models/ModelCrud.php"; ?>
-	
+	 
+?>	 
 	<!--=== HEADER ===---->
 	<?php include 'includes/headerCategoria.php'; ?>
 

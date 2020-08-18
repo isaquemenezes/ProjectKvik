@@ -1,6 +1,5 @@
 <?php
-   
-    include "./models/ModelCrud.php";
+    namespace Models;
 
     $crud=new ModelCrud();
     $id_user=filter_input(INPUT_GET, "id", FILTER_SANITIZE_SPECIAL_CHARS);

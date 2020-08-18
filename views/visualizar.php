@@ -1,6 +1,7 @@
 <?php    
+    namespace Models;
+    
     \Classes\ClassLayout::setHeadRestrito();   
-    include "./models/ModelCrud.php"; 
     Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' Minha Conta','Área Gerencie Sua Conta!'); 
     include "./includes/header.php";
 ?>

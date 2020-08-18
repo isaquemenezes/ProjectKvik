@@ -1,6 +1,8 @@
-<?php 	\Classes\ClassLayout::setHeadRestrito(); 
- 		\Classes\ClassLayout::setHead('Área Restrita','Área exclusiva para membros!');
- 		include "./models/ModelCrud.php"; ?>
+<?php 
+	namespace Models;	
+	\Classes\ClassLayout::setHeadRestrito(); 
+ 	\Classes\ClassLayout::setHead('Área Restrita','Área exclusiva para membros!');
+ 	//include "./models/ModelCrud.php"; ?>
 
 			
 	<!--body id="mod_corporate" class="root_home" style="padding-top: 0px;"-->
@@ -40,7 +42,7 @@
 							=================================-->							
 							<section id="section-products" class="section-null pt-5">
 								<div class="container">
-									<h2 class="cty-h2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Veja as vantagens de ser voluntário -Tentar sensibilizar, alertar ou mesmo apenas listar algumas vantagens em ser voluntário(ainda estou pensando)-  </font></font></h2>
+									<h2 class="cty-h2">Veja as vantagens de ser voluntário -Tentar sensibilizar, alertar ou mesmo apenas listar algumas vantagens em ser voluntário(ainda estou pensando)-  </h2>
 									<div class="row">
 									<!--DIV Vazia -->
 									<div class="col-sm-12 col-md-12 col-lg-6 py-5">
@@ -49,18 +51,18 @@
 												<img class="svg-inline--fa fa-search fa-w-16 texte_bleu" src="./assets/images/conhecimento.png">
 											</div>
 											<div class="col-9 pt-4">
-												<h4 class="cty-h4 pr-lg-5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-													Solidão maltrata o corpo e a mente dos idosos</font></font></h4>
-												<p class="text-justify pr-lg-5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-													Com o aumento da expectativa de vida, o mundo observa a formação de um exército de solitários.</font>
-													<font style="vertical-align: inherit;">Nos últimos anos, diversos estudos têm apontado uma forte 
+												<h4 class="cty-h4 pr-lg-5">
+													Solidão maltrata o corpo e a mente dos idosos</h4>
+												<p class="text-justify pr-lg-5">
+													Com o aumento da expectativa de vida, o mundo observa a formação de um exército de solitários.
+													Nos últimos anos, diversos estudos têm apontado uma forte 
 													associação entre a solidão e a incidência de doenças crônicas em idosos. De fato, pesquisadores 
 													da Universidade de Chicago descobriram que o isolamento pode aumentar o risco de morte em 14% nas 
-													faixas etárias mais avançadas. </font><font style="vertical-align: inherit;">
+													faixas etárias mais avançadas. 
 													O trabalho, liderado pelo psicólogo e especialista no assunto John Cacioppo, descobriu que o estresse 
 													provocado por essa sensação induz respostas inflamatórias nas células, afetando, entre outras coisas, 
-													a produção dos leucócitos, estruturas que defendem o organismo de infecções. </font></font>
-												</p></font></font>
+													a produção dos leucócitos, estruturas que defendem o organismo de infecções. 
+												</p>
 												<p>	<a class="call-to-click text-right" href="#">Junte-se a nós</a></p>
 											</div>
 										</div>

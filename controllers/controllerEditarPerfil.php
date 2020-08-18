@@ -1,6 +1,8 @@
 <?php
-   include "./helpers/variaveis.php"; 
-   include "./models/ModelCrud.php";  
+   namespace Models;
+
+   include_once "./helpers/variaveis.php"; 
+
 
     $crud=new ModelCrud();
 
@@ -18,5 +20,5 @@
                 $Id
             )
         );
-        echo 'Dados Alterados Success!';
+        header("location:".DIRPAGE."minha-conta");
     }
