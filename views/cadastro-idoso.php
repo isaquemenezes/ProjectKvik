@@ -10,15 +10,7 @@
         $Acao="Editar";
 
         $crud=new ModelCrud();
-        $BFetch=$crud->selectDB(
-                        "*",
-                        "users_idoso",
-                        "where idIdoso=?",
-                        array(
-                            $_GET['id']
-                        )
-                    );
-        
+        $BFetch=$crud->selectDB("*", "users_idoso", "where idIdoso=?", array($_GET['id']));
         $Fetch=$BFetch->fetch(\PDO::FETCH_ASSOC);
         
         $id           =$Fetch['idIdoso'];
@@ -49,8 +41,6 @@
     }
    
 ?>
-
-
 
 <div class="topFaixa float w100 center">Cadastro de Idoso</div>
 <!--Retorno Ajax-->

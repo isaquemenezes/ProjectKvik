@@ -23,7 +23,6 @@
             $r=$b->rowCount();
             return $arrayData=[ "data"=>$f, "rows"=>$r ];
 
-           
         }
 
         #Conta as tentativas

@@ -1,5 +1,6 @@
 <?php
      
+     //Buttom de enviar
      if(isset($_POST['Acao'])){ 
           $Acao=filter_input(INPUT_POST,'Acao',FILTER_SANITIZE_SPECIAL_CHARS); 
      }elseif(isset($_GET['Acao'])){  

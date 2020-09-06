@@ -11,9 +11,7 @@
 
     #Cadastro de Pessoa Atendida
     if($Acao=="Cadastrar"){
-        $crud->insertDB(
-                    "users_idoso",
-                    "?,?,?,?,?,?,?,?,?,?,?",
+        $crud->insertDB("users_idoso", "?,?,?,?,?,?,?,?,?,?,?",
                     array(
                         $Id_idoso,
                         $Email,

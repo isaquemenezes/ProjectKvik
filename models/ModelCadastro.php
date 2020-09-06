@@ -6,9 +6,7 @@
         #Realizará a inserção no banco de dados
         public function insertCad($arrayVar)
         {
-            $this->insertDB(
-                "users",
-                "?,?,?,?,?,?,?,?,?,?",
+            $this->insertDB("users", "?,?,?,?,?,?,?,?,?,?",
                         array(
                             0,
                             $arrayVar['nome'],
@@ -26,7 +24,7 @@
                 /********  RECUPERACAO DE SENHA ********/
                 $this->insConfirmation($arrayVar);  
 
-        }// CLOSE  Realizará a inserção no banco de dados
+        }
         
         /********  RECUPERACAO DE SENHA ********/
         #Inserção de confirmação
@@ -69,10 +67,7 @@
                 $this->updateDB("users", "status=?", "email=?", array("active", $email));
                 return true;
             
-            }else{
-
-                return false;
-            }
+            }else{  return false;  }
         }
 
     }
