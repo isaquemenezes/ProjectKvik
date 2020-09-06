@@ -31,7 +31,7 @@
                 <td><?php echo $_SESSION['bairro']; ?></td>
                 <td>
                     <a href="<?php echo DIRPAGE."./editar-perfil?id={$_SESSION['id_users']}"; ?>">Editar</a>
-                    <a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluirUser?id={$_SESSION['id_users']}"; ?>">Deletar Conta</a>
+                    <a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id_users={$_SESSION['id_users']}"; ?>">Deletar Conta</a>
                 </td>
             </tr>   
        </table>
@@ -78,7 +78,7 @@
                 <td>
                     <a href="<?php echo DIRPAGE."./cadastro-idoso"; ?>">Cadastrar</a>
                     <a href="<?php echo DIRPAGE."./cadastro-idoso?id={$cadastro['idIdoso']}"; ?>">Editar</a>
-                    <a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id={$cadastro['idIdoso']}"; ?>">Deletar</a>
+                    <a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id_idoso={$cadastro['idIdoso']}"; ?>">Deletar</a>
                 </td>
             </tr>              
         </table>

@@ -28,7 +28,7 @@
                         $DataCreated                                
                     )
                 );
-        echo "Dados Inserido com Sucesso!";
+            header("location:".DIRPAGE."minha-conta");
    }
    #Update de Pessoa Atendida
    else{
