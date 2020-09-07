@@ -20,11 +20,10 @@
 										if(isset($_SESSION['id_users'])){ echo "";	}
 										else{   echo "<a class='call-to-click text-right' style='margin-right: 12px;' 
 													href=".DIRPAGE."cadastro> Quero Ser Voluntário</a>";	}		
-										// Link Quero Cadastrar um Idoso	
-										if(isset($_SESSION['id_users'])){ 	echo ""; }
-										else{ echo "<a class='call-to-click text-right' style='margin-right: 12px;'
-												href=".DIRPAGE."cadastro-idoso> Quero Cadastrar um Idoso</a>";	}
-									?>   	
+									?>
+									<!--Link Quero Cadastrar um Idoso-->
+									<a class='call-to-click text-right' style='margin-right: 12px;'
+										href="<?php echo DIRPAGE.'cadastro-idoso'; ?>"> Quero Cadastrar um Idoso</a>   	
 								</p>
 								<p></p>
 							</div>

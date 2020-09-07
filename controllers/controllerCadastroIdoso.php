@@ -11,40 +11,16 @@
 
     #Cadastro de Pessoa Atendida
     if($Acao=="Cadastrar"){
-        $crud->insertDB("users_idoso", "?,?,?,?,?,?,?,?,?,?,?",
-                    array(
-                        $Id_idoso,
-                        $Email,
-                        $Nome,
-                        $Sexo,
-                        $AnoNascimento,
-                        $Contato,
-                        $Cidade,
-                        $Bairro,
-                        $Categoria,
-                        $Ead,
-                        $DataCreated                                
-                    )
-                );
+        $crud->insertDB("users_idoso", "?,?,?,?,?,?,?,?,?,?",
+                array($Id_idoso, $Fk_users, $Nome, $Sexo, $AnoNascimento, $Cidade, $Bairro, $Categoria, $Ead, $DataCreated)
+        );
             header("location:".DIRPAGE."minha-conta");
-   }
-   #Update de Pessoa Atendida
-   else{
-        $crud->updateDB(
-            "users_idoso",
-            "nome=?, sexo=?, anoNascimento=?, contato=?, cidade=?, bairro=?, categoria=?, ead=?",
-            "idIdoso=?",
-            array(
-                $Nome,
-                $Sexo,
-                $AnoNascimento,
-                $Contato,
-                $Cidade,
-                $Bairro,
-                $Categoria,
-                $Ead,               
-                $Id_idoso
-            )
+    }
+    #Update de Pessoa Atendida
+    else{
+        $crud->updateDB("users_idoso", "nome=?, sexo=?, anoNascimento=?, cidade=?, bairro=?, categoria=?, ead=?",
+                        "id=?",
+                array($Nome, $Sexo, $AnoNascimento, $Cidade, $Bairro, $Categoria, $Ead, $Id_idoso)
         );
         header("location:".DIRPAGE."minha-conta");
     

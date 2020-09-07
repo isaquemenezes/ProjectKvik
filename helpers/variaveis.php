@@ -18,14 +18,25 @@
           $Id=0;  
      }
 
+     
      //id DB users_idoso  
      if(isset($_POST['id'])){ 
           $Id_idoso=filter_input(INPUT_POST,'id',FILTER_SANITIZE_SPECIAL_CHARS); 
      }elseif(isset($_GET['id'])){ 
           $Id_idoso=filter_input(INPUT_GET,'id',FILTER_SANITIZE_SPECIAL_CHARS); 
      }else{ 
-          $Id_idoso=$_SESSION["id_users"]; 
+          $Id_idoso=0; 
      }
+
+     //fk_users DB users_idoso com id users 
+     if(isset($_POST['fk_users'])){ 
+          $Fk_users=filter_input(INPUT_POST,'fk_users',FILTER_SANITIZE_SPECIAL_CHARS); 
+     }elseif(isset($_GET['fk_users'])){ 
+          $Fk_users=filter_input(INPUT_GET,'fk_users',FILTER_SANITIZE_SPECIAL_CHARS); 
+     }else{ 
+          $Fk_users=""; 
+     }
+
 
      //Nome DB users e DB cadastro(idoso)
      if(isset($_POST['nome'])){ 

@@ -10,21 +10,15 @@
         $Acao="Editar";
 
         $crud=new ModelCrud();
-        $BFetch=$crud->selectDB(
-            "*",
-            "users",
-            "where id=?",
-            array(
-                $_GET['id']
-            )
-        );
+        $select_users=$crud->selectDB("*", "users", "WHERE id=?", array($_GET['id']));
+        $users=$select_users->fetch(\PDO::FETCH_ASSOC);
         
-        $Id     =$_SESSION['id_users'];
-        $nome   =$_SESSION['name'];
-        $email  =$_SESSION['email'];
-        $contato=$_SESSION['contato'];
-        $cidade =$_SESSION['cidade'];
-        $bairro =$_SESSION['bairro'];
+        $Id     =$users['id'];
+        $nome   =$users['nome'];
+        $email  =$users['email'];
+        $contato=$users['contato'];
+        $cidade =$users['cidade'];
+        $bairro =$users['bairro'];
     }
 
 ?>
@@ -38,15 +32,20 @@
                 <input type="hidden" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
                 <input type="hidden" id="Id" name="Id" value="<?php echo $Id; ?>">
             
-                <div class="formularioInput">Nome:<input type="text" id="nome" name="nome" value="<?php echo $nome; ?>"></div>
+                <div class="formularioInput">Nome:
+                    <input type="text" id="nome" name="nome" value="<?php echo $nome; ?>"></div>
             
-                <div class="formularioInput">Email:<input type="email" id="email" name="email" value="<?php echo $email; ?>"></div>
+                <div class="formularioInput">Email:
+                    <input type="email" id="email" name="email" value="<?php echo $email; ?>"></div>
 
-                <div class="formularioInput">Contato:<input type="text" id="contato" name="contato" value="<?php echo $contato;?>"></div>
+                <div class="formularioInput">Contato:
+                    <input type="text" id="contato" name="contato" value="<?php echo $contato;?>"></div>
                         
-                <div class="formularioInput">Cidade:<input type="text" id="cidade" name="cidade" value="<?php echo $cidade; ?>"></div>
+                <div class="formularioInput">Cidade:    
+                    <input type="text" id="cidade" name="cidade" value="<?php echo $cidade; ?>"></div>
 
-                <div class="formularioInput">Bairro:<input type="text" id="bairro" name="bairro" value="<?php echo $bairro; ?>"></div>
+                <div class="formularioInput">Bairro:
+                    <input type="text" id="bairro" name="bairro" value="<?php echo $bairro; ?>"></div>
             
                 <div class="formularioInput formularioInput100 center"><input type="submit" value="<?php echo $Acao; ?>"></div> 
             </form>    

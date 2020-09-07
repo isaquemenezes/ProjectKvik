@@ -2,87 +2,96 @@
     namespace Models;
 
     \Classes\ClassLayout::setHeadRestrito(); 
-    
     \Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' Minha Conta',' Gerencie Sua Conta!'); 
     include "./includes/header.php";
     
 ?>
     <div class="content"><strong>Gerencie Sua Conta</strong>
-    <div class="profile_image"><img src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="<?php echo $_SESSION['name'];?>"></div>
+        <div class="profile_image"><img src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="<?php echo $users['nome'];?>"></div>
+            <table class="tabelaCrud">
+                <tr>
+                        <td>Id</td>
+                        <td>Status da Conta</td>
+                        <td>Nome</td>
+                        <td>Email</td>   
+                        <td>Contato</td>
+                        <td>Cidade</td>
+                        <td>Bairro</td>
+                        <td>Ações</td>
+                </tr>
+                        <?php 
+                        $crud=new ModelCrud();
+                        $select_users=$crud->selectDB("*", "users", "WHERE email=?", array($_SESSION['email']));
+                        $users=$select_users->fetch(\PDO::FETCH_ASSOC);
+                        ?>
+
+                    <tr>
+                        <td><?php echo $users['id'];?></td>  
+                        <td><?php echo $users['status'];?></td>     
+                        <td><?php echo $users['nome'];?></td>                    
+                        <td><?php echo $users['email'];?></td>
+                        <td><?php echo $users['contato']; ?></td>
+                        <td><?php echo $users['cidade']; ?></td>
+                        <td><?php echo $users['bairro']; ?></td>
+                        <td>
+                            <a href="<?php echo DIRPAGE."./editar-perfil?id={$users['id']}"; ?>">Editar</a>
+                            <a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id_users={$users['id']}"; ?>">Deletar Conta</a>
+                        </td>
+                    </tr>   
+            </table>
+    </div>
+
+    
+    <style>
+        table tr td{
+            padding:5px;             
+        }
+    
+    </style>
+    <div class="content"><strong>Gerencie Seus Cadastros</strong>
         <table class="tabelaCrud">
-           <tr>
-                <td>Id</td>
-                <td>Status da Conta</td>
+            <tr>
+                <td>ID</td>
+                <td>FK</td>
                 <td>Nome</td>
-                <td>Email</td>   
-                <td>Contato</td>
+                <td>Sexo</td>
+                <td>Ano</td>
                 <td>Cidade</td>
                 <td>Bairro</td>
+                <td>Categoria</td>
+                <td>EAD</td>
+                <td>Data Criacao</td>
                 <td>Ações</td>
-           </tr>
-
-            <tr>
-                <td><?php echo $_SESSION['id_users'];?></td>  
-                <td><?php echo $_SESSION['status'];?></td>     
-                <td><?php echo $_SESSION['name'];?></td>                    
-                <td><?php echo $_SESSION['email'];?></td>
-                <td><?php echo $_SESSION['contato']; ?></td>
-                <td><?php echo $_SESSION['cidade']; ?></td>
-                <td><?php echo $_SESSION['bairro']; ?></td>
-                <td>
-                    <a href="<?php echo DIRPAGE."./editar-perfil?id={$_SESSION['id_users']}"; ?>">Editar</a>
-                    <a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id_users={$_SESSION['id_users']}"; ?>">Deletar Conta</a>
-                </td>
-            </tr>   
-       </table>
-    </div>
-
-     <!--======== DB cadastro idoso - PROFILE ========-->
-     <div class="content"><strong>Seus Assistidos - idosos</strong>     
-     
-       <table class="tabelaCrud">
-           <tr>
-               <td>Nome</td>
-               <td>Sexo</td>
-               <td>Ano</td>
-               <td>Contato</td>
-               <td>Cidade</td>
-               <td>Bairro</td>
-               <td>Categoria</td>
-               <td>EAD</td>
-               <td>Data Criacao</td>
-               <td>Ações</td>
-           </tr>
-    
+                
+            </tr>
             <?php       
-                $crud=new ModelCrud();
-                $results1=$crud->selectDB("*","users","", array());
-                // if - Precisa Ser Revisado
-                if($results1->fetch(\PDO::FETCH_ASSOC)){
-                    $email_user = $_SESSION['email'];        
-                    $results_cadastro=$crud->selectDB("*", "users_idoso","where email='$email_user'",array());   
-                    $cadastro=$results_cadastro->fetch(\PDO::FETCH_ASSOC); 
-                }  
+                $select_idoso=$crud->selectDB("*","users_idoso","WHERE fk_users=?", array($users['id']));
+                while($users_idoso=$select_idoso->fetch(\PDO::FETCH_ASSOC)){ 
+                    
             ?> 
 
-            <tr>    
-                <td><?php echo $cadastro['nome']; ?></td>         
-                <td><?php echo $cadastro['sexo']; ?></td>
-                <td><?php echo $cadastro['anoNascimento']; ?></td>
-                <td><?php echo $cadastro['contato']; ?></td>
-                <td><?php echo $cadastro['cidade']; ?></td>
-                <td><?php echo $cadastro['bairro']; ?></td>
-                <td><?php echo $cadastro['categoria']; ?></td>
-                <td><?php echo $cadastro['ead']; ?></td>
-                <td><?php echo $cadastro['dateCreated']; ?></td>
+            <tr>
+                <td><?php echo $users_idoso['id']; ?></td>
+                <td><?php echo $users_idoso['fk_users']; ?></td>    
+                <td><?php echo $users_idoso['nome']; ?></td>         
+                <td><?php echo $users_idoso['sexo']; ?></td>
+                <td><?php echo $users_idoso['anoNascimento']; ?></td>
+                <td><?php echo $users_idoso['cidade']; ?></td>
+                <td><?php echo $users_idoso['bairro']; ?></td>
+                <td><?php echo $users_idoso['categoria']; ?></td>
+                <td><?php echo $users_idoso['ead']; ?></td>
+                <td><?php echo $users_idoso['dateCreated']; ?></td>
                 <td>
                     <a href="<?php echo DIRPAGE."./cadastro-idoso"; ?>">Cadastrar</a>
-                    <a href="<?php echo DIRPAGE."./cadastro-idoso?id={$cadastro['idIdoso']}"; ?>">Editar</a>
-                    <a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id_idoso={$cadastro['idIdoso']}"; ?>">Deletar</a>
+                    <a href="<?php echo DIRPAGE."./cadastro-idoso?id={$users_idoso['id']}"; ?>">Editar</a>
+                    <a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id_idoso={$users_idoso['id']}"; ?>">Deletar</a>
                 </td>
+               
             </tr>              
+            <?php }?>
+           
         </table>
-    </div>
+    </div>    
     
     <?php include "./includes/footer.php"; ?>
     

@@ -27,4 +27,4 @@
             return password_verify($senha,$hashDb["data"]["senha"]);
         }
 
-    }//CLOSE class ClassPassword
+    }

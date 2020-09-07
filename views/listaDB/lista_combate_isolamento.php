@@ -9,15 +9,10 @@
 	$inicio =($pagina * $qnt_result_pg) - $qnt_result_pg;
      
 	$crud=new ModelCrud();
-	$BFetch=$crud->selectDB(
-					"*", 
-					"users_idoso", 
-					//"WHERE categoria='Combate ao Isolamento' and ead='sim' ORDER BY idIdoso  LIMIT $inicio, $qnt_result_pg",
-					"ORDER BY idIdoso  LIMIT $inicio, $qnt_result_pg", 
-					array(
 
-					)
-				);
+	$BFetch=$crud->selectDB("*", "users_idoso", 
+					"WHERE categoria=? ORDER BY id  LIMIT $inicio, $qnt_result_pg",
+					array('combateIsolamento'));
     while($Fetch=$BFetch->fetch(\PDO::FETCH_ASSOC)){
 ?>
 
@@ -37,7 +32,6 @@
 				<p><?php echo $Fetch['ead']; ?></p>
 				<a href="#">Junte-se</a>
 			</div>
-			
 		</li>			
 <?php 
     }
@@ -46,16 +40,10 @@
 	</ul>	 
 
 <?php 
-	$crud=new ModelCrud();
+	
 	//Paginação - Soma a quantidade de usuários	
-	$result_page=$crud->selectDB(
-						"COUNT(*) AS num_result", 
-						"users_idoso",
-						//"WHERE categoria='Combate ao Isolamento' and ead='sim'",
-						"", 
-						array(
-						)
-					);
+	$result_page=$crud->selectDB("COUNT(*) AS num_result", "users_idoso",
+						"WHERE categoria=?",array('combateIsolamento'));
 	$row_pg = $result_page->fetch(\PDO::FETCH_ASSOC);
 
 	//Quantidade de pagina para enviar para última página
@@ -65,9 +53,10 @@
 	$max_links = 2;
 
 	// iNÍCIO <nav>
-	echo "<nav aria-label='paginacao'><ul class='pagination'><li class='page-item'>
-		<span class='page-link'><a href='#' onclick='listar_user(1, $qnt_result_pg)'>Primeira</a></span>
-		</li>";
+	echo "<nav aria-label='paginacao'>
+			<ul class='pagination'><li class='page-item'>
+				<span class='page-link'><a href='#' onclick='listar_user(1, $qnt_result_pg)'>Primeira</a></span>
+				</li>";
 		for ($page_antes=$pagina-$max_links; $page_antes <= $pagina-1; $page_antes++) { 
 		//Retirar o 0 à esquerda, quando o user estar n primeira page, ou seja , o número zero, não é exibido
 			if($page_antes >= 1){

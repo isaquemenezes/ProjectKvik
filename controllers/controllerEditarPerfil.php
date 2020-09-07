@@ -7,14 +7,7 @@
 
     if($Acao=="Editar"){
         $crud->updateDB("users", "nome=?, email=?, contato=?, cidade=?, bairro=?", "id=?",
-                        array(
-                            $Nome,
-                            $Email,
-                            $Contato,
-                            $Cidade,
-                            $Bairro,
-                            $Id
-                        )
+                            array($Nome,  $Email,  $Contato,  $Cidade,  $Bairro,    $Id)
         );
         header("location:".DIRPAGE."minha-conta");
     }

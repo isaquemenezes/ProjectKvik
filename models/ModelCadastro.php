@@ -32,8 +32,7 @@
 
             $this->insertDB("confirmation", "?,?,?", array(0, $arrayVar['email'], $arrayVar['token']));
         }
-        public function confirmationSen($email, $token, $hashSenha)
-        {
+        public function confirmationSen($email, $token, $hashSenha){
             
             $b=$this->selectDB("*","confirmation", "where email=? and token=?", array($email, $token));
             $r=$b->rowCount();
@@ -46,7 +45,7 @@
             }else{
                 return false; 
             }
-        }// CLOSE RECUPERAÇÃO DE SENHA
+        }
 
         #Veriricar se já existe o mesmo email cadastro no db
         public function getIssetEmail($email)
@@ -56,8 +55,7 @@
         }
 
         #Verificar a confirmação de cadastro pelo email
-        public function confirmationCad($email, $token)
-        {
+        public function confirmationCad($email, $token){
             $b=$this->selectDB("*", "confirmation",  "where email=? and token=?", array($email, $token));
             $r=$b->rowCount();
 

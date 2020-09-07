@@ -40,3 +40,4 @@
 			<p class="text-center"><a class="call-to-click" href="<?php echo DIRPAGE.'cadastro';?>">Junte-se a nós. E faça a diferença. </a></p>
 		</div>
 	</section>
+	
