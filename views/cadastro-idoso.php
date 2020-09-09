@@ -10,18 +10,18 @@
         $Acao="Editar";
 
         $crud=new ModelCrud();
-        $selectUsers_idoso=$crud->selectDB("*","users_idoso", "WHERE fk_users=?", array($id_users));
-        $users_idoso=$selectUsers_idoso->fetch(\PDO::FETCH_ASSOC);
+        $select_idoso=$crud->selectDB("*","idosos", "WHERE id=?", array($_GET['id']));
+        $idosos=$select_idoso->fetch(\PDO::FETCH_ASSOC);
         
-        $id           =$users_idoso['id'];
-        $fk_users     =$users_idoso['fk_users'];
-        $nome         =$users_idoso['nome'];
-        $sexo         =$users_idoso['sexo'];
-        $cidade       =$users_idoso['cidade'];        
-        $bairro       =$users_idoso['bairro'];
-        $categoria    =$users_idoso['categoria'];  
-        $ead          =$users_idoso['ead'];
-        $anoNascimento=$users_idoso['anoNascimento'];
+        $id           =$idosos['id'];
+        $fk_users     =$idosos['fk_users'];
+        $nome         =$idosos['nome'];
+        $sexo         =$idosos['sexo'];
+        $cidade       =$idosos['cidade'];        
+        $bairro       =$idosos['bairro'];
+        $categoria    =$idosos['categoria'];  
+        $ead          =$idosos['ead'];
+        $anoNascimento=$idosos['anoNascimento'];
     }
     #Cadastro Novo
     else{
@@ -48,7 +48,7 @@
 <form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'./controllers/controllerCadastroIdoso'; ?>" method="post">
     <div class="cadastro float center">
         <input type="text" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
-        <input type="text" id="id" name="id" value="<?php echo "id=".$id; ?>">
+        <input type="text" id="id" name="id" value="<?php echo $id; ?>">
         <input type="text" id="fk_users" name="fk_users" value="<?php echo $fk_users; ?>">
 
         <label style="margin: 20px 0px 0px 0px; float:left; color:blue;">Nome da Pessoa a ser atendida:</label>
@@ -56,7 +56,6 @@
         
         <label style="margin: 20px 0px 0px 0px; float:left; color:blue;">Sexo:</label>
         <select class="float w100 h40" name="sexo" id="sexo">
-            <option value="">Selecione</option>
             <option value="masculino">Masculino</option>
             <option value="feminino">Feminino</option>
         </select>
@@ -69,7 +68,6 @@
         
         <label style="margin: 20px 0px 0px 0px; float:left; color:blue;">Categoria:</label>
         <select class="float w100 h40" name="categoria" id="categoria" required>
-            <option value="">Selecione</option>
             <option value="educacaoFinanceira">Educação Financeira</option>
             <option value="educacaoTecnologica">Educação Tecnológica</option>
             <option value="combateIsolamento">Combate ao Isolamento</option>
