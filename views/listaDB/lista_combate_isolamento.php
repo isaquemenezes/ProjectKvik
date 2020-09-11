@@ -10,27 +10,22 @@
      
 	$crud=new ModelCrud();
 
-	$BFetch=$crud->selectDB("*", "users_idoso", 
-					"WHERE categoria=? ORDER BY id  LIMIT $inicio, $qnt_result_pg",
-					array('combateIsolamento'));
+	$BFetch=$crud->selectDB("*", "idosos", "WHERE categoria=? ORDER BY id  LIMIT $inicio, $qnt_result_pg",
+							array('combateIsolamento'));
     while($Fetch=$BFetch->fetch(\PDO::FETCH_ASSOC)){
 ?>
 
 	<ul>
 		<li>
 			<div class="card-body">
-				<img  src="./assets/images/idososentado.jpg">
-				<a href="<?php echo DIRPAGE."visualizar?idIdoso={$Fetch['idIdoso']}";?>">
-				visualizar</a>					
-			    <p><?php echo $Fetch['nome']; ?></p>
-				<p><?php echo $Fetch['email']; ?></p>
-			    <p><?php echo $Fetch['anoNascimento']; ?></p>
-				<p><?php echo $Fetch['sexo']; ?></p>
-				<p><?php echo $Fetch['contato']; ?></p>
-			    <p><?php echo $Fetch['cidade']; ?></p>	
-			    <p><?php echo $Fetch['bairro']?></p>
-				<p><?php echo $Fetch['ead']; ?></p>
-				<a href="#">Junte-se</a>
+				<!--<img  src="./assets/images/idososentado.jpg">-->					
+			    <p><b>Nome:</b>  <?php echo $Fetch['nome']; ?><br>
+				<p><b>Sexo:</b>  <?php echo $Fetch['sexo']; ?><br>
+				<p><b>Cidade:</b><?php echo $Fetch['cidade']; ?><br>	
+			    <p><b>Bairro:</b><?php echo $Fetch['bairro']?><br>
+				<p><b>EAD:</b> <?php echo $Fetch['ead']; ?></p>
+				<a href="<?php echo DIRPAGE."perfil?id={$Fetch['id']}";?>">Perfil</a>
+				
 			</div>
 		</li>			
 <?php 
@@ -42,8 +37,7 @@
 <?php 
 	
 	//Paginação - Soma a quantidade de usuários	
-	$result_page=$crud->selectDB("COUNT(*) AS num_result", "users_idoso",
-						"WHERE categoria=?",array('combateIsolamento'));
+	$result_page=$crud->selectDB("COUNT(id) AS num_result", "idosos", "WHERE categoria=?", array('combateIsolamento'));
 	$row_pg = $result_page->fetch(\PDO::FETCH_ASSOC);
 
 	//Quantidade de pagina para enviar para última página
@@ -79,7 +73,7 @@
 		
 		echo "<li class='page-item'>
 				<span class='page-link'><a href='#' onclick='listar_user($qnt_page, $qnt_result_pg)'>última</a></span>
-				</li> </ul></nav>"; // ClOSE </nav>
+				</li></ul></nav>"; // ClOSE </nav>
 				
 
 

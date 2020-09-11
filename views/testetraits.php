@@ -10,6 +10,11 @@
         <input class="float w100 h40" type="email" id="email" name="email" value="<?php echo \Traits\TraitParseUrl::parseUrl(1); ?>" required>
         <input class="float w100 h40" type="text" id="token" name="token" value="<?php echo \Traits\TraitParseUrl::parseUrl(2); ?>" required>
         
+        <input class="float w100 h40" type="text" id="token" name="token" value="<?php echo \Traits\TraitParseUrl::parseUrl(3); ?>" required>
+        <input class="float w100 h40" type="text" id="token" name="token" value="<?php echo \Traits\TraitParseUrl::parseUrl(4); ?>" required>
+
+        
+        
         <input class="float w100 h40" type="password" id="senha" name="senha" placeholder="Senha:" required>
         <input class="float w100 h40" type="password" id="senhaConf" name="senhaConf" placeholder="Confirmação da Senha:" required>
         

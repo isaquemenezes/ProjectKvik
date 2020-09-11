@@ -2,15 +2,15 @@
     namespace Models;
     
     \Classes\ClassLayout::setHeadRestrito();   
-    Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' Minha Conta','Área Gerencie Sua Conta!'); 
+    \Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' Minha Conta','Área Gerencie Sua Conta!'); 
     include "./includes/header.php";
 ?>
     <div class="content">
         <?php
             $crud=new ModelCrud();
-            $idUser=filter_input(INPUT_GET,"idIdoso", FILTER_SANITIZE_SPECIAL_CHARS);
+            $idUser=filter_input(INPUT_GET,"id", FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $BFetch=$crud->selectDB( "*", "users_idos", "where idIdoso=?", array($idUser));
+            $BFetch=$crud->selectDB( "*", "idosos", "WHERE id=?", array($idUser));
 
             $Fetch=$BFetch->fetch(\PDO::FETCH_ASSOC);
         ?>
