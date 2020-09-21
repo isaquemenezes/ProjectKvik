@@ -1,6 +1,9 @@
 <?php
     namespace Models;
 
+    // Diz para o PHP que estamos usando strings UTF-8 até o final do script
+    mb_internal_encoding('UTF-8'); 
+
     class ModelCrud extends ModelConexao{
 
         private $crud;
@@ -40,4 +43,6 @@
             return $this->crud;
         }
     }
+    //Tentativa de configuar corretamente o cadastro d string no db
+    header('Content-Type: text/html; charset=UTF-8');  //mb_internal_encoding('UTF-8');
 

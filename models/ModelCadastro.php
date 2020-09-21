@@ -1,6 +1,9 @@
 <?php
     namespace Models;
 
+    // Diz para o PHP que estamos usando strings UTF-8 até o final do script
+    mb_internal_encoding('UTF-8');
+
     class ModelCadastro extends ModelCrud{
 
         #Realizará a inserção no banco de dados
@@ -69,3 +72,4 @@
         }
 
     }
+    header('Content-Type: text/html; charset=UTF-8');

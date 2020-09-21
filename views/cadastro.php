@@ -1,4 +1,8 @@
-<?php \Classes\ClassLayout::setHead('Cadastro de Usuário','Realize seu cadastro em nosso sistema.'); ?>
+<?php 
+// Diz para o PHP que estamos usando strings UTF-8 até o final do script
+mb_internal_encoding('UTF-8');
+
+\Classes\ClassLayout::setHead('Cadastro de Usuário','Realize seu cadastro em nosso sistema.'); ?>
 
     <div class="topFaixa float w100 center">Cadastro de Usuário</div>
     <!--Retorno Ajax-->
@@ -23,5 +27,5 @@
             <input class="inlineBlock h40" type="submit" value="Cadastrar">
         </div>
     </form>
-
+   
 <?php \Classes\ClassLayout::setFooter(); ?>
