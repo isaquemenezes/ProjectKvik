@@ -1,4 +1,45 @@
-    <header>  
+    <header> 
+	<!--style para button-->
+<style type="text/css">
+		.style{
+			/* position: relative;*/
+			cursor: pointer;
+			font-family: sans-serif;
+			font-size: 1em;
+			color: white;
+			width: 85px;
+			height: 30px;
+			background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);
+			background-size: 400%;
+			border:none;
+			border-radius: 30px;
+		}
+		a::after{ content: ''; opacity: 0; }
+		a:hover::after{
+			content: '';
+			display: block;
+			width: 200px;
+			height: 100px;
+			background-color: aliceblue;
+			position: absolute;
+			top: calc(50vh - 50px);
+			left: calc(50vw - 100px);
+			border-radius: 40px;
+			z-index: -1;
+			background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);
+			background-size: 400%;
+			filter: blur(40px);
+			opacity: 1;
+			transition: opacity .5s linear;
+			animation: animacao 5s linear infinite;
+		}
+		a:hover{	animation: animacao 5s linear infinite;	}
+
+		@keyframes animacao{
+			from{ background-position: 0%;	}
+			to{	background-position: 400%;  }
+		}
+	</style> 
         <!--========== NAV  ==========--->
 		<?php include 'includes/nav.php'; ?>
 
@@ -18,11 +59,11 @@
 									<?php
 										// Link Quero Ser Voluntário
 										if(isset($_SESSION['id_users'])){ echo "";	}
-										else{   echo "<a class='call-to-click text-right' style='margin-right: 12px;' 
+										else{   echo "<a 
 													href=".DIRPAGE."cadastro> Quero Ser Voluntário</a>";	}		
 									?>
 									<!--Link Quero Cadastrar um Idoso-->
-									<a class='call-to-click text-right' style='margin-right: 12px;'
+									<a class="style"
 										href="<?php echo DIRPAGE.'cadastro-idoso'; ?>"> Quero Cadastrar um Idoso</a>   	
 								</p>
 								<p></p>

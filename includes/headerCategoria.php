@@ -7,11 +7,7 @@
 
 	<!---- INICIALIZAR PARTICULAS ---->
 	<script type="text/javascript">		
-		window.onload = function() {
-            Particles.init({
-            selector: '.background'
-            });
-		};
+		window.onload = function() { Particles.init({ selector: '.background' });};
 	</script>
 	
 	<!---- PARTÍCULAS ---->

@@ -1,4 +1,4 @@
-<?php \Classes\ClassLayout::setHead('kvik | Plataforma de Voluntariado','kvik');?>
+<?php \Classes\ClassLayout::setHead('kvik | Plataforma de Voluntariado','kvik'); ?>
 
 	<!--- STYLE PARTÍCULAS -->
 	<style type="text/css">
@@ -7,19 +7,14 @@
 	</style>	
 
 	<!---- INICIALIZAR PARTICULAS ---->
-	<script> window.onload = function() { 
-		Particles.init({ 
-			selector: '.background' }); 
-		};
+	<script> 
+		window.onload = function() { Particles.init({ selector: '.background' }); };
 	</script>
 
 	<!------- PARTÍCULAS -------->
 	<div id="particles-js"></div>
 	<canvas class="background"></canvas>
 	<script src="./assets/js/particles.js"></script>
-	
-    <!--======================= BODY ==============================----->		
-	<!--body id="mod_corporate" class="root_home" style="padding-top: 0px;"-->
 	
 	<!--========== HEADER ============---->
 	<?php include 'includes/header.php'; ?>

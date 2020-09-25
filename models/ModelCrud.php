@@ -43,6 +43,5 @@
             return $this->crud;
         }
     }
-    //Tentativa de configuar corretamente o cadastro d string no db
-    header('Content-Type: text/html; charset=UTF-8');  //mb_internal_encoding('UTF-8');
+   
 

@@ -17,8 +17,7 @@
 
 	<ul>
 		<li>
-			<div class="card-body">
-				<!--<img  src="./assets/images/idososentado.jpg">-->					
+			<div class="card-body">					
 			    <p><b>Nome:</b>  <?php echo $Fetch['nome']; ?><br>
 				<p><b>Sexo:</b>  <?php echo $Fetch['sexo']; ?><br>
 				<p><b>Cidade:</b><?php echo $Fetch['cidade']; ?><br>	

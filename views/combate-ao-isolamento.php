@@ -4,9 +4,8 @@
  	\Classes\ClassLayout::setHead('Área Restrita','Área exclusiva para membros!'); 
 	 
 ?>
+<!--style para button-->
 <style type="text/css">
-		
-		
 		a{
 			/* position: relative;*/
 			cursor: pointer;
@@ -46,6 +45,7 @@
 			to{	background-position: 400%;  }
 		}
 	</style>
+	
 	<!--=========== HEADER ======================-->
 	<?php include 'includes/headerCategoria.php'; ?>
 

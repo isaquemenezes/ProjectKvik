@@ -1,6 +1,6 @@
 <?php
      // Diz para o PHP que estamos usando strings UTF-8 até o final do script
-mb_internal_encoding('UTF-8');
+     mb_internal_encoding('UTF-8');
      
      //Buttom de enviar
      if(isset($_POST['Acao'])){ 
