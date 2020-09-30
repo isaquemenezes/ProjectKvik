@@ -23,6 +23,8 @@
             
             $html.="  <link rel='icon' type='image/png' href='".DIRPAGE."./assets/logo.ico'>\n"; 
             $html.="  <link rel='stylesheet' href='".DIRCSS."main.css'>\n";
+            $html.="  <link rel='stylesheet' href='".DIRCSS."style.css'>\n";
+
             
             $html.="</head>\n\n";
             $html.="<body> \n";
@@ -52,12 +54,14 @@
         #Setar as tags do footer
         public static function setFooter(){
             $html="<script src='".DIRJS."jquery-3.3.1.min.js'></script>\n";
+            $html.="<script src='".DIRJS."javascript.js'></script>\n";
             $html.="<script src='".DIRJS."jquery.scrollex.min.js'></script>\n";
-            $html.="<script src='".DIRJS."main.js'></script>\n";
             $html.="<script src='".DIRJS."skel.min.js'></script>\n";
             $html.="<script src='".DIRJS."util.js'></script>\n";            
+            $html.="<script src='".DIRJS."main.js'></script>\n";
             $html.="</body>\n";
             $html.="</html>";
             echo $html;
+           
         }
     }//CLOSE class ClassLayout

@@ -8,6 +8,6 @@
     $validate->validateSenha($Email,$senha);        //verificação de senhas
     $validate->validateAttemptLogin();              //controle d tentativas de login do usuário
     
-    echo $validate->validateFinalLogin($email); 
+    echo $validate->validateFinalLogin($Email); 
     
     

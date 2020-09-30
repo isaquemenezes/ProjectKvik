@@ -1,8 +1,10 @@
 <section id="two" class="wrapper style3">
 				<div class="inner">
 					<header class="align-center">
-						<p>Nam vel ante sit amet libero scelerisque facilisis eleifend vitae urna</p>
-						<h2>Morbi maximus justo</h2>
+						<!--<p>parágrafo vazio</p>-->
+						<h2>Estamos reunindo um exército do bem.</h2>
+						<a href="">Junta-se</a>
+						
 					</header>
 				</div>
 			</section>

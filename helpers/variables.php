@@ -14,11 +14,11 @@
 
     //id DB users_idoso  
     if(isset($_POST['id'])){ 
-        $Id_idoso=filter_input(INPUT_POST,'id',FILTER_SANITIZE_SPECIAL_CHARS); 
+        $Id=filter_input(INPUT_POST,'id',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['id'])){ 
-        $Id_idoso=filter_input(INPUT_GET,'id',FILTER_SANITIZE_SPECIAL_CHARS); 
+        $Id=filter_input(INPUT_GET,'id',FILTER_SANITIZE_SPECIAL_CHARS); 
     }else{ 
-        $Id_idoso=0; 
+        $Id=0; 
     }
 
     //fk_users DB users_idoso com id users 

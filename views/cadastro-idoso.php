@@ -1,16 +1,16 @@
 <?php 
     namespace Models;
 
-    //\Classes\ClassLayout::setHeadRestrito();   
+    \Classes\ClassLayout::setHeadRestrito();   
     \Classes\ClassLayout::setHead('Cadastro de Idoso','Cadastre uma Pessoa Idosa.');
 
-    ////$id_users=$_SESSION["id_users"];
+    $id_users=$_SESSION["id_users"];
     //Update de Dados do DB users_idoso
     if(isset($_GET['id'])){
         $Acao="Editar";
 
         $crud=new ModelCrud();
-        $select_idoso=$crud->selectDB("*","idosos", "WHERE id=?", array($_GET['id']));
+        $select_idoso=$crud->selectDB("*","users_idoso", "WHERE id=?", array($_GET['id']));
         $idosos=$select_idoso->fetch(\PDO::FETCH_ASSOC);
         
         $id           =$idosos['id'];
@@ -20,7 +20,7 @@
         $cidade       =$idosos['cidade'];        
         $bairro       =$idosos['bairro'];
         $categoria    =$idosos['categoria'];  
-        $ead          =$idosos['ead'];
+        $on          =$idosos['ead'];
         $anoNascimento=$idosos['anoNascimento'];
     }
     #Cadastro Novo
@@ -28,15 +28,15 @@
         $Acao="Cadastrar";
 
         $id=0;
-        //$fk_users=$id_users;
+        $fk_users=$id_users;
         $nome="";
         $email="";
         $sexo="";
         $anoNascimento="";
-       // $cidade=$_SESSION["cidade"];
+        $cidade="";
         $bairro="";
         $categoria="";
-        $ead="";
+        $on="";
     }
    
 ?>
@@ -50,14 +50,20 @@
 
 <form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'./controllers/controllerCadastroIdoso'; ?>" method="post" >
     <div class="row uniform">
-        <input type="hidden" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
-        <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
-        <input type="hidden" id="fk_users" name="fk_users" value="<?php echo $fk_users; ?>">
+        <input type="text" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
+        <input type="text" id="id" name="id" value="<?php echo $id; ?>">
+        <input type="text" id="fk_users" name="fk_users" value="<?php echo $fk_users; ?>">
 
         <div class="6u 12u$(xsmall)">
             <input type="text" id="nome" name="nome" value="<?php echo $nome; ?>" placeholder="Nome ou apelido" required=""/></div>
-        <div class="6u$ 12u$(xsmall)">
-            <input type="email" name="email" id="email" value="" placeholder="Email" /></div>
+        <!--<div class="6u$ 12u$(xsmall)">
+        
+        O atributo pattern nos permite definir expressões regulares de validação, sem Javascript. Veja um
+exemplo de como validar CEP:
+        
+        
+        pattern=”\d{5}-?\d{3}”
+            <input type="email" name="email" id="email" value="" placeholder="Email" /></div>-->
         
         <!-- Break -->
         <div class="12u$">
@@ -130,7 +136,7 @@
     </div>
 </form>
 </div>
-
+<script src="<?php echo DIRJS.'vanilla.js'; ?>"></script>
    
 
 
