@@ -1,9 +1,6 @@
 <?php
     namespace Models;
 
-    // Diz para o PHP que estamos usando strings UTF-8 até o final do script
-    mb_internal_encoding('UTF-8');
-
     class ModelCadastro extends ModelCrud{
 
         #Realizará a inserção no banco de dados
@@ -23,10 +20,8 @@
                             'confirmation'
                         )
                 );
-                
                 /********  RECUPERACAO DE SENHA ********/
                 $this->insConfirmation($arrayVar);  
-
         }
         
         /********  RECUPERACAO DE SENHA ********/
@@ -35,6 +30,7 @@
 
             $this->insertDB("confirmation", "?,?,?", array(0, $arrayVar['email'], $arrayVar['token']));
         }
+        
         public function confirmationSen($email, $token, $hashSenha){
             
             $b=$this->selectDB("*","confirmation", "where email=? and token=?", array($email, $token));
@@ -45,9 +41,7 @@
                 $this->deleteDB("confirmation", "email=?",array($email));
                 $this->updateDB("users", "senha=?", "email=?", array($hashSenha, $email));
                 return true;
-            }else{
-                return false; 
-            }
+            }else{  return false;  }
         }
 
         #Veriricar se já existe o mesmo email cadastro no db

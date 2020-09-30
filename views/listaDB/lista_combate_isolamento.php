@@ -10,20 +10,20 @@
      
 	$crud=new ModelCrud();
 
-	$BFetch=$crud->selectDB("*", "idosos", "WHERE categoria=? ORDER BY id  LIMIT $inicio, $qnt_result_pg",
+	$BFetch=$crud->selectDB("*", "users_idoso", "WHERE categoria=? ORDER BY id  LIMIT $inicio, $qnt_result_pg",
 							array('combateIsolamento'));
-    while($Fetch=$BFetch->fetch(\PDO::FETCH_ASSOC)){
+    while($users_idoso=$BFetch->fetch(\PDO::FETCH_ASSOC)){
 ?>
 
 	<ul>
 		<li>
 			<div class="card-body">					
-			    <p><b>Nome:</b>  <?php echo $Fetch['nome']; ?><br>
-				<p><b>Sexo:</b>  <?php echo $Fetch['sexo']; ?><br>
-				<p><b>Cidade:</b><?php echo $Fetch['cidade']; ?><br>	
-			    <p><b>Bairro:</b><?php echo $Fetch['bairro']?><br>
-				<p><b>EAD:</b> <?php echo $Fetch['ead']; ?></p>
-				<a href="<?php echo DIRPAGE."perfil?id={$Fetch['id']}";?>">Perfil</a>
+			    <p><b>Nome:</b>  <?php echo $users_idoso['nome']; ?><br>
+				<p><b>Sexo:</b>  <?php echo $users_idoso['sexo']; ?><br>
+				<p><b>Cidade:</b><?php echo $users_idoso['cidade']; ?><br>	
+			    <p><b>Bairro:</b><?php echo $users_idoso['bairro']?><br>
+				<p><b>EAD:</b> <?php echo $users_idoso['ead']; ?></p>
+				<a href="<?php echo DIRPAGE."perfil?id={$users_idoso['id']}";?>">Perfil</a>
 				
 			</div>
 		</li>			
@@ -36,7 +36,7 @@
 <?php 
 	
 	//Paginação - Soma a quantidade de usuários	
-	$result_page=$crud->selectDB("COUNT(id) AS num_result", "idosos", "WHERE categoria=?", array('combateIsolamento'));
+	$result_page=$crud->selectDB("COUNT(id) AS num_result", "users_idosos", "WHERE categoria=?", array('combateIsolamento'));
 	$row_pg = $result_page->fetch(\PDO::FETCH_ASSOC);
 
 	//Quantidade de pagina para enviar para última página
@@ -72,7 +72,7 @@
 		
 		echo "<li class='page-item'>
 				<span class='page-link'><a href='#' onclick='listar_user($qnt_page, $qnt_result_pg)'>última</a></span>
-				</li></ul></nav>"; // ClOSE </nav>
+				</li></ul></nav>"; 
 				
 
 

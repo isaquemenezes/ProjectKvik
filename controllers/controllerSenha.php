@@ -2,9 +2,9 @@
     $validate=new Classes\ClassValidate();
 
     $validate->validateFields($_POST);
-    $validate->validateEmail($email);  // validação do email
-    $validate->validateIssetEmail($email, "senha"); // verificação se o email está ou não no banco de dados
+    $validate->validateEmail($Email);                  // validação do email
+    $validate->validateIssetEmail($Email, "senha");    // verificação se o email está ou não no banco de dados
     //$validate->validateConfSenha($senha,$senhaConf); //verificação de senhas 
-    $validate->validateEmailRecuperaSenha($email);
+    $validate->validateEmailRecuperaSenha($Email);
     
     echo $validate->validateFinalSen($arrayVar);

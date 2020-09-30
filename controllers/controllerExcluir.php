@@ -14,7 +14,7 @@
         
         echo"<script>
         alert('Conta Deletada!')
-        window.location.href='".DIRPAGE."index'
+        window.location.href='".DIRPAGE."';
         </script>";
         
     }
@@ -22,10 +22,10 @@
     //Controller Excluir idoso cadastrado
     if(isset($id_idoso))
     {
-        $crud->deleteDB("idosos", "id=?", array($id_idoso));
+        $crud->deleteDB("users_idoso", "id=?", array($id_idoso));
         echo"<script>
         alert('Dados Deletados!')
-        window.location.href='".DIRPAGE."minha-conta'
+        window.location.href='".DIRPAGE."myaccount';
         </script>";
     }
 

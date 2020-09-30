@@ -1,7 +1,7 @@
 <?php
     namespace Models;
     
-    include_once "./helpers/variaveis.php";  
+    include_once "./helpers/variables.php";  
 
     $crud=new ModelCrud();
 
@@ -11,14 +11,14 @@
 
     #Cadastro de Pessoa Atendida
     if($Acao=="Cadastrar"){
-        $crud->insertDB("idosos", "?,?,?,?,?,?,?,?,?,?",
-                array($Id_idoso, $Fk_users, $Nome, $Sexo, $AnoNascimento, $Cidade, $Bairro, $Categoria, $Ead, $DataCreated));
-            header("location:".DIRPAGE."minha-conta");
+        $crud->insertDB("users_idoso", "?,?,?,?,?,?,?,?,?,?",
+                array(0, $Fk_users, $Nome, $Sexo, $AnoNascimento, $Cidade, $Bairro, $Categoria, $On, $DataCreated));
+            header("location:".DIRPAGE."myaccount");
     }
     #Update de Pessoa Atendida
     else{
-        $crud->updateDB("idosos", "nome=?, sexo=?, anoNascimento=?, cidade=?, bairro=?, categoria=?, ead=?","id=?",
-                array($Nome, $Sexo, $AnoNascimento, $Cidade, $Bairro, $Categoria, $Ead, $Id_idoso));
-        header("location:".DIRPAGE."minha-conta");
+        $crud->updateDB("users_idoso", "nome=?, sexo=?, anoNascimento=?, cidade=?, bairro=?, categoria=?, ead=?","id=?",
+                array($Nome, $Sexo, $AnoNascimento, $Cidade, $Bairro, $Categoria, $On, $id));
+        header("location:".DIRPAGE."myaccount");
     
     }

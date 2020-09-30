@@ -31,7 +31,7 @@
             $b=$this->selectDB("*", "attempt", "where ip=?", array( $this->trait ));
             $r=0;
             while($f=$b->fetch(\PDO::FETCH_ASSOC)){
-                if(strtotime($f["date"]) > strtotime($this->dateNow)-1200){ //tempo de bloqueio 
+                if(strtotime($f["date"]) > strtotime($this->dateNow)-30){ //tempo de bloqueio 
                     $r++;
                 }
             }
@@ -52,4 +52,4 @@
             $this->deleteDB("attempt", "ip=?", array($this->trait));
         }
 
-    }// CLOSE  class ModelLogin extends ModelCrud 
+    }

@@ -6,8 +6,8 @@
         protected function conectaDB()
         {
             try{
-                $con=new \PDO("mysql:host=".HOST.";dbname=".DB."; charset=utf8mb4","".USER."","".PASS."");
-                return $con;
+                $connect=new \PDO("mysql:host=".HOST.";dbname=".DB."; charset=utf8","".USER."","".PASS."");
+                return $connect;
             }catch (\PDOException $erro){
                 return $erro->getMessage();
             }

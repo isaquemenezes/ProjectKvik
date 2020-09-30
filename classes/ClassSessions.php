@@ -34,7 +34,8 @@
         #Proteger contra roubo de sessão
         public function setSessionCanary($par=null){
             session_regenerate_id(true);
-            if($par == null){  $_SESSION['canary']=["birth" => time(), "IP" => TraitGetIp::getUserIp() ];   }
+            if($par == null){  
+                $_SESSION['canary']=["birth" => time(), "IP" => TraitGetIp::getUserIp() ]; }
             else{ $_SESSION['canary']['birth']=time();  }
         }
 

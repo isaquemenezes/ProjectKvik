@@ -1,9 +1,6 @@
 <?php
     namespace Models;
 
-    // Diz para o PHP que estamos usando strings UTF-8 até o final do script
-    mb_internal_encoding('UTF-8'); 
-
     class ModelCrud extends ModelConexao{
 
         private $crud;

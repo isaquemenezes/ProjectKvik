@@ -6,7 +6,7 @@ define('DIRPAGE',"http://{$_SERVER['HTTP_HOST']}/{$pastaInterna}");
 define('DIRREQ',"{$_SERVER['DOCUMENT_ROOT']}{$barra}{$pastaInterna}");
 
 #Atalhos
-define('DIRCSS',DIRPAGE.'assets/css/main.css');
+define('DIRCSS',DIRPAGE.'assets/css/');
 define('DIRIMG',DIRPAGE.'assets/images/');
 define('DIRJS',DIRPAGE.'assets/js/');
 
