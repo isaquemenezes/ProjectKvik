@@ -1,6 +1,6 @@
 
 
     <header id="header">
-				<div class="logo"><a href="index.html">Hielo <span>by TEMPLATED</span></a></div>
+				<div class="logo"><a href="index.html">Kvik<span> Plataforma</span></a></div>
 				<a href="#menu">Menu</a>
 			</header>

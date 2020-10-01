@@ -1,19 +1,19 @@
-<?php \Classes\ClassLayout::setHead('Login','Entre com seu email e senha'); ?>
+<?php \Classes\ClassLayout::setHeadSubPage('Login','Entre com seu email e senha'); ?>
 
     <!--login-->
-    <div style="width: 50%;  clear: none; margin: 3em 3em 0 25%;">
+    <div style="width: 50%;  clear: none; margin: 3em 3em 0 38%;">
         <div class="loginLogomarca float w100 center">
             <img src="<?php echo DIRIMG.'logo_kvik.png'; ?>" alt="Logomarca da Kvik"></div>
            
         
         <!-- Form -->
         <h3>Entre e Mova uma Vida.</h3>
-        
+                
         <!--Retorno javascript-->
         <!-- em fase de teste <div class="retornoLogin"></div>-->
         
         <!--- Ajax Login e CapsLock --->
-        <div class="resultadoForm float w100 center"></div>
+        <div class="resultadoForm"></div>
         <form name="formLogin" id="formLogin" action="<?php echo DIRPAGE.'controllers/controllerLogin'; ?>" method="post" >
     
             <div class="row uniform">
@@ -36,8 +36,11 @@
                         <li><a href="<?php echo DIRPAGE.'cadastro'; ?>">Nova Conta</a></li>
                     </ul>
                 </div>
+                <h6><a href="#">Termo de uso</a> | <a href="#">Politica de Privacidade</a> | <a href="#">Termo de Voluntário</h6>
+
             </div>
         </form>
     </div>
+
 <!--========== script JS ===============-->
 <?php \Classes\ClassLayout::setFooter(); ?>

@@ -10,7 +10,7 @@
 									</header>
 									<p> quis volutpat lacus placerat malesuada.</p>
 									<footer class="align-center">
-										<a href="<?php echo DIRPAGE.'auxiliojuridico';?>" class="button special">Junta-se</a>
+										<a href="<?php echo DIRPAGE.'auxiliojuridico';?>" class="button special">Ajudar Aqui</a>
 									</footer>
 								</div>
 							</div>

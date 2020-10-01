@@ -1,9 +1,9 @@
-<!-- One -->
-<section id="One" class="wrapper style3">
-				<div class="inner">
-					<header class="align-center">
-						<p>Page da Causa Combate Ao Isolamento</p>
-						<h2>Kvik plataforma</h2>
-					</header>
-				</div>
-			</section>
+<?php 
+	namespace Models;
+
+	$crud =new ModelCrud();
+
+	$select_c = $crud->selectDB("*", "users_idoso", "", array());
+	$user_c = $select_c->fetch(\PDO::FETCH_ASSOC);
+	
+?>	 

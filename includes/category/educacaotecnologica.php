@@ -1,7 +1,7 @@
 <div>
 							<div class="box">
 								<div class="image fit">
-									<img src="<?php echo DIRIMG.'pic01.jpg';?>" alt="" />
+									<img src="<?php echo DIRIMG.'tecnologia.png';?>" alt="" />
 								</div>
 								<div class="content">
 									<header class="align-center">
@@ -26,7 +26,7 @@
 						            <p style="font-size: 22px;">Pré-Requitos:</p>
 						            <p>Muita vontade de ajudar e fazer a diferença.
 						            <footer class="align-center">
-										<a href="<?php echo DIRPAGE.'educacaotecnologica';?>" class="button special">Junta-se</a>
+										<a href="<?php echo DIRPAGE.'educacaotecnologica';?>" class="button special">Ajudar Aqui</a>
 									</footer>
 								</div>
 							</div>

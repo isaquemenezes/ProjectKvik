@@ -1,132 +1,100 @@
 <?php    
 
     $objPass=new \Classes\ClassPassword();
-
    
-    //Buttom de enviar
+    //Acao de enviar
     if(isset($_POST['Acao'])){ 
         $Acao=filter_input(INPUT_POST,'Acao',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['Acao'])){  
         $Acao=filter_input(INPUT_GET,'Acao',FILTER_SANITIZE_SPECIAL_CHARS);  
-    }else{ 
-        $Acao="";  
-    }
+    }else{  $Acao="";   }
 
     //id DB users_idoso  
     if(isset($_POST['id'])){ 
         $Id=filter_input(INPUT_POST,'id',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['id'])){ 
         $Id=filter_input(INPUT_GET,'id',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ 
-        $Id=0; 
-    }
+    }else{ $Id=0;  }
 
     //fk_users DB users_idoso com id users 
     if(isset($_POST['fk_users'])){ 
         $Fk_users=filter_input(INPUT_POST,'fk_users',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['fk_users'])){ 
         $Fk_users=filter_input(INPUT_GET,'fk_users',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ 
-        $Fk_users=""; 
-    }
+    }else{ $Fk_users="";  }
 
 
     //Nome DB users e DB cadastro(idoso)
-    if(isset($_POST['nome'])){ 
-        $Nome=filter_input(INPUT_POST,'nome',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }elseif(isset($_GET['nome'])){ 
-        $Nome=filter_input(INPUT_GET,'nome',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ 
-        $Nome=""; 
-    }
+    if(isset($_POST['name'])){ 
+        $Nome=filter_input(INPUT_POST,'name',FILTER_SANITIZE_SPECIAL_CHARS); 
+    }elseif(isset($_GET['name'])){ 
+        $Nome=filter_input(INPUT_GET,'name',FILTER_SANITIZE_SPECIAL_CHARS); 
+    }else{ $Nome="";  }
 
     #sexo DB cadastro(idoso)
     if(isset($_POST['sexo'])){ 
         $Sexo=filter_input(INPUT_POST,'sexo',FILTER_SANITIZE_SPECIAL_CHARS);  
     }elseif(isset($_GET['sexo'])){ 
         $Sexo=filter_input(INPUT_GET,'sexo',FILTER_SANITIZE_SPECIAL_CHARS);
-    }else{ 
-        $Sexo=""; 
-    }
+    }else{ $Sexo="";  }
 
     # anoNascimento DB cadastro(idoso)
     if(isset($_POST['anoNascimento'])){ 
         $AnoNascimento=filter_input(INPUT_POST,'anoNascimento',FILTER_SANITIZE_SPECIAL_CHARS);  
     }elseif(isset($_GET['anoNascimento'])){ 
         $AnoNascimento=filter_input(INPUT_GET,'anoNascimento',FILTER_SANITIZE_SPECIAL_CHARS);
-    }else{ 
-        $AnoNascimento="";  
-    } 
+    }else{ $AnoNascimento="";  } 
 
     #contato DB users e DB cadastro(idoso)
     if(isset($_POST['contato'])){ 
         $Contato=filter_input(INPUT_POST,'contato',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['contato'])){ 
         $Contato=filter_input(INPUT_GET,'contato',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ 
-        $Contato=""; 
-    } 
+    }else{   $Contato="";  } 
 
     #email DB users e DB cadastro(idoso)
     if(isset($_POST['email'])){ 
         $Email=filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL);
     }elseif(isset($_GET['email'])){ 
         $Email=filter_input(INPUT_GET,'email',FILTER_VALIDATE_EMAIL); 
-    }else{ 
-        $Email=""; 
-    }      
+    }else{  $Email="";   }      
 
     #cidade DB users e cadastro(idoso)
     if(isset($_POST['cidade'])){ 
         $Cidade=filter_input(INPUT_POST,'cidade',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['cidade'])){ 
         $Cidade=filter_input(INPUT_GET,'cidade',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ 
-        $Cidade="";  
-    }
+    }else{  $Cidade="";   }
 
     # bairro DB users e cadastro(idoso)
     if(isset($_POST['bairro'])){ 
         $Bairro=filter_input(INPUT_POST,'bairro',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['bairro'])){ 
         $Bairro=filter_input(INPUT_GET,'bairro',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ 
-        $Bairro=""; 
-    }
+    }else{ $Bairro="";  }
 
     # categoria DB cadastro(idoso)
     if(isset($_POST['categoria'])){ 
         $Categoria=filter_input(INPUT_POST, 'categoria',FILTER_SANITIZE_SPECIAL_CHARS);  
     }elseif(isset($_GET['categoria'])){ 
         $Categoria=filter_input(INPUT_GET,'categoria',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ 
-        $Categoria=""; 
-    }
+    }else{ $Categoria="";  }
 
     # Radio para questionamento sobre Atendimento à distância DB users e users_idoso
     if(isset($_POST['on'])){ 
         $On=filter_input(INPUT_POST,'on',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['on'])){ 
         $On=filter_input(INPUT_GET,'on',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ 
-        $On=""; 
-    }
+    }else{ $On="";  }
 
         
     //Input Senha
-    if(isset($_POST['senha'])){  
-        $senha=$_POST['senha'];  $hashSenha=$objPass->passwordHash($senha); 
-    }else{  
-        $senha=null;  
-        $hashSenha=null;  
-    }
+    if(isset($_POST['senha'])){ $senha=$_POST['senha'];  $hashSenha=$objPass->passwordHash($senha); }
+    else{  $senha=null;   $hashSenha=null;   }
 
     #Input Confirmacao de Senha
-    if(isset($_POST['senhaConf'])){ 
-        $senhaConf=$_POST['senhaConf']; 
-    }else{  
-        $senhaConf=null;  
-    }   
+    if(isset($_POST['senhaConf'])){ $senhaConf=$_POST['senhaConf'];   }
+    else{   $senhaConf=null;   }   
 
     
     #Input data de Criacao 
@@ -137,11 +105,8 @@
     #Esqueci minha senha - Recuperação
     $token=bin2hex(random_bytes(64));
        
-    if(isset($_POST['token'])){  
-        $token=$_POST['token'];  
-    }else{  
-        $token=bin2hex(random_bytes(64)); 
-    }
+    if(isset($_POST['token'])){  $token=$_POST['token'];  }
+    else{   $token=bin2hex(random_bytes(64));  }
 
     #Array para inserção no banco de dados
     $arrayVar=[

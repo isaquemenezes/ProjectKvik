@@ -1,7 +1,7 @@
 <div>
 							<div class="box">
 								<div class="image fit">
-									<img src="<?php echo DIRIMG.'pic03.jpg';?>" alt="" />
+									<img src="<?php echo DIRIMG.'financeira.png';?>" alt="" />
 								</div>
 								<div class="content">
 									<header class="align-center">
@@ -31,7 +31,7 @@
 									
 						
                                     <footer class="align-center">
-                                        <a href="<?php echo DIRPAGE.'educacao-financeira';?>" class="button special">Junta-se</a>
+                                        <a href="<?php echo DIRPAGE.'educacao-financeira';?>" class="button special">Ajudar Aqui</a>
                                     </footer>
 								</div>
 							</div>

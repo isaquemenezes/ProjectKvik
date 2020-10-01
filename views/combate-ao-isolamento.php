@@ -5,82 +5,69 @@
    \Classes\ClassLayout::setHeadSubPage('Área Restrita', 'Área exclusiva para categoria combate ao isolamento');
 	 
 ?>
-<!--style para button-->
-<style type="text/css">
-		a{
-			/* position: relative;*/
-			cursor: pointer;
-			font-family: sans-serif;
-			font-size: 1em;
-			color: white;
-			width: 200px;
-			height: 30px;
-			background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);
-			background-size: 400%;
-			border:none;
-			border-radius: 30px;
-		}
-		a::after{ content: ''; opacity: 0; }
-		a:hover::after{
-			content: '';
-			display: block;
-			width: 200px;
-			height: 100px;
-			background-color: aliceblue;
-			position: absolute;
-			top: calc(50vh - 50px);
-			left: calc(50vw - 100px);
-			border-radius: 40px;
-			z-index: -1;
-			background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);
-			background-size: 400%;
-			filter: blur(40px);
-			opacity: 1;
-			transition: opacity .5s linear;
-			animation: animacao 5s linear infinite;
-		}
-		a:hover{	animation: animacao 5s linear infinite;	}
-
-		@keyframes animacao{
-			from{ background-position: 0%;	}
-			to{	background-position: 400%;  }
-		}
-	</style>
-
-
-
 
 		<!-- Header ========================-->
 		<?php include './includes/subPages/header.php'; ?>
 		<!-- /Header =======================-->	
 
 		<!-- Nav ======================= -->
-		<?php include './includes/nav.php'; ?>
+		<?php include './includes/subPages/nav-menu.php'; ?>
 		<!-- Nav /======================= -->	
 
 		<!-- Section One =============================-->
-		<?php include_once './includes/subPages/section-one.php';?>
-
-
-		<div>
-							<div class="box">
-								<div class="image fit">
-									<img src="<?php echo DIRIMG.'pic02.jpg';?>" alt="" />
-								</div>
-								
-								<!--Lista db - Via jQuery-->
-								<span id="listaCombateIsolamento"></span>	
-
-
-							</div>
-		</div>
-	
+		<!-- One -->
+		<section id="One" class="wrapper style3">
 		
+	
+		<div class="inner">
+			<header class="align-center"> 
+					<img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
+					<p></p>
+					<h2>Causa Combate Ao Isolamento</h2>
+				</header>
+			</div>
+		</section>
+	
+
+		<section id="one" class="wrapper style2">
+			<div class="inner">
+				<div class="grid-style">
+					<?php 
+						$crud=new ModelCrud();
+						$BFetch=$crud->selectDB("*", "users_idoso", "WHERE ead=?",array('sim'));
+						while($users_idoso=$BFetch->fetch(\PDO::FETCH_ASSOC)){
+					?>
+						<div>
+							<div class="box">						
+								<div class="content">
+									<header class="align-center">
+										<h2><?php echo $users_idoso['nome']; ?></h2>
+									</header>
+									<p>
+										<ul class="text-muted small">
+											<li>Cidade <?php echo $users_idoso['cidade']; ?></li>
+											<li>Bairro <?php echo $users_idoso['bairro']; ?></li>
+											<li>Data <?php echo $users_idoso['dateCreated']; ?></li>
+											<li>Pode ser a distância? <?php echo $users_idoso['ead']; ?></li>
+											<li>Sexo <?php echo $users_idoso['sexo']; ?></li>
+										</ul>
+									</p>								
+									<footer class="align-center">
+										<a href="<?php echo DIRPAGE.'combate-ao-isolamento';?>" class="button special">junta-se</a>
+									</footer>
+								</div>
+							</div>
+						</div>
+					<?php }?>	
+				</div>				
+			</div>			
+		</section>
+	
 			<!--============= jquery-3.3.1.min.js =============-->
 			<script src="<?php echo  DIRJS.'jquery-3.3.1.min.js';?>"></script>
 		
 			<script>
-				Listagem dos usuários idosos do DB na page 
+				//Listagem dos usuários idosos do DB na page 
 				var qnt_result_pg = 5; 	//quantidades de Registros por páginas
 				var pagina = 1;  		//page inícial
 
@@ -99,6 +86,6 @@
 					});
 				}
 			</script>
-
+			<?php include_once './includes/footer.php';?>
 			<!--======= FOOTER SCRIPTS =======-->
 			<?php \Classes\ClassLayout::setFooter(); ?>

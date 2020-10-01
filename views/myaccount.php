@@ -2,12 +2,34 @@
     namespace Models;
 
     \Classes\ClassLayout::setHeadRestrito(); 
-    \Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' Minha Conta',' Gerencie Sua Conta'); 
-    include "./includes/header.php";
-    
+    \Classes\ClassLayout::setHeadSubPage(strtoupper($_SESSION['name']).' Minha Conta',' Gerencie Sua Conta');     
 ?>
-    <div class="content"><strong>Gerencie Sua Conta</strong>
-        <div class="profile_image"><img src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="<?php echo $users['nome'];?>"></div>
+
+        <!-- Header ========================-->
+        <header id="header">
+			<div class="logo"><a href="index.html">Hielo <span>by TEMPLATED</span></a></div>
+			<a href="#menu">Menu</a>
+		</header><!-- /Header ===========
+        ====================================-->	
+
+		<!-- Nav ======================= -->
+		<?php include './includes/nav.php'; ?>
+		<!-- Nav /======================= -->	
+
+		<!-- Section One ======================-->
+        <section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+                    <img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
+					<p></p>
+						<h2>Gerencie Sua Conta</h2>
+					</header>
+				</div>
+		</section><!-- Section One ========
+        ========================================-->
+
+    <div class="content">
+        
             <table class="tabelaCrud">
                 <tr>
                     <td>Id</td>
@@ -86,9 +108,10 @@
             </tr>              
             <?php }?>           
         </table>
-    </div>       
-    
-    <?php include "./includes/footer.php"; ?>
-    
+    </div>   
+
     <!--======= FOOTER SCRIPTS =======-->
     <?php  \Classes\ClassLayout::setFooter();?>
+    <?php include "./includes/footer.php"; ?>
+    
+    

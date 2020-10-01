@@ -1,9 +1,9 @@
 <?php
     namespace Models;
 
-    //\Classes\ClassLayout::setHeadRestrito();    
-    \Classes\ClassLayout::setHead(strtoupper($_SESSION['name']).' Minha Conta','Área Gerencie Sua Conta!'); 
-    include "./includes/header.php";
+    \Classes\ClassLayout::setHeadRestrito();    
+    \Classes\ClassLayout::setHeadSubPage(strtoupper($_SESSION['name']).' Minha Conta','Área Gerencie Sua Conta!');
+
 
     /*Update de Dados de Usuário Volunteer*/
     if(isset($_GET['id'])){
@@ -22,12 +22,31 @@
     }
 
 ?>
+    <!-- Header ===================================-->
+    <?php include './includes/subPages/header.php'; ?>
+	<!-- /Header ==================================-->	
+
+    <!-- Nav ======================================= -->
+	<?php include './includes/subPages/nav-menu.php'; ?>
+	<!-- Nav /====================================== -->	
+
+		<!-- Section One =====================-->
+		<section id="One" class="wrapper style3">
+			<div class="inner">
+				<header class="align-center"><img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
+					<p></p>
+					<h2>Atualize Seu Perfil</h2>
+				</header>
+			</div>
+        </section> 
+        <!-- /Section One =====================-->   
+
     <!--Retorno Ajax-->
     <div class="resultado"></div>
     <!--Formulário de edicao de perfil para usuário voluntário-->
    
-    <div style="width: 50%;  clear: none; margin: 3em 3em 0 25%;">
-    <h3>Atualize seu Perfil</h3>
+    <div style="width: 50%;  clear: none; margin: 5em 3em 0 25%;">
+    <!--<h3>Atualize seu Perfil</h3>-->
       <!-- Form -->
     <form action="<?php echo DIRPAGE."controllers/controllerEditarPerfil"; ?>" name="formCadastro" id="formCadastro" method="post">
         <input type="hidden" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
@@ -35,27 +54,34 @@
         
         <div class="row uniform">
             <div class="6u 12u$(xsmall)">
-                <input type="text" id="nome" name="nome" value="<?php echo $nome; ?>" required="" /></div>
+                <input type="text" id="nome" name="nome" value="<?php echo $nome; ?>" required></div>
                 
             <div class="6u$ 12u$(xsmall)">
-                <input type="email" name="email" id="email" value="<?php echo $email; ?>" readonly="" /></div>
+                <input type="email" name="email" id="email" value="<?php echo $email; ?>" readonly></div>
 
             <div class="6u 12u$(xsmall)">
-                <input type="text" id="contato" name="contato" value="<?php echo $contato;?>"/></div>
+                <input type="text" id="contato" name="contato" value="<?php echo $contato;?>"></div>
 
             <div class="6u 12u$(xsmall)">
                 <input type="text" id="cidade" name="cidade" value="<?php echo $cidade; ?>"></div>
 
             <div class="6u 12u$(xsmall)">
-                <input type="text" id="bairro" name="bairro" value="<?php echo $bairro; ?>"/></div>
+                <input type="text" id="bairro" name="bairro" value="<?php echo $bairro; ?>"></div>
             
             <!-- Break -->
             <div class="12u$">
                 <ul class="actions">
-                    <li><input type="submit" value="<?php echo $Acao; ?>" /></li>
-                    <li><input type="reset" value="Reset" class="alt" /></li>
+                    <li><input type="submit" value="<?php echo $Acao; ?>" ></li>
                 </ul>
             </div>
         </div>
     </form>
 </div>
+
+<div style="width: 50%;  clear: none; margin: 20em">
+</div>
+
+    <?php include_once './includes/footer.php';?>
+	
+    <!--======= FOOTER SCRIPTS =======-->
+	<?php \Classes\ClassLayout::setFooter(); ?>
