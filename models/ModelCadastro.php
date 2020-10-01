@@ -7,18 +7,17 @@
         public function insertCad($arrayVar)
         {
             $this->insertDB("users", "?,?,?,?,?,?,?,?,?,?",
-                        array(
-                            0,
-                            $arrayVar['nome'],
-                            $arrayVar['email'],
-                            $arrayVar['cidade'],
-                            $arrayVar['bairro'],
-                            $arrayVar['contato'],
-                            $arrayVar['hashSenha'],
-                            $arrayVar['dataCreate'],
-                            'user',
-                            'confirmation'
-                        )
+                        array(0,
+                              $arrayVar['nome'],
+                              $arrayVar['email'],
+                              $arrayVar['cidade'],
+                              $arrayVar['bairro'],
+                              $arrayVar['contato'],
+                              $arrayVar['hashSenha'],
+                              $arrayVar['dataCreated'],
+                              'user',
+                              'confirmation'
+                            )
                 );
                 /********  RECUPERACAO DE SENHA ********/
                 $this->insConfirmation($arrayVar);  

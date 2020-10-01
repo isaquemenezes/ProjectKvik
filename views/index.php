@@ -31,8 +31,8 @@
 			border:none;
 			border-radius: 30px;
 		}
-		a::after{ content: ''; opacity: 0; }
-		a:hover::after{
+		footer > a::after{ content: ''; opacity: 0; }
+		footer > a:hover::after{
 			content: '';
 			display: block;
 			width: 200px;
@@ -50,7 +50,7 @@
 			transition: opacity .5s linear;
 			animation: animacao 5s linear infinite;
 		}
-		a:hover{	animation: animacao 5s linear infinite;	}
+		footer > a:hover{	animation: animacao 5s linear infinite;	}
 
 		@keyframes animacao{
 			from{ background-position: 0%;	}

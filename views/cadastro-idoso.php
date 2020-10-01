@@ -2,15 +2,16 @@
     namespace Models;
 
     \Classes\ClassLayout::setHeadRestrito();   
-    \Classes\ClassLayout::setHead('Cadastro de Idoso','Cadastre uma Pessoa Idosa.');
+    \Classes\ClassLayout::setHeadSubPage('Cadastro de Idoso','Cadastre uma Pessoa Idosa.');
 
     $id_users=$_SESSION["id_users"];
+    $id_users2=$_GET['id'];
     //Update de Dados do DB users_idoso
-    if(isset($_GET['id'])){
+    if(isset($id_users2)){
         $Acao="Editar";
 
         $crud=new ModelCrud();
-        $select_idoso=$crud->selectDB("*","users_idoso", "WHERE id=?", array($_GET['id']));
+        $select_idoso=$crud->selectDB("*","users_idoso", "WHERE id=?", array($id_users2));
         $idosos=$select_idoso->fetch(\PDO::FETCH_ASSOC);
         
         $id           =$idosos['id'];
@@ -41,14 +42,33 @@
    
 ?>
 
+        <!-- Header ===================================-->
+        <?php include './includes/subPages/header.php'; ?>
+	    <!-- /Header ==================================-->	
+
+        <!-- Nav ======================================= -->
+	    <?php include './includes/subPages/nav-menu.php'; ?>
+	    <!-- Nav /====================================== -->
+
+        <!-- Section One =====================-->
+		<section id="One" class="wrapper style3">
+			<div class="inner">
+				<header class="align-center"><img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
+					<p></p>
+					<h2>Cadastre um idoso</h2>
+				</header>
+			</div>
+        </section> 
+        <!-- /Section One =====================-->   
+
 <!--Retorno Ajax-->
 <div class="retornoCad"></div>
 <!--Formulário de Cadastro de Idoso-->
-    <div style="width: 50%;  clear: none; margin: 3em 3em 0 25%;">
+    <div style="width: 50%;  clear: none; margin: 6em 3em 20em 25%;">
     <!-- Form -->
-    <h3>Cadastre Uma Pessoa Idosa*.</h3>
+    <!--<h3>H3 vazio</h3>-->
 
-<form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'./controllers/controllerCadastroIdoso'; ?>" method="post" >
+<form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'controllers/controllerCadastroIdoso'; ?>" method="post" >
     <div class="row uniform">
         <input type="text" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
         <input type="text" id="id" name="id" value="<?php echo $id; ?>">
@@ -114,10 +134,10 @@ exemplo de como validar CEP:
 		</div>
 
         <div class="6u 12u$(xsmall)">
-            <input type="text" id="cidade" name="cidade" value="<?php echo $cidade; ?>" placeholder="Cidade" required=""/></div>
+            <input type="text" id="cidade" name="cidade" value="<?php echo $cidade; ?>" placeholder="Cidade" required></div>
         
         <div class="6u 12u$(xsmall)">
-            <input type="text" id="bairro" name="bairro" value="<?php echo $bairro; ?>" placeholder="Bairro" required=""/></div>
+            <input type="text" id="bairro" name="bairro" value="<?php echo $bairro; ?>" placeholder="Bairro" required></div>
             
         <div class="6u 12u$(xsmall)">
             <input class="float w100 h40" type="text" id="anoNascimento" name="anoNascimento" value="<?php echo $anoNascimento; ?>" placeholder="Ano de Nascimento 4dígitos (Opcional)"></div> 
@@ -134,11 +154,16 @@ exemplo de como validar CEP:
             </ul>
         </div>
     </div>
-</form>
+    
+</form><h6>Lembre-se que você deve ser o responsável, ou ter autorização, para cadastrar a pessoa. Qualquer dúvida, leia nossos termos.</h6>
+<h6><a href="#">Termo de uso</a> | <a href="#">Politica de Privacidade</a> | <a href="#">Termo de Voluntário</h6>
+
 </div>
+
+
 <script src="<?php echo DIRJS.'vanilla.js'; ?>"></script>
    
 
-
-<?php //\Classes\ClassLayout::setFooter(); ?>
+<?php include './includes/footer.php';?>
+<?php \Classes\ClassLayout::setFooter(); ?>
 

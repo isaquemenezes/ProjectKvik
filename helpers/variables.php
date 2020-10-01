@@ -21,7 +21,7 @@
         $Fk_users=filter_input(INPUT_POST,'fk_users',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['fk_users'])){ 
         $Fk_users=filter_input(INPUT_GET,'fk_users',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ $Fk_users="";  }
+    }else{ $Fk_users=null;  }
 
 
     //Nome DB users e DB cadastro(idoso)
@@ -29,63 +29,63 @@
         $Nome=filter_input(INPUT_POST,'name',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['name'])){ 
         $Nome=filter_input(INPUT_GET,'name',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ $Nome="";  }
+    }else{ $Nome=null;  }
 
     #sexo DB cadastro(idoso)
     if(isset($_POST['sexo'])){ 
         $Sexo=filter_input(INPUT_POST,'sexo',FILTER_SANITIZE_SPECIAL_CHARS);  
     }elseif(isset($_GET['sexo'])){ 
         $Sexo=filter_input(INPUT_GET,'sexo',FILTER_SANITIZE_SPECIAL_CHARS);
-    }else{ $Sexo="";  }
+    }else{ $Sexo=null;  }
 
     # anoNascimento DB cadastro(idoso)
     if(isset($_POST['anoNascimento'])){ 
         $AnoNascimento=filter_input(INPUT_POST,'anoNascimento',FILTER_SANITIZE_SPECIAL_CHARS);  
     }elseif(isset($_GET['anoNascimento'])){ 
         $AnoNascimento=filter_input(INPUT_GET,'anoNascimento',FILTER_SANITIZE_SPECIAL_CHARS);
-    }else{ $AnoNascimento="";  } 
+    }else{ $AnoNascimento=null;  } 
 
     #contato DB users e DB cadastro(idoso)
     if(isset($_POST['contato'])){ 
         $Contato=filter_input(INPUT_POST,'contato',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['contato'])){ 
         $Contato=filter_input(INPUT_GET,'contato',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{   $Contato="";  } 
+    }else{   $Contato=null;  } 
 
     #email DB users e DB cadastro(idoso)
     if(isset($_POST['email'])){ 
         $Email=filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL);
     }elseif(isset($_GET['email'])){ 
         $Email=filter_input(INPUT_GET,'email',FILTER_VALIDATE_EMAIL); 
-    }else{  $Email="";   }      
+    }else{  $Email=null;   }      
 
     #cidade DB users e cadastro(idoso)
     if(isset($_POST['cidade'])){ 
         $Cidade=filter_input(INPUT_POST,'cidade',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['cidade'])){ 
         $Cidade=filter_input(INPUT_GET,'cidade',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{  $Cidade="";   }
+    }else{  $Cidade=null;   }
 
     # bairro DB users e cadastro(idoso)
     if(isset($_POST['bairro'])){ 
         $Bairro=filter_input(INPUT_POST,'bairro',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['bairro'])){ 
         $Bairro=filter_input(INPUT_GET,'bairro',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ $Bairro="";  }
+    }else{ $Bairro=null;  }
 
     # categoria DB cadastro(idoso)
     if(isset($_POST['categoria'])){ 
         $Categoria=filter_input(INPUT_POST, 'categoria',FILTER_SANITIZE_SPECIAL_CHARS);  
     }elseif(isset($_GET['categoria'])){ 
         $Categoria=filter_input(INPUT_GET,'categoria',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ $Categoria="";  }
+    }else{ $Categoria=null;  }
 
     # Radio para questionamento sobre Atendimento à distância DB users e users_idoso
     if(isset($_POST['on'])){ 
         $On=filter_input(INPUT_POST,'on',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['on'])){ 
         $On=filter_input(INPUT_GET,'on',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ $On="";  }
+    }else{ $On=null;  }
 
         
     //Input Senha
@@ -99,7 +99,6 @@
     
     #Input data de Criacao 
     date_default_timezone_set('America/Sao_Paulo');
-
     $dataCreated=date("Y-m-d H:i:s", time());
     
     #Esqueci minha senha - Recuperação
@@ -117,7 +116,7 @@
         "contato"=>$Contato,
         "senha"=>$senha,
         "hashSenha"=>$hashSenha,
-        "dataCreate"=>$dataCreated,
+        "dataCreated"=>$dataCreated,
         "token"=>$token,
     ];
 

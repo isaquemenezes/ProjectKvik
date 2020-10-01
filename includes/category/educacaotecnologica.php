@@ -1,7 +1,7 @@
 <div>
 							<div class="box">
 								<div class="image fit">
-									<img src="<?php echo DIRIMG.'tecnologia.png';?>" alt="" />
+									<img src="<?php echo DIRIMG.'tech2.jpg';?>" alt="" />
 								</div>
 								<div class="content">
 									<header class="align-center">

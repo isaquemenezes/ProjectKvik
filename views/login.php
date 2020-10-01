@@ -1,8 +1,12 @@
 <?php \Classes\ClassLayout::setHeadSubPage('Login','Entre com seu email e senha'); ?>
 
     <!--login-->
-    <div style="width: 50%;  clear: none; margin: 3em 3em 0 38%;">
-        <div class="loginLogomarca float w100 center">
+    <section id='two' class='wrapper style2'>
+				<div class='inner'>
+					<header class='align-center'>
+    
+    <div style="width: 50%;  clear: none; margin: 3em 3em 0 25%;">
+        <div class="loginLogomaca" >
             <img src="<?php echo DIRIMG.'logo_kvik.png'; ?>" alt="Logomarca da Kvik"></div>
            
         
@@ -41,6 +45,8 @@
             </div>
         </form>
     </div>
-
+    </hedear>
+</div>
+</section>
 <!--========== script JS ===============-->
 <?php \Classes\ClassLayout::setFooter(); ?>

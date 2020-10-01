@@ -81,7 +81,7 @@
             else{  $this->setErro("Usuário ou Senha Inválidos!"); return false;  }
         }
 
-        #Validação final do cadastro
+         /* #Validação final do cadastro
         public function validateFinalCad($arrayVar)
         {
             if(count($this->getErro())>0){
@@ -90,11 +90,11 @@
                 $this->cadastro->insertCad($arrayVar);                
             }
             return json_encode($arrayResponse);
-        }
+        }*/
 
        
        #Validação final do cadastro com email de confirmacao
-       /* public function validateFinalCad($arrayVar)
+      public function validateFinalCad($arrayVar)
         {
             if(count($this->getErro())>0){
                 $arrayResponse=[
@@ -102,7 +102,7 @@
                     "erros"=>$this->getErro()
                 ];
             }else{
-                $this->mail->sendMail(
+               /* $this->mail->sendMail(
                     $arrayVar['email'],
                     $arrayVar['nome'],
                     $arrayVar['token'],
@@ -111,12 +111,12 @@
                     <strong>Cadastro do Site</strong><br>
                     Confirme seu email <a href='".DIRPAGE."controllers/controllerConfirmacao/{$arrayVar['email']}/{$arrayVar['token']}'>clicando aqui</a>.
                     "
-                );
+                );*/
                 $arrayResponse=[ "retorno"=>"success", "erros"=>null ];
                 $this->cadastro->insertCad($arrayVar);
             }
             return json_encode($arrayResponse);
-        }*/
+        }
 
         #Validação das tentativas
         public function validateAttemptLogin()

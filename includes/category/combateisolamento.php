@@ -1,7 +1,7 @@
 <div>
 							<div class="box">
 								<div class="image fit">
-									<img src="<?php echo DIRIMG.'combate_isolamento.png';?>" alt="" />
+									<img src="<?php echo DIRIMG.'pessoa_com_cadeira.jpg';?>" alt="" />
 								</div>
 								<div class="content">
 									<header class="align-center">

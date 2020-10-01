@@ -4,7 +4,7 @@
 
 					<li><a href="#">Categoria</a>
                         <ul class="links">
-                            <li><a href="#">Combate ao Isolamento</a></li>
+                            <li><a href="<?php echo DIRPAGE.'combate-ao-isolamento';?>">Combate ao Isolamento</a></li>
                             <li><a href="#">Educação Tecnológica</a></li>
                             <li><a href="#">Educação Financeira</a></li>
                             <li><a href="#">Auxílio Jurídico</a></li>
