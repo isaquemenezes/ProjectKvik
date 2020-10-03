@@ -1,27 +1,30 @@
-<?php 
-	
-	$verify=new \Classes\ClassSessions();
+<?php
+	/*   subPages
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
 
 ?>
     <header id="header">
 
-				
-				<?php 
+	<div class="logo"><a href="<?php echo DIRPAGE.''; ?>">Kvik <span>Plataforma</span></a></div>
+				<?php  
+					$verify = new \Classes\ClassSessions();
+					$acentos=new \Classes\ClassAuxilia();			
+					$verify_session=$verify->verifyIdSessions();
+					
+					//if(isset($verify_session)){				
 
-					$verify->verifyIdSessions();
-					$user_session=$_SESSION['login'];
-					$user_name=$_SESSION['name'];
-					if(isset($user_session)){
-						echo "<div class='logo'><a href='".DIRPAGE."index'>".$user_name."<span> Voluntário</span></a></div>";
-					
-					}else{
-						echo "<div class='logo'><a href='".DIRPAGE."index'>
-						Kvik<span> Plataforma Social</span></a></div>";
-					}
-					
+					if(isset($_SESSION['name'])){$user=$_SESSION['name'];
+							echo "<a href='#menu'>".$user."</a>";}
+					else{	echo "<a href='#menu'>MenuOff</a>";}
 				?>
 				
-				<a href="#menu">Menu</a>
+				
 			</header>
 
 

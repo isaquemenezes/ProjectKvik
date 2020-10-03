@@ -23,10 +23,8 @@
     if(isset($id_idoso))
     {
         $crud->deleteDB("users_idoso", "id=?", array($id_idoso));
-        echo"<script>
-        alert('Dados Deletados!')
-        window.location.href='".DIRPAGE."myaccount';
-        </script>";
+       
+        header("Location:".DIRPAGE."myaccount");
     }
 
 

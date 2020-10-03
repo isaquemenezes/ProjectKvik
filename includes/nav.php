@@ -4,7 +4,7 @@
 					<li><a href="<?php echo DIRPAGE.'cadastro-idoso';?>">Cadastrar Idoso</a></li> 
 	
 					<?php
-							$verify=new \Classes\ClassSessions();
+							/*$verify=new \Classes\ClassSessions();
 
 							$verify->verifyIdSessions();
 							if(isset($_SESSION['login']))
@@ -13,7 +13,7 @@
  
 								echo "<li><a href='".DIRPAGE."controllers/controllerLogout'>Sair</a></li>";
 							}
-							else{ echo "<li><a href='".DIRPAGE."login'>Entrar</a></li>";	}
+							else{ echo "<li><a href='".DIRPAGE."login'>Entrar</a></li>";	}*/
 						?>		
 
 					

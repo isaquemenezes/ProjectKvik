@@ -53,7 +53,7 @@
 
         #Setar as tags do footer
         public static function setFooter(){
-            $html="<script src='".DIRJS."jquery-3.3.1.min.js'></script>\n";
+            $html="<script src='".DIRJS."jquery.min.js'></script>\n";
             $html.="<script src='".DIRJS."javascript.js'></script>\n";
             $html.="<script src='".DIRJS."jquery.scrollex.min.js'></script>\n";
             $html.="<script src='".DIRJS."skel.min.js'></script>\n";

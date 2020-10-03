@@ -118,6 +118,33 @@
             return json_encode($arrayResponse);
         }
 
+
+
+         #Validação final do cadastro com email de confirmacao
+        public function validateFinalCadIdoso($arrayVar)
+        {
+            if(count($this->getErro())>0){
+              $arrayResponse=[
+                  "retorno"=>"erro",
+                  "erros"=>$this->getErro()
+              ];
+            }else{
+             /* $this->mail->sendMail(
+                  $arrayVar['email'],
+                  $arrayVar['nome'],
+                  $arrayVar['token'],
+                  "Confirmação de Cadastro",
+                  "
+                  <strong>Cadastro do Site</strong><br>
+                  Confirme seu email <a href='".DIRPAGE."controllers/controllerConfirmacao/{$arrayVar['email']}/{$arrayVar['token']}'>clicando aqui</a>.
+                  "
+              );*/
+              $arrayResponse=[ "retorno"=>"success", "erros"=>null ];
+              $this->cadastro->insertCad($arrayVar);
+            }
+            return json_encode($arrayResponse);
+        }
+
         #Validação das tentativas
         public function validateAttemptLogin()
         {
@@ -185,7 +212,7 @@
                     "erros"=>$this->getErro()
                 ];
             }else{
-                /*$this->mail->sendMail(
+                $this->mail->sendMail(
                     $arrayVar['email'],
                     $arrayVar['nome'],
                     $arrayVar['token'],
@@ -194,7 +221,7 @@
                     <strong>Redefinação da Senha</strong><br>
                     Redefina sua senha <a href='".DIRPAGE."redefinicaoSenha/{$arrayVar['email']}/{$arrayVar['token']}'>clicando aqui</a>.
                     "
-                );*/
+                );
                 $arrayResponse=[ "retorno"=>"success", "erros"=>null  ];
                 $this->cadastro->insConfirmation($arrayVar);
             }

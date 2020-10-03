@@ -1,16 +1,45 @@
-<?php \Classes\ClassLayout::setHead('Esqueci Minha Senha','Recupere sua senha.'); ?>
+<?php \Classes\ClassLayout::setHead('Recupere sua senha','Recupere sua senha para fazer o login, novamente'); ?>
+    <!--login
+        class='wrapper style1'  = lilas
+        class='wrapper style2'  = branco berge
+        class='wrapper style3'  = Black    
+    -->
+    
+        <section  class="wrapper style2">
+			<div class="inner">
+				<header class="align-center">
+                    <img src="<?php echo DIRIMG.'logo_kvik.png'; ?>" alt="Logomarca da Kvik">
+						<h2>Você receberá um link para resert sua Senha. </h2>		
+				</header>
 
-<div class="topFaixa float w100 center">Esqueci minha senha</div>
-
-<div class="retornoSen float w100 center"></div>
-
-<form name="formSenha" id="formSenha" action="<?php echo DIRPAGE.'controllers/controllerSenha'; ?>" method="post">
-    <div class="cadastro float center">
+                <div style="width: 50%;  clear: none; margin: 3em 3em 0 38%;">
+                     <!--- Ajax Login e CapsLock --->
+                     <div class="retornoSen"></div>                    
+                    <form name="formSenha" id="formSenha" action="<?php echo DIRPAGE.'controllers/controllerSenha'; ?>" method="post">
         
-        <input class="float w100 h40" type="email" id="email" name="email" placeholder="Email:" required>
-        
-        <input class="inlineBlock h40" type="submit" value="Solicitar">
-    </div>
-</form>
+                        <div class="6u$ 12u$(xsmall)">
+                            <input type="email" name="email" id="email" placeholder="Email" autofocus require></div><br>                     
+                        
+                        <!-- submit -->
+                        <div class="12u$">
+                            <ul class="actions">
+                                <li><input type='submit' value='Reset' class='alt'></li>
+                            </ul>
+                        </div>
 
-<?php \Classes\ClassLayout::setFooter(); ?>
+                        <div class="12u$">
+                            <ul class="actions">
+                                <li><a href="<?php echo DIRPAGE.''; ?>">Home</a></li>
+                                <li><a href="<?php echo DIRPAGE.'cadastro'; ?>">Nova Conta</a></li>
+                            </ul>
+                        </div>                        
+                    </form>    
+                </div>
+			</div>
+		</section>
+
+    <!--========== script JS ===============-->
+    <script src="<?php echo DIRJS.'jquery.min.js';?>"></script>
+    <script src="<?php echo DIRJS.'javascript.js';?>"></script>
+    </body>
+</html>

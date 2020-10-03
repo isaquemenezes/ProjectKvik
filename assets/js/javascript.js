@@ -22,7 +22,8 @@ $("#formCadastro").on("submit",function(event){
                     $('.retornoCad').append(value+'');
                 });
             }else{
-                $('.retornoCad').append('Dados inseridos com sucesso!');
+                $('.retornoCad').append('Sucesso! Bem vindo. Você agora é parte do nosso time.<br>'
+                 +'Ah! Não esqueçe de confirmar seu email, através do link que enviamos. Blz.');
             }
         }
     });
@@ -46,7 +47,7 @@ $("#formCadastro").on("submit",function(event){
                     $('.retornoCad').append(value+'');
                 });
             }else{
-                $('.retornoCad').append('Dados inseridos com sucesso!');
+                $('.retornoCad').append('Dados Cadastrdo Com Sucesso!');
             }
         }
     });
@@ -87,7 +88,16 @@ $("#senha").keypress(function(e){
     else{    $(".resultadoForm").empty();  }
 });
 
-//Ajax do formulário de confirmação de senha
+//CapsLock Para redefinição senha
+$("#formRedSenha").keypress(function(e){
+    kc=e.keyCode?e.keyCode:e.which;
+    sk=e.shiftKey?e.shiftKey:((kc==16)?true:false);
+    if(((kc>=65 && kc<=90) && !sk)||(kc>=97 && kc<=122)&&sk){ $(".retornoRedSenha").html("Caps Lock Ligado");  }
+    else{    $(".retornoRedSenha").empty();  }
+});
+
+
+//Ajax do formulario de confirmacão de senha
 $("#formSenha").on("submit",function(event){
     event.preventDefault();
     var dados=$(this).serialize();
@@ -112,7 +122,7 @@ $("#formSenha").on("submit",function(event){
 
 /* Confirmação de deletar de conta de usuário volunteer*/
 $('.excluir').on('click', function(event){
-    event.preventDefault(); //evita direcionamento automática para o link
+    event.preventDefault(); 
 
     var link=$(this).attr('href');
 

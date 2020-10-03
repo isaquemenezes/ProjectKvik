@@ -4,10 +4,10 @@
     \Classes\ClassLayout::setHeadRestrito();   
     \Classes\ClassLayout::setHeadSubPage('Cadastro de Idoso','Cadastre uma Pessoa Idosa.');
 
-    $id_users=$_SESSION["id_users"];
-    $id_users2=$_GET['id'];
+    $id_users=$_SESSION["id_users"];    
     //Update de Dados do DB users_idoso
-    if(isset($id_users2)){
+    if(isset($_GET['id'])){
+        $id_users2=$_GET['id'];
         $Acao="Editar";
 
         $crud=new ModelCrud();
@@ -29,7 +29,8 @@
         $Acao="Cadastrar";
 
         $id=0;
-        $fk_users=$id_users;
+        $fk_users=$id_users;        
+        //$fk_users="";
         $nome="";
         $email="";
         $sexo="";
@@ -37,7 +38,7 @@
         $cidade="";
         $bairro="";
         $categoria="";
-        $on="";
+        $Ead="";
     }
    
 ?>
@@ -68,14 +69,14 @@
     <!-- Form -->
     <!--<h3>H3 vazio</h3>-->
 
-<form name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'controllers/controllerCadastroIdoso'; ?>" method="post" >
+<form name="formCadastro" id="formCadastr" action="<?php echo DIRPAGE.'controllers/controllerCadastroIdoso'; ?>" method="post" >
     <div class="row uniform">
         <input type="text" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
         <input type="text" id="id" name="id" value="<?php echo $id; ?>">
         <input type="text" id="fk_users" name="fk_users" value="<?php echo $fk_users; ?>">
 
         <div class="6u 12u$(xsmall)">
-            <input type="text" id="nome" name="nome" value="<?php echo $nome; ?>" placeholder="Nome ou apelido" required=""/></div>
+            <input type="text" id="name" name="name" value="<?php echo $nome; ?>" placeholder="Nome ou apelido" required=""/></div>
         <!--<div class="6u$ 12u$(xsmall)">
         
         O atributo pattern nos permite definir expressões regulares de validação, sem Javascript. Veja um
@@ -112,7 +113,7 @@ exemplo de como validar CEP:
           <!-- Break -->
           <div class="12u$">
             <div class="select-wrapper">
-                <select name="on" id="on">
+                <select name="ead" id="ead">
                     <option value="">- Pode ser à distância -</option>
                     <option value="sim">SIM</option>
                     <option value="nao">NÂO</option>
@@ -120,7 +121,7 @@ exemplo de como validar CEP:
             </div>
         </div>
 
-        <!-- Break -->
+        <!-- Break 
         <div class="4u 12u$(small)"><label>Pode ser à distância?</label></div>
 		
         <div class="4u 12u$(small)">
@@ -131,7 +132,7 @@ exemplo de como validar CEP:
         <div class="4u$ 12u$(small)">
 			<input type="radio" id="priority-high" name="priority">
 			<label for="priority-high">Sim</label>
-		</div>
+		</div>-->
 
         <div class="6u 12u$(xsmall)">
             <input type="text" id="cidade" name="cidade" value="<?php echo $cidade; ?>" placeholder="Cidade" required></div>
@@ -142,10 +143,10 @@ exemplo de como validar CEP:
         <div class="6u 12u$(xsmall)">
             <input class="float w100 h40" type="text" id="anoNascimento" name="anoNascimento" value="<?php echo $anoNascimento; ?>" placeholder="Ano de Nascimento 4dígitos (Opcional)"></div> 
 
-        <!-- message -->
+        <!-- message 
         <div class="12u$">
             <textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea></div>
-        
+        -->
         <!-- submit -->
         <div class="12u$">
             <ul class="actions">

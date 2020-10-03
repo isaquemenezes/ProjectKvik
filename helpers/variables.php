@@ -1,6 +1,7 @@
 <?php    
-
+    //namespace Models;
     $objPass=new \Classes\ClassPassword();
+
    
     //Acao de enviar
     if(isset($_POST['Acao'])){ 
@@ -17,11 +18,13 @@
     }else{ $Id=0;  }
 
     //fk_users DB users_idoso com id users 
-    if(isset($_POST['fk_users'])){ 
+    if(!isset($_POST['fk_users'])){ 
         $Fk_users=filter_input(INPUT_POST,'fk_users',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }elseif(isset($_GET['fk_users'])){ 
+        
+    }elseif(!isset($_GET['fk_users'])){ 
         $Fk_users=filter_input(INPUT_GET,'fk_users',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ $Fk_users=null;  }
+        
+    }else{ $Fk_users=null;}
 
 
     //Nome DB users e DB cadastro(idoso)
@@ -87,7 +90,15 @@
         $On=filter_input(INPUT_GET,'on',FILTER_SANITIZE_SPECIAL_CHARS); 
     }else{ $On=null;  }
 
-        
+    # Radio para questionamento sobre Atendimento à distância DB users e users_idoso
+    if(isset($_POST['ead'])){ 
+        $Ead=filter_input(INPUT_POST,'ead',FILTER_SANITIZE_SPECIAL_CHARS); 
+    }elseif(isset($_GET['ead'])){ 
+        $Ead=filter_input(INPUT_GET,'ead',FILTER_SANITIZE_SPECIAL_CHARS); 
+    }else{ $Ead=null;  }
+    
+    
+
     //Input Senha
     if(isset($_POST['senha'])){ $senha=$_POST['senha'];  $hashSenha=$objPass->passwordHash($senha); }
     else{  $senha=null;   $hashSenha=null;   }
@@ -117,7 +128,7 @@
         "senha"=>$senha,
         "hashSenha"=>$hashSenha,
         "dataCreated"=>$dataCreated,
-        "token"=>$token,
+        "token"=>$token
     ];
 
 

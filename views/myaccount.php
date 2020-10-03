@@ -5,12 +5,9 @@
     \Classes\ClassLayout::setHeadSubPage(strtoupper($_SESSION['name']).' Minha Conta',' Gerencie Sua Conta');     
 ?>
 
-        <!-- Header ========================-->
-        <header id="header">
-			<div class="logo"><a href="index.html">Hielo <span>by TEMPLATED</span></a></div>
-			<a href="#menu">Menu</a>
-		</header><!-- /Header ===========
-        ====================================-->	
+        <!-- Header ========================================-->
+        <?php include_once './includes/subPages/header.php'; ?>
+        <!-- /Header =======================================-->	
 
 		<!-- Nav ======================= -->
 		<?php include './includes/nav.php'; ?>
@@ -85,7 +82,8 @@
                 
             </tr>
             <?php       
-                $select_idoso=$crud->selectDB("*","idosos","WHERE fk_users=?", array($users['id']));
+                $users=$users['id'];
+                $select_idoso=$crud->selectDB("*","users_idoso","WHERE fk_users=?", array($users));
                 while($idosos=$select_idoso->fetch(\PDO::FETCH_ASSOC)){                     
             ?> 
             <tr>

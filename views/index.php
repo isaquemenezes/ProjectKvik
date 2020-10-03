@@ -1,21 +1,5 @@
 <?php \Classes\ClassLayout::setHead('kvik | Plataforma de Voluntariado','kvik'); ?>
-<!--- STYLE PARTÍCULAS -->
-<style type="text/css">
-		#particles-js{ width: 100% height: 300px; }
-		.background { position: absolute; display: block; top: 0; left: 0; z-index: 0;}
-	</style>	
-
-	<!---- INICIALIZAR PARTICULAS ---->
-	<script> 
-		window.onload = function() { Particles.init({ selector: '.background' }); };
-	</script>
-
-	<!------- PARTÍCULAS -------->
-	<div id="particles-js"></div>
-	<canvas class="background"></canvas>
-	<script src="<?php echo DIRJS.'particles.js';?>"></script>
-
-	<!--style para button-->
+<!--style para show link-->
 <style type="text/css">
 		
 		footer > a{
@@ -64,7 +48,7 @@
 
 		<!-- Nav ======================= -->
 		<?php include 'includes/nav.php'; ?>
-		<!-- Nav /======================= -->	
+		<!-- Nav /====================== -->	
 
 		<!-- Banner ===============================-->
 		<?php include 'includes/section-banner.php'; ?>	
@@ -84,7 +68,7 @@
 
 		<!-- Footer ========================-->
 		<?php include 'includes/footer.php'; ?>	
-		<!-- /Footer ========================-->
+		<!-- /Footer =======================-->
 
 		<!--============= JS ================-->
 		<?php Classes\ClassLayout::setFooter()?>

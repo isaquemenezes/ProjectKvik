@@ -4,7 +4,7 @@
 					<div class="inner">
 						<header>
 							<p>A free responsive web site template by <a href="https://templated.co">TEMPLATED</a></p>
-							<h2>Hielo</h2>
+							<h2>Kvik</h2>
 						</header>
 					</div>
 				</article>
@@ -13,7 +13,7 @@
 					<div class="inner">
 						<header>
 							<p>Lorem ipsum dolor sit amet nullam feugiat</p>
-							<h2>Magna etiam</h2>
+							<h2>Plataforma Social de Voluntariado</h2>
 						</header>
 					</div>
 				</article>
@@ -22,7 +22,7 @@
 					<div class="inner">
 						<header>
 							<p>Sed cursus aliuam veroeros lorem ipsum nullam</p>
-							<h2>Tempus dolor</h2>
+							<h2>Aqui Você faz a diferença</h2>
 						</header>
 					</div>
 				</article>
@@ -31,7 +31,7 @@
 					<div class="inner">
 						<header>
 							<p>Adipiscing lorem ipsum feugiat sed phasellus consequat</p>
-							<h2>Etiam feugiat</h2>
+							<h2>Na Vida de Pessoas Idosas</h2>
 						</header>
 					</div>
 				</article>
@@ -40,7 +40,7 @@
 					<div class="inner">
 						<header>
 							<p>Ipsum dolor sed magna veroeros lorem ipsum</p>
-							<h2>Lorem adipiscing</h2>
+							<h2>Junte-se À Nós Nesta Jornada</h2>
 						</header>
 					</div>
 				</article>
