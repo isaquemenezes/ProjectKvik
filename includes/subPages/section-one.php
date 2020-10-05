@@ -1,9 +1,10 @@
-<?php 
-	namespace Models;
-
-	$crud =new ModelCrud();
-
-	$select_c = $crud->selectDB("*", "users_idoso", "", array());
-	$user_c = $select_c->fetch(\PDO::FETCH_ASSOC);
-	
-?>	 
+<section id="one" class="wrapper style2">
+				<div class="inner">
+					<header class="align-center">
+						<p class="special">Escolha sua causa</p>
+						<h2>Gene</h2>
+						<br><br>
+					</header>
+				
+				</div>
+			</section>

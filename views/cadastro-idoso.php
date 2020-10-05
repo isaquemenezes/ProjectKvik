@@ -21,7 +21,7 @@
         $cidade       =$idosos['cidade'];        
         $bairro       =$idosos['bairro'];
         $categoria    =$idosos['categoria'];  
-        $on          =$idosos['ead'];
+        $Aa          =$idosos['ead'];
         $anoNascimento=$idosos['anoNascimento'];
     }
     #Cadastro Novo
@@ -38,7 +38,7 @@
         $cidade="";
         $bairro="";
         $categoria="";
-        $Ead="";
+        $Aa="";
     }
    
 ?>
@@ -56,7 +56,7 @@
 			<div class="inner">
 				<header class="align-center"><img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
 					<p></p>
-					<h2>Cadastre um idoso</h2>
+					<h2><?php echo  $Acao; ?></h2>
 				</header>
 			</div>
         </section> 
@@ -76,6 +76,7 @@
         <input type="text" id="fk_users" name="fk_users" value="<?php echo $fk_users; ?>">
 
         <div class="6u 12u$(xsmall)">
+            <label for="">Nome </label>
             <input type="text" id="name" name="name" value="<?php echo $nome; ?>" placeholder="Nome ou apelido" required=""/></div>
         <!--<div class="6u$ 12u$(xsmall)">
         
@@ -89,8 +90,9 @@ exemplo de como validar CEP:
         <!-- Break -->
         <div class="12u$">
             <div class="select-wrapper">
+            <label for="">Categoria</label>
                 <select name="categoria" id="categoria">
-                    <option value="">- Categoria -</option>
+                    <option value="<?php echo $categoria; ?>"><?php echo $categoria; ?></option>
                     <option value="educacaofinanceira">Educação Financeira</option>
                     <option value="educacaotecnologica">Educação Tecnológica</option>
                     <option value="combateisolamento">Combate Ao Isolamento</option>
@@ -103,8 +105,9 @@ exemplo de como validar CEP:
          <!-- Break -->
          <div class="12u$">
             <div class="select-wrapper">
+            <label for="">Sexo</label>
                 <select name="sexo" id="sexo">
-                    <option value="">- Sexo -</option>
+                    <option value="<?php echo $sexo; ?>"><?php echo $sexo; ?></option>
                     <option value="masculino">Masculino</option>
                     <option value="feminino">Feminino</option>
                 </select>
@@ -113,8 +116,9 @@ exemplo de como validar CEP:
           <!-- Break -->
           <div class="12u$">
             <div class="select-wrapper">
-                <select name="ead" id="ead">
-                    <option value="">- Pode ser à distância -</option>
+            <label for="">Pode ser atendido á distância</label>
+                <select name="aa" id="aa">
+                    <option value="<?php echo $Aa; ?>"><?php echo $Aa; ?></option>
                     <option value="sim">SIM</option>
                     <option value="nao">NÂO</option>
                 </select>
@@ -135,12 +139,15 @@ exemplo de como validar CEP:
 		</div>-->
 
         <div class="6u 12u$(xsmall)">
+        <label for="">Cidade</label>
             <input type="text" id="cidade" name="cidade" value="<?php echo $cidade; ?>" placeholder="Cidade" required></div>
         
         <div class="6u 12u$(xsmall)">
+        <label for="">Bairro</label>
             <input type="text" id="bairro" name="bairro" value="<?php echo $bairro; ?>" placeholder="Bairro" required></div>
             
         <div class="6u 12u$(xsmall)">
+        <label for="">Ano de Nascimento</label>
             <input class="float w100 h40" type="text" id="anoNascimento" name="anoNascimento" value="<?php echo $anoNascimento; ?>" placeholder="Ano de Nascimento 4dígitos (Opcional)"></div> 
 
         <!-- message 
@@ -150,7 +157,7 @@ exemplo de como validar CEP:
         <!-- submit -->
         <div class="12u$">
             <ul class="actions">
-                <li><input type="submit" value="Cadastrar" /></li>
+                <li><input type="submit" value="<?php echo $Acao;?>" /></li>
                 <li><input type="reset" value="Reset" class="alt" /></li>
             </ul>
         </div>

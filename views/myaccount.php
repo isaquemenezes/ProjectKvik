@@ -13,7 +13,7 @@
 		<?php include './includes/nav.php'; ?>
 		<!-- Nav /======================= -->	
 
-		<!-- Section One ======================-->
+		<!-- Section One =====-->
         <section id="One" class="wrapper style3">
 				<div class="inner">
 					<header class="align-center">
@@ -22,9 +22,9 @@
 						<h2>Gerencie Sua Conta</h2>
 					</header>
 				</div>
-		</section><!-- Section One ========
+		</section><!-- /Section One ========
         ========================================-->
-
+       
     <div class="content">
         
             <table class="tabelaCrud">

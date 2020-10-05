@@ -1,16 +1,17 @@
 <header id="header" class="alt">
 
-				<div class="logo"><a href="<?php echo DIRPAGE.''; ?>">Kvik <span>Plataforma</span></a></div>
+				<div class="logo"><a href="javascript:void(0);" onclick="MoveTop()">Kvik <span>Plataforma</span></a></div>
 				<?php  
 					$verify = new \Classes\ClassSessions();
-					$acentos=new \Classes\ClassAuxilia();			
-					$verify_session=$verify->verifyIdSessions();
-					
-					//if(isset($verify_session)){				
+					$verify_session=$verify->verifyIdSessions();		
 
-					if(isset($_SESSION['name'])){$user=$_SESSION['name'];
-							echo "<a href='#menu'>".$user."</a>";}
-					else{	echo "<a href='#menu'>MenuOff</a>";}
+					if(isset($_SESSION['name'])){$user_db=$_SESSION['name'];
+						$array_name=explode(" ",$user_db);            
+            			$user=strtoupper($array_name[0]);	
+						echo "<a href='#menu'>".$user."</a>";}
+					else{	
+						echo "<a href='#menu'>MenuOff</a>";
+					}
 				?>
 			
 			</header>

@@ -1,4 +1,6 @@
-<?php namespace Models; ?>
+<?php namespace Models; 
+
+?>
 <section id='two' class='wrapper style3'>
 				<div class='inner'>
 					<header class='align-center'>
@@ -58,7 +60,9 @@
 
                         <div class='6u 12u$(xsmall)'>
                             <input type='text' id='nome' name='nome' placeholder='Nome ou apelido' required></div>
-                                            
+                        
+                        
+                    
                         <div class='12u$'>
                             <div class='select-wrapper'>
                                 <select name='categoria' id='categoria'>
@@ -71,6 +75,8 @@
                             </div>
                         </div>
 
+
+                        
                         <div class='12u$'>
                             <div class='select-wrapper'>
                                 <select name='sexo' id='sexo'>
@@ -91,6 +97,9 @@
                             </div>
                         </div>
 
+                        
+                  
+
                         <div class='6u 12u$(xsmall)'>
                             <input type='text' id='cidade' name='cidade' placeholder='Cidade' required></div>
                         
@@ -100,11 +109,14 @@
                         <div class='6u 12u$(xsmall)'>
                             <input type='text' id='anoNascimento' name='anoNascimento' placeholder='Ano de Nascimento 4dígitos (Opcional)'></div> 
 
-                        <div class='12u$'>                        
+                    
+                        <div class='12u$'>
+                        
                             <ul class='actions'>
                                 <li><input type='submit' value='Cadastrar' /></li>
                                 <li><input type='reset' value='Reset' class='alt' /></li>
                             </ul>
+                        
                         </div>
                     </div>
                     
@@ -113,7 +125,7 @@
             </div>";
 
     }else{
-        echo "<div style='width: 50%;  margin: 3em 3em 0 25%;'>					
+    echo "<div style='width: 50%;  margin: 3em 3em 0 25%;'>					
             <h2>Estamos reunindo um exército do bem.</h2>
                 <div class='retornoCad'></div>
                             
@@ -159,70 +171,6 @@
                     </div>
                 </form>
           </div>";
-
-    
-    /*echo "
-    
-            
-            <div id='formulario'>
-            <form id='formularioLogin'>
-                <span class='title'>Acesse sua conta</span>
-
-                <div id='linha'>
-                    <label for='email'>Email</label>
-                    <input type='text' name='email' id='email' require/>
-                </div>
-
-                <div id='linha'>
-                    <label for='senha'>Senha</label>
-                    <input type='password' name='senha' id='senha' require/>
-                </div>
-
-                <div id='button'>
-                    <button id='btnEntrar'>Entrar</button>
-                </div>
-            </form>
-
-            <form id='formularioCadastro'>
-                <span class='title'>Crie sua conta</span>
-
-                <div id='linha'>
-                    <label for='nomeCadastro'>Nome</label>
-                    <input type='text' name='nomeCadastro' id='nomeCadastro' require/>
-                </div>
-
-                <div id='linha'>
-                    <label for='emailCadastro'>Email</label>
-                    <input type='text' name='emailCadastro' id='emailCadastro' require/>
-                </div>
-
-                <div id='linha'>
-                    <label for='senhaCadastro'>Senha</label>
-                    <input type='password' name='senhaCadastro' id='senhaCadastro' require/>
-                </div>
-
-                <div id='linha'>
-                <label for='ConfSenha'>Confirme sua senha</label>
-                <input type='password' name='confSenha' id='confSenha' require/>
-            </div>
-
-                <div id='button'>
-                    <button id='btnCadastrar'>Cadastrar</button>
-                </div>
-            </form>
-
-            <div id='textoCadastro'>
-                <span class='title'>Junte-se á nós</span>
-                <span class='subtitle'>Estamos juntando um exército do bem!</span>
-                <button id='btnCadastro' class='change'>Cadastrar</button>
-            </div>
-
-            <div id='textoLogin'>
-                <span class='title'>Já possui uma conta?</span>
-                <span class='subtitle'>Entre a faça a diferença</span>
-                <button id='btnLogin' class='change'>Entrar</button>
-            </div>
-        </div> "   ;*/
     }
 ?>
 

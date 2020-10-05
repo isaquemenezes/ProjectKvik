@@ -171,7 +171,7 @@
 
                 $arrayResponse=[
                     "retorno"=>"success",
-                    "page"=>'index',
+                    "page"=>'./',
                     "tentativas"=>$this->tentativas
                 ];
             }
@@ -227,4 +227,5 @@
             }
             return json_encode($arrayResponse);
         }
+
     }

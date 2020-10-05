@@ -1,12 +1,8 @@
-<?php 
+<!-- 
 	/* ProjectKvik/includes/Section-one.php  
 	*  index.php 
-	*
-	*
-	*
-	*	
 	*/
-?>
+-->
 <section id="one" class="wrapper style2">
 				<div class="inner">
 					<header class="align-center">

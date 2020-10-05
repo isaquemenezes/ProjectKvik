@@ -84,7 +84,7 @@
 										</ul>
 
 									</div>
-									<div class="6u$ 12u$(small)">
+									<div class="6u$ 12u$(larg)">
 
 										<h4>Ordered</h4>
 										<ol>

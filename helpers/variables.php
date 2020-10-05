@@ -1,6 +1,7 @@
 <?php    
     //namespace Models;
     $objPass=new \Classes\ClassPassword();
+    $filter=new \Classes\ClassAuxilia();
 
    
     //Acao de enviar
@@ -29,10 +30,11 @@
 
     //Nome DB users e DB cadastro(idoso)
     if(isset($_POST['name'])){ 
-        $Nome=filter_input(INPUT_POST,'name',FILTER_SANITIZE_SPECIAL_CHARS); 
+        $Name=filter_input(INPUT_POST,'name',FILTER_SANITIZE_SPECIAL_CHARS);  
     }elseif(isset($_GET['name'])){ 
-        $Nome=filter_input(INPUT_GET,'name',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ $Nome=null;  }
+        $Name=filter_input(INPUT_GET,'name',FILTER_SANITIZE_SPECIAL_CHARS);
+    }else{ $Name=null;  }
+    $Nome=$filter->filterVariavel($Name); 
 
     #sexo DB cadastro(idoso)
     if(isset($_POST['sexo'])){ 
@@ -60,7 +62,8 @@
         $Email=filter_input(INPUT_POST,'email',FILTER_VALIDATE_EMAIL);
     }elseif(isset($_GET['email'])){ 
         $Email=filter_input(INPUT_GET,'email',FILTER_VALIDATE_EMAIL); 
-    }else{  $Email=null;   }      
+    }else{  $Email=null;   } 
+        
 
     #cidade DB users e cadastro(idoso)
     if(isset($_POST['cidade'])){ 
@@ -91,11 +94,11 @@
     }else{ $On=null;  }
 
     # Radio para questionamento sobre Atendimento à distância DB users e users_idoso
-    if(isset($_POST['ead'])){ 
-        $Ead=filter_input(INPUT_POST,'ead',FILTER_SANITIZE_SPECIAL_CHARS); 
+    if(isset($_POST['aa'])){ 
+        $Aa=filter_input(INPUT_POST,'aa',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['ead'])){ 
-        $Ead=filter_input(INPUT_GET,'ead',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ $Ead=null;  }
+        $Aa=filter_input(INPUT_GET,'aa',FILTER_SANITIZE_SPECIAL_CHARS); 
+    }else{ $Aa=null;  }
     
     
 
@@ -117,6 +120,8 @@
        
     if(isset($_POST['token'])){  $token=$_POST['token'];  }
     else{   $token=bin2hex(random_bytes(64));  }
+
+
 
     #Array para inserção no banco de dados
     $arrayVar=[
