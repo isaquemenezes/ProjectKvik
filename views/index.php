@@ -58,6 +58,7 @@
 		<?php include 'includes/section-one.php'; ?>
 		<!-- /One ===============================-->	
 
+		<!-- Opçaõ pra cadastrar idoso-->
 		<!-- Two ================================-->
 		<?php include 'includes/section-two.php'; ?>
 		<!-- /Two ===============================-->

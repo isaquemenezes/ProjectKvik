@@ -1,6 +1,6 @@
 <?php 
 	namespace Models;
-   //\Classes\ClassLayout::setHeadRestrito();
+	\Classes\ClassLayout::setHeadRestrito();
    
    \Classes\ClassLayout::setHeadSubPage('Área Restrita', 'Área exclusiva para categoria combate ao isolamento');
 	 
@@ -34,7 +34,7 @@
 				<div class="grid-style">
 					<?php 
 						$crud=new ModelCrud();
-						$BFetch=$crud->selectDB("*", "users_idoso", "WHERE ead=?",array('sim'));
+						$BFetch=$crud->selectDB("*", "users_idoso", "",array());
 						while($users_idoso=$BFetch->fetch(\PDO::FETCH_ASSOC)){
 					?>
 						<div>
@@ -50,6 +50,14 @@
 											<li>Data <?php echo $users_idoso['dateCreated']; ?></li>
 											<li>Pode ser a distância? <?php echo $users_idoso['ead']; ?></li>
 											<li>Sexo <?php echo $users_idoso['sexo']; ?></li>
+											<?php 
+												$select_users=$crud->selectDB("*", "users", "WHERE id=?", array($users_idoso['fk_users'])); 
+												$users=$select_users->fetch(\PDO::FETCH_ASSOC);
+
+											?>
+											
+											<li>Email do Responsável <?php echo $users['email']; ?></li>
+
 										</ul>
 									</p>								
 									<footer class="align-center">

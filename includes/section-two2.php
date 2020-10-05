@@ -1,17 +1,12 @@
-<?php namespace Models; 
-
-?>
+<?php namespace Models; ?>
 <section id='two' class='wrapper style3'>
 				<div class='inner'>
 					<header class='align-center'>
 
 <?php
-    $verify=new \Classes\ClassSessions(); 
-    $verify->verifyIdSessions();
-    
-    
+       
 
-    // $id_users=$_SESSION["id_users"];
+   
     //Update de Dados do DB users_idoso
     if(isset($_GET['id'])){  
         $id_users2=$_GET['id'];
@@ -36,7 +31,7 @@
         $Acao="Cadastrar";
 
         $id=0;
-       // $fk_users=$id_users;
+        $fk_users=$id_users;
         $nome="";
         $email="";
         $sexo="";
@@ -60,9 +55,7 @@
 
                         <div class='6u 12u$(xsmall)'>
                             <input type='text' id='nome' name='nome' placeholder='Nome ou apelido' required></div>
-                        
-                        
-                    
+                                            
                         <div class='12u$'>
                             <div class='select-wrapper'>
                                 <select name='categoria' id='categoria'>
@@ -75,8 +68,6 @@
                             </div>
                         </div>
 
-
-                        
                         <div class='12u$'>
                             <div class='select-wrapper'>
                                 <select name='sexo' id='sexo'>
@@ -87,18 +78,17 @@
                             </div>
                         </div>
                         
-                        <div class='12u$'>
-                            <div class='select-wrapper'>
-                                <select name='on' id='on'>
-                                    <option value=''>- Pode ser à distância -</option>
-                                    <option style='background:black;'value='sim'>SIM</option>
-                                    <option style='background:black;' value='nao'>NÂO</option>
-                                </select>
-                            </div>
-                        </div>
-
+                        <div class='4u 12u$(small)'><label>Pode ser à distância?</label></div>
                         
-                  
+                        <div class='4u 12u$(small)'>
+                            <input type='radio' id='priority-normal' name='priority'>
+                            <label for='priority-normal'>Não</label>
+                        </div>
+                        
+                        <div class='4u$ 12u$(small)'>
+                            <input type='radio' id='priority-high' name='priority'>
+                            <label for='priority-high'>Sim</label>
+                        </div>
 
                         <div class='6u 12u$(xsmall)'>
                             <input type='text' id='cidade' name='cidade' placeholder='Cidade' required></div>
@@ -109,14 +99,11 @@
                         <div class='6u 12u$(xsmall)'>
                             <input type='text' id='anoNascimento' name='anoNascimento' placeholder='Ano de Nascimento 4dígitos (Opcional)'></div> 
 
-                    
-                        <div class='12u$'>
-                        
+                        <div class='12u$'>                        
                             <ul class='actions'>
                                 <li><input type='submit' value='Cadastrar' /></li>
                                 <li><input type='reset' value='Reset' class='alt' /></li>
                             </ul>
-                        
                         </div>
                     </div>
                     
@@ -125,7 +112,7 @@
             </div>";
 
     }else{
-    echo "<div style='width: 50%;  margin: 3em 3em 0 25%;'>					
+        echo "<div style='width: 50%;  margin: 3em 3em 0 25%;'>					
             <h2>Estamos reunindo um exército do bem.</h2>
                 <div class='retornoCad'></div>
                             
@@ -171,6 +158,9 @@
                     </div>
                 </form>
           </div>";
+
+    
+    
     }
 ?>
 

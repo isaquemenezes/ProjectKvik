@@ -1,9 +1,10 @@
 <?php    
-    //namespace Models;
+    namespace Models;
     $objPass=new \Classes\ClassPassword();
+    //$obj=new \Classes\ClassSessions();
     $filter=new \Classes\ClassAuxilia();
 
-   
+    //$obj->verifyIdSessions();
     //Acao de enviar
     if(isset($_POST['Acao'])){ 
         $Acao=filter_input(INPUT_POST,'Acao',FILTER_SANITIZE_SPECIAL_CHARS); 
@@ -19,10 +20,10 @@
     }else{ $Id=0;  }
 
     //fk_users DB users_idoso com id users 
-    if(!isset($_POST['fk_users'])){ 
+    if(isset($_POST['fk_users'])){ 
         $Fk_users=filter_input(INPUT_POST,'fk_users',FILTER_SANITIZE_SPECIAL_CHARS); 
         
-    }elseif(!isset($_GET['fk_users'])){ 
+    }elseif(isset($_GET['fk_users'])){ 
         $Fk_users=filter_input(INPUT_GET,'fk_users',FILTER_SANITIZE_SPECIAL_CHARS); 
         
     }else{ $Fk_users=null;}
@@ -94,10 +95,17 @@
     }else{ $On=null;  }
 
     # Radio para questionamento sobre Atendimento à distância DB users e users_idoso
-    if(isset($_POST['aa'])){ 
+    /*if(isset($_POST['aa'])){ 
         $Aa=filter_input(INPUT_POST,'aa',FILTER_SANITIZE_SPECIAL_CHARS); 
     }elseif(isset($_GET['ead'])){ 
         $Aa=filter_input(INPUT_GET,'aa',FILTER_SANITIZE_SPECIAL_CHARS); 
+    }else{ $Aa=null;  }*/
+
+    # Radio para questionamento sobre Atendimento à distância DB users e users_idoso
+    if(isset($_POST['priority'])){ 
+        $Aa=filter_input(INPUT_POST,'priority',FILTER_SANITIZE_SPECIAL_CHARS); 
+    }elseif(isset($_GET['ead'])){ 
+        $Aa=filter_input(INPUT_GET,'priority',FILTER_SANITIZE_SPECIAL_CHARS); 
     }else{ $Aa=null;  }
     
     

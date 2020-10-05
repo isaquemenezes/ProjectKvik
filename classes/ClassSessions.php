@@ -91,7 +91,8 @@
             }else{
                 if($_SESSION['time'] >= time() - $this->timeSession){
                     $_SESSION['time']=time();
-                }else{
+                }
+                /*else{
                     $this->destructSessions();
                     echo "
                         <script>
@@ -99,7 +100,7 @@
                             window.location.href='".DIRPAGE."login';
                         </script>
                     ";
-                }
+                }*/
             }
         }
 
@@ -108,4 +109,4 @@
             foreach (array_keys($_SESSION) as $key) {  unset($_SESSION[$key]);  }
         }
 
-    }//CLOSE class ClassSessions
+    }

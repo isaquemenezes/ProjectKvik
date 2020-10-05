@@ -30,7 +30,6 @@
 
         $id=0;
         $fk_users=$id_users;        
-        //$fk_users="";
         $nome="";
         $email="";
         $sexo="";
@@ -113,7 +112,7 @@ exemplo de como validar CEP:
                 </select>
             </div>
         </div>
-          <!-- Break -->
+          <!-- Break 
           <div class="12u$">
             <div class="select-wrapper">
             <label for="">Pode ser atendido á distância</label>
@@ -123,9 +122,9 @@ exemplo de como validar CEP:
                     <option value="nao">NÂO</option>
                 </select>
             </div>
-        </div>
+        </div>-->
 
-        <!-- Break 
+        <!-- Break -->
         <div class="4u 12u$(small)"><label>Pode ser à distância?</label></div>
 		
         <div class="4u 12u$(small)">
@@ -136,7 +135,7 @@ exemplo de como validar CEP:
         <div class="4u$ 12u$(small)">
 			<input type="radio" id="priority-high" name="priority">
 			<label for="priority-high">Sim</label>
-		</div>-->
+		</div>
 
         <div class="6u 12u$(xsmall)">
         <label for="">Cidade</label>

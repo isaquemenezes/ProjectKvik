@@ -4,46 +4,9 @@
 					<header class='align-center'>
 
 <?php
-    $verify=new \Classes\ClassSessions(); 
-    $verify->verifyIdSessions();
-    
-    
+       
 
-    // $id_users=$_SESSION["id_users"];
-    //Update de Dados do DB users_idoso
-    if(isset($_GET['id'])){  
-        $id_users2=$_GET['id'];
-        $Acao="Editar";
-
-        $crud=new ModelCrud();
-        $select_idoso=$crud->selectDB("*","users_idoso", "WHERE id=?", array($id_users2));
-        $idosos=$select_idoso->fetch(\PDO::FETCH_ASSOC);
-        
-        $id           =$idosos['id'];
-        $fk_users     =$idosos['fk_users'];
-        $nome         =$idosos['nome'];
-        $sexo         =$idosos['sexo'];
-        $cidade       =$idosos['cidade'];        
-        $bairro       =$idosos['bairro'];
-        $categoria    =$idosos['categoria'];  
-        $on          =$idosos['ead'];
-        $anoNascimento=$idosos['anoNascimento'];
-    }
-    #Cadastro Novo
-    else{
-        $Acao="Cadastrar";
-
-        $id=0;
-       // $fk_users=$id_users;
-        $nome="";
-        $email="";
-        $sexo="";
-        $anoNascimento="";
-        $cidade="";
-        $bairro="";
-        $categoria="";
-        $on="";
-    }
+   
    
     if(isset($_SESSION['login'])){
         echo "<div style='width: 50%;  clear: none; margin: 0 3em 2em 25%;'>
@@ -81,14 +44,16 @@
                             </div>
                         </div>
                         
-                        <div class='12u$'>
-                            <div class='select-wrapper'>
-                                <select name='on' id='on'>
-                                    <option value=''>- Pode ser à distância -</option>
-                                    <option style='background:black;'value='sim'>SIM</option>
-                                    <option style='background:black;' value='nao'>NÂO</option>
-                                </select>
-                            </div>
+                        <div class='4u 12u$(small)'><label>Pode ser à distância?</label></div>
+                        
+                        <div class='4u 12u$(small)'>
+                            <input type='radio' id='priority-normal' name='priority'>
+                            <label for='priority-normal'>Não</label>
+                        </div>
+                        
+                        <div class='4u$ 12u$(small)'>
+                            <input type='radio' id='priority-high' name='priority'>
+                            <label for='priority-high'>Sim</label>
                         </div>
 
                         <div class='6u 12u$(xsmall)'>
@@ -161,68 +126,7 @@
           </div>";
 
     
-    /*echo "
     
-            
-            <div id='formulario'>
-            <form id='formularioLogin'>
-                <span class='title'>Acesse sua conta</span>
-
-                <div id='linha'>
-                    <label for='email'>Email</label>
-                    <input type='text' name='email' id='email' require/>
-                </div>
-
-                <div id='linha'>
-                    <label for='senha'>Senha</label>
-                    <input type='password' name='senha' id='senha' require/>
-                </div>
-
-                <div id='button'>
-                    <button id='btnEntrar'>Entrar</button>
-                </div>
-            </form>
-
-            <form id='formularioCadastro'>
-                <span class='title'>Crie sua conta</span>
-
-                <div id='linha'>
-                    <label for='nomeCadastro'>Nome</label>
-                    <input type='text' name='nomeCadastro' id='nomeCadastro' require/>
-                </div>
-
-                <div id='linha'>
-                    <label for='emailCadastro'>Email</label>
-                    <input type='text' name='emailCadastro' id='emailCadastro' require/>
-                </div>
-
-                <div id='linha'>
-                    <label for='senhaCadastro'>Senha</label>
-                    <input type='password' name='senhaCadastro' id='senhaCadastro' require/>
-                </div>
-
-                <div id='linha'>
-                <label for='ConfSenha'>Confirme sua senha</label>
-                <input type='password' name='confSenha' id='confSenha' require/>
-            </div>
-
-                <div id='button'>
-                    <button id='btnCadastrar'>Cadastrar</button>
-                </div>
-            </form>
-
-            <div id='textoCadastro'>
-                <span class='title'>Junte-se á nós</span>
-                <span class='subtitle'>Estamos juntando um exército do bem!</span>
-                <button id='btnCadastro' class='change'>Cadastrar</button>
-            </div>
-
-            <div id='textoLogin'>
-                <span class='title'>Já possui uma conta?</span>
-                <span class='subtitle'>Entre a faça a diferença</span>
-                <button id='btnLogin' class='change'>Entrar</button>
-            </div>
-        </div> "   ;*/
     }
 ?>
 
