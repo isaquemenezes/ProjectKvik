@@ -3,7 +3,12 @@
     include_once './includes/subPages/header.php';
     include_once './includes/nav.php';
 
+
+
+
+
 ?>
+
         <!-- Section One ======================-->
         <section id="One" class="wrapper style3">
 			<div class="inner">

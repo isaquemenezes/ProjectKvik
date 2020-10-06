@@ -14,17 +14,14 @@
     {
         $crud->insertDB("users_idoso", "?,?,?,?,?,?,?,?,?,?",
                 array($Id, $Fk_users, $Nome, $Sexo, $AnoNascimento, $Cidade, $Bairro, $Categoria, $Aa, $dataCreated));
-                           
-            //var_dump($Id, $Fk_users, $Nome, $Sexo, $AnoNascimento, $Cidade, $Bairro, $Categoria, $Aa, $dataCreated);
-           
-            header("location:".DIRPAGE."myaccount");
+                        
+            header("location:".DIRPAGE."myaccount#marker2");
    } 
     #Update de Pessoa Atendida
     else{
         $crud->updateDB("users_idoso", "nome=?, sexo=?, anoNascimento=?, cidade=?, bairro=?, categoria=?, Aa=?","id=?",
                 array($Nome, $Sexo, $AnoNascimento, $Cidade, $Bairro, $Categoria, $Aa, $Id));
-        header("location:".DIRPAGE."myaccount");
-                    //var_dump($Nome, $Sexo, $AnoNascimento, $Cidade, $Bairro, $Categoria, $Aa, $Id);
-
+        header("location:".DIRPAGE."myaccount#marker2");
+                    
     
     }

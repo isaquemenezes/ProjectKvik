@@ -6,7 +6,7 @@
     $confirmation=new \Models\ModelCadastro();
 
     if($confirmation->confirmationCad($email,$token)){
-        echo "<script>
+       echo "<script>
                 alert('Dados confirmados com sucesso!');
                 window.location.href='".DIRPAGE."login';
               </script>";
@@ -15,4 +15,5 @@
                 alert('Não foi possível confirmar seus dados!');
                 window.location.href='".DIRPAGE."';
             </script> ";
+            
     }

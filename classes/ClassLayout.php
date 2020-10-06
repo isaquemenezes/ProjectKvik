@@ -24,8 +24,6 @@
             $html.="  <link rel='icon' type='image/png' href='".DIRPAGE."./assets/logo.ico'>\n"; 
             $html.="  <link rel='stylesheet' href='".DIRCSS."main.css'>\n";
             $html.="  <link rel='stylesheet' href='".DIRCSS."style.css'>\n";
-            $html.="  <link rel='stylesheet' href='".DIRCSS."styleform.css'>\n";
-
             
             $html.="</head>\n\n";
             $html.="<body> \n";
@@ -66,4 +64,4 @@
             echo $html;
            
         }
-    }//CLOSE class ClassLayout
+    }

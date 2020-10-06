@@ -6,12 +6,17 @@
     $crud=new ModelCrud();
 
     if($Acao=="Editar"){
-        $crud->updateDB("users","nome=?, contato=?, cidade=?, bairro=?", "id=?",
+        $crud->updateDB("users","nome=?, contato=?, cidade=?, bairro=?" , "id=?",
                     array($Nome, $Contato, $Cidade,  $Bairro, $Id ));
+                    
         echo"<script>
                 alert('Dados alterados com sucesso!');
-                window.location.href='".DIRPAGE."myaccount';
+                window.location.href='".DIRPAGE."myaccount#marker1';
             </script>";    
     }else{
+        echo"<script>
+                alert('Erro!');
+                window.location.href='".DIRPAGE."myaccount#marker1';
+            </script>";
 
     }

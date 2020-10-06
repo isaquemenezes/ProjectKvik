@@ -4,7 +4,7 @@ function getRoot(){
     return root;
 }
 
-//Ajax do formulário de cadastro
+//Ajax do formulario de cadastro users
 $("#formCadastro").on("submit",function(event){
     event.preventDefault();
     var dados=$(this).serialize();
@@ -17,7 +17,6 @@ $("#formCadastro").on("submit",function(event){
         success: function (response) {
             $('.retornoCad').empty();
             if(response.retorno == 'erro'){
-                //getCaptcha();
                 $.each(response.erros,function(key,value){
                     $('.retornoCad').append(value+'');
                 });
@@ -29,31 +28,8 @@ $("#formCadastro").on("submit",function(event){
     });
 });
 
-//Ajax do formulário de cadastro Idoso
-$("#formCadastro").on("submit",function(event){
-    event.preventDefault();
-    var dados=$(this).serialize();
 
-    $.ajax({
-       url: getRoot()+'controllers/controllerCadastroIdoso',
-        type: 'post',
-        dataType: 'json',
-        data: dados,
-        success: function (response) {
-            $('.retornoCad').empty();
-            if(response.retorno == 'erro'){
-                //getCaptcha();
-                $.each(response.erros,function(key,value){
-                    $('.retornoCad').append(value+'');
-                });
-            }else{
-                $('.retornoCad').append('Dados Cadastrdo Com Sucesso!');
-            }
-        }
-    });
-});
-
-//Ajax do formulário de login
+//Ajax do formulario de login
 $("#formLogin").on("submit",function(event){
     event.preventDefault();
     var dados=$(this).serialize();
@@ -110,7 +86,6 @@ $("#formSenha").on("submit",function(event){
         success: function (response) {
             if(response.retorno == 'success'){$('.retornoSen').html("Redefinição de senha enviada com sucesso!");}
             else{
-                //getCaptcha();
                 $('.retornoSen').empty();
                 $.each(response.erros,function(key,value){
                     $('.retornoSen').append(value+'');
@@ -119,6 +94,17 @@ $("#formSenha").on("submit",function(event){
         }
     });
 });
+
+/* Confirmacao de deletar de conta de usuario volunteer*/
+$('.excluir-conta').on('click', function(event){
+    event.preventDefault(); 
+
+    var link=$(this).attr('href');
+
+    if(confirm("Confirmar a Exclusão da Conta?")){ window.location.href=link; }
+    else{  return false;  }   
+});
+
 
 /* Confirmação de deletar de conta de usuário volunteer*/
 $('.excluir').on('click', function(event){

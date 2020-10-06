@@ -43,7 +43,6 @@
 
     <!--Retorno Ajax-->
     <div class="resultado"></div>
-    <!--Formulário de edicao de perfil para usuário voluntário-->
    
     <div style="width: 50%;  clear: none; margin: 5em 3em 0 25%;">
     <!--<h3>Atualize seu Perfil</h3>-->

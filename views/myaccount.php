@@ -29,12 +29,18 @@
         table tr td{ padding:5px; }    
     </style>
 
-    <?php 
+    <?php
         $user_email=$_SESSION['email'];
         $crud=new ModelCrud();
         $select_users=$crud->selectDB("*", "users", "WHERE email=?", array($user_email));
         $users=$select_users->fetch(\PDO::FETCH_ASSOC);
     ?>
+
+
+
+
+
+
 
                         <div class="box">
 						    <div class="image fit">
@@ -42,7 +48,7 @@
 							</div>
 						<div class="content">
 							<header class="align-center">
-								<h2>Organize Seu Perfil</h2>
+								<h2 id="marker1">Organize Seu Perfil</h2>
 						    </header>
                             <div class="retornoCad"></div><br><br>
                                 <!-- Form -->
@@ -80,12 +86,11 @@
                                             ?>
                                           </div>
                                         
-                                        
                                          <!-- Break -->
                                         <div class="12u$">
                                             <ul class="actions">
                                                 <li><a href="<?php echo DIRPAGE."./editar-perfil?id={$users['id']}"; ?>" class="button special">Editar</a></li>
-                                                <li><a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id_users={$users['id']}"; ?>">Deletar Conta</a></li>
+                                                <li><a class="excluir-conta" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id_users={$users['id']}"; ?>">Deletar Conta</a></li>
                                             </ul>
                                         </div><br><br>
                                     </div>
@@ -98,7 +103,7 @@
                             
 
             <header class="align-center">
-                <h2>Organize O Cadastro de Pessoas Atendidas</h2>
+                <h2 id="marker2">Organize O Cadastro de Pessoas Atendidas</h2>
             </header>
         <div class="content">
         <table class="tabelaCrud">
