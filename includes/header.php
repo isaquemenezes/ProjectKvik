@@ -10,7 +10,7 @@
             			$user=strtoupper($array_name[0]);	
 						echo "<a href='#menu'>".$user."</a>";}
 					else{	
-						echo "<a href='#menu'>MenuOff</a>";
+						echo "<a href='#menu'>Menu</a>";
 					}
 				?>
 			

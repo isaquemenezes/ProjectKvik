@@ -7,11 +7,7 @@
 									<header class="align-center">
 										<h2>Educação Tecnológica</h2>
 									</header>
-									<p>Um estudo da Associação Americana de Pessoas Aposentadas mostrou que 38% dos americanos com 50 anos 
-                                    ou mais disseram jogar videogame, enquanto uma pesquisa da Conferência Internacional da Associação de 
-                                    Alzheimer concluiu que as pequenas formas de estimulação cognitiva dos jogos podem atrasar ou retardar 
-                                    o aparecimento de doenças neurológicas degenerativas, como Alzheimer ou outras formas de demência.
-                                    </p><br><br>
+									<!---<p>parágrafo Vazio</p><br><br>-->
 						            <p style="font-size: 22px;">Como contribuir:</p>
 						            <p>
 							            <ul class="text-muted small">

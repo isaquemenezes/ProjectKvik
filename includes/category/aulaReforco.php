@@ -1,11 +1,11 @@
 <div>
 							<div class="box">
 								<div class="image fit">
-									<img src="<?php echo DIRIMG.'pessoa_com_cadeira.jpg';?>" alt="" />
+									<img src="<?php echo DIRIMG.'ensino.jpg';?>" alt="" />
 								</div>
 								<div class="content">
 									<header class="align-center">
-										<h2>Combate Ao Isolamento</h2>
+										<h2>Ajude um estudante com aulas de reforço</h2>
 									</header>
 									<!--<p>paragráfo vazio</p>-->
 									<p style="font-size: 22px;">Como contribuir:</p>

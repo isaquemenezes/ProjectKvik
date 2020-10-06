@@ -48,7 +48,7 @@
 											<li>Cidade <?php echo $users_idoso['cidade']; ?></li>
 											<li>Bairro <?php echo $users_idoso['bairro']; ?></li>
 											<li>Data <?php echo $users_idoso['dateCreated']; ?></li>
-											<li>Pode ser a distância? <?php echo $users_idoso['ead']; ?></li>
+											<li>Pode ser a distância? <?php echo $users_idoso['Aa']; ?></li>
 											<li>Sexo <?php echo $users_idoso['sexo']; ?></li>
 											<?php 
 												$select_users=$crud->selectDB("*", "users", "WHERE id=?", array($users_idoso['fk_users'])); 

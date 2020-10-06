@@ -13,8 +13,8 @@
             echo "<script> alert('Senha diferente de confirmação de senha!');</script>";
             echo "<script> window.location.href='".DIRPAGE."redefinicaoSenha/{$arrayVar['email']}/{$arrayVar['token']}';</script>";
         }
-    var_dump($confirmation);
-    echo $Email ."=".$token."=".$hashSenha; 
+    //var_dump($confirmation);
+    echo "Email = ".$Email ."Token = ".$token."Hash =".$hashSenha; 
     //echo "<script> window.location.href='".DIRPAGE."login';</script>";
 
     //Confirme seu email <a href='".DIRPAGE."controllers/controllerConfirmacao/{$arrayVar['email']}/{$arrayVar['token']}'>clicando aqui</a>.

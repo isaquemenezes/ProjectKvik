@@ -56,6 +56,9 @@
 
 		<!-- One Category =======================-->
 		<?php include 'includes/section-one.php'; ?>
+		<!-- /One ===============================-->
+		<!-- One Category =======================-->
+		<?php include 'includes/section-one2.php'; ?>
 		<!-- /One ===============================-->	
 
 		<!-- Opçaõ pra cadastrar idoso-->

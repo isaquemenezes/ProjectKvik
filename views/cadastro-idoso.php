@@ -21,7 +21,7 @@
         $cidade       =$idosos['cidade'];        
         $bairro       =$idosos['bairro'];
         $categoria    =$idosos['categoria'];  
-        $Aa          =$idosos['ead'];
+        $Aa          =$idosos['Aa'];
         $anoNascimento=$idosos['anoNascimento'];
     }
     #Cadastro Novo
@@ -112,30 +112,30 @@ exemplo de como validar CEP:
                 </select>
             </div>
         </div>
-          <!-- Break 
+          <!-- Break -->
           <div class="12u$">
             <div class="select-wrapper">
             <label for="">Pode ser atendido á distância</label>
-                <select name="aa" id="aa">
+                <select name="priority" id="priority">
                     <option value="<?php echo $Aa; ?>"><?php echo $Aa; ?></option>
-                    <option value="sim">SIM</option>
-                    <option value="nao">NÂO</option>
+                    <option value="SIM">SIM</option>
+                    <option value="NAO">NÂO</option>
                 </select>
             </div>
-        </div>-->
+        </div>
 
-        <!-- Break -->
+        <!-- Break 
         <div class="4u 12u$(small)"><label>Pode ser à distância?</label></div>
 		
         <div class="4u 12u$(small)">
-			<input type="radio" id="priority-normal" name="priority">
-			<label for="priority-normal">Não</label>
+			<input type="radio" id="nao" name="priority">
+			<label for="nao">Não</label>
 		</div>
 		
         <div class="4u$ 12u$(small)">
-			<input type="radio" id="priority-high" name="priority">
-			<label for="priority-high">Sim</label>
-		</div>
+			<input type="radio" id="sim" name="priority">
+			<label for="sim">Sim</label>
+		</div>-->
 
         <div class="6u 12u$(xsmall)">
         <label for="">Cidade</label>

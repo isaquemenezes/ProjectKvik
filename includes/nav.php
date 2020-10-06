@@ -22,7 +22,6 @@
 						}
 					?>		
 
-					<li><a href="<?php echo DIRPAGE.'elements'; ?>">Elements</a></li>
 				</ul>
 			</nav>
 

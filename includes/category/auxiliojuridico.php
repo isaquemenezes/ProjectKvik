@@ -8,7 +8,7 @@
 									<header class="align-center">
 										<h2>Auxilio Jurídico</h2>
 									</header>
-									<p> quis volutpat lacus placerat malesuada.</p>
+									<!--<p>parágrafo vazio</p>-->
 									<footer class="align-center">
 										<a href="<?php echo DIRPAGE.'auxiliojuridico';?>" class="button special">Ajudar Aqui</a>
 									</footer>

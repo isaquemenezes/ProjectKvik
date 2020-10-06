@@ -32,7 +32,7 @@
         
         public function confirmationSen($email, $token, $hashSenha){
             
-            $b=$this->selectDB("*","confirmation", "WHERE email=? and token=?", array($email, $token));
+            $b=$this->selectDB("*","confirmation", "where email=? and token=?", array($email, $token));
             $r=$b->rowCount();
 
             if($r >0)
