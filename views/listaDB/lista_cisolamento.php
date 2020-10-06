@@ -10,48 +10,19 @@
      
 	$crud=new ModelCrud();
 
-	$BFetch=$crud->selectDB("*", "users_idoso", "WHERE categoria=? ORDER BY id  LIMIT $inicio, $qnt_result_pg",
-							array('combateIsolamento'));
+	$BFetch=$crud->selectDB("*", "users_idoso", "ORDER BY id  LIMIT $inicio, $qnt_result_pg",
+							array());
     while($users_idoso=$BFetch->fetch(\PDO::FETCH_ASSOC)){
 ?>
-                                <div class="content">
-									<header class="align-center">
-										<h2>Nome <?php echo $users_idoso['nome']; ?></h2>
-									</header>
-								
-									<p style="font-size: 22px;">Dados:</p>
-									<p>
-										<ul class="text-muted small">
-											<li><?php echo $users_idoso['cidade']; ?></li>
-											<li><?php echo $users_idoso['bairro']; ?></li>
-											<li><?php echo $users_idoso['contato']; ?></li>
-											<li><?php echo $users_idoso['']; ?></li>
-											<li><?php echo $users_idoso['']; ?></li>
-										</ul>
-									</p>
-                                    <p>Com o aumento da expectativa de vida, o mundo observa a formação de um exército de solitários. 
-									Nos últimos anos, diversos estudos têm apontado uma forte associação entre a solidão e a incidência 
-									de doenças crônicas em idosos. O trabalho, liderado pelo psicólogo John Cacioppo, descobriu que o estresse provocado 
-									por essa sensação induz respostas inflamatórias nas células, afetando, entre outras coisas, a produção 
-									dos leucócitos, estruturas que defendem o organismo de infecções.<br></p>
-
-									<p style="font-size: 22px;">Pré-Requitos:</p>
-									<p>Muita vontade de ajudar e fazer a diferença.</p>
-									<footer class="align-center">
-								        <a href="<?php echo DIRPAGE.'combate-ao-isolamento';?>" class="button special">junta-se</a>
-									</footer>
 
 
-
-</div>
-						
-<?php 
-    }
-?>
+									
+										
+			
 <?php 
 	
 	//Paginação - Soma a quantidade de usuários	
-	$result_page=$crud->selectDB("COUNT(id) AS num_result", "users_idosos", "WHERE categoria=?", array('combateIsolamento'));
+	$result_page=$crud->selectDB("COUNT(id) AS num_result", "users_idosos", "", array());
 	$row_pg = $result_page->fetch(\PDO::FETCH_ASSOC);
 
 	//Quantidade de pagina para enviar para última página

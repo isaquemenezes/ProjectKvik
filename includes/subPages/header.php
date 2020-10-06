@@ -4,10 +4,7 @@
 	 * 
 	 * 
 	 * 
-	 * 
-	 * 
 	 */
-
 ?>
     <header id="header">
 

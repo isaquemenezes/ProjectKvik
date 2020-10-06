@@ -27,14 +27,66 @@
 				</header>
 			</div>
 		</section>
-	
+	<!--style para show link-->
+<style type="text/css">
+		
+		footer > a{
+			
+			cursor: pointer;
+			font-family: sans-serif;
+			font-size: 1em;
+			color: white;
+			width: 200px;
+			height: 50px;
+			background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);
+			background-size: 400%;
+			border:none;
+			border-radius: 30px;
+		}
+		footer > a::after{ content: ''; opacity: 0; }
+		footer > a:hover::after{
+			content: '';
+			display: block;
+			width: 200px;
+			height: 100px;
+			background-color: aliceblue;
+			position: absolute;
+			top: calc(50vh - 50px);
+			left: calc(50vw - 100px);
+			border-radius: 40px;
+			z-index: -1;
+			background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);
+			background-size: 400%;
+			filter: blur(40px);
+			opacity: 1;
+			transition: opacity .5s linear;
+			animation: animacao 5s linear infinite;
+		}
+		footer > a:hover{	animation: animacao 5s linear infinite;	}
+
+		@keyframes animacao{
+			from{ background-position: 0%;	}
+			to{	background-position: 400%;  }
+		}
+	</style>
 
 		<section id="one" class="wrapper style2">
 			<div class="inner">
 				<div class="grid-style">
-					<?php 
+					<?php //Paginação
+
+					//Receber o número da página
+					$pagina_atual = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);		
+					$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
+		
+					//Setar a quantidade de itens por pagina
+					$qnt_result_pg = 2;
+		
+					//calcular o inicio visualização
+					$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
+
 						$crud=new ModelCrud();
-						$BFetch=$crud->selectDB("*", "users_idoso", "",array());
+						$BFetch=$crud->selectDB("*", "users_idoso", "ORDER BY id DESC LIMIT $inicio, $qnt_result_pg",array());
 						while($users_idoso=$BFetch->fetch(\PDO::FETCH_ASSOC)){
 					?>
 						<div>
@@ -43,6 +95,9 @@
 									<header class="align-center">
 										<h2><?php echo $users_idoso['nome']; ?></h2>
 									</header>
+									<p>Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. 
+									Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus,
+									 quis volutpat lacus placerat malesuada.</p>
 									<p>
 										<ul class="text-muted small">
 											<li>Cidade <?php echo $users_idoso['cidade']; ?></li>
@@ -66,34 +121,49 @@
 								</div>
 							</div>
 						</div>
-					<?php }?>	
+					<?php }?>
+
+
 				</div>				
 			</div>			
 		</section>
-	
-			<!--============= jquery-3.3.1.min.js =============-->
-			<script src="<?php echo  DIRJS.'jquery-3.3.1.min.js';?>"></script>
+
 		
-			<script>
-				//Listagem dos usuários idosos do DB na page 
-				var qnt_result_pg = 5; 	//quantidades de Registros por páginas
-				var pagina = 1;  		//page inícial
+		<div style="padding:2em;"class="align-center">
+			<?php //Paginação 
 
-				$(document).ready(function (){
-					listar_user(pagina, qnt_result_pg); 
-				});
-
-				function listar_user(pagina, qnt_result_pg){
-					var dados_page ={
-						pagina: pagina,
-						qnt_result_pg: qnt_result_pg
+				//Paginação - Soma a quantidade de usuários	
+				$result_page=$crud->selectDB("*", "users_idoso", "", array());
+				$cont_page=$result_page->rowCount();
+				
+				//Quantidade de pagina 
+				$quantidade_pg = ceil($cont_page / $qnt_result_pg);		
+						
+				//Limitar os link antes depois
+				$max_links = 2;
+				echo "<a style='margin: 5px; text-decoration: none;' href='combate-ao-isolamento?pagina=1'>Primeira</a> ";
+					
+					for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++){
+						if($pag_ant >= 1){
+							echo "<a style='margin: 5px;' href='combate-ao-isolamento?pagina=$pag_ant'>$pag_ant</a> ";
+						}
 					}
-					$.post('listaDB/lista_cisolamento', dados_page, function(retorna_lista){
-						$("#listaCombateIsolamento").html(retorna_lista);
-
-					});
-				}
-			</script>
+							
+					echo "$pagina ";
+						
+					for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
+						if($pag_dep <= $quantidade_pg){
+							echo "<a style='margin: 5px;' href='combate-ao-isolamento?pagina=$pag_dep'>$pag_dep</a> ";
+						}
+					}
+					
+				echo "<a style='margin: 5px; text-decoration: none;' href='combate-ao-isolamento?pagina=$quantidade_pg'>Ultima</a>";
+						
+			?>		
+		</div>
+			
+		
+		
 			<?php include_once './includes/footer.php';?>
 			<!--======= FOOTER SCRIPTS =======-->
 			<?php \Classes\ClassLayout::setFooter(); ?>
