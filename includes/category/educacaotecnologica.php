@@ -22,7 +22,7 @@
 						            <p style="font-size: 22px;">Pré-Requitos:</p>
 						            <p>Muita vontade de ajudar e fazer a diferença.
 						            <footer class="align-center">
-										<a href="<?php echo DIRPAGE.'educacaotecnologica';?>" class="button special">Ajudar Aqui</a>
+										<a href="<?php echo DIRPAGE.'categorias/educacao-tecnologica';?>" class="button special">Ajudar Aqui</a>
 									</footer>
 								</div>
 							</div>

@@ -24,7 +24,7 @@
 									
 						
                                     <footer class="align-center">
-                                        <a href="<?php echo DIRPAGE.'educacao-financeira';?>" class="button special">Ajudar Aqui</a>
+                                        <a href="<?php echo DIRPAGE.'categorias/educacao-financeira';?>" class="button special">Ajudar Aqui</a>
                                     </footer>
 								</div>
 							</div>

@@ -21,7 +21,7 @@
 									<p style="font-size: 22px;">Pré-Requitos:</p>
 									<p>Muita vontade de ajudar e fazer a diferença.</p>
 									<footer class="align-center">
-								<a href="<?php echo DIRPAGE.'combate-ao-isolamento';?>" class="button special">Ajudar Aqui</a>
+								<a href="<?php echo DIRPAGE.'categorias/mentor';?>" class="button special">Ajudar Aqui</a>
 									
 									</footer>
 								</div>

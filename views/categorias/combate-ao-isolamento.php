@@ -116,7 +116,7 @@
 										</ul>
 									</p>								
 									<footer class="align-center">
-										<a href="<?php echo DIRPAGE.'combate-ao-isolamento';?>" class="button special">junta-se</a>
+										<a href="<?php echo DIRPAGE.'./combate-ao-isolamento';?>" class="button special">Posso Ajudar</a>
 									</footer>
 								</div>
 							</div>
