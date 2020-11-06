@@ -24,29 +24,32 @@
 ?>
     <!-- Header ===================================-->
     <?php include './includes/subPages/header.php'; ?>
-	<!-- /Header ==================================-->	
+
 
     <!-- Nav ======================================= -->
 	<?php include './includes/subPages/nav-menu.php'; ?>
-	<!-- Nav /====================================== -->	
+	
 
 		<!-- Section One =====================-->
 		<section id="One" class="wrapper style3">
 			<div class="inner">
+
 				<header class="align-center"><img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
 					<p></p>
 					<h2>Atualize Seu Perfil</h2>
 				</header>
+
 			</div>
         </section> 
-        <!-- /Section One =====================-->   
+        
 
     <!--Retorno Ajax-->
     <div class="resultado"></div>
    
     <div style="width: 50%;  clear: none; margin: 5em 3em 0 25%;">
     <!--<h3>Atualize seu Perfil</h3>-->
-      <!-- Form -->
+   
+    <!-- Formulário -->
     <form action="<?php echo DIRPAGE."controllers/controllerEditarPerfil"; ?>" name="formCadastr" id="formCadastr" method="post">
         <input type="hidden" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
         <input type="hidden" id="id" name="id" value="<?php echo $Id; ?>">

@@ -1,6 +1,74 @@
 <footer id="footer">
-				<div class="container">
-					<!--<ul class="icons">
+			<div class="container">
+					
+				
+				<!-- div class icons Square -->
+				
+				<div class="icons">
+
+          <a href="#">
+            <div class="layer">
+              <span></span><span></span><span>
+              </span><span></span>
+              <span class="fab fa-facebook-f"></span>
+            </div>
+            <div class="text">Facebook</div>
+           </a>
+           
+        <a href="#">
+          <div class="layer">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="fab fa-twitter"></span>
+          </div>
+  <div class="text">
+  Twitter</div>
+  </a>
+        <a href="#">
+          <div class="layer">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="fab fa-instagram"></span>
+          </div>
+  <div class="text">
+  Instagram</div>
+  </a>
+        <a href="#">
+          <div class="layer">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="fab fa-linkedin-in"></span>
+          </div>
+  <div class="text">
+  Linkedin</div>
+  </a>
+        <a href="#">
+          <div class="layer">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span class="fab fa-youtube"></span>
+          </div>
+  <div class="text">
+  YouTube</div> 
+  </a>
+			
+			</div>
+						
+				
+				<br/><br/><br/><br/><br/>		
+							
+				
+
+				
+				<!--<ul class="icons">
 						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 						<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>

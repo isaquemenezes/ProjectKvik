@@ -4,7 +4,7 @@
     
     $filter=new \Classes\ClassAuxilia();
 
-    //$obj->verifyIdSessions();
+    
     //Acao de enviar
     if(isset($_POST['Acao'])){ 
         $Acao=filter_input(INPUT_POST,'Acao',FILTER_SANITIZE_SPECIAL_CHARS); 
@@ -120,9 +120,7 @@
     if(isset($_POST['senhaConf'])){ $senhaConf=$_POST['senhaConf'];   }
     else{   $senhaConf=null;   }   
 
-    #Input data de Criacao 
-    date_default_timezone_set('America/Sao_Paulo');
-    $dataCreated=date("Y-m-d H:i:s", time());
+    
     
     #Esqueci minha senha - Recuperação
     $token=bin2hex(random_bytes(64));
@@ -130,6 +128,9 @@
     if(isset($_POST['token'])){  $token=$_POST['token'];  }
     else{   $token=bin2hex(random_bytes(64));  }
 
+    #Input data de Criacao 
+    $dataCreated=date("Y-m-d H:i:s", time());
+    
     #Array para inserção no banco de dados
     $arrayVar=[
         "nome"=>$Nome,

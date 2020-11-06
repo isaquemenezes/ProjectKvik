@@ -6,6 +6,7 @@
     include "./includes/header.php";
 ?>
     <div class="content">
+
         <?php
             $crud=new ModelCrud();
             $idUser=filter_input(INPUT_GET,"id", FILTER_SANITIZE_SPECIAL_CHARS);
@@ -14,8 +15,10 @@
 
             $Fetch=$BFetch->fetch(\PDO::FETCH_ASSOC);
         ?>
+
         <div style="margin-top: 15px;"><h1>Dados do Usuário</h1></div>
         <div style="margin-top: 10px; ">
+            
             <ul>
                 <li><strong>Nome: </strong><?php echo $Fetch['nome']; ?></li>
                 
@@ -27,6 +30,7 @@
                 <li><strong>Email do responsável: </strong><?php echo $Fetch['email']; ?></li>
                 <li><strong>Idade: </strong><?php echo $Fetch['anoNascimento']; ?></li>
             <ul>
+            
         </div>
     </div>
 

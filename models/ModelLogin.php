@@ -30,7 +30,8 @@
         {
             $b=$this->selectDB("*", "attempt", "where ip=?", array( $this->trait ));
             $r=0;
-            while($f=$b->fetch(\PDO::FETCH_ASSOC)){
+            while($f=$b->fetch(\PDO::FETCH_ASSOC))
+            {
                 if(strtotime($f["date"]) > strtotime($this->dateNow)-30){ //tempo de bloqueio 
                     $r++;
                 }
@@ -41,7 +42,8 @@
         #Inseri as tentativas
         public function insertAttempt()
         {
-            if($this->countAttempt() < 5){
+            if($this->countAttempt() < 5)
+            {
                 $this->insertDB("attempt", "?,?,?", array(0, $this->trait, $this->dateNow));
             }
         }

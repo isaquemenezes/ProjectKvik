@@ -7,23 +7,22 @@
 
         <!-- Header ========================================-->
         <?php include_once './includes/subPages/header.php'; ?>
-        <!-- /Header =======================================-->	
-
+       
 		<!-- Nav ======================= -->
 		<?php include './includes/nav.php'; ?>
-		<!-- Nav /======================= -->	
-
+		
 		<!-- Section One =====-->
         <section id="One" class="wrapper style3">
-				<div class="inner">
-					<header class="align-center">
-                    <img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
+		    <div class="inner">
+
+				<header class="align-center">
+                   <img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
 					<p></p>
-						<h2>Gerencie Sua Conta</h2>
-					</header>
-				</div>
-		</section><!-- /Section One ========
-        ========================================-->
+					<h2>Gerencie Sua Conta</h2>
+				</header>
+
+			</div>
+		</section>
                
     <style>
         table tr td{ padding:5px; }    
@@ -37,20 +36,19 @@
     ?>
 
 
-
-
-
-
-
                         <div class="box">
+
 						    <div class="image fit">
 								<!-- foto perfil <img src="" alt="" />-->
 							</div>
+
 						<div class="content">
 							<header class="align-center">
 								<h2 id="marker1">Organize Seu Perfil</h2>
 						    </header>
+
                             <div class="retornoCad"></div><br><br>
+                               
                                 <!-- Form -->
                                 <form method="post" name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'controllers/controllerCadastro'; ?>">
                                     <div class="row uniform">
@@ -116,36 +114,35 @@
                 <td>Categoria</td>
                 <td>Online?</td>
                 <td></td>
-                <td><a href="<?php echo DIRPAGE."./cadastro-idoso"; ?>" class="button special">Cadastrar</a></td>
+                <td><a href="<?php echo DIRPAGE."cadastro-idoso"; ?>" class="button special">Cadastrar</a></td>
                 
             </tr>
             <?php       
                 $users=$users['id'];
                 $select_idoso=$crud->selectDB("*","users_idoso","WHERE fk_users=?", array($users));
-                while($idoso=$select_idoso->fetch(\PDO::FETCH_ASSOC)){                     
-            ?> 
-            <tr>   
-                <td><?php echo $idoso['nome']; ?></td>         
-                <td><?php echo $idoso['sexo']; ?></td>
-                <td><?php echo $idoso['anoNascimento']; ?></td>
-                <td><?php echo $idoso['cidade']; ?></td>
-                <td><?php echo $idoso['bairro']; ?></td>
-                <td><?php echo $idoso['categoria']; ?></td>
-                <td><?php echo $idoso['Aa']; ?></td>
-                    <td></td>
-                <td>
-                  <a href="<?php echo DIRPAGE."cadastro-idoso?id={$idoso['id']}"; ?>" class="button">Editar</a>
-                    <a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id_idoso={$idoso['id']}"; ?>">Deletar</a>
-                </td>
-                
-            </tr>              
+                while($idoso=$select_idoso->fetch(\PDO::FETCH_ASSOC)){  ?> 
+                    <tr>   
+                        <td><?php echo $idoso['nome']; ?></td>         
+                        <td><?php echo $idoso['sexo']; ?></td>
+                        <td><?php echo $idoso['anoNascimento']; ?></td>
+                        <td><?php echo $idoso['cidade']; ?></td>
+                        <td><?php echo $idoso['bairro']; ?></td>
+                        <td><?php echo $idoso['categoria']; ?></td>
+                        <td><?php echo $idoso['Aa']; ?></td>
+                            <td></td>
+                        <td>
+                        <a href="<?php echo DIRPAGE."cadastro-idoso?id={$idoso['id']}"; ?>" class="button">Editar</a>
+                            <a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id_idoso={$idoso['id']}"; ?>">Deletar</a>
+                        </td>
+                        
+                    </tr>              
             <?php }?>           
         </table>
     </div>   
 
     <br><br><br><br><br><br>
     <!--======= FOOTER SCRIPTS =======-->
-    <?php  \Classes\ClassLayout::setFooter();?>
-    <?php include "./includes/footer.php"; ?>
+    <?php  include "./includes/footer.php"; 
+    \Classes\ClassLayout::setFooter(); ?>
     
     

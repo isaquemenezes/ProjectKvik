@@ -24,6 +24,7 @@
             $html.="  <link rel='icon' type='image/png' href='".DIRPAGE."./assets/logo.ico'>\n"; 
             $html.="  <link rel='stylesheet' href='".DIRCSS."main.css'>\n";
             $html.="  <link rel='stylesheet' href='".DIRCSS."style.css'>\n";
+            $html.="  <link rel='stylesheet' href='".DIRCSS."style-icon.css'>\n";
             
             $html.="</head>\n\n";
             $html.="<body> \n";
@@ -45,6 +46,7 @@
             $html.="  <link rel='icon' type='image/png' href='".DIRPAGE."./assets/logo.ico'>\n"; 
             $html.="  <link rel='stylesheet' href='".DIRCSS."main.css'>\n";
             $html.="  <link rel='stylesheet' href='".DIRCSS."style.css'>\n";
+            $html.="  <link rel='stylesheet' href='".DIRCSS."style-icon.css'>\n";
             $html.="</head>\n\n";
             $html.="<body class='subpage'> \n";
             echo $html;
@@ -59,6 +61,7 @@
             $html.="<script src='".DIRJS."util.js'></script>\n";            
             $html.="<script src='".DIRJS."main.js'></script>\n";
             $html.="<script src='".DIRJS."kvik_menu.js'></script>\n";
+            $html.="<script src='https://kit.fontawesome.com/a076d05399.js'></script>\n"; //icons Square
             $html.="</body>\n";
             $html.="</html>";
             echo $html;

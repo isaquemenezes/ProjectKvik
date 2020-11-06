@@ -13,8 +13,10 @@
 				</header>
 
                 <div style="width: 50%;  clear: none; margin: 3em 3em 0 38%;">
+                     
                      <!--- Ajax Login e CapsLock --->
                      <div class="retornoRedSenha"></div>                    
+                    
                     <form name="formRedSenha" id="formRedSenha" action="<?php echo DIRPAGE.'controllers/controllerConfirmacaoSenha'; ?>" method="post">
         
                         <div class="6u$ 12u$(xsmall)">
@@ -45,7 +47,8 @@
                                 <li><a href="<?php echo DIRPAGE.''; ?>">Home</a></li>
                                 <li><a href="<?php echo DIRPAGE.'cadastro'; ?>">Nova Conta</a></li>
                             </ul>
-                        </div>                        
+                        </div> 
+                                               
                     </form>    
                 </div>
 			</div>

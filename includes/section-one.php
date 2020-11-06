@@ -11,10 +11,10 @@
 						<br><br>
 					</header>
 					<div class="grid-style">
-						<?php include_once 'category/combateisolamento.php'; ?>
-						<?php include_once 'category/educacaofinanceira.php'; ?>
-						<?php include_once 'category/educacaotecnologica.php'; ?>
-						<?php include_once 'category/auxiliojuridico.php'; ?>
+						<?php include 'category/combateisolamento.php'; ?>
+						<?php include 'category/educacaofinanceira.php'; ?>
+						<?php include 'category/educacaotecnologica.php'; ?>
+						<?php include 'category/auxiliojuridico.php'; ?>
 					</div>
 				</div>
 			</section>

@@ -7,6 +7,7 @@
     
         <section  class="wrapper style2">
 			<div class="inner">
+
 				<header class="align-center">
                     <img src="<?php echo DIRIMG.'logo_kvik.png'; ?>" alt="Logomarca da Kvik">
 						<p class="special">Você pode fazer diferença no mundo.</p>
@@ -14,6 +15,7 @@
 				</header>
 
                 <div style="width: 50%;  clear: none; margin: 3em 3em 0 38%;">
+                    
                      <!--- Ajax Login e CapsLock --->
                     <div class="resultadoForm"></div>
                     
@@ -40,7 +42,8 @@
                             </ul>
                         </div>
                         <h6><a href="<?php echo DIRPAGE.'article/termo-de-uso';?>" target="_blank">Termo de uso</a> | <a href="<?php echo DIRPAGE.'article/politica-de-privacidade';?>" target="_blank">Politica de Privacidade</a> | <a href="<?php echo DIRPAGE.'article/termo-de-voluntariado';?>" target="_blank">Termo de Voluntário</h6>
-                    </form>    
+                    </form> 
+                       
                 </div>
 			</div>
 		</section>

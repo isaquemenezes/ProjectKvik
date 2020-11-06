@@ -1,30 +1,29 @@
 <?php 
     \Classes\ClassLayout::setHeadSubPage('Cadastro de Usuário','Realize seu cadastro em nosso sistema.');
-    include_once './includes/subPages/header.php';
-    include_once './includes/nav.php';
-
-
-
-
+    include './includes/subPages/header.php';
+    include './includes/nav.php';
 
 ?>
 
         <!-- Section One ======================-->
         <section id="One" class="wrapper style3">
 			<div class="inner">
+
 				<header class="align-center">
                     <img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
 					<p></p>
 					<h2>Cadastre-se e começe a fazer a diferença</h2>
 				</header>
-			</div>
-		</section><!-- Section One ========
-        ========================================-->
+			
+            </div>
+		</section>
 
         <div style="width: 50%;  clear: none; margin: 5em 3em 0 25%;">
+
             <!--<h3>Cadastre-se e começe a fazer a diferença!</h3>-->
             <div class="retornoCad"></div>
             <br><br>
+
             <!-- Form -->
             <form method="post" name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'controllers/controllerCadastro'; ?>">
                 <div class="row uniform">
@@ -74,5 +73,4 @@
             </form>
         </div>
 
-        
         <?php \Classes\ClassLayout::setFooter(); ?>

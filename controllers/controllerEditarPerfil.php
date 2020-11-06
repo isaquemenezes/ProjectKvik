@@ -1,8 +1,6 @@
 <?php
     namespace Models;
 
-    include_once "./helpers/variables.php"; 
-
     $crud=new ModelCrud();
 
     if($Acao=="Editar"){

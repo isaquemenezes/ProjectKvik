@@ -23,6 +23,8 @@
 									<footer class="align-center">
 								<a href="<?php echo DIRPAGE.'categorias/combate-ao-isolamento';?>" class="button special">Ajudar Aqui</a>
 									
+								<a href="<?php echo DIRPAGE.'cadastro-idoso';?>" class="button special">Cadastrar Um Idoso</a>
+
 										
 									
 									</footer>

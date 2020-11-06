@@ -1,5 +1,6 @@
 <?php \Classes\ClassLayout::setHead('kvik | Plataforma de Voluntariado','kvik'); ?>
-<!--style para show link-->
+
+<!--style para button link brilhante-->
 <style type="text/css">
 		
 		footer > a{
@@ -44,33 +45,29 @@
 	
 		<!-- Header ========================-->
 		<?php include 'includes/header.php'; ?>
-		<!-- /Header =======================-->	
+		
 
 		<!-- Nav ======================= -->
 		<?php include 'includes/nav.php'; ?>
-		<!-- Nav /====================== -->	
+			
 
 		<!-- Banner ===============================-->
 		<?php include 'includes/section-banner.php'; ?>	
-		<!-- /Banner ==============================-->
+		
 
 		<!-- One Category =======================-->
 		<?php include 'includes/section-one.php'; ?>
-		<!-- /One ===============================-->
+		
 
-		<!-- Opçaõ pra cadastrar idoso-->
-		<!-- Two ================================-->
+		<!--Two Opçaõ pra cadastrar idoso-->
 		<?php include 'includes/section-two.php'; ?>
-		<!-- /Two ===============================-->
-
+		
 		<!-- Three ================================-->
 		<?php include 'includes/section-three.php'; ?>
-		<!-- /Three ===============================-->	
-
+		
 		<!-- Footer ========================-->
 		<?php include 'includes/footer.php'; ?>	
-		<!-- /Footer =======================-->
-
+		
 		<!--============= JS ================-->
 		<?php Classes\ClassLayout::setFooter()?>
 			

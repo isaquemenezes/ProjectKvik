@@ -7,26 +7,23 @@
 ?>
 
 		<!-- Header ========================-->
-		<?php include './includes/subPages/header.php'; ?>
-		<!-- /Header =======================-->	
-
-		<!-- Nav ======================= -->
-		<?php include './includes/subPages/nav-menu.php'; ?>
-		<!-- Nav /======================= -->	
-
-		<!-- Section One =============================-->
-		<!-- One -->
-		<section id="One" class="wrapper style3">
+		<?php include 'includes/subPages/header.php'; ?>
 		
+		<!-- Nav ======================= -->
+		<?php include 'includes/subPages/nav-menu.php'; ?>
+		
+		<!-- Section One =============================-->
+		<section id="One" class="wrapper style3">		
 	
-		<div class="inner">
-			<header class="align-center"> 
+			<div class="inner">
+				<header class="align-center"> 
 					<img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
 					<p></p>
 					<h2>Causa Combate Ao Isolamento</h2>
 				</header>
 			</div>
 		</section>
+
 	<!--style para show link-->
 <style type="text/css">
 		
@@ -134,6 +131,8 @@
 
 				//Paginação - Soma a quantidade de usuários	
 				$result_page=$crud->selectDB("*", "users_idoso", "", array());
+				
+				//Quantidade Total de Registros
 				$cont_page=$result_page->rowCount();
 				
 				//Quantidade de pagina 
@@ -143,16 +142,20 @@
 				$max_links = 2;
 				echo "<a style='margin: 5px; text-decoration: none;' href='combate-ao-isolamento?pagina=1'>Primeira</a> ";
 					
-					for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++){
-						if($pag_ant >= 1){
+					for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++)
+					{
+						if($pag_ant >= 1)
+						{
 							echo "<a style='margin: 5px;' href='combate-ao-isolamento?pagina=$pag_ant'>$pag_ant</a> ";
 						}
 					}
 							
 					echo "$pagina ";
 						
-					for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++){
-						if($pag_dep <= $quantidade_pg){
+					for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++)
+					{
+						if($pag_dep <= $quantidade_pg)
+						{
 							echo "<a style='margin: 5px;' href='combate-ao-isolamento?pagina=$pag_dep'>$pag_dep</a> ";
 						}
 					}
@@ -164,6 +167,6 @@
 			
 		
 		
-			<?php include_once './includes/footer.php';?>
+			<?php include_once 'includes/footer.php';?>
 			<!--======= FOOTER SCRIPTS =======-->
 			<?php \Classes\ClassLayout::setFooter(); ?>

@@ -82,4 +82,10 @@ class ClassDispatch{
     {
         return $this->page;
     }
+
+    #Retornar a página temporária para o sistema
+    public function getInclusaoTemp()
+    {
+        return  $this->page=DIRREQ.'views/index_temp.php';
+    }
 }

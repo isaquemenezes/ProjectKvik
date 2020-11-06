@@ -102,7 +102,7 @@
                     "erros"=>$this->getErro()
                 ];
             }else{
-                $this->mail->sendMail(
+                /* $this->mail->sendMail(
                     $arrayVar['email'],
                     $arrayVar['nome'],
                     $arrayVar['token'],
@@ -111,7 +111,7 @@
                     <strong>Cadastro do Site</strong><br>
                     Confirme seu email <a href='".DIRPAGE."controllers/controllerConfirmacao/{$arrayVar['email']}/{$arrayVar['token']}'>clicando aqui</a>.
                     "
-                );
+                ); */
                 $arrayResponse=[ "retorno"=>"success", "erros"=>null ];
                 $this->cadastro->insertCad($arrayVar);
             }
