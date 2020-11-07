@@ -61,7 +61,7 @@
             $html.="<script src='".DIRJS."util.js'></script>\n";            
             $html.="<script src='".DIRJS."main.js'></script>\n";
             $html.="<script src='".DIRJS."kvik_menu.js'></script>\n";
-            $html.="<script src='https://kit.fontawesome.com/a076d05399.js'></script>\n"; //icons Square
+            //$html.="<script src='https://kit.fontawesome.com/a076d05399.js'></script>\n"; //icons Square
             $html.="</body>\n";
             $html.="</html>";
             echo $html;

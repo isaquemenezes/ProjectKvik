@@ -4,12 +4,15 @@
 									<img src="<?php echo DIRIMG.'finance.jpg';?>" alt="" />
 								</div>
 								<div class="content">
+
 									<header class="align-center">
 										<h2>Educação Financeira</h2>
 									</header>
+
 									<!--<p>parágrafo Vazio</p>-->
 						            <p style="font-size: 22px;">Como contribuir:</p>
-						            <p>
+								   
+									<p>
 							            <ul class="text-muted small">
 								            <li>Oriente sobre o uso de cartão de crédito.</li>
                                             <li style="margin-top: 10px;">Explicando sobre economia.</li>
@@ -22,10 +25,13 @@
 						            <p style="font-size: 22px;">Pré-Requitos:</p>
 						            <p>Muita vontade de ajudar e fazer a diferença.</p>
 									
-						
                                     <footer class="align-center">
+
                                         <a href="<?php echo DIRPAGE.'categorias/educacao-financeira';?>" class="button special">Ajudar Aqui</a>
-                                    </footer>
+										<a href="<?php echo DIRPAGE.'cadastro-idoso';?>" class="button special">Cadastrar Idoso</a>
+
+									</footer>
+
 								</div>
 							</div>
 						</div>
