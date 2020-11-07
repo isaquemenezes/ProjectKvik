@@ -5,19 +5,19 @@
 				<?php 
 					 
 					$verify = new \Classes\ClassSessions();
-					$verify_session=$verify->verifyIdSessions();		
+					$verify->verifyIdSessions();		
 
-					if(!empty($_SESSION['login']))
+					if(empty($_SESSION['email']))
 					{
+						echo "<a href='#menu'>Menu</a>";
+					}else{	
 						$user_db=$_SESSION['name']; //Seta o nome
 
 						$array_name=explode(" ",$user_db);  // Quebra o nome           
 						
 						$user=strtoupper($array_name[0]);	//pega o primeiro nome(array[0])
 						
-						echo "<a href='#menu'>".$user."</a>";}
-					else{	
-						echo "<a href='#menu'>Menu</a>";
+						echo "<a href='#menu'>".$user."</a>";
 					}
 				?>
 			

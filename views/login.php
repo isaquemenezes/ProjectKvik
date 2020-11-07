@@ -9,7 +9,7 @@
 			<div class="inner">
 
 				<header class="align-center">
-                    <img src="<?php echo DIRIMG.'logo_kvik.png'; ?>" alt="Logomarca da Kvik">
+                    <a href="<?php echo DIRPAGE.'';?>"><img src="<?php echo DIRIMG.'logo_kvik.png'; ?>" alt="Logomarca da Kvik"></a>
 						<p class="special">Você pode fazer diferença no mundo.</p>
 						<!--<h2>Entre e Mova Uma Vida</h2>-->		
 				</header>
@@ -22,7 +22,7 @@
                     <form name="formLogin" id="formLogin" action="<?php echo DIRPAGE.'controllers/controllerLogin'; ?>" method="post" >
         
                         <div class="6u$ 12u$(xsmall)">
-                            <input type="email" name="email" id="email" value="" placeholder="Email" autofocus require></div>
+                            <input type="email" name="email" id="email" placeholder="Email" autofocus require></div>
                         <br>
                         <div class="6u 12u$(xsmall)">
                             <input type="password" name="senha" id="senha" placeholder="Senha:" required></div>

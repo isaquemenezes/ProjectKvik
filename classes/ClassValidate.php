@@ -81,7 +81,7 @@
             else{  $this->setErro("Usuário ou Senha Inválidos!"); return false;  }
         }
 
-         /* #Validação final do cadastro
+        /* #Validação final do cadastro
         public function validateFinalCad($arrayVar)
         {
             if(count($this->getErro())>0){
@@ -120,7 +120,7 @@
 
 
 
-         #Validação final do cadastro com email de confirmacao
+        #Validação final do cadastro com email de confirmacao
         public function validateFinalCadIdoso($arrayVar)
         {
             if(count($this->getErro())>0){
@@ -212,7 +212,7 @@
                     "erros"=>$this->getErro()
                 ];
             }else{
-                /*$this->mail->sendMail(
+                $this->mail->sendMail(
                     $arrayVar['email'],
                     $arrayVar['nome'],
                     $arrayVar['token'],
@@ -221,7 +221,7 @@
                     <strong>Redefinação da Senha</strong><br>
                     Redefina sua senha <a href='".DIRPAGE."redefinicaoSenha/{$arrayVar['email']}/{$arrayVar['token']}'>clicando aqui</a>.
                     "
-                );*/
+                );
                 $arrayResponse=[ "retorno"=>"success", "erros"=>null  ];
                 $this->cadastro->insConfirmation($arrayVar);
             }

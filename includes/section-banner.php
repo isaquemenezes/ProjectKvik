@@ -13,7 +13,7 @@
 					<div class="inner">
 						<header>
 							<!--<p></p>-->
-							<h2>Dedicada Aos Idosos</h2>
+							<h2>Dedicada aos idosos</h2>
 						</header>
 					</div>
 				</article>
@@ -22,7 +22,7 @@
 					<div class="inner">
 						<header>
 							<!--<p></p>-->
-							<h2>Aqui Você faz a diferença</h2>
+							<h2>Faça a diferença</h2>
 						</header>
 					</div>
 				</article>

@@ -46,20 +46,16 @@
 		<!-- Header ========================-->
 		<?php include 'includes/header.php'; ?>
 		
-
 		<!-- Nav ======================= -->
 		<?php include 'includes/nav.php'; ?>
 			
-
 		<!-- Banner ===============================-->
 		<?php include 'includes/section-banner.php'; ?>	
 		
-
 		<!-- One Category =======================-->
 		<?php include 'includes/section-one.php'; ?>
 		
-
-		<!--Two Opçaõ pra cadastrar idoso-->
+		<!--Two Opçaõ pra cadastra -->
 		<?php include 'includes/section-two.php'; ?>
 		
 		<!-- Three ================================-->

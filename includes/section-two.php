@@ -1,55 +1,8 @@
-<?php namespace Models; ?>
-
-
 <?php
-       
-
-        
-       $id_users=$_SESSION["id_users"];
-       
-       //Update de Dados do DB users_idoso
-       if(isset($_GET['id'])){  
-           $id_users2=$_GET['id'];
-           $Acao="Editar";
-   
-           $crud=new ModelCrud();
-           $select_idoso=$crud->selectDB("*","users_idoso", "WHERE id=?", array($id_users2));
-           $idosos=$select_idoso->fetch(\PDO::FETCH_ASSOC);
-           
-           $id           =$idosos['id'];
-           $fk_users     =$idosos['fk_users'];
-           $nome         =$idosos['nome'];
-           $sexo         =$idosos['sexo'];
-           $cidade       =$idosos['cidade'];        
-           $bairro       =$idosos['bairro'];
-           $categoria    =$idosos['categoria'];  
-           $Aa          =$idosos['Aa'];
-           $anoNascimento=$idosos['anoNascimento'];
-       }
-       #Cadastro Novo
-       else{ 
-           $Acao="Cadastrar";
-   
-           $id=0;
-           $fk_users=$id_users;        
-           $nome="";
-           $email="";
-           $sexo="";
-           $anoNascimento="";
-           $cidade="";
-           $bairro="";
-           $categoria="";
-           $Aa="";
-       }
       
    
-    if(!empty($_SESSION['login'])){
-        echo " ";
-
-    }else{
+    if(empty($_SESSION['email'])){
         echo "
-        
-
         <section id='two' class='wrapper style3'>
         <div class='inner'>
             <header class='align-center'>
@@ -104,6 +57,10 @@
                 </form>
                  <br><br>
           </div>";
+
+    }else{
+        echo "";
+       
 
     
     
