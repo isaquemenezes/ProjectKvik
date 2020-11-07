@@ -23,6 +23,11 @@ $("#formCadastro").on("submit",function(event){
             }else{
                 $('.retornoCad').append('Sucesso! Bem vindo. Você agora é parte do nosso time.<br>'
                  +'Ah! Não esqueçe de confirmar seu email, através do link que enviamos. Blz.');
+                
+                //Limpa os inputs
+                $('#formCadastro input[text][email][password]').each(function(){
+                    $(this).val('');
+                });  
             }
         }
     });

@@ -55,15 +55,15 @@
 
 				<header class="align-center"><img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
 					<p></p>
-					<h2><?php echo  $Acao; ?></h2>
+					<h2>*<?php echo  $Acao; ?> Um Idoso </h2>
 				</header>
 
 			</div>
         </section> 
            
 
-<!--Retorno Ajax-->
-<div class="retornoCad"></div>
+    <!--Retorno Ajax-->
+    <div class="retornoCad"></div>
 
    
     <div style="width: 50%;  clear: none; margin: 6em 3em 20em 25%;">
@@ -73,9 +73,9 @@
     <!--Formulário de Cadastro de Idoso-->
     <form name="formCadastro" id="formCadastr" action="<?php echo DIRPAGE.'controllers/controllerCadastroIdoso'; ?>" method="post" >
         <div class="row uniform">
-            <input type="text" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
-            <input type="text" id="id" name="id" value="<?php echo $id; ?>">
-            <input type="text" id="fk_users" name="fk_users" value="<?php echo $fk_users; ?>">
+            <input type="hidden" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
+            <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
+            <input type="hidden" id="fk_users" name="fk_users" value="<?php echo $fk_users; ?>">
 
             <div class="6u 12u$(xsmall)">
                 <label for="">Nome </label>
@@ -163,8 +163,8 @@
         
     </form>
     
-    <h6>Lembre-se que você deve ser o responsável, ou ter autorização, para cadastrar a pessoa. Qualquer dúvida, leia nossos termos.</h6>
-    <h6><a href="#">Termo de uso</a> | <a href="#">Politica de Privacidade</a> | <a href="#">Termo de Voluntário</h6>
+    <h7>*Lembre-se que você deve ser o responsável, ou ter autorização, para cadastrar a pessoa. Qualquer dúvida, leia nossos termos.</h7>
+    
 
 </div>
 

@@ -56,16 +56,30 @@
                         <label for="">Repita sua senha</label>
                         <input type="password" id="senhaConf" name="senhaConf" placeholder="Confirmação da Senha:" required></div>
                     
-                    <!-- Break -->
-                
+                    <!-- Break -->                
                     <div class="12u$">
                         <ul class="actions">
                             <li><input type="submit" value="Cadastrar" /></li>
-                            <li><input type="reset" value="Reset" class="alt" /></li>
+                            <li><a 
+                                    style ="background-color: transparent;
+                                            box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.25);
+                                            color: #000 !important; border-radius: 2px;
+                                            border: 0;
+                                            cursor: pointer;
+                                            display: inline-block;
+                                            font-weight: 300;
+                                            height: 2.85rem;
+                                            line-height: 2.95rem;
+                                            padding: 0 1.5rem;
+                                            text-align: center;
+                                            text-decoration: none;
+                                            text-transform: uppercase;
+                                            white-space: nowrap;"
+                                            href="<?php echo DIRPAGE.'login';?>">Entrar</a></li>
                         </ul>
                     </div>
-                    <br>
-                    <br>
+                    <br><br>
+
                     <h5>Ao click em Cadastrar, consideramos que você leu nossa politica de privacidade e concorda com a mesma.</h5>
                     <h6><a href="<?php echo DIRPAGE.'article/termo-de-uso';?>" target="_blank">Termo de uso</a> | <a href="<?php echo DIRPAGE.'article/politica-de-privacidade';?>" target="_blank">Politica de Privacidade</a> | <a href="<?php echo DIRPAGE.'article/termo-de-voluntariado';?>" target="_blank">Termo de Voluntário</h6>
 

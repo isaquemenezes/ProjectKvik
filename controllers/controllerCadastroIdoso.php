@@ -8,7 +8,12 @@
     {
         $crud->insertDB("users_idoso", "?,?,?,?,?,?,?,?,?,?",
                 array($Id, $Fk_users, $Nome, $Sexo, $AnoNascimento, $Cidade, $Bairro, $Categoria, $Aa, $dataCreated));
-                        
+            
+            echo "<script>
+                    alert('Deu Certo! -)');
+                    window.location.href='".DIRPAGE."myaccount#marker2';
+                  </script>
+                ";    
             //header("location:".DIRPAGE."myaccount#marker2");
    } 
     #Update de Pessoa Atendida

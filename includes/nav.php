@@ -3,8 +3,10 @@
 					<li><a href="<?php echo DIRPAGE.'';?>">Home</a></li>
 					
 					<?php
-						//$verify=new \Classes\ClassSessions();
-						//$verify->verifyIdSessions();
+					
+						$verify=new \Classes\ClassSessions();
+						$verify->verifyIdSessions();
+
 						if(!empty($_SESSION['login']))
 						{	
 							//echo "<li><a href='javascript:void(0);' onclick='MoveScroll(&#39;two&#39;)' id='tv2'>Cadastrar Idoso</a></li>";			

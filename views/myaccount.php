@@ -101,7 +101,7 @@
                             
 
             <header class="align-center">
-                <h2 id="marker2">Organize O Cadastro de Pessoas Atendidas</h2>
+                <h2 id="marker2">Gerencie Seus Cadastros</h2>
             </header>
         <div class="content">
         <table class="tabelaCrud">

@@ -2,7 +2,7 @@
 	namespace Models;
 	\Classes\ClassLayout::setHeadRestrito();
    
-   \Classes\ClassLayout::setHeadSubPage('Área Restrita', 'Área exclusiva para categoria combate ao isolamento');
+   \Classes\ClassLayout::setHeadSubPage('kvik', 'Causa Educação Financeira');
 	 
 ?>
 
@@ -20,7 +20,7 @@
 				<header class="align-center"> 
 					<img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
 					<p></p>
-					<h2>Causa Combate Ao Isolamento</h2>
+					<h2>Causa Educação Financeira</h2>
 				</header>
 
 			</div>
@@ -112,7 +112,7 @@
 									<footer class="align-center">
 
 										<a href="<?php echo DIRPAGE."profile?id=".$users_idoso['id']; ?>" class="button special">Perfil</a>
-										<a href="<?php echo DIRPAGE.'combate-ao-isolamento';?>" class="button special">Conecta</a>
+										<a href="<?php echo DIRPAGE.'#';?>" class="button special">Conecta</a>
 									
 									</footer>
 
@@ -140,13 +140,13 @@
 						
 				//Limitar os link antes depois
 				$max_links = 2;
-				echo "<a style='margin: 5px; text-decoration: none;' href='combate-ao-isolamento?pagina=1'>Primeira</a> ";
+				echo "<a style='margin: 5px; text-decoration: none;' href='educacao-financeira?pagina=1'>Primeira</a> ";
 					
 					for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++)
 					{
 						if($pag_ant >= 1)
 						{
-							echo "<a style='margin: 5px;' href='combate-ao-isolamento?pagina=$pag_ant'>$pag_ant</a> ";
+							echo "<a style='margin: 5px;' href='educacao-financeira?pagina=$pag_ant'>$pag_ant</a> ";
 						}
 					}
 							
@@ -156,11 +156,11 @@
 					{
 						if($pag_dep <= $quantidade_pg)
 						{
-							echo "<a style='margin: 5px;' href='combate-ao-isolamento?pagina=$pag_dep'>$pag_dep</a> ";
+							echo "<a style='margin: 5px;' href='educacao-financeira?pagina=$pag_dep'>$pag_dep</a> ";
 						}
 					}
 					
-				echo "<a style='margin: 5px; text-decoration: none;' href='combate-ao-isolamento?pagina=$quantidade_pg'>Ultima</a>";
+				echo "<a style='margin: 5px; text-decoration: none;' href='educacao-financeira?pagina=$quantidade_pg'>Ultima</a>";
 						
 			?>		
 		</div>
