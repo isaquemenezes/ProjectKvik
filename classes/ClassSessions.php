@@ -7,7 +7,7 @@
     class ClassSessions{
 
         private $login;
-        private $timeSession=1200;
+        private $timeSession=1200; //Tempo de Sessão
         private $timeCanary=300; //tempo de sessão dentro do sistema para o usuário em segundos
 
         public function __construct()

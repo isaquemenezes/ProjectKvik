@@ -4169,6 +4169,19 @@
 					display: none;
 				}
 
+			/* Modify add */
+			.banner > article h3 {
+				font-size: 4rem;
+				margin-bottom: 0;
+				color: #FFF;
+				font-weight: 300;
+			}
+	
+				.banner > article h2:after {
+					display: none;
+				}
+			/* **************  */		
+
 			.banner > article p {
 				color: rgba(255, 255, 255, 0.65);
 				text-transform: uppercase;

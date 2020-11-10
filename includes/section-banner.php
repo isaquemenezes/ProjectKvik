@@ -4,7 +4,7 @@
 					<div class="inner">
 						<header>
 							<p>Somos uma Plataforma Social de Voluntariado</p>
-							<h2>Kvik</h2>
+							<h3>Kvik</h3>
 						</header>
 					</div>
 				</article>
@@ -13,7 +13,7 @@
 					<div class="inner">
 						<header>
 							<!--<p></p>-->
-							<h2>Dedicada aos idosos</h2>
+							<h3>Dedicada aos idosos</h3>
 						</header>
 					</div>
 				</article>
@@ -22,7 +22,7 @@
 					<div class="inner">
 						<header>
 							<!--<p></p>-->
-							<h2>Faça a diferença</h2>
+							<h3>Faça a diferença</h3>
 						</header>
 					</div>
 				</article>
@@ -31,7 +31,7 @@
 					<div class="inner">
 						<header>
 							<!--<p>Vazio </p>
-							<h2>Vazio</h2>-->
+							<h3>Vazio</h3>-->
 						</header>
 					</div>
 				</article>
@@ -40,7 +40,7 @@
 					<div class="inner">
 						<header>
 							<!--<p>Vazio </p>
-							<h2>Vazio</h2>-->
+							<h3>Vazio</h3>-->
 						</header>
 					</div>
 				</article>
