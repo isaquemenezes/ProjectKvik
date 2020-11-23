@@ -133,15 +133,27 @@
     
     #Array para inserção no banco de dados
     $arrayVar=[
-        "nome"=>$Nome,
-        "email"=>$Email,
-        "cidade"=>$Cidade,
-        "bairro"=>$Bairro,
-        "contato"=>$Contato,
-        "senha"=>$senha,
-        "hashSenha"=>$hashSenha,
+        "nome"       =>$Nome,
+        "email"      =>$Email,
+        "cidade"     =>$Cidade,
+        "bairro"     =>$Bairro,
+        "contato"    =>$Contato,
+        "senha"      =>$senha,
+        "hashSenha"  =>$hashSenha,
         "dataCreated"=>$dataCreated,
-        "token"=>$token
+        "token"      =>$token,
+       
+    ];
+    $array_idoso = [
+        "fk_users"      =>$Fk_users,
+        "nome"          =>$Nome,      
+        "anoNascimento" =>$AnoNascimento,
+        "cidade"        =>$Cidade,
+        "bairro"        =>$Bairro,      
+        "categoria"     =>$Categoria,
+        "aa"            =>$Aa,
+        "sexo"          =>$Sexo,
+        "dataCreated"   =>$dataCreated
     ];
 
 
@@ -164,7 +176,7 @@
 
         $solicitation_id=filter_input(INPUT_GET,'solicitation_id',FILTER_SANITIZE_SPECIAL_CHARS);
     
-    }*/
+    }
 
     if(isset($_GET['solicitation_id'])){
         $solicitation_id=filter_input(INPUT_GET, "solicitation_id", FILTER_SANITIZE_STRING);
@@ -185,7 +197,7 @@
 
         $id_profile=filter_input(INPUT_GET,'profile',FILTER_SANITIZE_SPECIAL_CHARS);
     
-    }
+    }*/
 
 
     

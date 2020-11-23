@@ -89,7 +89,7 @@
 
                     <label for="">Categoria</label>
                     
-                    <select name="categoria" id="categoria">
+                    <select name="categoria" id="categoria" required>
                         <option value="<?php echo $categoria; ?>"><?php echo $categoria; ?></option>
                         <option value="educacaofinanceira">Educação Financeira</option>
                         <option value="educacaotecnologica">Educação Tecnológica</option>
@@ -106,7 +106,7 @@
                 
                     <label for="">Sexo</label>
                     
-                    <select name="sexo" id="sexo">
+                    <select name="sexo" id="sexo" required>
                         <option value="<?php echo $sexo; ?>"><?php echo $sexo; ?></option>
                         <option value="masculino">Masculino</option>
                         <option value="feminino">Feminino</option>

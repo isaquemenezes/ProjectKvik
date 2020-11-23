@@ -22,6 +22,25 @@
                 /********  RECUPERACAO DE SENHA ********/
                 $this->insConfirmation($arrayVar);  
         }
+
+        #Realizará a inserção no banco de dados
+        public function insertCadIdoso($array_idoso)
+        {
+            $this->insertDB("users_idoso", "?,?,?,?,?,?,?,?,?,?",
+                        array(0,
+                            $array_idoso['fk_users'],
+                            $array_idoso['nome'],
+                            $array_idoso['sexo'],
+                            $array_idoso['anoNascimento'],
+                            $array_idoso['cidade'],
+                            $array_idoso['bairro'],
+                            $array_idoso['categoria'],
+                            $array_idoso['aa'],
+                            $array_idoso['dataCreated']
+                             )
+                 );
+                
+        }
         
         /********  RECUPERACAO DE SENHA ********/
         #Inserção de confirmação

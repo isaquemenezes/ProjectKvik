@@ -145,13 +145,13 @@ header > .container .icons li a:hover{
         <section id="One" class="wrapper style3">
 		    <div class="inner">
 
-				<header class="align-center">
+				  <header class="align-center">
 
-                   <img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
-					<p></p>
-					<h2>Conheça Nosso Voluntário </h2>
+            <img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
+            <p></p>
+            <h2>Conheça Nosso Voluntário </h2>
 				
-                </header>
+          </header>
 
 			</div>
 		</section>
@@ -256,7 +256,7 @@ header > .container .icons li a:hover{
                                                 {
                                                     $status = "Conta Pendende";
                                                 
-                                                }else{
+                                                }else {
 
                                                     $status = "Conta Ativada";
                                                 

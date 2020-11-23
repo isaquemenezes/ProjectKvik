@@ -141,28 +141,22 @@
 
 
 
-        #Validação final do cadastro com email de confirmacao
-        public function validateFinalCadIdoso($arrayVar){
+        #Validação final do cadastro de Idoso
+        public function validateFinalCadIdoso($array_idoso){
 
-            if(count($this->getErro())>0){
-              $arrayResponse=[
+            if(count($this->getErro()) > 0)
+            {
+                $arrayResponse = [
                   "retorno"=>"erro",
                   "erros"=>$this->getErro()
-              ];
-            }else{
-             /* $this->mail->sendMail(
-                  $arrayVar['email'],
-                  $arrayVar['nome'],
-                  $arrayVar['token'],
-                  "Confirmação de Cadastro",
-                  "
-                  <strong>Cadastro do Site</strong><br>
-                  Confirme seu email <a href='".DIRPAGE."controllers/controllerConfirmacao/{$arrayVar['email']}/{$arrayVar['token']}'>clicando aqui</a>.
-                  "
-              );*/
-              $arrayResponse=[ "retorno"=>"success", "erros"=>null ];
-              $this->cadastro->insertCad($arrayVar);
+                ];
+            }else {
+              
+              $arrayResponse = [ "retorno"=>"success", "erros"=>null ];
+              $this->cadastro->insertCadIdoso($array_idoso);
+            
             }
+
             return json_encode($arrayResponse);
         }
 

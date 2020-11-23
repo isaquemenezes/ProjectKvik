@@ -8,13 +8,13 @@
 
     
     //Controller Excluir conta de usuário
-    if(isset($id_users) && $id_users != " "){
+    if(isset($id_users) && $id_users != ""){
 
         $crud->deleteDB("users", "id=?", array($id_users));
         
         echo"<script>
-            alert('Conta Deletada!')
-            window.location.href='".DIRPAGE."';
+                alert('Conta Deletada!')
+                window.location.href='".DIRPAGE."';
             </script>
         ";
         
@@ -26,7 +26,7 @@
         $crud->deleteDB("users_idoso", "id=?", array($id_idoso));
     
         echo"<script>
-                alert('Sucesso!')
+                alert('Excluído com sucesso!')
                 window.location.href='".DIRPAGE."myaccount';
             </script>
          ";
