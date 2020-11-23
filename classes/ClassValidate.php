@@ -33,10 +33,13 @@
 
         #Validar se os campos desejados foram preenchidos
         public function validateFields($par){
+
             $i=0;
+            
             foreach ($par as $key => $value){
                 if(empty($value)){  $i++;   }
             }
+            
             if($i==0){  return true;   }
             else{   $this->setErro("Preencha todos os dados!");   return false;  }
         }
@@ -54,14 +57,30 @@
 
             $b=$this->cadastro->getIssetEmail($email);
 
-            if($action==null){
-                if($b > 0){ $this->setErro("Email já cadastrado!");
+            if($action==null)
+            {
+
+                if($b > 0)
+                {                    
+                    $this->setErro("Email já cadastrado!");
+                    
                     return false;
-                }else{ return true; }
+                
+                }else{ 
+
+                    return true; 
+                }
             }else{ //login 
-                if($b > 0){ return true; }
-                else{ $this->setErro("Email não cadastrado!");
+                if($b > 0)
+                { 
+                    return true; 
+                }
+                else{
+
+                    $this->setErro("Email não cadastrado!");
+                    
                     return false;
+                
                 }
             }
         } 
@@ -75,10 +94,11 @@
         }
 
         #Verificação da senha digitada com o hash no banco de dados
-        public function validateSenha($email,$senha)
-        {
+        public function validateSenha($email,$senha){
+
             if($this->password->verifyHash($email,$senha)){  return true;  }
             else{  $this->setErro("Usuário ou Senha Inválidos!"); return false;  }
+        
         }
 
         /* #Validação final do cadastro
@@ -93,9 +113,8 @@
         }*/
 
        
-       #Validação final do cadastro com email de confirmacao
-      public function validateFinalCad($arrayVar)
-        {
+        #Validação final do cadastro com email de confirmacao
+        public function validateFinalCad($arrayVar){
             if(count($this->getErro())>0){
                 $arrayResponse=[
                     "retorno"=>"erro",
@@ -107,13 +126,15 @@
                     $arrayVar['nome'],
                     $arrayVar['token'],
                     "Confirmação de Cadastro",
-                    "
-                    <strong>Cadastro do Site</strong><br>
+                    "<strong>Cadastro do Site - Kvik plataforma de voluntariado </strong><br>
                     Confirme seu email <a href='".DIRPAGE."controllers/controllerConfirmacao/{$arrayVar['email']}/{$arrayVar['token']}'>clicando aqui</a>.
                     "
                 ); */
+
                 $arrayResponse=[ "retorno"=>"success", "erros"=>null ];
+                
                 $this->cadastro->insertCad($arrayVar);
+
             }
             return json_encode($arrayResponse);
         }
@@ -121,8 +142,8 @@
 
 
         #Validação final do cadastro com email de confirmacao
-        public function validateFinalCadIdoso($arrayVar)
-        {
+        public function validateFinalCadIdoso($arrayVar){
+
             if(count($this->getErro())>0){
               $arrayResponse=[
                   "retorno"=>"erro",
@@ -146,18 +167,21 @@
         }
 
         #Validação das tentativas
-        public function validateAttemptLogin()
-        {
+        public function validateAttemptLogin(){
+
             if($this->login->countAttempt() >= 5){
+
                 $this->setErro("Você realizou mais de 5 tentativas!\nTente Novamente Depois.");
-                $this->tentativas=true;    return false;  
+                $this->tentativas=true;    return false;
+
             }else{ $this->tentativas=false;return true;}
         }
 
         #Validação final do login
-        public function validateFinalLogin($email)
-        {
+        public function validateFinalLogin($email){
+
             if(count($this->getErro()) >0){
+
                 $this->login->insertAttempt();
 
                 $arrayResponse=[
@@ -166,6 +190,7 @@
                     "tentativas"=>$this->tentativas
                 ];
             }else{
+
                 $this->login->deleteAttempt();
                 $this->session->setSessions($email);
 
@@ -175,6 +200,7 @@
                     "tentativas"=>$this->tentativas
                 ];
             }
+
             return json_encode($arrayResponse);
         }
 
@@ -184,28 +210,34 @@
 
             $user=$this->login->getDataUser($email);
             if($user["data"]["status"] == "confirmation"){
+
                 //Verificar a data de criacao do usuário - para ativação do cadastro pelo email
                 if(strtotime($user["data"]["dataCreate"])<= strtotime(date("Y-m-d H:i:s"))-432000){
+                    
                     $this->setErro("Ative seu cadastro pelo link do email");
+                    
                     return false;
+                
                 }else{ return true;   }
+
             }else{ return true;  }
         }
 
 
         #Validação se o email é igual ao email do banco de dados
-        public function validateEmailRecuperaSenha($email)
-        {
+        public function validateEmailRecuperaSenha($email){
+
             $dataDb=$this->login->getDataUser($email)["data"]["email"];
+            
             if($email == $dataDb){ return true;     }
             else{  //$this->setErro("Email não confere com o usuário!"); 
-                 return false;
+                   return false;
             }
         }
 
         #Validação final para Recuperação de senha
-        public function validateFinalSen($arrayVar)
-        {
+        public function validateFinalSen($arrayVar){
+
             if(count($this->getErro())>0){
                 $arrayResponse=[
                     "retorno"=>"erro",
@@ -217,14 +249,16 @@
                     $arrayVar['nome'],
                     $arrayVar['token'],
                     "Link para Confirmação de Senha",
-                    "
-                    <strong>Redefinação da Senha</strong><br>
+                    "<strong>Redefinação da Senha</strong><br>
                     Redefina sua senha <a href='".DIRPAGE."redefinicaoSenha/{$arrayVar['email']}/{$arrayVar['token']}'>clicando aqui</a>.
                     "
                 );
+
                 $arrayResponse=[ "retorno"=>"success", "erros"=>null  ];
+                
                 $this->cadastro->insConfirmation($arrayVar);
             }
+
             return json_encode($arrayResponse);
         }
 

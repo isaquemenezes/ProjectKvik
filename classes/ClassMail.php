@@ -14,8 +14,8 @@
         }
 
         #Envio de email
-        public function sendMail($email, $nome, $token=null , $assunto, $corpoEmail)
-        {
+        public function sendMail($email, $nome, $token=null , $assunto, $corpoEmail){
+            
             try {
                 $this->mail->isSMTP();              // Set mailer to use SMTP
                 $this->mail->Host = HOSTMAIL;       // Specify main and backup SMTP servers

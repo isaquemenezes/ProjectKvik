@@ -8,10 +8,10 @@
 
         private $login;
         private $timeSession=1200; //Tempo de Sessão
-        private $timeCanary=300; //tempo de sessão dentro do sistema para o usuário em segundos
+        private $timeCanary=300; //tempo de regeneration_id
 
-        public function __construct()
-        {
+        public function __construct(){
+
             if(session_id() == ''){
                 ini_set("session.save_handler","files");
                 ini_set("session.use_cookies",1);
@@ -33,6 +33,7 @@
 
         #Proteger contra roubo de sessão
         public function setSessionCanary($par=null){
+
             session_regenerate_id(true);
             if($par == null){  
                 $_SESSION['canary']=["birth" => time(), "IP" => TraitGetIp::getUserIp() ]; }
@@ -40,8 +41,8 @@
         }
 
         #Verificar a integridade da sessão
-        public function verifyIdSessions()
-        {
+        public function verifyIdSessions(){
+
             if(!isset($_SESSION['canary'])){ $this->setSessionCanary(); }
         
             if($_SESSION['canary']['IP'] !== TraitGetIp::getUserIp()){
@@ -55,8 +56,8 @@
         }
 
         #Setar as sessões do nosso sistema
-        public function setSessions($email)
-        {
+        public function setSessions($email){
+
             $this->verifyIdSessions();
             $_SESSION["login"]=true;
             $_SESSION["time"]=time();
@@ -77,19 +78,22 @@
         }
 
         #Validar as páginas internas do sistema
-        public function verifyInsideSession()
-        {
+        public function verifyInsideSession(){
+
             $this->verifyIdSessions();
+            
             if(!isset($_SESSION['login']) || !isset($_SESSION['permition']) || !isset($_SESSION['canary'])){
+                
                 $this->destructSessions();
-                echo "
-                    <script>
+                
+                echo "<script>
                         alert('Você não está logado');
                         window.location.href='".DIRPAGE."login';
                     </script>
                 ";
             }else{
-                if($_SESSION['time'] >= time() - $this->timeSession){
+                if($_SESSION['time'] >= time() - $this->timeSession)
+                {
                     $_SESSION['time']=time();
                 }
                 /*else{
@@ -106,6 +110,7 @@
 
         #Destruir as sessions existentes
         public function destructSessions() {
+            
             foreach (array_keys($_SESSION) as $key) {  unset($_SESSION[$key]);  }
         }
 

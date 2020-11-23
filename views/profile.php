@@ -22,15 +22,14 @@
                     
                     <?php 
                     
-					$id = filter_input(INPUT_GET,'id', FILTER_SANITIZE_NUMBER_INT);		
-					
-
+					    $id = filter_input(INPUT_GET,'id', FILTER_SANITIZE_NUMBER_INT);		
+				
 						$crud=new ModelCrud();
 						$BFetch=$crud->selectDB("*", "users_idoso", "WHERE id=?",array($id));
                         $users_idoso=$BFetch->fetch(\PDO::FETCH_ASSOC)?>
                         
 
-					<h2>Perfil Do Senhor (a) <?php echo $users_idoso['nome']?></h2>
+					<h2>Perfil do Senhor (a) <?php echo ucwords($users_idoso['nome']); ?></h2>
 				</header>
 			</div>
 		</section>
@@ -78,55 +77,68 @@
 		}
 	</style>
 
-		<section id="one" class="wrapper style2">
-			<div class="inner">
-			
-                  
-                    
-                    <div>
-							<div class="box">						
-								<div class="content">
+		<!-- Two -->
+			<section id="two" class="wrapper style2">
+				<div class="inner">
+					<div class="box">
 
-									<header class="align-center">
-										<h2><?php echo $users_idoso['nome']; ?></h2>
-                                    </header>
-                                    
-                                    <p style="text-align: justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, in. Expedita corporis
-                                         culpa voluptatibus laboriosam quidem qui facere, autem, 
-                                         libero dicta adipisci repellendus provident atque dolorem mollitia 
-                                         dignissimos corrupti quo.</p>
-									<p>
-										<ul class="text-muted small">
-											<li>Cidade <?php echo $users_idoso['cidade']; ?></li>
-											<li>Bairro <?php echo $users_idoso['bairro']; ?></li>
-											<li>Data <?php echo $users_idoso['dateCreated']; ?></li>
-											<li>Pode ser a distância? <?php echo $users_idoso['Aa']; ?></li>
-											<li>Sexo <?php echo $users_idoso['sexo']; ?></li>
+						<div class="content">
+
+							<header class="align-center">
+								<p><?php echo $_SESSION['name']; ?></p>
+								<h2><?php echo ucwords($users_idoso['nome']); ?></h2>
+							</header>
+
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at dignissim augue, in iaculis neque. Etiam bibendum felis ac vulputate pellentesque. Cras non blandit quam. Nunc porta, est non posuere sagittis, neque nunc pellentesque diam, a iaculis lacus urna vitae purus. In non dui vel est tempor faucibus. Aliquam erat volutpat. Quisque vel est vitae nibh laoreet auctor. In nec libero dui. Nulla ullamcorper, dolor nec accumsan viverra, libero eros rutrum metus, vel lacinia magna odio non nunc. Praesent semper felis eu rhoncus aliquam. Donec at quam ac libero vestibulum pretium. Nunc faucibus vel arcu in malesuada. Aenean at velit odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas commodo erat eget molestie sollicitudin. Donec imperdiet, ex sed blandit dictum, ipsum metus ultrices arcu, vitae euismod nisl sapien vitae tortor.</p>
+
+                            <p>Dados: </p>    
+							<p>
+
+                                <ul class="text-muted small">
+								
+                                	<li><b>Cidade</b> <?php echo strtoupper($users_idoso['cidade']); ?></li>
+									<li><b>Bairro</b> <?php echo strtoupper($users_idoso['bairro']); ?></li>
+									<li><b>Data</b> <?php echo $users_idoso['dateCreated']; ?></li>
+									<li><b>Pode ser a distância?</b> <?php echo $users_idoso['Aa']; ?></li>
+									<li><b>Sexo</b> <?php echo strtoupper($users_idoso['sexo']); ?></li>
 											
+								</ul>
+                            </p>
+                            
+                            <footer class="align-center">
 
-										</ul>
-									</p>								
-									<footer class="align-center">
-
-										<a href="<?php echo DIRPAGE.'./combate-ao-isolamento';?>" class="button special">Conecta</a>
+								<a href="<?php echo DIRPAGE.'./combate-ao-isolamento';?>" class="button special">Conecta</a>
 									
-									</footer>
-								</div>
-							</div>
+							</footer>
+                            
+
 						</div>
 
+					</div>
+				</div>
+			</section>
+            
 
-							
-			</div>			
-		</section>
+
+
+
+
+
+										
+                                   
+                                	
+								
+									
 
 		
-		<div style="padding:2em;"class="align-center">
-			
-		</div>
 			
 		
 		
 			<?php include_once 'includes/footer.php';?>
 			<!--======= FOOTER SCRIPTS =======-->
 			<?php \Classes\ClassLayout::setFooter(); ?>
+
+
+
+
+

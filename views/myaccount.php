@@ -16,10 +16,13 @@
 		    <div class="inner">
 
 				<header class="align-center">
+    
                    <img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
-					<p></p>
+	
+    				<p></p>
 					<h2>Gerencie Sua Conta</h2>
-				</header>
+	
+    			</header>
 
 			</div>
 		</section>
@@ -29,10 +32,12 @@
     </style>
 
     <?php
+
         $user_email=$_SESSION['email'];
         $crud=new ModelCrud();
         $select_users=$crud->selectDB("*", "users", "WHERE email=?", array($user_email));
         $users=$select_users->fetch(\PDO::FETCH_ASSOC);
+    
     ?>
 
 
@@ -43,15 +48,20 @@
 							</div>
 
 						<div class="content">
+
 							<header class="align-center">
-								<h2 id="marker1">Organize Seu Perfil</h2>
-						    </header>
+						
+                        		<h2 id="marker1">Organize Seu Perfil</h2>
+						
+                            </header>
 
                             <div class="retornoCad"></div><br><br>
                                
                                 <!-- Form -->
                                 <form method="post" name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'controllers/controllerCadastro'; ?>">
+                                    
                                     <div class="row uniform">
+                                        
                                         <div class="6u 12u$(xsmall)">
                                         <label for="">Nome </label>
                                             <input type="text" name="name" id="name" value="<?php echo $users['nome']; ?>"></div>
@@ -86,12 +96,18 @@
                                         
                                          <!-- Break -->
                                         <div class="12u$">
+                                            
                                             <ul class="actions">
+                                            
                                                 <li><a href="<?php echo DIRPAGE."./editar-perfil?id={$users['id']}"; ?>" class="button special">Editar</a></li>
                                                 <li><a class="excluir-conta" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id_users={$users['id']}"; ?>">Deletar Conta</a></li>
+                                            
                                             </ul>
+
                                         </div><br><br>
+                                    
                                     </div>
+
                                 </form>
 								
 								</div>
@@ -101,11 +117,16 @@
                             
 
             <header class="align-center">
+            
                 <h2 id="marker2">Gerencie Seus Cadastros</h2>
+            
             </header>
+        
         <div class="content">
         <table class="tabelaCrud">
+            
             <tr>
+            
                 <td>Nome</td>
                 <td>Sexo</td>
                 <td>Ano</td>
@@ -113,15 +134,21 @@
                 <td>Bairro</td>
                 <td>Categoria</td>
                 <td>Online?</td>
-                <td></td>
+                <td>voluntário</td>
+            
                 <td><a href="<?php echo DIRPAGE."cadastro-idoso"; ?>" class="button special">Cadastrar</a></td>
                 
             </tr>
-            <?php       
+            
+            <?php    
+
                 $users=$users['id'];
                 $select_idoso=$crud->selectDB("*","users_idoso","WHERE fk_users=?", array($users));
+                                                
                 while($idoso=$select_idoso->fetch(\PDO::FETCH_ASSOC)){  ?> 
+            
                     <tr>   
+                        
                         <td><?php echo $idoso['nome']; ?></td>         
                         <td><?php echo $idoso['sexo']; ?></td>
                         <td><?php echo $idoso['anoNascimento']; ?></td>
@@ -129,20 +156,46 @@
                         <td><?php echo $idoso['bairro']; ?></td>
                         <td><?php echo $idoso['categoria']; ?></td>
                         <td><?php echo $idoso['Aa']; ?></td>
-                            <td></td>
+
+                        <td>   
+                            <?php 
+                                
+                                $select_db_conexao = $crud->selectDB("*", "conexao", "where fk_users_idoso=?", array($idoso['id']));
+                                $rowCount = $select_db_conexao->rowCount();
+
+                               // while($select_conexao= $select_db_conexao->fetch(\PDO::FETCH_ASSOC)){
+                                while($data_conexao= $select_db_conexao->fetch(\PDO::FETCH_ASSOC))
+                                {
+                                    //echo $rowCount; 
+                                    echo "<a href='".DIRPAGE."profile-user-volunteer?profile={$data_conexao['fk_users']}?solicitation_id={$data_conexao['id']}'>Perfil </a>";
+                                
+                                }
+   
+                            ?>
+    
+
+                        </td>
+                        
+                        
+                        
                         <td>
+                        
                         <a href="<?php echo DIRPAGE."cadastro-idoso?id={$idoso['id']}"; ?>" class="button">Editar</a>
+                           
                             <a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id_idoso={$idoso['id']}"; ?>">Deletar</a>
+                        
                         </td>
                         
                     </tr>              
-            <?php }?>           
+            
+            <?php }?> 
+
         </table>
     </div>   
 
     <br><br><br><br><br><br>
     <!--======= FOOTER SCRIPTS =======-->
-    <?php  include "./includes/footer.php"; 
-    \Classes\ClassLayout::setFooter(); ?>
+    <?php  //include "./includes/footer.php"; 
+    //\Classes\ClassLayout::setFooter(); ?>
     
     

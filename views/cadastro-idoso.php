@@ -12,6 +12,7 @@
         $Acao="Editar";
 
         $crud=new ModelCrud();
+
         $select_idoso=$crud->selectDB("*","users_idoso", "WHERE id=?", array($id_users2));
         $idosos=$select_idoso->fetch(\PDO::FETCH_ASSOC);
         
@@ -73,21 +74,21 @@
     <!--Formulário de Cadastro de Idoso-->
     <form name="formCadastro" id="formCadastr" action="<?php echo DIRPAGE.'controllers/controllerCadastroIdoso'; ?>" method="post" >
         <div class="row uniform">
-            <input type="hidden" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
-            <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
-            <input type="hidden" id="fk_users" name="fk_users" value="<?php echo $fk_users; ?>">
+
+            <input type="text" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
+            <input type="text" id="id" name="id" value="<?php echo $id; ?>">
+            <input type="text" id="fk_users" name="fk_users" value="<?php echo $fk_users; ?>">
 
             <div class="6u 12u$(xsmall)">
                 <label for="">Nome </label>
                 <input type="text" id="name" name="name" value="<?php echo $nome; ?>" placeholder="Nome ou apelido" required=""/></div>
         
-             <!--<div class="6u$ 12u$(xsmall)">          
-                <input type="email" name="email" id="email" value="" placeholder="Email" /></div>-->
-            
             <!-- Break -->
             <div class="12u$">
                 <div class="select-wrapper">
-                <label for="">Categoria</label>
+
+                    <label for="">Categoria</label>
+                    
                     <select name="categoria" id="categoria">
                         <option value="<?php echo $categoria; ?>"><?php echo $categoria; ?></option>
                         <option value="educacaofinanceira">Educação Financeira</option>
@@ -95,18 +96,22 @@
                         <option value="combateisolamento">Combate Ao Isolamento</option>
                         <option value="Outros">Outros</option>
                     </select>
+
                 </div>
             </div>
 
             <!-- Break -->
             <div class="12u$">
                 <div class="select-wrapper">
-                <label for="">Sexo</label>
+                
+                    <label for="">Sexo</label>
+                    
                     <select name="sexo" id="sexo">
                         <option value="<?php echo $sexo; ?>"><?php echo $sexo; ?></option>
                         <option value="masculino">Masculino</option>
                         <option value="feminino">Feminino</option>
                     </select>
+                    
                 </div>
             </div>
 
@@ -126,12 +131,12 @@
             <div class="4u 12u$(small)"><label>Pode ser à distância?</label></div>
             
             <div class="4u 12u$(small)">
-                <input type="radio" id="nao" name="priority" value="NAO">
+                <input type="radio" id="nao" name="priority" value="NAO" >
                 <label for="nao">Não</label>
             </div>
             
             <div class="4u$ 12u$(small)">
-                <input type="radio" id="sim" name="priority" value="SIM">
+                <input type="radio" id="sim" name="priority" value="SIM" checked>
                 <label for="sim">Sim</label>
             </div>
 
@@ -151,12 +156,15 @@
             <div class="12u$">
                 <textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea></div>
             -->
+
             <!-- submit -->
             <div class="12u$">
+                
                 <ul class="actions">
                     <li><input type="submit" value="<?php echo $Acao;?>" /></li>
                     <li><input type="reset" value="Reset" class="alt" /></li>
                 </ul>
+
             </div>
 
         </div>

@@ -36,6 +36,7 @@ $("#formCadastro").on("submit",function(event){
 
 //Ajax do formulario de login
 $("#formLogin").on("submit",function(event){
+
     event.preventDefault();
     var dados=$(this).serialize();
 
@@ -44,16 +45,24 @@ $("#formLogin").on("submit",function(event){
         type: 'post',
         dataType: 'json',
         data: dados,
+        
         success: function (response) {
-            if(response.retorno == 'success'){
+            
+            if(response.retorno == 'success')
+            {
                 window.location.href=response.page;
             }else{
+                
                 //getCaptacha();
-                if(response.tentativas == true){
+                if(response.tentativas == true)
+                {
                     $('.loginFormFormulario').hide();
                 }
+                
                 $('.resultadoForm').empty();
-                $.each(response.erros, function(key, value){
+                
+                $.each(response.erros, function(key, value)
+                {
                     $('.resultadoForm').append(value+'<br>');
                 });
             }
@@ -63,23 +72,29 @@ $("#formLogin").on("submit",function(event){
 
 //CapsLock
 $("#senha").keypress(function(e){
+
     kc=e.keyCode?e.keyCode:e.which;
     sk=e.shiftKey?e.shiftKey:((kc==16)?true:false);
+    
     if(((kc>=65 && kc<=90) && !sk)||(kc>=97 && kc<=122)&&sk){ $(".resultadoForm").html("Caps Lock Ligado");  }
     else{    $(".resultadoForm").empty();  }
 });
 
 //CapsLock Para redefinição senha
 $("#formRedSenha").keypress(function(e){
+
     kc=e.keyCode?e.keyCode:e.which;
     sk=e.shiftKey?e.shiftKey:((kc==16)?true:false);
+    
     if(((kc>=65 && kc<=90) && !sk)||(kc>=97 && kc<=122)&&sk){ $(".retornoRedSenha").html("Caps Lock Ligado");  }
     else{    $(".retornoRedSenha").empty();  }
+
 });
 
 
 //Ajax do formulario de confirmacão de senha
 $("#formSenha").on("submit",function(event){
+   
     event.preventDefault();
     var dados=$(this).serialize();
 
@@ -88,12 +103,19 @@ $("#formSenha").on("submit",function(event){
         type: 'post',
         dataType: 'json',
         data: dados,
-        success: function (response) {
+   
+        success: function (response) 
+        {
             if(response.retorno == 'success'){$('.retornoSen').html("Redefinição de senha enviada com sucesso!");}
+        
             else{
+        
                 $('.retornoSen').empty();
-                $.each(response.erros,function(key,value){
+                
+                $.each(response.erros,function(key,value)
+                {
                     $('.retornoSen').append(value+'');
+        
                 });
             }
         }
@@ -113,12 +135,14 @@ $('.excluir-conta').on('click', function(event){
 
 /* Confirmação de deletar de conta de usuário volunteer*/
 $('.excluir').on('click', function(event){
+    
     event.preventDefault(); 
 
     var link=$(this).attr('href');
 
     if(confirm("Confirmar a Exclusão dos Dados?")){ window.location.href=link; }
-    else{  return false;  }   
+    else{  return false;  }
+       
 });
 
 

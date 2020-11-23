@@ -3,6 +3,7 @@
 	\Classes\ClassLayout::setHeadRestrito();
    
    \Classes\ClassLayout::setHeadSubPage('Área Restrita', 'Área exclusiva para categoria combate ao isolamento');
+	 
 ?>
 
 		<!-- Header ========================-->
@@ -15,15 +16,23 @@
 		<section id="One" class="wrapper style3">		
 	
 			<div class="inner">
-
 				<header class="align-center"> 
 					<img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
-					<p></p>
-					<h2>Causa Combate Ao Isolamento</h2>
+                    <p></p>
+                    
+                    <?php 
+                    
+					$id = filter_input(INPUT_GET,'id', FILTER_SANITIZE_NUMBER_INT);		
+					
+
+						$crud=new ModelCrud();
+						$BFetch=$crud->selectDB("*", "users_idoso", "WHERE id=?",array($id));
+                        $users_idoso=$BFetch->fetch(\PDO::FETCH_ASSOC)?>
+                        
+
+					<h2>Perfil Do Senhor (a) <?php echo $users_idoso['nome']?></h2>
 				</header>
-
 			</div>
-
 		</section>
 
 	<!--style para show link-->
@@ -71,36 +80,23 @@
 
 		<section id="one" class="wrapper style2">
 			<div class="inner">
-				<div class="grid-style">
-					<?php //Paginação
-
-					//Receber o número da página
-					$pagina_atual = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);		
-					$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
-		
-					//Setar a quantidade de itens por pagina
-					$qnt_result_pg = 2;
-		
-					//calcular o inicio visualização
-					$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
-
-						$crud=new ModelCrud();
-						$BFetch=$crud->selectDB("*", "users_idoso", "ORDER BY id DESC LIMIT $inicio, $qnt_result_pg",array());
-						while($users_idoso=$BFetch->fetch(\PDO::FETCH_ASSOC)){ ?>
-						
-						<div>
+			
+                  
+                    
+                    <div>
 							<div class="box">						
 								<div class="content">
 
 									<header class="align-center">
-
-										<h2><?php $first_name= explode(" ",$users_idoso['nome']); echo $first_name[0]; ?></h2>
-									
-									</header>
-							
+										<h2><?php echo $users_idoso['nome']; ?></h2>
+                                    </header>
+                                    
+                                    <p style="text-align: justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, in. Expedita corporis
+                                         culpa voluptatibus laboriosam quidem qui facere, autem, 
+                                         libero dicta adipisci repellendus provident atque dolorem mollitia 
+                                         dignissimos corrupti quo.</p>
 									<p>
 										<ul class="text-muted small">
-										
 											<li>Cidade <?php echo $users_idoso['cidade']; ?></li>
 											<li>Bairro <?php echo $users_idoso['bairro']; ?></li>
 											<li>Data <?php echo $users_idoso['dateCreated']; ?></li>
@@ -109,68 +105,26 @@
 											
 
 										</ul>
-									</p>	
-																
+									</p>								
 									<footer class="align-center">
 
-										<a href="<?php echo DIRPAGE."profile?id=".$users_idoso['id']; ?>" class="button special">Perfil</a>
-										<!--<a href="<?php// echo DIRPAGE.'controllers/controllerCon?=con'//.$users_idoso['id'];?>" class="button special">Conecta</a>-->
-										<a href="<?php echo DIRPAGE.'controllers/controllerCon?con='.$users_idoso['id'];?>" class="button special">Conecta</a>
-
-										<input type="text" name="con" value="con">
-										<!--<button name="con" id="con">fusão</button>
-										<input  type="submit" value="Cadastrar"/>-->
+										<a href="<?php echo DIRPAGE.'./combate-ao-isolamento';?>" class="button special">Conecta</a>
+									
 									</footer>
-
 								</div>
 							</div>
 						</div>
-					<?php }?>
 
-				</div>				
+
+							
 			</div>			
 		</section>
 
 		
 		<div style="padding:2em;"class="align-center">
-			<?php //Paginação 
-
-				//Paginação - Soma a quantidade de usuários	
-				$result_page=$crud->selectDB("*", "users_idoso", "", array());
-				
-				//Quantidade Total de Registros
-				$cont_page=$result_page->rowCount();
-				
-				//Quantidade de pagina 
-				$quantidade_pg = ceil($cont_page / $qnt_result_pg);		
-						
-				//Limitar os link antes depois
-				$max_links = 2;
-				echo "<a style='margin: 5px; text-decoration: none;' href='combate-ao-isolamento?pagina=1'>Primeira</a> ";
-					
-					for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++)
-					{
-						if($pag_ant >= 1)
-						{
-							echo "<a style='margin: 5px;' href='combate-ao-isolamento?pagina=$pag_ant'>$pag_ant</a> ";
-						}
-					}
-							
-					echo "$pagina ";
-						
-					for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++)
-					{
-						if($pag_dep <= $quantidade_pg)
-						{
-							echo "<a style='margin: 5px;' href='combate-ao-isolamento?pagina=$pag_dep'>$pag_dep</a> ";
-						}
-					}
-					
-				echo "<a style='margin: 5px; text-decoration: none;' href='combate-ao-isolamento?pagina=$quantidade_pg'>Ultima</a>";
-						
-			?>		
+			
 		</div>
-		
+			
 		
 		
 			<?php include_once 'includes/footer.php';?>

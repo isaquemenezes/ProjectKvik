@@ -7,10 +7,14 @@
 
     /*Update de Dados de Usuário Volunteer*/
     if(isset($_GET['id'])){
+        
+        $id_users=$_GET['id'];
+
         $Acao="Editar";
 
         $crud=new ModelCrud();
-        $select_users=$crud->selectDB("*", "users", "WHERE id=?", array($_GET['id']));
+
+        $select_users=$crud->selectDB("*", "users", "WHERE id=?", array($id_users));
         $users=$select_users->fetch(\PDO::FETCH_ASSOC);
         
         $Id     =$users['id'];
@@ -24,7 +28,6 @@
 ?>
     <!-- Header ===================================-->
     <?php include './includes/subPages/header.php'; ?>
-
 
     <!-- Nav ======================================= -->
 	<?php include './includes/subPages/nav-menu.php'; ?>
@@ -51,6 +54,7 @@
    
     <!-- Formulário -->
     <form action="<?php echo DIRPAGE."controllers/controllerEditarPerfil"; ?>" name="formCadastr" id="formCadastr" method="post">
+        
         <input type="hidden" id="Acao" name="Acao" value="<?php echo  $Acao; ?>">
         <input type="hidden" id="id" name="id" value="<?php echo $Id; ?>">
         
@@ -77,10 +81,13 @@
             
             <!-- Break -->
             <div class="12u$">
+
                 <ul class="actions">
                     <li><input type="submit" value="<?php echo $Acao; ?>" ></li>
                 </ul>
+
             </div>
+
         </div>
     </form>
 </div>

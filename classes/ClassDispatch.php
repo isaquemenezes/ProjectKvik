@@ -14,26 +14,28 @@ class ClassDispatch{
 
     use TraitParseUrl;
 
-    public function __construct()
-    {
+    public function __construct(){
+
         $this->url=TraitParseUrl::parseUrl();
         $this->cont=count($this->url);
         $this->verificaParametros();
     }
 
     #Verificar se existem parâmetros digitados pelo usuário
-    private function verificaParametros()
-    {
-        if($this->cont == 1 && empty($this->url[0])){
+    private function verificaParametros(){
+
+        if($this->cont == 1 && empty($this->url[0]))
+        {
             $this->page=DIRREQ.'views/index.php';
         }else{
+
             $this->verificaDir();
         }
     }
 
     #Verificar se o índice digitado pelo usuário é um diretório
-    private function verificaDir()
-    {
+    private function verificaDir(){
+
         $this->init=$this->url[0].'/';
 
         for($i=0; $i<$this->cont; $i++){
@@ -65,8 +67,8 @@ class ClassDispatch{
     }
 
     #Verificar se existe o arquivo requisitado, se não existir ele chama o index.php, senão chama a pagina 404.
-    private function verificaFile()
-    {
+    private function verificaFile(){
+
         $dirAbs=DIRREQ.$this->dir;
         if(file_exists($dirAbs.$this->file.'.php')){
             $this->page=$dirAbs.$this->file.'.php';
@@ -78,14 +80,14 @@ class ClassDispatch{
     }
 
     #Retornar a página final para o sistema
-    public function getInclusao()
-    {
+    public function getInclusao(){
+
         return $this->page;
     }
 
     #Retornar a página temporária para o sistema
-    public function getInclusaoTemp()
-    {
+    public function getInclusaoTemp(){
+        
         return  $this->page=DIRREQ.'views/index_temp.php';
     }
 }
