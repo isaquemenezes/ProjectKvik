@@ -1,4 +1,8 @@
-<?php 
+<?php
+    /**
+     * 
+     * Tentativa de mostrar notificação ao users
+    */
     namespace Models;
     \Classes\ClassLayout::setHeadRestrito();   
 

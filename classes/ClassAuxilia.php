@@ -1,32 +1,54 @@
 <?php 
     namespace Classes;
 
-    use Models\ModelCadastro;
-    use Models\ModelLogin;
-    use Classes\ClassPassword;
-    use Classes\ClassSessions;
-    use Classes\ClassMail; 
+    // use Models\ModelCadastro;
+    // use Models\ModelLogin;
+    // use Classes\ClassPassword;
+    // use Classes\ClassSessions;
+    // use Classes\ClassMail; 
 
     class ClassAuxilia{
         
-        public function filterVariavel($name){
+         #filter caracteres especiais
+         public function filterVariavel($name){
 
-            $com_acentos=array('Á', 'Ã', 'À', 'á', 'â','ã', 'É', 'é', 'Í', 'í', 'Ó', 'Ô', 'ó', 'ô',
-            'Ú', 'ú', 'Ê', 'ç', 'Ç');
-            
-            $sem_acentos=array('A', 'A', 'A', 'a', 'a', 'a', 'E', 'e', 'I', 'i', 'O', 'O', 'o', 'o',
-            'U','u','E', 'c', 'C');
+            // matriz de entrada
+            $what = array('ä','ã','à','á','â','ê','ë','è','é','ï','ì','í','ö','õ','ò','ó','ô','ü','ù','ú','û','À','Á','É','Í','Ó','Ú','ñ','Ñ','ç','Ç',
+                          '-','(',')',',',';',':','|','!','"','#','$','%','&','/','=','?','~','^','>','<','ª','º');
 
-            //Substituindo 
-            $filterAcentos_name=str_replace($com_acentos, $sem_acentos, $name);		
-            
-            //Removendo espaçamentos
-            $filter_espaco_branco=trim($filterAcentos_name);
-            
-            $filter_name=$filter_espaco_branco;
-            
-            return  $filter_name;
+            // matriz de saída
+            $by   = array('a','a','a','a','a','e','e','e','e','i','i','i','o','o','o','o','o','u','u','u','u','A','A','E','I','O','U','n','n','c','C',
+                          '_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_','_');
 
+            // devolver a string substituidas
+            $filter_name = str_replace($what, $by, $name);
+
+            //Retorna com devidos tratamentos
+            return trim($filter_name);
+                       
+        }
+
+        #filter contato celular
+        public function filterContact($contact){
+            
+            $what =array('-',);
+            $by   =array('');
+
+            return  str_replace($what, $by, $contact);
+    
+        }
+
+        #Calc idade
+        public function age($data_nascimento){
+            
+            $dataNascimento = new DateTime($data);
+            $dateNow = new DateTime();
+
+            $dateNow->diff($dataNascimento);
+
+            $age = $dateNow;
+            
+            return $age->y;
         }
     
     }

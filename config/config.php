@@ -12,7 +12,7 @@ define('DIRJS',DIRPAGE.'assets/js/');
 
 #Acesso ao db
 define('HOST',"localhost");
-define('DB',"sistema");
+define('DB',"sistema_kvik");
 define('USER',"root");
 define('PASS',"");
 
@@ -21,9 +21,6 @@ define("HOSTMAIL","HOSTMAIL DO SEU PROVEDOR DE EMAIL");
 define("USERMAIL","USUÁRIO DO EMAIL");
 define("PASSMAIL","");
 
-#Outras informações GOOGLE CAPTACHA
-define("SITEKEY", "6LdU-t8UAAAAAPk2EVlzqCvpa3QZ05cOa7TOmH_X");
-define("SECRETKEY","6LdU-t8UAAAAAMRDDgUHX2t-BXY9Q7NQpqWoXMPY");
 
 #Outros
 define("DOMAIN",$_SERVER["HTTP_HOST"]);

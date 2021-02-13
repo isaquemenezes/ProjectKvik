@@ -144,6 +144,7 @@
         "token"      =>$token,
        
     ];
+    
     $array_idoso = [
         "fk_users"      =>$Fk_users,
         "nome"          =>$Nome,      
@@ -168,36 +169,6 @@
     
     }
 
-    /*if(isset($_POST['solicitation_id']))
-    {
-        $solicitation_id=filter_input(INPUT_POST,'solicitation_id',FILTER_SANITIZE_SPECIAL_CHARS);  
-    
-    }elseif(isset($_GET['solicitation_id'])){
-
-        $solicitation_id=filter_input(INPUT_GET,'solicitation_id',FILTER_SANITIZE_SPECIAL_CHARS);
-    
-    }
-
-    if(isset($_GET['solicitation_id'])){
-        $solicitation_id=filter_input(INPUT_GET, "solicitation_id", FILTER_SANITIZE_STRING);
-    }else{
-        if(\Traits\TraitParseUrl::parseUrl(2) !== false){
-            $solicitation_id = \Traits\TraitParseUrl::parseUrl(2); 
-        }else{  $solicitation_id="";   }
-    }    
-
-
-    if(\Traits\TraitParseUrl::parseUrl(3) != false){  $solicitation_id=\Traits\TraitParseUrl::parseUrl(3); }
-
-    if(isset($_POST['profile']))
-    {
-        $id_profile=filter_input(INPUT_POST,'profile',FILTER_SANITIZE_SPECIAL_CHARS);  
-    
-    }elseif(isset($_GET['profile'])){
-
-        $id_profile=filter_input(INPUT_GET,'profile',FILTER_SANITIZE_SPECIAL_CHARS);
-    
-    }*/
-
+  
 
     
