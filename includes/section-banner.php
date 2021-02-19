@@ -1,6 +1,6 @@
 <section class="banner full">
 				<article>
-					<img src="<?php echo DIRIMG.'slide01.jpg';?>" alt="" />
+					<img src="<?php echo DIRIMG.'img1.jpg';?>" alt="" />
 					<div class="inner">
 						<header>
 							<p>Somos uma Plataforma Social de Voluntariado</p>
@@ -9,7 +9,7 @@
 					</div>
 				</article>
 				<article>
-					<img src="<?php echo DIRIMG.'slide02.jpg';?>" alt="" />
+					<img src="<?php echo DIRIMG.'idososentado.jpg';?>" alt="" />
 					<div class="inner">
 						<header>
 							<!--<p></p>-->
@@ -18,7 +18,7 @@
 					</div>
 				</article>
 				<article>
-					<img src="<?php echo DIRIMG.'slide03.jpg';?>"  alt="" />
+					<img src="<?php echo DIRIMG.'isolamento.jpg';?>"  alt="" />
 					<div class="inner">
 						<header>
 							<!--<p></p>-->
@@ -26,22 +26,6 @@
 						</header>
 					</div>
 				</article>
-				<article>
-					<img src="<?php echo DIRIMG.'slide04.jpg';?>"  alt="" />
-					<div class="inner">
-						<header>
-							<!--<p>Vazio </p>
-							<h3>Vazio</h3>-->
-						</header>
-					</div>
-				</article>
-				<article>
-					<img src="<?php echo DIRIMG.'slide05.jpg';?>"  alt="" />
-					<div class="inner">
-						<header>
-							<!--<p>Vazio </p>
-							<h3>Vazio</h3>-->
-						</header>
-					</div>
-				</article>
+				
+			
 			</section>
