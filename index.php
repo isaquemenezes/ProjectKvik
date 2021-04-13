@@ -4,7 +4,7 @@
     //error_reporting(0);        //Oculta Erros para os users
 
     include ("config/config.php");  
-    include (DIRREQ."lib/vendor/autoload.php");
+    include (DIRREQ."library/vendor/autoload.php");
     include (DIRREQ."helpers/variables.php");  
  
     $dispatch = new Classes\ClassDispatch();  //configuração para localhost(index da viws)
