@@ -17,9 +17,14 @@ define('USER',"root");
 define('PASS',"");
 
 #Informações do servidor de email
-define("HOSTMAIL","HOSTMAIL DO SEU PROVEDOR DE EMAIL");
-define("USERMAIL","USUÁRIO DO EMAIL");
+define("HOSTMAIL","");
+define("USERMAIL","");
+//define("PASSMAIL","");
 define("PASSMAIL","");
+define ("MAIL",[
+    "from_name" => "Equipe kvik",
+    "from_email" => ""
+]);
 
 
 #Outros
