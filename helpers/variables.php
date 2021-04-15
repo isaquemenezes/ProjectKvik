@@ -90,20 +90,7 @@
         $Categoria=filter_input(INPUT_GET,'categoria',FILTER_SANITIZE_SPECIAL_CHARS);  }
     else{ $Categoria=null;  }
 
-   /* # Radio para questionamento sobre Atendimento à distância DB users e users_idoso
-    if(isset($_POST['on'])){ 
-        $On=filter_input(INPUT_POST,'on',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }elseif(isset($_GET['on'])){ 
-        $On=filter_input(INPUT_GET,'on',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ $On=null;  }
-
-    # Radio para questionamento sobre Atendimento à distância DB users e users_idoso
-    if(isset($_POST['aa'])){ 
-        $Aa=filter_input(INPUT_POST,'aa',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }elseif(isset($_GET['ead'])){ 
-        $Aa=filter_input(INPUT_GET,'aa',FILTER_SANITIZE_SPECIAL_CHARS); 
-    }else{ $Aa=null;  }*/
-
+   
     # Radio para questionamento sobre Atendimento à distância DB users e users_idoso
     if(isset($_POST['priority'])){ 
         $Aa=filter_input(INPUT_POST,'priority',FILTER_SANITIZE_SPECIAL_CHARS); }
@@ -159,16 +146,7 @@
 
 
     
-    if(isset($_POST['con']))
-    {
-        $id_con=filter_input(INPUT_POST,'con',FILTER_SANITIZE_SPECIAL_CHARS);  
     
-    }elseif(isset($_GET['con'])){
-
-        $id_con=filter_input(INPUT_GET,'con',FILTER_SANITIZE_SPECIAL_CHARS);
-    
-    }
-
   
 
     

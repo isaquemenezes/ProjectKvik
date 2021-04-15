@@ -9,6 +9,4 @@
  
     $dispatch = new Classes\ClassDispatch();  //configuração para localhost(index da viws)
     include ($dispatch ->getInclusao());       //configuração para index da viws)
-    //include ($dispatch ->getInclusaoTemp());   // Index temporária
      
-    

@@ -6,10 +6,10 @@
 ?>
 
         <!-- Header ========================================-->
-        <?php include_once './includes/subPages/header.php'; ?>
+        <?php include 'includes/subPages/header.php'; ?>
        
 		<!-- Nav ======================= -->
-		<?php include './includes/nav.php'; ?>
+		<?php include 'includes/nav.php'; ?>
 		
 		<!-- Section One =====-->
         <section id="One" class="wrapper style3">
@@ -35,6 +35,7 @@
 
         $user_email=$_SESSION['email'];
         $crud=new ModelCrud();
+        
         $select_users=$crud->selectDB("*", "users", "WHERE email=?", array($user_email));
         $users=$select_users->fetch(\PDO::FETCH_ASSOC);
     
@@ -87,7 +88,7 @@
                                             <?php 
                                                 if($users['status'] == "confirmation"){
                                                     $status = "Ative sua conta pelo link do email";
-                                                }else{
+                                                } else {
                                                     $status = "Conta Ativada";
                                                 }
                                                 echo "<p> {$status} </p>";
