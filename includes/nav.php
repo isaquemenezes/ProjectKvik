@@ -2,9 +2,24 @@
 				<ul class="links">
 
 					<li><a href="<?php echo DIRPAGE.'';?>">Home</a></li>		
-					<li><a href='javascript:void(0);' onclick='MoveScroll(&#39;three&#39;)' id='tv2'>Sobre Nós</a></li>";			
-					<li><a href='javascript:void(0);' onclick='MoveScroll(&#39;two&#39;)' id='tv2'>Junta-se</a></li>";
-					<li><a href='<?php echo DIRPAGE.'equipe';?>'>Equipe</a></li>							
+
+					<?php 
+						$verify = new \Classes\ClassSessions();
+						$verify_session = $verify->verifyIdSessions();
+						
+						if(isset($_SESSION['login'])){
+						
+							echo "<li><a href='".DIRPAGE."controllers/controllerLogout'>Sair</a></li>";
+							echo "<li><a href='".DIRPAGEP."account'>Gerenciar Conta</a></li>";
+							echo "<li><a href='".DIRPAGEP."cadastro-idoso'></a></li>";
+
+						} else {
+							echo "<li><a href='".DIRPAGEP."Login'>Login</a></li>";
+						}
+					?>
+
+					
+							
 
 				</ul>
 			</nav>

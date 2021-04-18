@@ -7,6 +7,11 @@
     include (DIRREQ."library/vendor/autoload.php");
     include (DIRREQ."helpers/variables.php");  
  
-    $dispatch = new Classes\ClassDispatch();  //configuração para localhost(index da viws)
-    include ($dispatch ->getInclusao());       //configuração para index da viws)
+    $dispatch = new Classes\ClassDispatch();  
+    
+    /*configuração para index da views*/
+    //sem argumento . index principal, com todas as funcionalidades
+    //argumento 1 . index_1 page de divulgação do project
+    //argumento 2 . index_2 page de site em manutençao
+    include ($dispatch ->getInclusao());       
      

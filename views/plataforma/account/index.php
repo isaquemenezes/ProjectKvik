@@ -5,11 +5,11 @@
     \Classes\ClassLayout::setHeadSubPage(strtoupper($_SESSION['name']).' Minha Conta',' Gerencie Sua Conta');     
 ?>
 
-        <!-- Header ========================================-->
+        <!-- Header ================================ -->
         <?php include 'includes/subPages/header.php'; ?>
        
 		<!-- Nav ======================= -->
-		<?php include 'includes/nav.php'; ?>
+		<?php include 'includes/subPages/nav-menu.php'; ?>
 		
 		<!-- Section One =====-->
         <section id="One" class="wrapper style3">
@@ -113,7 +113,7 @@
 								
 								</div>
 							</div>
-                        </div>
+                        
                        
                             
 
@@ -196,7 +196,11 @@
 
     <br><br><br><br><br><br>
     <!--======= FOOTER SCRIPTS =======-->
-    <?php  //include "./includes/footer.php"; 
-    //\Classes\ClassLayout::setFooter(); ?>
+    <?php  
+    
+        include "includes/footer.php"; 
+        \Classes\ClassLayout::setFooter(); 
+    
+    ?>
     
     

@@ -10,6 +10,8 @@ define('DIRCSS',DIRPAGE.'assets/css/');
 define('DIRIMG',DIRPAGE.'assets/images/');
 define('DIRJS',DIRPAGE.'assets/js/');
 
+define('DIRPAGEP',DIRPAGE.'plataforma/');
+
 #Acesso ao db
 define('HOST',"localhost");
 define('DB',"sistema_kvik");

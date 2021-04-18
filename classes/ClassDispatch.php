@@ -82,16 +82,14 @@ class ClassDispatch{
     #Retornar a página final para o sistema
     public function getInclusao($par=null){
         if($par==null){
-
-            return $this->page;
-        
-        } else {
-            return  $this->page=DIRREQ.'views/index_temp.php';
-        }
+            return $this->page;  // page index  
+        } else { 
+                if($par==1){
+                    return  $this->page=DIRREQ.'views/index_1.php'; //page temporária
+                } else {
+                    return  $this->page=DIRREQ.'views/index_2.php';  //page de site em manutenção
+                }
+        } 
     }
 
-    #Retornar a página temporária para o sistema
-    public function getInclusaoTemp(){
-       
-    }
 }

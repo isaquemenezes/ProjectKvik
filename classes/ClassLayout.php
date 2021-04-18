@@ -28,6 +28,7 @@
             
             $html.="</head>\n\n";
             $html.="<body> \n";
+            
             echo $html;
         } 
         
