@@ -160,8 +160,8 @@
 
                         <td>   
                             <?php 
-                                
-                                $select_db_conexao = $crud->selectDB("*", "conexao", "where fk_users_idoso=?", array($idoso['id']));
+                                $idoso_id=$idoso['id'];
+                                $select_db_conexao = $crud->selectDB("*", "conexao", "where fk_users_idoso=?", array($idoso_id));
                                 $rowCount = $select_db_conexao->rowCount();
 
                                // while($select_conexao= $select_db_conexao->fetch(\PDO::FETCH_ASSOC)){
@@ -181,9 +181,9 @@
                         
                         <td>
                         
-                        <a href="<?php echo DIRPAGE."cadastro-idoso?id={$idoso['id']}"; ?>" class="button">Editar</a>
+                        <a href="<?php echo DIRPAGEP."cadastro-idoso?id={$idoso_id}"; ?>" class="button">Editar</a>
                            
-                            <a class="excluir" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id_idoso={$idoso['id']}"; ?>">Deletar</a>
+                            <a class="excluir" href="<?php echo DIRPAGE."controllers/controllerExcluir?id_idoso={$idoso_id}"; ?>">Deletar</a>
                         
                         </td>
                         

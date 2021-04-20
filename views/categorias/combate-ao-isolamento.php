@@ -5,81 +5,93 @@
    \Classes\ClassLayout::setHeadSubPage('Área Restrita', 'Área exclusiva para categoria combate ao isolamento');
 ?>
 
-		<!-- Header ========================-->
-		<?php include 'includes/subPages/header.php'; ?>
-		
-		<!-- Nav ======================= -->
-		<?php include 'includes/subPages/nav-menu.php'; ?>
-		
-		<!-- Section One =============================-->
-		<section id="One" class="wrapper style3">		
-	
-			<div class="inner">
+<!-- Header ================================ -->
+<?php include 'includes/subPages/header.php'; ?>
 
-				<header class="align-center"> 
-					<img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
-					<p></p>
-					<h2>Causa Combate Ao Isolamento</h2>
-				</header>
+<!-- Nav ===================================== -->
+<?php include 'includes/subPages/nav-menu.php'; ?>
 
-			</div>
+<!-- Section One ==================== -->
+<section id="One" class="wrapper style3">
 
-		</section>
+    <div class="inner">
 
-	<!--style para show link-->
+        <header class="align-center">
+            <img style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">
+            <p></p>
+            <h2>Causa Combate Ao Isolamento</h2>
+        </header>
+
+    </div>
+
+</section>
+
+<!--style para show link-->
 <style type="text/css">
-		
-		footer > a{
-			
-			cursor: pointer;
-			font-family: sans-serif;
-			font-size: 1em;
-			color: white;
-			width: 200px;
-			height: 50px;
-			background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);
-			background-size: 400%;
-			border:none;
-			border-radius: 30px;
-		}
-		footer > a::after{ content: ''; opacity: 0; }
-		footer > a:hover::after{
-			content: '';
-			display: block;
-			width: 200px;
-			height: 100px;
-			background-color: aliceblue;
-			position: absolute;
-			top: calc(50vh - 50px);
-			left: calc(50vw - 100px);
-			border-radius: 40px;
-			z-index: -1;
-			background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);
-			background-size: 400%;
-			filter: blur(40px);
-			opacity: 1;
-			transition: opacity .5s linear;
-			animation: animacao 5s linear infinite;
-		}
-		footer > a:hover{	animation: animacao 5s linear infinite;	}
+footer>a {
 
-		@keyframes animacao{
-			from{ background-position: 0%;	}
-			to{	background-position: 400%;  }
-		}
-	</style>
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 1em;
+    color: white;
+    width: 200px;
+    height: 50px;
+    background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);
+    background-size: 400%;
+    border: none;
+    border-radius: 30px;
+}
 
-		<section id="one" class="wrapper style2">
-			<div class="inner">
-				<div class="grid-style">
-					<?php //Paginação
+footer>a::after {
+    content: '';
+    opacity: 0;
+}
+
+footer>a:hover::after {
+    content: '';
+    display: block;
+    width: 200px;
+    height: 100px;
+    background-color: aliceblue;
+    position: absolute;
+    top: calc(50vh - 50px);
+    left: calc(50vw - 100px);
+    border-radius: 40px;
+    z-index: -1;
+    background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);
+    background-size: 400%;
+    filter: blur(40px);
+    opacity: 1;
+    transition: opacity .5s linear;
+    animation: animacao 5s linear infinite;
+}
+
+footer>a:hover {
+    animation: animacao 5s linear infinite;
+}
+
+@keyframes animacao {
+    from {
+        background-position: 0%;
+    }
+
+    to {
+        background-position: 400%;
+    }
+}
+</style>
+
+<section id="one" class="wrapper style2">
+    <div class="inner">
+        <div class="grid-style">
+            <?php //Paginação
 
 					//Receber o número da página
 					$pagina_atual = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);		
 					$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 		
 					//Setar a quantidade de itens por pagina
-					$qnt_result_pg = 2;
+					$qnt_result_pg = 15;
 		
 					//calcular o inicio visualização
 					$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
@@ -87,53 +99,16 @@
 						$crud=new ModelCrud();
 						$BFetch=$crud->selectDB("*", "users_idoso", "ORDER BY id DESC LIMIT $inicio, $qnt_result_pg",array());
 						while($users_idoso=$BFetch->fetch(\PDO::FETCH_ASSOC)){ ?>
-						
-						<div>
-							<div class="box">						
-								<div class="content">
 
-									<header class="align-center">
+            <?php }?>
 
-										<h2><?php $first_name= explode(" ",$users_idoso['nome']); echo $first_name[0]; ?></h2>
-									
-									</header>
-							
-									<p>
-										<ul class="text-muted small">
-										
-											<li>Cidade <?php echo $users_idoso['cidade']; ?></li>
-											<li>Bairro <?php echo $users_idoso['bairro']; ?></li>
-											<li>Data <?php echo $users_idoso['dateCreated']; ?></li>
-											<li>Pode ser a distância? <?php echo $users_idoso['Aa']; ?></li>
-											<li>Sexo <?php echo $users_idoso['sexo']; ?></li>
-											
+        </div>
+    </div>
+</section>
 
-										</ul>
-									</p>	
-																
-									<footer class="align-center">
 
-										<a href="<?php echo DIRPAGE."profile?id=".$users_idoso['id']; ?>" class="button special">Perfil</a>
-										<!--<a href="<?php// echo DIRPAGE.'controllers/controllerCon?=con'//.$users_idoso['id'];?>" class="button special">Conecta</a>-->
-										<a href="<?php echo DIRPAGE.'controllers/controllerCon?con='.$users_idoso['id'];?>" class="button special">Conecta</a>
-
-										<input type="text" name="con" value="con">
-										<!--<button name="con" id="con">fusão</button>
-										<input  type="submit" value="Cadastrar"/>-->
-									</footer>
-
-								</div>
-							</div>
-						</div>
-					<?php }?>
-
-				</div>				
-			</div>			
-		</section>
-
-		
-		<div style="padding:2em;"class="align-center">
-			<?php //Paginação 
+<div style="padding:2em;" class="align-center">
+    <?php //Paginação 
 
 				//Paginação - Soma a quantidade de usuários	
 				$result_page=$crud->selectDB("*", "users_idoso", "", array());
@@ -168,11 +143,103 @@
 					
 				echo "<a style='margin: 5px; text-decoration: none;' href='combate-ao-isolamento?pagina=$quantidade_pg'>Ultima</a>";
 						
-			?>		
-		</div>
-		
-		
-		
-			<?php include_once 'includes/footer.php';?>
-			<!--======= FOOTER SCRIPTS =======-->
-			<?php \Classes\ClassLayout::setFooter(); ?>
+			?>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="one" class="wrapper style2">
+    <div class="inner">
+
+        <?php //Paginação
+
+//Receber o número da página
+$pagina_atual = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);		
+$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
+
+//Setar a quantidade de itens por pagina
+$qnt_result_pg = 15;
+
+//calcular o inicio visualização
+$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
+
+    $crud=new ModelCrud();
+    $BFetch=$crud->selectDB("*", "users_idoso", "ORDER BY id DESC LIMIT $inicio, $qnt_result_pg",array());
+    while($users_idoso=$BFetch->fetch(\PDO::FETCH_ASSOC)){ ?>
+
+
+
+
+
+
+        <div class="row 50% uniform" style="display: inline-block; position:relative;">
+            <div class="4u" style="display: inline-block; position:relative;">
+                <div class="box" style="display: inline-block;position:relative;">
+                    <div class="content">
+
+                        <header class="align-center">
+
+                            <h2><?php $first_name= explode(" ",$users_idoso['nome']); echo $first_name[0]; ?></h2>
+
+                        </header>
+
+                        <p>
+                        <ul class="text-muted small">
+
+                            <li>Cidade <?php echo $users_idoso['cidade']; ?></li>
+                            <li>Bairro <?php echo $users_idoso['bairro']; ?></li>
+                            <li>Data <?php echo $users_idoso['dateCreated']; ?></li>
+                            <li>Pode ser a distância? <?php echo $users_idoso['Aa']; ?></li>
+                            <li>Sexo <?php echo $users_idoso['sexo']; ?></li>
+                            <li>Categoria <?php echo $users_idoso['categoria']; ?></li>
+
+
+                        </ul>
+                        </p>
+
+
+
+                        <footer class="align-center">
+
+                            <a href="<?php echo DIRPAGE."profile?id=".$users_idoso['id']; ?>"
+                                class="button special">Perfil</a>
+                            <br><br>
+                            <a href="<?php echo DIRPAGE.'controllers/controllerCon?con='.$users_idoso['id'];?>"
+                                class="button special">Conecta</a>
+
+
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <?php }?>
+
+
+
+    </div>
+    </div>
+
+    <?php include_once 'includes/footer.php';?>
+    <!--======= FOOTER SCRIPTS =======-->
+    <?php \Classes\ClassLayout::setFooter(); ?>

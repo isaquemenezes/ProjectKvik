@@ -1,6 +1,7 @@
 //Retorno do root
-function getRoot(){
-    var root = "http://"+document.location.hostname+"/ProjectKvik/";
+function getRoot()
+{
+    var root = window.location.protocol+"//"+document.location.hostname+"/ProjectKvik/";
     return root;
 }
 

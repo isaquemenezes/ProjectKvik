@@ -14,7 +14,7 @@
 
       echo "<script>
             alert('Cadastro efetuado com sucesso! :-)');
-            window.location.href='".DIRPAGE."myaccount#marker2';
+            window.location.href='".DIRPAGEP."account#marker2';
           </script>
       ";
     } 
@@ -28,7 +28,7 @@
 
                 echo "<script>
                         alert('Dados atualizados com sucesso!');
-                        window.location.href='".DIRPAGE."myaccount#marker2';
+                        window.location.href='".DIRPAGEP."account#marker2';
                       </script>
                 ";          
                          

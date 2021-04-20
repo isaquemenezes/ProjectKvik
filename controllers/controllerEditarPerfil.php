@@ -10,14 +10,14 @@
                     
         echo"<script>
                 alert('Dados alterados com sucesso!');
-                window.location.href='".DIRPAGE."myaccount#marker1';
+                window.location.href='".DIRPAGEP."account#marker1';
             </script>";    
             
     }else{
 
         echo"<script>
                 alert('Erro!');
-                window.location.href='".DIRPAGE."myaccount#marker1';
+                window.location.href='".DIRPAGEP."account#marker1';
             </script>";
 
     }

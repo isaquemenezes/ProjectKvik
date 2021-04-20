@@ -85,7 +85,7 @@ class ClassDispatch{
             return $this->page;  // page index  
         } else { 
                 if($par==1){
-                    return  $this->page=DIRREQ.'views/index_1.php'; //page temporária
+                    return  $this->page=DIRREQ.'views/index_1.php'; //page de apresentação
                 } else {
                     return  $this->page=DIRREQ.'views/index_2.php';  //page de site em manutenção
                 }

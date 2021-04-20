@@ -152,7 +152,11 @@
                 ];
             }else {
               
-              $arrayResponse = [ "retorno"=>"success", "erros"=>null ];
+              $arrayResponse = [ 
+                  "retorno"=>"success", 
+                  "erros"=>null 
+                ];
+                
               $this->cadastro->insertCadIdoso($array_idoso);
             
             }
@@ -174,7 +178,7 @@
         #Validação final do login
         public function validateFinalLogin($email){
 
-            if(count($this->getErro()) >0){
+            if(count($this->getErro()) > 0){
 
                 $this->login->insertAttempt();
 
@@ -190,7 +194,7 @@
 
                 $arrayResponse=[
                     "retorno"=>"success",
-                    "page"=>'./',
+                    "page"=>DIRPAGE.'',
                     "tentativas"=>$this->tentativas
                 ];
             }

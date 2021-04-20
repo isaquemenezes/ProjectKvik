@@ -1,7 +1,6 @@
 <?php    
     
     $objPass=new \Classes\ClassPassword();
-    
     $filter=new \Classes\ClassAuxilia();
 
     
@@ -22,12 +21,9 @@
     //fk_users DB users_idoso com id users 
     if(isset($_POST['fk_users'])){ 
         $Fk_users=filter_input(INPUT_POST,'fk_users',FILTER_SANITIZE_SPECIAL_CHARS); 
-        
     }elseif(isset($_GET['fk_users'])){ 
         $Fk_users=filter_input(INPUT_GET,'fk_users',FILTER_SANITIZE_SPECIAL_CHARS); 
-        
     }else{ $Fk_users=null;}
-
 
     //Nome DB users e DB cadastro(idoso)
     if(isset($_POST['name'])){ 
@@ -100,20 +96,31 @@
     
 
     //Input Senha
-    if(isset($_POST['senha'])){ $senha=$_POST['senha'];  $hashSenha=$objPass->passwordHash($senha); }
-    else{  $senha=null;   $hashSenha=null;   }
+    if(isset($_POST['senha'])){ 
+        $senha=$_POST['senha'];  
+        $hashSenha=$objPass->passwordHash($senha); 
+    } else {  
+        $senha=null;   
+        $hashSenha=null;   
+    }
 
     #Input Confirmacao de Senha
-    if(isset($_POST['senhaConf'])){ $senhaConf=$_POST['senhaConf'];   }
-    else{   $senhaConf=null;   }   
+    if(isset($_POST['senhaConf'])){ 
+        $senhaConf=$_POST['senhaConf'];   
+    } else {   
+        $senhaConf=null;   
+    }   
 
     
     
     #Esqueci minha senha - Recuperação
     $token=bin2hex(random_bytes(64));
        
-    if(isset($_POST['token'])){  $token=$_POST['token'];  }
-    else{   $token=bin2hex(random_bytes(64));  }
+    if(isset($_POST['token'])){  
+        $token=$_POST['token'];  
+    } else {   
+        $token=bin2hex(random_bytes(64));  
+    }
 
     #Input data de Criacao 
     $dataCreated=date("Y-m-d H:i:s", time());

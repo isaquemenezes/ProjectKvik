@@ -45,18 +45,19 @@
 ?>
 
         <!-- Header ===================================-->
-        <?php include './includes/subPages/header.php'; ?>
+        <?php include 'includes/subPages/header.php'; ?>
 	   
         <!-- Nav ======================================= -->
-	    <?php include './includes/subPages/nav-menu.php'; ?>
+	    <?php include 'includes/subPages/nav-menu.php'; ?>
 	   
         <!-- Section One =====================-->
 		<section id="One" class="wrapper style3">
 			<div class="inner">
 
-				<header class="align-center"><img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
+				<header class="align-center">
+                    <img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
 					<p></p>
-					<h2>*<?php echo  $Acao; ?> Um Idoso </h2>
+					<h2><?php echo  $Acao; ?> Um Idoso*</h2>
 				</header>
 
 			</div>

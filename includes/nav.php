@@ -9,9 +9,9 @@
 						
 						if(isset($_SESSION['login'])){
 						
-							echo "<li><a href='".DIRPAGE."controllers/controllerLogout'>Sair</a></li>";
 							echo "<li><a href='".DIRPAGEP."account'>Gerenciar Conta</a></li>";
-							echo "<li><a href='".DIRPAGEP."cadastro-idoso'></a></li>";
+							echo "<li><a href='".DIRPAGEP."cadastro-idoso'>Cadastrar Idoso</a></li>";
+							echo "<li><a href='".DIRPAGE."controllers/controllerLogout'>Sair</a></li>";
 
 						} else {
 							echo "<li><a href='".DIRPAGEP."Login'>Login</a></li>";

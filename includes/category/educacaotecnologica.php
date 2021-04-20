@@ -1,7 +1,7 @@
 <div>
 							<div class="box">
 								<div class="image fit">
-									<img src="<?php echo DIRIMG.'tech2.jpg';?>" alt="" />
+									<img src="<?php echo DIRIMG.'tech2.jpg';?>" alt="Imagem de um gato olhando para um smartphone, simbolizando ajuda tecnológica" />
 								</div>
 								<div class="content">
 
@@ -27,8 +27,10 @@
 						            <p>Muita vontade de ajudar e fazer a diferença.
 								   
 									<footer class="align-center">
+
 										<a href="<?php echo DIRPAGE.'categorias/educacao-tecnologica';?>" class="button special">Ajudar Aqui</a>
-										<a href="<?php echo DIRPAGE.'cadastro-idoso';?>" class="button special">Cadastrar Idoso</a>
+										<a href="<?php echo DIRPAGEP.'cadastro-idoso';?>" class="button special">Cadastrar Idoso</a>
+									
 									</footer>
 
 								</div>

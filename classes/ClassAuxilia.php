@@ -1,12 +1,6 @@
 <?php 
     namespace Classes;
 
-    // use Models\ModelCadastro;
-    // use Models\ModelLogin;
-    // use Classes\ClassPassword;
-    // use Classes\ClassSessions;
-    // use Classes\ClassMail; 
-
     class ClassAuxilia{
         
          #filter caracteres especiais
