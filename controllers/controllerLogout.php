@@ -3,7 +3,7 @@
     $sesssion->destructSessions();
 
     echo"<script>
-            alert('Você efetuou o Logout!')
-            window.location.href='".DIRPAGE."'
+            alert('Você efetuou o Logout!');
+            window.location.href='".DIRPAGE."';
         </script>
     ";

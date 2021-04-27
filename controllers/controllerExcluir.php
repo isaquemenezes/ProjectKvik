@@ -27,7 +27,7 @@
     
         echo"<script>
                 alert('Excluído com sucesso!')
-                window.location.href='".DIRPAGE."myaccount';
+                window.location.href='".DIRPAGEP."account/';
             </script>
          ";
     }

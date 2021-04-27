@@ -248,7 +248,7 @@
                     $arrayVar['token'],
                     "Link para Confirmação de Senha",
                     "<strong>Redefinação da Senha</strong><br>
-                    Redefina sua senha <a href='".DIRPAGE."redefinicaoSenha/{$arrayVar['email']}/{$arrayVar['token']}'>clicando aqui</a>.
+                    Redefina sua senha <a href='".DIRPAGEP."redefinicaoSenha/{$arrayVar['email']}/{$arrayVar['token']}'>clicando aqui</a>.
                     "
                 );
 

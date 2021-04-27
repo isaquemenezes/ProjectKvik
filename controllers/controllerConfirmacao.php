@@ -9,7 +9,7 @@
 
        echo "<script>
                 alert('Dados confirmados com sucesso!');
-                window.location.href='".DIRPAGE."login';
+                window.location.href='".DIRPAGEP."login';
               </script>";
     }else{
         

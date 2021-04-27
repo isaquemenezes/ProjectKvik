@@ -74,13 +74,15 @@
             $b=$this->selectDB("*", "confirmation",  "where email=? and token=?", array($email, $token));
             $r=$b->rowCount();
 
-            if($r >0)
-            {  
+            if($r >0){  
                 $this->deleteDB("confirmation", "email=?", array($email));
                 $this->updateDB("users", "status=?", "email=?", array("active", $email));
+                
                 return true;
             
-            }else{  return false;  }
+            } else {  
+                return false;  
+            }
         }
 
     }

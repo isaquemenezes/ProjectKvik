@@ -88,7 +88,7 @@
                 
                 echo "<script>
                         alert('Você não está logado');
-                        window.location.href='".DIRPAGE."login';
+                        window.location.href='".DIRPAGEP."login';
                     </script>
                 ";
             }else{
@@ -111,7 +111,9 @@
         #Destruir as sessions existentes
         public function destructSessions() {
             
-            foreach (array_keys($_SESSION) as $key) {  unset($_SESSION[$key]);  }
+            foreach (array_keys($_SESSION) as $key) {  
+                unset($_SESSION[$key]);  
+            }
         }
 
     }

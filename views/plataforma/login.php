@@ -37,8 +37,8 @@
 
                         <div class="12u$">
                             <ul class="actions">
-                                <li><a href="<?php echo DIRPAGE.'esqueci-minha-senha'; ?>">Esqueci minha senha</a></li>
-                                <li><a href="<?php echo DIRPAGE.'cadastro'; ?>">Nova Conta</a></li>
+                                <li><a href="<?php echo DIRPAGEP.'esqueci-minha-senha'; ?>">Esqueci minha senha</a></li>
+                                <li><a href="<?php echo DIRPAGEP.'cadastro'; ?>">Nova Conta</a></li>
                             </ul>
                         </div>
                         <h6><a href="<?php echo DIRPAGE.'article/termo-de-uso';?>" target="_blank">Termo de uso</a> | <a href="<?php echo DIRPAGE.'article/politica-de-privacidade';?>" target="_blank">Politica de Privacidade</a> | <a href="<?php echo DIRPAGE.'article/termo-de-voluntariado';?>" target="_blank">Termo de Voluntário</h6>
