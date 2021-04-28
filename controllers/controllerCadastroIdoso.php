@@ -14,7 +14,7 @@
 
       echo "<script>
             alert('Cadastro efetuado com sucesso! :-)');
-            window.location.href='".DIRPAGEP."account#marker2';
+            window.location.href='".DIRPAGEP."account';
           </script>
       ";
     } 
@@ -23,12 +23,12 @@
        
         $crud->updateDB("users_idoso", 
                         "nome=?, sexo=?, anoNascimento=?, cidade=?, bairro=?, categoria=?, Aa=?","id=?",
-                  array($Nome, $Sexo, $AnoNascimento,$Cidade,$Bairro,$Categoria,$Aa, $Id)
+                  array( $Nome, $Sexo, $AnoNascimento, $Cidade, $Bairro, $Categoria, $Aa, $Id)
                 );
 
                 echo "<script>
                         alert('Dados atualizados com sucesso!');
-                        window.location.href='".DIRPAGEP."account#marker2';
+                        window.location.href='".DIRPAGEP."account';
                       </script>
                 ";          
                          

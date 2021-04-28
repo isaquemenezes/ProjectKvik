@@ -22,11 +22,11 @@ $("#formCadastro").on("submit",function(event){
                     $('.retornoCad').append(value+'');
                 });
             }else{
-                $('.retornoCad').append('Sucesso! Bem vindo. Você agora é parte do nosso time.<br>'
-                 +'Ah! Não esqueçe de confirmar seu email, através do link que enviamos. Blz.');
+                $('.retornoCad').append('Sucesso! Bem vindo ao time.<br>'
+                 +'Ah! Não esqueça de confirmar seu email, através do link que enviamos. Blz.');
                 
                 //Limpa os inputs
-                $('#formCadastro input[text][email][password]').each(function(){
+                $('#formCadastro input').each(function(){
                     $(this).val('');
                 });  
             }

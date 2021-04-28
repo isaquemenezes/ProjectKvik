@@ -1,206 +1,371 @@
-<?php 
-    namespace Models;
-
-    \Classes\ClassLayout::setHeadRestrito(); 
-    \Classes\ClassLayout::setHeadSubPage(strtoupper($_SESSION['name']).' Minha Conta',' Gerencie Sua Conta');     
-?>
-
-        <!-- Header ================================ -->
-        <?php include 'includes/subPages/header.php'; ?>
-       
-		<!-- Nav ======================= -->
-		<?php include 'includes/subPages/nav-menu.php'; ?>
-		
-		<!-- Section One =====-->
-        <section id="One" class="wrapper style3">
-		    <div class="inner">
-
-				<header class="align-center">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimun-scale=1,maximum-scale=1, initial-scale=1">
+	<!-- <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'> -->
     
-                   <img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
+	<title>DashBoard Para Project Kvik</title>
+	<link rel="stylesheet" type="text/css" href="<?php echo DIRCSS.'stylesheet.css'?>">
 	
-    				<p></p>
-					<h2>Gerencie Sua Conta</h2>
-	
-    			</header>
+</head>
+<body>
+
+	<input type="checkbox" id="menu-toggle">
+
+	<div class="sidebar">
+		
+		<div class="brand">
+			<span class="fa fa-affiliatetheme"></span>
+			<h2><a href="#">Kvik</a></h2>				
+		</div>
+		
+		<div class="sidemenu">
+			
+			<div class="side-user">
+				<div class="side-img" style="background-image: url(library/images/user.jpg)"></div>
+				<div class="user">
+					<small>Léonard Vinci</small>
+					<p>Software Developer</p>
+				</div>
+			</div>
+			
+			<ul>
+				<li>
+					<a href="#" class="active"> 
+						<span class="fa fa-home"></span> 
+						<span>Minha conta</span> 
+					</a>
+				</li>
+
+				<li>
+					<a href="#" > 
+						<span class="fa fa-balance-scale"></span> 
+						<span>Configurações</span> 
+					</a>
+				</li>
+
+				<li>
+					<a href="analytics.html"> 
+						<span class="fa fa-line-chart"></span> 
+						<span>Analytics</span> 
+					</a>
+				</li>
+
+				<li>
+					<a href="calendar.html"> 
+						<span class="fa fa-calendar"></span> 
+						<span>Calendar</span> 
+					</a>
+				</li>
+
+				<li>
+					<a href="#"> 
+						<span class="fa fa-users"></span> 
+						<span>Trocar senha</span> 
+					</a>
+				</li>
+
+				<li>
+					<a href="#"> 
+						<span class="fa fa-shopping-cart"></span> 
+						<span>Ecommerce</span> 
+					</a>
+				</li>
+
+				<li>
+					<a href="#"> 
+						<span class="fa fa-envelope"></span> 
+						<span>Mailbox</span> 
+					</a>
+				</li>
+
+				<li>
+					<a href="#"> 
+						<span class="fa fa-check-circle"></span> 
+						<span>Tasks</span> 
+					</a>
+				</li>
+
+				<li>
+					<a href="#"> 
+						<span class="fa fa-lock"></span> 
+						<span>Authentication</span> 
+					</a>
+				</li>
+
+				<li>
+					<a href="#"> 
+						<span class="fa fa-usd"></span> 
+						<span>Desativar minha conta</span> 
+					</a>
+				</li>
+
+			</ul>
+
+		</div>
+
+	</div>
+
+	<div class="main-content">
+		
+		<header>			
+			
+			<label for="menu-toggle" class="menu-toggler">
+				<span class="fa fa-bars"></span>
+			</label>
+
+			<div class="search">
+				<span class="fa fa-search"></span>
+				<input type="search" name="" placeholder="Enter keyword">
+			</div>
+
+			<div class="head-icons">
+				<span class="fa fa-bell"></span>
+				<span class="fa fa-bookmark"></span>
+				<span class="fa fa-comment"></span>
+			</div>
+
+		</header>
+
+		<main>
+			
+
+			<!-- <div START TEST -->
+				<div class="recent-grid">
+				<div class="projects">
+					<div class="card">
+						<div class="card-header">
+							<h3>Perfil</h3>
+							<!-- <button>Editar Perfil<span class="fa fa-arrow-right"></span></button> -->
+							<a href=""> <i class="fa fa-cog" aria-hidden="true"></i>
+ Editar Perfil</span></a>
+						</div>
+
+						<div class="card-body">
+							<table width="100%"> 
+								<thead>
+									<tr>
+										<td>Campo</td>
+										<td>Dado</td>
+										<td>Público</td>
+									</tr>
+								</thead>
+
+								<tbody>
+									
+									<tr>
+								
+										<td>Nome</td>
+										<td>Kaio Santos Malcher</td>
+										<td><span class="status purple"></span>SIM</td>
+
+										<tr>
+											<td>Contato</td>
+											<td>(11) 9 63522-4422</td>
+											<td><span class="status pink"></span>NAO</td>
+										</tr>
+
+										<tr>
+											<td>Cidade</td>
+											<td>São Paulo</td>
+											<td><span class="status orange"></span>SIM</td>
+										</tr>
+
+										<tr>
+											<td>Bairro</td>
+											<td>São Tadeu</td>
+											<td><span class="status orange"></span>SIM</td>
+										</tr>
+
+										<tr>
+											<td>Grau de Ensino</td>
+											<td>Ensino superior</td>
+											<td><span class="status orange"></span>SIM</td>
+										</tr>
+
+										<tr>
+											<td>Profisão</td>
+											<td>Eng. da Computação</td>
+											<td><span class="status orange"></span>SIM</td>
+										</tr>
+
+										<tr>
+											<td>Data de Nascimento</td>
+											<td>21 / 03 / 2021</td>
+											<td><span class="status orange"></span>NAO</td>
+										</tr>
+
+										<tr>
+											<td>Rede social</td>
+											<td>LinkedIn</td>
+											<td><span class="status orange"></span>SIM</td>
+										</tr>
+
+										<tr>
+											<td>Conosco desde</td>
+											<td>21 / 03 / 2021</td>
+											<td><span class="status orange"></span>SIM</td>
+										</tr>
+
+										<tr>
+											<td>CPF</td>
+											<td>005.345.274-45</td>
+											<td><span class="status orange"></span>NAO</td>
+										</tr>
+
+										<tr>
+											<td>RG</td>
+											<td>345234</td>
+											<td><span class="status orange"></span>NAO</td>
+										</tr>
+
+										
+
+									</tr>
+
+									
+
+
+
+
+
+
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
+				</div>
+
+				<div class="customers">
+					<div class="card">
+						<div class="card-header">
+							<h3>New customer</h3>
+
+							<button>See all <sapn class="fa fa-arrow-right"></sapn></button>
+						</div>
+
+						<div class="card-body">
+
+							<div class="customer">
+								<div class="info">
+									<img src="library/images/img1.png" width="40px" height="40px" alt="">
+								
+									<div>
+										<h4>Lewis S. Cunningham</h4>
+										<small>CEO Excerpt</small>
+									</div>
+								</div>
+
+								<div class="contact">
+									<span class="fa fa-user-circle"></span>
+									<span class="fa fa-comment"></span>
+									<span class="fa fa-phone"></span>
+								</div>
+							</div> <!-- END customer-->
+
+							<div class="customer">
+								<div class="info">
+									<img src="library/images/img1.png" width="40px" height="40px" alt="">
+								
+									<div>
+										<h4>Lewis S. Cunningham</h4>
+										<small>CEO Excerpt</small>
+									</div>
+								</div>
+
+								<div class="contact">
+									<span class="fa fa-user-circle"></span>
+									<span class="fa fa-comment"></span>
+									<span class="fa fa-phone"></span>
+								</div>
+							</div> <!-- END customer-->
+
+							<div class="customer">
+								<div class="info">
+									<img src="library/images/img1.png" width="40px" height="40px" alt="">
+								
+									<div>
+										<h4>Lewis S. Cunningham</h4>
+										<small>CEO Excerpt</small>
+									</div>
+								</div>
+
+								<div class="contact">
+									<span class="fa fa-user-circle"></span>
+									<span class="fa fa-comment"></span>
+									<span class="fa fa-phone"></span>
+								</div>
+							</div> <!-- END customer-->
+
+							<div class="customer">
+								<div class="info">
+									<img src="library/images/img1.png" width="40px" height="40px" alt="">
+								
+									<div>
+										<h4>Lewis S. Cunningham</h4>
+										<small>CEO Excerpt</small>
+									</div>
+								</div>
+
+								<div class="contact">
+									<span class="fa fa-user-circle"></span>
+									<span class="fa fa-comment"></span>
+									<span class="fa fa-phone"></span>
+								</div>
+							</div> <!-- END customer-->
+
+							<div class="customer">
+								<div class="info">
+									<img src="library/images/img1.png" width="40px" height="40px" alt="">
+								
+									<div>
+										<h4>Lewis S. Cunningham</h4>
+										<small>CEO Excerpt</small>
+									</div>
+								</div>
+
+								<div class="contact">
+									<span class="fa fa-user-circle"></span>
+									<span class="fa fa-comment"></span>
+									<span class="fa fa-phone"></span>
+								</div>
+							</div> <!-- END customer-->
+
+							<div class="customer">
+								<div class="info">
+									<img src="library/images/img1.png" width="40px" height="40px" alt="">
+								
+									<div>
+										<h4>Lewis S. Cunningham</h4>
+										<small>CEO Excerpt</small>
+									</div>
+								</div>
+
+								<div class="contact">
+									<span class="fa fa-user-circle"></span>
+									<span class="fa fa-comment"></span>
+									<span class="fa fa-phone"></span>
+								</div>
+							</div> <!-- END customer-->
+
+						</div><!--END card-body -->
+
+					</div>
+				</div><!--END customers -->
 
 			</div>
-		</section>
-               
-    <style>
-        table tr td{ padding:5px; }    
-    </style>
+			
+				
+			<!--</END DIV TEST> -->
 
-    <?php
+		</main>
+		
+	</div>
 
-        $user_email=$_SESSION['email'];
-        $crud=new ModelCrud();
-        
-        $select_users=$crud->selectDB("*", "users", "WHERE email=?", array($user_email));
-        $users=$select_users->fetch(\PDO::FETCH_ASSOC);
-    
-    ?>
+	<label class="close-mobile-menu" for="menu-toggle"></label>
 
-
-                        <div class="box">
-
-						    <div class="image fit">
-								<!-- foto perfil <img src="" alt="" />-->
-							</div>
-
-						<div class="content">
-
-							<header class="align-center">
-						
-                        		<h2 id="marker1">Organize Seu Perfil</h2>
-						
-                            </header>
-
-                            <div class="retornoCad"></div><br><br>
-                               
-                                <!-- Form -->
-                                <form method="post" name="formCadastro" id="formCadastro" action="<?php echo DIRPAGE.'controllers/controllerCadastro'; ?>">
-                                    
-                                    <div class="row uniform">
-                                        
-                                        <div class="6u 12u$(xsmall)">
-                                        <label for="">Nome </label>
-                                            <input type="text" name="name" id="name" value="<?php echo $users['nome']; ?>"></div>
-                                            
-                                        <div class="6u$ 12u$(xsmall)">
-                                            <label for="">Email </label>
-                                            <input type="email" name="email" id="email" value="<?php echo $users['email'];?>" readonly></div>
-
-                                        <div class="6u 12u$(xsmall)">
-                                            <label for="">Contato </label>
-                                            <input type="text" id="contato" name="contato" value="<?php echo $users['contato']; ?>" placeholder="Contato"/></div>
-                                        
-                                        <div class="6u 12u$(xsmall)">
-                                            <label for="">Cidade</label>
-                                            <input type="text" id="cidade" name="cidade" value="<?php echo $users['cidade']; ?>" placeholder="Cidade:"></div>
-                                        
-                                        <div class="6u 12u$(xsmall)">
-                                            <label for="">Bairro </label>
-                                            <input type="text" id="bairro" name="bairro" value="<?php echo $users['bairro']; ?>" placeholder="Bairro:"></div>
-                                        
-                                            <div class="6u 12u$(xsmall)">
-                                            <label for="">Status da conta</label>
-                                            <?php 
-                                                if($users['status'] == "confirmation"){
-                                                    $status = "Ative sua conta pelo link do email";
-                                                } else {
-                                                    $status = "Conta Ativada";
-                                                }
-                                                echo "<p> {$status} </p>";
-                                            ?>
-                                          </div>
-                                        
-                                         <!-- Break -->
-                                        <div class="12u$">
-                                            
-                                            <ul class="actions">
-                                            
-                                                <li><a href="<?php echo DIRPAGE."./editar-perfil?id={$users['id']}"; ?>" class="button special">Editar</a></li>
-                                                <li><a class="excluir-conta" href="<?php echo DIRPAGE."./controllers/controllerExcluir?id_users={$users['id']}"; ?>">Deletar Conta</a></li>
-                                            
-                                            </ul>
-
-                                        </div><br><br>
-                                    
-                                    </div>
-
-                                </form>
-								
-								</div>
-							</div>
-                        
-                       
-                            
-
-            <header class="align-center">
-            
-                <h2 id="marker2">Gerencie Seus Cadastros</h2>
-            
-            </header>
-        
-        <div class="content">
-        <table class="tabelaCrud">
-            
-            <tr>
-            
-                <td>Nome</td>
-                <td>Sexo</td>
-                <td>Ano</td>
-                <td>Cidade</td>
-                <td>Bairro</td>
-                <td>Categoria</td>
-                <td>Online?</td>
-                <td>voluntário</td>
-            
-                <td><a href="<?php echo DIRPAGE."cadastro-idoso"; ?>" class="button special">Cadastrar</a></td>
-                
-            </tr>
-            
-            <?php    
-
-                $users=$users['id'];
-                $select_idoso=$crud->selectDB("*","users_idoso","WHERE fk_users=?", array($users));
-                                                
-                while($idoso=$select_idoso->fetch(\PDO::FETCH_ASSOC)){  ?> 
-            
-                    <tr>   
-                        
-                        <td><?php echo $idoso['nome']; ?></td>         
-                        <td><?php echo $idoso['sexo']; ?></td>
-                        <td><?php echo $idoso['anoNascimento']; ?></td>
-                        <td><?php echo $idoso['cidade']; ?></td>
-                        <td><?php echo $idoso['bairro']; ?></td>
-                        <td><?php echo $idoso['categoria']; ?></td>
-                        <td><?php echo $idoso['Aa']; ?></td>
-
-                        <td>   
-                            <?php 
-                                $idoso_id=$idoso['id'];
-                                $select_db_conexao = $crud->selectDB("*", "conexao", "where fk_users_idoso=?", array($idoso_id));
-                                $rowCount = $select_db_conexao->rowCount();
-
-                               // while($select_conexao= $select_db_conexao->fetch(\PDO::FETCH_ASSOC)){
-                                while($data_conexao= $select_db_conexao->fetch(\PDO::FETCH_ASSOC))
-                                {
-                                    //echo $rowCount; 
-                                    echo "<a href='".DIRPAGE."profile-user-volunteer?profile={$data_conexao['fk_users']}?solicitation_id={$data_conexao['id']}'>Perfil </a>";
-                                
-                                }
-   
-                            ?>
-    
-
-                        </td>
-                        
-                        
-                        
-                        <td>
-                        
-                        <a href="<?php echo DIRPAGEP."cadastro-idoso?id={$idoso_id}"; ?>" class="button">Editar</a>
-                           
-                            <a class="excluir" href="<?php echo DIRPAGE."controllers/controllerExcluir?id_idoso={$idoso_id}"; ?>">Deletar</a>
-                        
-                        </td>
-                        
-                    </tr>              
-            
-            <?php }?> 
-
-        </table>
-    </div>   
-
-    <br><br><br><br><br><br>
-    <!--======= FOOTER SCRIPTS =======-->
-    <?php  
-    
-        include "includes/footer.php"; 
-        \Classes\ClassLayout::setFooter(); 
-    
-    ?>
-    
-    
+</body>
+</html>

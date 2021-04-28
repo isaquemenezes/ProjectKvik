@@ -70,7 +70,8 @@
 
                     return true; 
                 }
-            }else{ //login 
+            }else{ 
+                //login 
                 if($b > 0)
                 { 
                     return true; 
@@ -228,7 +229,7 @@
             $dataDb=$this->login->getDataUser($email)["data"]["email"];
             
             if($email == $dataDb){ return true;     }
-            else{  //$this->setErro("Email não confere com o usuário!"); 
+            else{  
                    return false;
             }
         }

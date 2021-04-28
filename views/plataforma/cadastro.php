@@ -1,7 +1,7 @@
 <?php 
     \Classes\ClassLayout::setHeadSubPage('Cadastro de Usuário','Realize seu cadastro em nosso sistema.');
-    include './includes/subPages/header.php';
-    include './includes/nav.php';
+    include 'includes/subPages/header.php';
+    include 'includes/nav.php';
 
 ?>
 
@@ -75,7 +75,7 @@
                                             text-decoration: none;
                                             text-transform: uppercase;
                                             white-space: nowrap;"
-                                            href="<?php echo DIRPAGE.'login';?>">Entrar</a></li>
+                                            href="<?php echo DIRPAGEP.'login';?>">Entrar</a></li>
                         </ul>
                     </div>
                     <br><br>

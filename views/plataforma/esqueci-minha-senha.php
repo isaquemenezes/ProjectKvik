@@ -33,7 +33,7 @@
                         <div class="12u$">
                             <ul class="actions">
                                 <li><a href="<?php echo DIRPAGE.''; ?>">Home</a></li>
-                                <li><a href="<?php echo DIRPAGE.'cadastro'; ?>">Nova Conta</a></li>
+                                <li><a href="<?php echo DIRPAGEP.'cadastro'; ?>">Nova Conta</a></li>
                             </ul>
                         </div>   
 
