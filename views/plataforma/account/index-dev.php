@@ -1,8 +1,8 @@
 <?php 
     namespace Models;
 
-     \Classes\ClassLayout::setHeadRestrito(); 
-    // \Classes\ClassLayout::setHeadSubPage(strtoupper($_SESSION['name']).' Minha Conta',' Gerencie Sua Conta');     
+    // \Classes\ClassLayout::setHeadRestrito(); 
+    \Classes\ClassLayout::setHeadSubPage(strtoupper($_SESSION['name']).' Minha Conta',' Gerencie Sua Conta');     
 
 ?>
 
@@ -34,8 +34,8 @@
 			<div class="side-user">
 				<div class="side-img" style="background-image: url(library/images/user.jpg)"></div>
 				<div class="user">
-					<small><?php echo strtoupper($_SESSION['name']); ?></small>
-					<p>Developer </p>
+					<small>Léonard Vinci</small>
+					<p>Software Developer</p>
 				</div>
 			</div>
 			
@@ -89,9 +89,19 @@
 					</a>
 				</li>
 
-			
+				<li>
+					<a href="#"> 
+						<span class="fa fa-check-circle"></span> 
+						<span>Tasks</span> 
+					</a>
+				</li>
 
-				
+				<li>
+					<a href="#"> 
+						<span class="fa fa-lock"></span> 
+						<span>Authentication</span> 
+					</a>
+				</li>
 
 				<li>
 					<a href="#"> 
@@ -137,7 +147,7 @@
 						<div class="card-header">
 							<h3>Perfil</h3>
 							<!-- <button>Editar Perfil<span class="fa fa-arrow-right"></span></button> -->
-							<a href="<?php echo DIRPAGEP.'account/editar-perfil?id='.$_SESSION['id_users']  ?>"> <i class="fa fa-cog" aria-hidden="true"></i>
+							<a href=""> <i class="fa fa-cog" aria-hidden="true"></i>
  Editar Perfil</span></a>
 						</div>
 

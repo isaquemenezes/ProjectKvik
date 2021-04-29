@@ -13,6 +13,7 @@
 	list-style-type: none;
 	margin:0;
 	padding: 0;
+	
 }
 
 input, button {
@@ -276,14 +277,13 @@ main {
 
 .close-mobile-menu {
 	position: fixed;
-	/* right: --100%; */
     right: -100%;
 	top: 0;
 	bottom: 0;
 	display: block;
 	height: 100%;
 	width:calc(100% - 280px);
-	background: red;
+	background: transparent;
 	z-index: 100;
 	transition: right 300ms;
 }
@@ -329,7 +329,6 @@ main {
 		display: inline-block;
 	}
 	#menu-toggle:checked ~ .sidebar {
-		display: none;
 		width: 280px;
 		z-index: 100;
 	}
@@ -357,7 +356,7 @@ main {
 
 @media only screen and (max-width: 630px) {
 	.cards-col-three {
-		grid-template-columns: 100%
+		grid-template-columns: 100%;
 	}	
 }
 
@@ -411,7 +410,6 @@ thead tr td {
 }
 thead td {
 	font-weight: 700; 
-
 }
 td {
 	padding: .5em 1em;
@@ -545,6 +543,7 @@ tr td:last-child {
 	}
 
 }
+
 @media only screen and (max-width: 768px) {
 	.cards {
 		grid-template-columns: 100%;
