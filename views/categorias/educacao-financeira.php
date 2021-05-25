@@ -1,205 +1,149 @@
+<?php 
+	namespace Models;
+	// \Classes\ClassLayout::setHeadRestrito();
+   
+   \Classes\ClassLayout::setHeadSubPage('kvik', 'Causa Educação Financeira');
+	 
+?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,minimun-scale=1,maximum-scale=1, initial-scale=1">
-	<!-- <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'> -->
-    
-	<title>Responsive Dashboard Dark</title>
-	<link rel="stylesheet" type="text/css" href="<?php echo DIRCSS.'stylesheet.css';?>">
+		<!-- Header ========================-->
+		<?php include 'includes/subPages/header.php'; ?>
+		
+		<!-- Nav ======================= -->
+		<?php include 'includes/subPages/nav-menu.php'; ?>
+		
+		<!-- Section One =============================-->
+		<section id="One" class="wrapper style3">		
 	
-</head>
-<body>
+			<div class="inner">
 
-	<input type="checkbox" id="menu-toggle">
+				<header class="align-center"> 
+					<img  style="margin: -2em;" src="<?php echo DIRIMG.'logo_kvik.png';?>" alt="logo kvik">	
+					<p></p>
+					<h2>Causa Educação Financeira</h2>
+				</header>
 
-	<div class="sidebar">
+			</div>
+
+		</section>
+
+	<!--style para show link-->
+	<style type="text/css">
 		
-		<div class="brand">
-			<span class="fa fa-affiliatetheme"></span>
-			<h2>Artist</h2>				
+		footer > a{cursor: pointer;font-family: sans-serif;font-size: 1em;color: white;width: 200px;height: 50px;background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);
+			background-size: 400%;border:none;border-radius: 30px;}footer > a::after{ content: ''; opacity: 0; }
+		footer > a:hover::after{content: '';display: block;width: 200px;height: 100px;background-color: aliceblue;position: absolute;top: calc(50vh - 50px);
+			left: calc(50vw - 100px);border-radius: 40px;z-index: -1;background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);background-size: 400%;
+			filter: blur(40px);opacity: 1;transition: opacity .5s linear;animation: animacao 5s linear infinite;}footer > a:hover{	animation: animacao 5s linear infinite;	}
+		@keyframes animacao{
+			from{ background-position: 0%;	}
+			to{	background-position: 400%;  }
+		}
+		.card-icon {display: flex;place-items:left;}.card-icon span {height: 55px;width: 55px;color: #fff;font-size: 2rem;border-radius: 6px;display: grid;place-items:center;}
+		.follow span {color: #0072f2;background: #e5f3fe;}
+	</style>
+
+		<section id="one" class="wrapper style2">
+			<div class="inner">
+				<div class="grid-style">
+					<?php //Paginação
+
+					//Receber o número da página
+					$pagina_atual = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);		
+					$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
+		
+					//Setar a quantidade de itens por pagina
+					$qnt_result_pg = 2;
+		
+					//calcular o inicio visualização
+					$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
+
+						$crud=new ModelCrud();
+						$BFetch=$crud->selectDB("*", "users_idoso", "ORDER BY id DESC LIMIT $inicio, $qnt_result_pg",array());
+						while($users_idoso=$BFetch->fetch(\PDO::FETCH_ASSOC)){ ?>
+						
+						<div>
+							<div class="box">						
+								<div class="content">
+
+									<div class="card-icon follow">
+										<span class="fa fa-users"></span>
+									</div>
+
+									<header class="align-center">
+										<h2><?php echo $users_idoso['nome']; ?></h2>
+									</header>
+							
+									<p>
+										<ul class="text-muted small">
+											<li>Cidade <?php echo $users_idoso['cidade']; ?></li>
+											<li>Bairro <?php echo $users_idoso['bairro']; ?></li>
+											<li>Data <?php echo $users_idoso['dateCreated']; ?></li>
+											<li>Pode ser a distância? <?php echo $users_idoso['Aa']; ?></li>
+											<li>Sexo <?php echo $users_idoso['sexo']; ?></li>
+											
+
+										</ul>
+									</p>	
+																
+									<footer class="align-center">
+
+										<a href="<?php echo DIRPAGE."profile?id=".$users_idoso['id']; ?>" class="button special">Perfil</a>
+										<a href="<?php echo DIRPAGE.'#';?>" class="button special">Conecta</a>
+									
+									</footer>
+
+								</div>
+							</div>
+						</div>
+					<?php }?>
+
+				</div>				
+			</div>			
+		</section>
+
+		
+		<div style="padding:2em;"class="align-center">
+			<?php //Paginação 
+
+				//Paginação - Soma a quantidade de usuários	
+				$result_page=$crud->selectDB("*", "users_idoso", "", array());
+				
+				//Quantidade Total de Registros
+				$cont_page=$result_page->rowCount();
+				
+				//Quantidade de pagina 
+				$quantidade_pg = ceil($cont_page / $qnt_result_pg);		
+						
+				//Limitar os link antes depois
+				$max_links = 2;
+				echo "<a style='margin: 5px; text-decoration: none;' href='educacao-financeira?pagina=1'>Primeira</a> ";
+					
+					for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++)
+					{
+						if($pag_ant >= 1)
+						{
+							echo "<a style='margin: 5px;' href='educacao-financeira?pagina=$pag_ant'>$pag_ant</a> ";
+						}
+					}
+							
+					echo "$pagina ";
+						
+					for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep++)
+					{
+						if($pag_dep <= $quantidade_pg)
+						{
+							echo "<a style='margin: 5px;' href='educacao-financeira?pagina=$pag_dep'>$pag_dep</a> ";
+						}
+					}
+					
+				echo "<a style='margin: 5px; text-decoration: none;' href='educacao-financeira?pagina=$quantidade_pg'>Ultima</a>";
+						
+			?>		
 		</div>
-		
-		<div class="sidemenu">
 			
-			<div class="side-user">
-				<div class="side-img" style="background-image: url(library/images/user.jpg)"></div>
-				<div class="user">
-					<small>Léonard Vinci</small>
-					<p>Software Developer</p>
-				</div>
-			</div>
-			
-			<ul>
-				<li>
-					<a href="#"> 
-						<span class="fa fa-home"></span> 
-						<span>Dashboard</span> 
-					</a>
-				</li>
-
-				<li>
-					<a href="#" class="active"> 
-						<span class="fa fa-balance-scale"></span> 
-						<span>Finance</span> 
-					</a>
-				</li>
-
-				<li>
-					<a href="#"> 
-						<span class="fa fa-line-chart"></span> 
-						<span>Analytics</span> 
-					</a>
-				</li>
-
-				<li>
-					<a href="#"> 
-						<span class="fa fa-calendar"></span> 
-						<span>Calendar</span> 
-					</a>
-				</li>
-
-				<li>
-					<a href="#"> 
-						<span class="fa fa-users"></span> 
-						<span>Contacts</span> 
-					</a>
-				</li>
-
-				<li>
-					<a href="#"> 
-						<span class="fa fa-shopping-cart"></span> 
-						<span>Ecommerce</span> 
-					</a>
-				</li>
-
-				<li>
-					<a href="#"> 
-						<span class="fa fa-envelope"></span> 
-						<span>Mailbox</span> 
-					</a>
-				</li>
-
-				<li>
-					<a href="#"> 
-						<span class="fa fa-check-circle"></span> 
-						<span>Tasks</span> 
-					</a>
-				</li>
-
-				<li>
-					<a href="#"> 
-						<span class="fa fa-lock"></span> 
-						<span>Authentication</span> 
-					</a>
-				</li>
-
-				<li>
-					<a href="#"> 
-						<span class="fa fa-usd"></span> 
-						<span>Pricing</span> 
-					</a>
-				</li>
-
-			</ul>
-
-		</div>
-
-	</div>
-
-	<div class="main-content">
 		
-		<header>			
-			
-			<label for="menu-toggle" class="menu-toggler">
-				<span class="fa fa-bars"></span>
-			</label>
-
-			<div class="search">
-				<span class="fa fa-search"></span>
-				<input type="search" name="" placeholder="Enter keyword">
-			</div>
-
-			<div class="head-icons">
-				<span class="fa fa-bell"></span>
-				<span class="fa fa-bookmark"></span>
-				<span class="fa fa-comment"></span>
-			</div>
-
-		</header>
-
-		<main>
-			<div class="cards-col-three">
-
-				<div class="card-col">
-
-					<div class="card-icon follow">
-						<span class="fa fa-users"></span>
-					</div>
-					<div class="card-info">
-						<h2>3,4</h2>
-						<small>Total follwers</small>
-					</div>
-					<div class="card-images">
-						<div style="background-image: url(library/images/user.jpg)"></div>
-						<div style="background-image: url(library/images/img1.png)"></div>
-						<div style="background-image: url(library/images/img2.png)"></div>
-						<div style="background-image: url(library/images/img3.png)"></div>
-						<div style="background-image: url(library/images/img4.jpg)"></div>
-					</div>
-
-				</div>
-
-				<div class="card-col">
-				
-					<div class="card-icon likes">
-						<span class="fa fa-heart"></span>
-					</div>
-					<div class="card-info">
-						<h2>19,876</h2>
-						<small>Total likes</small>
-					</div>
-					<div class="card-images">
-						<div style="background-image: url(library/images/user.jpg)"></div>
-						<div style="background-image: url(library/images/img1.png)"></div>
-						<div style="background-image: url(library/images/img2.png)"></div>
-						<div style="background-image: url(library/images/img3.png)"></div>
-						<div style="background-image: url(library/images/img4.jpg)"></div>
-					</div>
-				
-				</div>
-
-				<div class="card-col">
-
-					<div class="card-icon comment">
-						<span class="fa fa-comment"></span>
-					</div>
-					<div class="card-info">
-						<h2>212,876</h2>
-						<small>Total comments</small>
-					</div>
-					<div class="card-images">
-						<div style="background-image: url(library/images/user.jpg)"></div>
-						<div style="background-image: url(library/images/img1.png)"></div>
-						<div style="background-image: url(library/images/img2.png)"></div>
-						<div style="background-image: url(library/images/img3.png)"></div>
-						<div style="background-image: url(library/images/img4.jpg)"></div>
-					</div>
-				
-				</div>
-
-			</div>
-
-			<!-- <div class="chart-grid">
-				
-			</div> -->
-
-		</main>
 		
-	</div>
-
-	<label class="close-mobile-menu" for="menu-toggle"></label>
-
-</body>
-</html>
+			<?php include_once 'includes/footer.php';?>
+			<!--======= FOOTER SCRIPTS =======-->
+			<?php \Classes\ClassLayout::setFooter(); ?>

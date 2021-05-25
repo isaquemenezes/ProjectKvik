@@ -1,6 +1,8 @@
 <?php 
+
 	namespace Models;
-	// \Classes\ClassLayout::setHeadRestrito();
+	
+	\Classes\ClassLayout::setHeadRestrito();
    
    \Classes\ClassLayout::setHeadSubPage('kvik', 'Causa Educação Tecnológica');
 	 
@@ -28,46 +30,19 @@
 		</section>
 
 	<!--style para show link-->
-<style type="text/css">
+	<style type="text/css">
 		
-		footer > a{
-			
-			cursor: pointer;
-			font-family: sans-serif;
-			font-size: 1em;
-			color: white;
-			width: 200px;
-			height: 50px;
-			background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);
-			background-size: 400%;
-			border:none;
-			border-radius: 30px;
-		}
-		footer > a::after{ content: ''; opacity: 0; }
-		footer > a:hover::after{
-			content: '';
-			display: block;
-			width: 200px;
-			height: 100px;
-			background-color: aliceblue;
-			position: absolute;
-			top: calc(50vh - 50px);
-			left: calc(50vw - 100px);
-			border-radius: 40px;
-			z-index: -1;
-			background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);
-			background-size: 400%;
-			filter: blur(40px);
-			opacity: 1;
-			transition: opacity .5s linear;
-			animation: animacao 5s linear infinite;
-		}
-		footer > a:hover{	animation: animacao 5s linear infinite;	}
-
+		footer > a{cursor: pointer;font-family: sans-serif;font-size: 1em;color: white;width: 200px;height: 50px;background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);
+			background-size: 400%;border:none;border-radius: 30px;}footer > a::after{ content: ''; opacity: 0; }
+		footer > a:hover::after{content: '';display: block;width: 200px;height: 100px;background-color: aliceblue;position: absolute;top: calc(50vh - 50px);
+			left: calc(50vw - 100px);border-radius: 40px;z-index: -1;background-image: linear-gradient(90deg, #6979F8, #00C48C, #FF647C, #6979F8);background-size: 400%;
+			filter: blur(40px);opacity: 1;transition: opacity .5s linear;animation: animacao 5s linear infinite;}footer > a:hover{	animation: animacao 5s linear infinite;	}
 		@keyframes animacao{
 			from{ background-position: 0%;	}
 			to{	background-position: 400%;  }
 		}
+		.card-icon {display: flex;place-items:left;}.card-icon span {height: 55px;width: 55px;color: #fff;font-size: 2rem;border-radius: 6px;display: grid;place-items:center;}
+		.follow span {color: #0072f2;background: #e5f3fe;}
 	</style>
 
 		<section id="one" class="wrapper style2">
@@ -79,8 +54,8 @@
 					$pagina_atual = filter_input(INPUT_GET,'pagina', FILTER_SANITIZE_NUMBER_INT);		
 					$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 		
-					//Setar a quantidade de itens por pagina
-					$qnt_result_pg = 2;
+					
+					$qnt_result_pg = 22;   //Setar a quantidade de itens por pagina
 		
 					//calcular o inicio visualização
 					$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
@@ -92,6 +67,10 @@
 						<div>
 							<div class="box">						
 								<div class="content">
+
+									<div class="card-icon follow">
+										<span class="fa fa-users"></span>
+									</div>
 
 									<header class="align-center">
 										<h2><?php echo $users_idoso['nome']; ?></h2>
@@ -116,10 +95,10 @@
 									
 									</footer>
 
-								</div>
+								</div> <!--END content-->
 							</div>
 						</div>
-					<?php }?>
+					<?php }?> <!--END while -->
 
 				</div>				
 			</div>			
@@ -128,18 +107,15 @@
 		
 		<div style="padding:2em;"class="align-center">
 			<?php //Paginação 
-
-				//Paginação - Soma a quantidade de usuários	
-				$result_page=$crud->selectDB("*", "users_idoso", "", array());
 				
-				//Quantidade Total de Registros
-				$cont_page=$result_page->rowCount();
+				$result_page=$crud->selectDB("*", "users_idoso", "", array());//Paginação - Soma a quantidade de usuários	
 				
-				//Quantidade de pagina 
-				$quantidade_pg = ceil($cont_page / $qnt_result_pg);		
+				$cont_page=$result_page->rowCount();//Quantidade Total de Registros
+			
+				$quantidade_pg = ceil($cont_page / $qnt_result_pg);	//Quantidade de pagina	
 						
-				//Limitar os link antes depois
-				$max_links = 2;
+				$max_links = 2; //Limitar os link antes depois
+
 				echo "<a style='margin: 5px; text-decoration: none;' href='educacao-tecnologica?pagina=1'>Primeira</a> ";
 					
 					for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant++)
