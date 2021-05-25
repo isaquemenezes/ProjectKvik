@@ -1,6 +1,6 @@
 <?php 
 	namespace Models;
-	// \Classes\ClassLayout::setHeadRestrito();
+	\Classes\ClassLayout::setHeadRestrito();
    
    \Classes\ClassLayout::setHeadSubPage('kvik', 'Causa Educação Financeira');
 	 
