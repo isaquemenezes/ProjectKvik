@@ -55,7 +55,12 @@
 		
 		<!-- One Category =======================-->
 		<?php include 'includes/section-one.php'; ?>
-		
+
+		<!-- Cadastro de email ================-->
+		<?php include 'includes/cadastroemail.php'; ?>
+
+		<!-- Cadastro Message ==================== -->
+		<?php include 'includes/section-two-message.php'; ?>
 		
 		<!-- Footer ========================-->
 		<?php include 'includes/footer.php'; ?>	

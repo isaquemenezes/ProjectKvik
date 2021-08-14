@@ -18,12 +18,14 @@
                 
                                 <div class='12u$'>                                    
                                     <ul class='actions'>
-                                        <li><input type='submit' value='enviar'></li>
+                                        <li><input type='submit' value='cadastrar'></li>
                                     </ul>                                     
                                 </div> 
 
                             </div>
                         </form>
+
+                        <h6>Fique tranquilo. Nós não enviamos spam.</h6>
 					</header>
                     
 				</div>

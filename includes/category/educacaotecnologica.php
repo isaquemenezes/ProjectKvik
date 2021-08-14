@@ -14,7 +14,7 @@
 									
 									<p>
 							            <ul class="text-muted small">
-                                            <li>Ensine sobre configurções no smarphone, table, ipad, computador, notebook,</li>
+                                            <li>Ensine sobre configurações no smartphone</li>
                                             <li>Ensine-os como manusear o controle da televisão.</li>
                                             <li>Configurações básicas sobre informática,</li>
                                             <li>Computadores ou tecnologia no geral!</li>

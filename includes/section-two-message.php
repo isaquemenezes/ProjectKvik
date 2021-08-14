@@ -1,10 +1,9 @@
 <section id='two' class='wrapper style2'>
         <div class='inner'>
             <header class='align-center'>
-
-        
+ 
                 <div style='width: 50%;  margin: 0em 3em 0 25%;'>					
-                    <h2>Gostariamos de Ouvir sua Dúvida, Crítica ou Sugestão.</h2>      
+                    <h2>Gostariamos de ouvir sua dúvida, crítica e/ou sugestão.</h2>      
                         
                         <div class="retornoCadMessage"></div>      
                         
@@ -33,6 +32,7 @@
                             
                             </div>
                         </form>
+
                         <h6>Fique tranquilo. Nós não enviamos spam.</h6>  
 
                 </div>
